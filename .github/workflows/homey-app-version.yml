@@ -26,14 +26,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+      - name: Install TypeScript
+        run: npm install typescript --save-dev
       - name: Update Homey App Version
         uses: athombv/github-action-homey-app-version@master
         id: update_app_version
         with:
           version: ${{ inputs.version }}
           changelog: ${{ inputs.changelog }}
-
       - name: Commit & Push
         run: |
           git config --local user.name "github-actions[bot]"

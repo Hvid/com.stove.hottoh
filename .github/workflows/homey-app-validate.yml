@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install TypeScript
+        run: npm install typescript --save-dev
       - uses: athombv/github-action-homey-app-validate@master
         with:
           level: verified

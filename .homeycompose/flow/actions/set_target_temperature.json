@@ -1,0 +1,29 @@
+{
+  "title": {
+    "en": "Set target temperature",
+    "da": "Indstil måltemperatur"
+  },
+  "hint": {
+    "en": "Sets the stove's target temperature.",
+    "da": "Indstiller brændeovnens måltemperatur."
+  },
+  "titleFormatted": {
+    "en": "Set target temperature to [[temperature]]°C",
+    "da": "Indstil måltemperatur til [[temperature]]°C"
+  },
+  "args": [
+    {
+      "type": "number",
+      "name": "temperature",
+      "title": {
+        "en": "Target temperature",
+        "da": "Måltemperatur"
+      },
+      "placeholder": {
+        "en": "e.g. 21.5",
+        "da": "f.eks. 21,5"
+      }
+    }
+  ],
+  "tokens": []
+}

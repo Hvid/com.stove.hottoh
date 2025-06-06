@@ -1,0 +1,40 @@
+{
+  "id": "fan_speed_changed",
+  "title": {
+    "en": "Fan speed changed",
+    "da": "Blæserhastighed ændret",
+    "nl": "Ventilatorsnelheid gewijzigd",
+    "de": "Lüftergeschwindigkeit geändert",
+    "fr": "Vitesse du ventilateur modifiée",
+    "no": "Viftehastighet endret",
+    "sv": "Fläkthastighet ändrad",
+    "fi": "Puhaltimen nopeus muuttunut",
+    "it": "Velocità ventola cambiata",
+    "es": "Velocidad del ventilador cambiada",
+    "pl": "Prędkość wentylatora zmieniona"
+  },
+  "titleFormatted": {
+    "en": "Fan speed changed to [[speed]]"
+  },
+  "args": [
+    {
+      "name": "speed",
+      "type": "number",
+      "title": {
+        "en": "New Fan Speed",
+        "da": "Ny blæserhastighed",
+        "nl": "Nieuwe ventilatorsnelheid",
+        "de": "Neue Lüftergeschwindigkeit",
+        "fr": "Nouvelle vitesse du ventilateur",
+        "no": "Ny viftehastighet",
+        "sv": "Ny fläkthastighet",
+        "fi": "Uusi puhaltimen nopeus",
+        "it": "Nuova velocità ventola",
+        "es": "Nueva velocidad del ventilador",
+        "pl": "Nowa prędkość wentylatora"
+      },
+      "min": 1,
+      "max": 5
+    }
+  ]
+}

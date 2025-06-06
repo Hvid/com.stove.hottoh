@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Pelletofen manuell hinzufügen",
+      "desc": "Geben Sie die IP-Adresse und den Port Ihres Pelletofens ein, um ihn mit Homey zu verbinden.",
+      "ip_label": "IP-Adresse",
+      "port_label": "Port",
+      "submit": "Pelletofen hinzufügen",
+      "continue": "Weiter",
+      "success": "Pelletofen hinzugefügt! Klicken Sie auf Weiter, um abzuschließen.",
+      "error_missing": "Bitte geben Sie sowohl die IP-Adresse als auch den Port ein.",
+      "error_connect": "Verbindung zum Pelletofen konnte nicht hergestellt werden. Bitte überprüfen Sie die IP-Adresse und den Port.",
+      "error_invalid": "Bitte geben Sie eine gültige Portnummer ein (1-65535)."
+    }
+  }
+}

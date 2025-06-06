@@ -1,0 +1,19 @@
+{
+  "id": "stove_turned_off",
+  "title": {
+    "en": "Stove turned off",
+    "da": "Brændeovnen slukket",
+    "nl": "Pelletkachel uitgeschakeld",
+    "de": "Pelletofen ausgeschaltet",
+    "fr": "Poêle éteint",
+    "no": "Pelletskaminen slått av",
+    "sv": "Pelletskaminen avstängd",
+    "fi": "Pellettitakka sammutettu",
+    "it": "Stufa spenta",
+    "es": "Estufa apagada",
+    "pl": "Piec wyłączony"
+  },
+  "titleFormatted": {
+    "en": "Stove turned off"
+  }
+}

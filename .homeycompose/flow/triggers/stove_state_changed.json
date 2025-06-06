@@ -1,0 +1,56 @@
+{
+  "title": {
+    "en": "Stove state changed",
+    "da": "Brændeovnens tilstand ændret"
+  },
+  "hint": {
+    "en": "Triggers when a stove state changes.",
+    "da": "Udløses når brændeovnens tilstand ændres."
+  },
+  "titleFormatted": {
+  "en": "Stove state changed: [[state]] → [[new_value]]"
+  },
+  "args": [
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": {
+        "en": "State",
+        "da": "Tilstand"
+      },
+      "values": [
+        { "id": "power", "label": { "en": "Power", "da": "Tænd/sluk" } },
+        { "id": "fan_speed", "label": { "en": "Fan Speed", "da": "Blæserhastighed" } },
+        { "id": "fumes", "label": { "en": "Fumes", "da": "Røg" } },
+        { "id": "power_level", "label": { "en": "Power Level", "da": "Effektniveau" } },
+        { "id": "smoke_temperature", "label": { "en": "Smoke Temperature", "da": "Røgtemperatur" } }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "new_value",
+      "title": {
+        "en": "New value",
+        "da": "Ny værdi"
+      },
+      "placeholder": {
+        "en": "New value",
+        "da": "Ny værdi"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "string",
+      "name": "stove_state_change",
+      "title": {
+        "en": "Stove state change",
+        "da": "Brændeovnens tilstandsændring"
+      },
+      "example": {
+        "en": "E.g. 'fan_speed: 3', 'power: on'",
+        "da": "F.eks. 'blæserhastighed: 3', 'tænd/sluk: tændt'"
+      }
+    }
+  ]
+}

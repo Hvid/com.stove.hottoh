@@ -1,0 +1,40 @@
+{
+  "id": "is_at_fan_speed",
+  "title": {
+    "en": "Stove is at fan speed [[speed]]",
+    "da": "Brændeovnen er på blæserhastighed [[speed]]",
+    "nl": "Pelletkachel is op ventilatorsnelheid [[speed]]",
+    "de": "Pelletofen ist auf Lüftergeschwindigkeit [[speed]]",
+    "fr": "Le poêle est à la vitesse du ventilateur [[speed]]",
+    "no": "Pelletskaminen er på viftehastighet [[speed]]",
+    "sv": "Pelletskaminen är på fläkthastighet [[speed]]",
+    "fi": "Pellettitakka on puhaltimen nopeudella [[speed]]",
+    "it": "La stufa è alla velocità ventola [[speed]]",
+    "es": "La estufa está en velocidad del ventilador [[speed]]",
+    "pl": "Piec jest na prędkości wentylatora [[speed]]"
+  },
+  "titleFormatted": {
+    "en": "Stove is at fan speed [[speed]]"
+  },
+  "args": [
+    {
+      "name": "speed",
+      "type": "number",
+      "title": {
+        "en": "Fan Speed",
+        "da": "Blæserhastighed",
+        "nl": "Ventilatorsnelheid",
+        "de": "Lüftergeschwindigkeit",
+        "fr": "Vitesse du ventilateur",
+        "no": "Viftehastighet",
+        "sv": "Fläkthastighet",
+        "fi": "Puhaltimen nopeus",
+        "it": "Velocità ventola",
+        "es": "Velocidad del ventilador",
+        "pl": "Prędkość wentylatora"
+      },
+      "min": 1,
+      "max": 5
+    }
+  ]
+}

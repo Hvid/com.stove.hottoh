@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Agregar estufa de pellets manualmente",
+      "desc": "Ingrese la dirección IP y el puerto de su estufa de pellets para conectarla a Homey.",
+      "ip_label": "Dirección IP",
+      "port_label": "Puerto",
+      "submit": "Agregar estufa de pellets",
+      "continue": "Continuar",
+      "success": "¡Estufa de pellets agregada! Haga clic en Continuar para finalizar.",
+      "error_missing": "Por favor, ingrese la dirección IP y el puerto.",
+      "error_connect": "No se pudo conectar con la estufa de pellets. Verifique la dirección IP y el puerto.",
+      "error_invalid": "Ingrese un número de puerto válido (1-65535)."
+    }
+  }
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="pair.manual.title"></title>
+  <style>
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      width: 100vw;
+      max-width: 100vw;
+      min-width: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    .pair-container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 0.75rem 0.5rem 1rem 0.5rem;
+      width: 100%;
+      max-width: none;
+      min-width: 0;
+      margin: 0 auto;
+      display: block;
+      box-sizing: border-box;
+      overflow: visible;
+    }
+    h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #E25B00;
+      text-align: center;
+    }
+    .desc {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+    .form-group { margin-bottom: 0.75rem; }
+    .form-control {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      margin-top: 0.15rem;
+      box-sizing: border-box;
+      background: #fafafa;
+      transition: border 0.2s;
+    }
+    .form-control:focus {
+      border: 1.5px solid #E25B00;
+      outline: none;
+      background: #fff;
+    }
+    .btn {
+      background-color: #E25B00;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+      box-shadow: 0 1px 4px rgba(226,91,0,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover {
+      background-color: #ff6b1a;
+      box-shadow: 0 2px 8px rgba(226,91,0,0.12);
+    }
+    .status {
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      text-align: center;
+      display: block;
+    }
+    .status.error {
+      color: #b71c1c;
+      background: #f8d7da;
+    }
+    .status.success {
+      color: #155724;
+      background: #d4edda;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+    <div class="pair-container">
+      <header class="homey-header">
+        <h1 class="homey-title" id="title" data-i18n="pair.manual.title"></h1>
+        <p class="homey-subtitle" id="desc" data-i18n="pair.manual.desc"></p>
+      </header>
+      <form class="homey-form" id="pairForm" autocomplete="off">
+        <fieldset class="homey-form-fieldset">
+          <legend class="homey-form-legend" data-i18n="pair.manual.title"></legend>
+          <div class="homey-form-group">
+            <label for="address" class="homey-form-label" id="ip_label" data-i18n="pair.manual.ip_label"></label>
+            <input type="text" class="homey-form-input" id="address" placeholder="192.168.1.158" />
+          </div>
+          <div class="homey-form-group">
+            <label for="port" class="homey-form-label" id="port_label" data-i18n="pair.manual.port_label"></label>
+            <input type="number" class="homey-form-input" id="port" min="1" max="65535" placeholder="5001" />
+          </div>
+          <div id="statusMessage" class="homey-form-group homey-form-label hidden"></div>
+          <div class="homey-form-group">
+            <button type="button" class="homey-button-primary" id="addBtn" data-i18n="pair.manual.submit"></button>
+            <button type="button" class="homey-button-primary hidden" id="continueBtn" data-i18n="pair.manual.continue"></button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+<script>(function() {
+  function __(key) {
+    if (window.Homey && typeof Homey.__ === 'function') {
+      var result = Homey.__(key);
+      if (result === key) {
+        return key;
+      }
+      return result;
+    }
+    return key;
+  }
+  function showStatus(type, message) {
+    var statusElement = document.getElementById('statusMessage');
+    statusElement.textContent = message;
+    statusElement.className = 'status ' + type;
+    statusElement.classList.remove('hidden');
+    if (type === 'success') {
+      statusElement.style.color = '#155724';
+      statusElement.style.background = '#d4edda';
+    } else if (type === 'error') {
+      statusElement.style.color = '#b71c1c';
+      statusElement.style.background = '#f8d7da';
+    } else {
+      statusElement.style.color = '';
+      statusElement.style.background = '';
+    }
+  }
+  function wireEvents() {
+    document.getElementById('addBtn').addEventListener('click', function() {
+      var address = document.getElementById('address').value;
+      var port = parseInt(document.getElementById('port').value);
+      if (!address) {
+        showStatus('error', __('pair.manual.error_missing'));
+        return;
+      }
+      if (isNaN(port) || port < 1 || port > 65535) {
+        showStatus('error', __('pair.manual.error_invalid'));
+        return;
+      }
+      if (!window.Homey || !Homey.emit) {
+        showStatus('error', __('pair.manual.error_connect'));
+        alert(__('pair.manual.error_connect'));
+        return;
+      }
+      showStatus('success', __('pair.manual.desc'));
+      Homey.emit('add_device', { address, port })
+        .then(function(result) {
+          if (result === null) {
+            showStatus('error', __('pair.manual.error_connect'));
+            return;
+          }
+          showStatus('success', __('pair.manual.success'));
+          document.getElementById('addBtn').classList.add('hidden');
+          var continueBtn = document.getElementById('continueBtn');
+          continueBtn.textContent = __('pair.manual.continue');
+          continueBtn.classList.remove('hidden');
+          window._pairResult = result;
+        })
+        .catch(function(error) {
+          showStatus('error', error && error.message ? error.message : __('pair.manual.error_connect'));
+          alert('Pairing error: ' + (error && error.message ? error.message : error));
+        });
+    });
+    document.getElementById('continueBtn').addEventListener('click', function() {
+      if (window._pairResult) {
+        if (!window.Homey || !Homey.createDevice) {
+          showStatus('error', __('pair.manual.error_connect'));
+          alert(__('pair.manual.error_connect'));
+          return;
+        }
+        Homey.createDevice(window._pairResult)
+          .then(function() {
+            if (window.Homey && Homey.done) Homey.done();
+          })
+          .catch(function(err) {
+            showStatus('error', __('pair.manual.error_connect') + (err && err.message ? err.message : err));
+            alert('Create device error: ' + (err && err.message ? err.message : err));
+          });
+      }
+    });
+    document.getElementById('address').value = '';
+    document.getElementById('port').value = '';
+  }
+  function localizeUI() {
+    document.getElementById('title').textContent = __('pair.manual.title');
+    document.getElementById('ip_label').textContent = __('pair.manual.ip_label');
+    document.getElementById('port_label').textContent = __('pair.manual.port_label');
+    document.getElementById('addBtn').textContent = __('pair.manual.submit');
+    document.getElementById('continueBtn').textContent = __('pair.manual.continue');
+    document.getElementById('desc')?.remove();
+  }
+  localizeUI();
+  wireEvents();
+})();
+</script>
+</body>
+</html>

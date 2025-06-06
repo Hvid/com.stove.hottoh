@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Aggiungi stufa a pellet manualmente",
+      "desc": "Inserisci l'indirizzo IP e la porta della stufa a pellet per collegarla a Homey.",
+      "ip_label": "Indirizzo IP",
+      "port_label": "Porta",
+      "submit": "Aggiungi stufa a pellet",
+      "continue": "Continua",
+      "success": "Stufa a pellet aggiunta! Fai clic su Continua per terminare.",
+      "error_missing": "Inserisci sia l'indirizzo IP che la porta.",
+      "error_connect": "Impossibile connettersi alla stufa a pellet. Controlla l'indirizzo IP e la porta.",
+      "error_invalid": "Inserisci un numero di porta valido (1-65535)."
+    }
+  }
+}

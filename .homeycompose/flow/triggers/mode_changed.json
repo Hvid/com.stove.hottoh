@@ -1,0 +1,38 @@
+{
+  "id": "mode_changed",
+  "title": {
+    "en": "Stove mode changed",
+    "da": "Brændeovnens tilstand ændret",
+    "nl": "Pelletkachelmodus gewijzigd",
+    "de": "Modus des Pelletofens geändert",
+    "fr": "Mode du poêle modifié",
+    "no": "Pelletskaminens modus endret",
+    "sv": "Pelletskaminens läge ändrat",
+    "fi": "Pellettitakan tila muuttunut",
+    "it": "Modalità stufa cambiata",
+    "es": "Modo de la estufa cambiado",
+    "pl": "Tryb pieca zmieniony"
+  },
+  "args": [
+    {
+      "name": "mode",
+      "type": "text",
+      "title": {
+        "en": "New Mode",
+        "da": "Ny tilstand",
+        "nl": "Nieuwe modus",
+        "de": "Neuer Modus",
+        "fr": "Nouveau mode",
+        "no": "Ny modus",
+        "sv": "Nytt läge",
+        "fi": "Uusi tila",
+        "it": "Nuova modalità",
+        "es": "Nuevo modo",
+        "pl": "Nowy tryb"
+      }
+    }
+  ],
+  "titleFormatted": {
+    "en": "Mode changed to [[mode]]"
+  }
+}

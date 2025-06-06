@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Add Pellet Stove Manually",
+      "desc": "Enter the IP address and port of your pellet stove to connect it to Homey.",
+      "ip_label": "IP Address",
+      "port_label": "Port",
+      "submit": "Add Pellet Stove",
+      "continue": "Continue",
+      "success": "Pellet stove added! Click Continue to finish.",
+      "error_missing": "Please enter both the IP address and port.",
+      "error_connect": "Could not connect to the pellet stove. Please check the IP address and port.",
+      "error_invalid": "Please enter a valid port number (1-65535)."
+    }
+  }
+}

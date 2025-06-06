@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Legg til pelletskamin manuelt",
+      "desc": "Skriv inn IP-adressen og porten til pelletskaminen for å koble den til Homey.",
+      "ip_label": "IP-adresse",
+      "port_label": "Port",
+      "submit": "Legg til pelletskamin",
+      "continue": "Fortsett",
+      "success": "Pelletskamin lagt til! Klikk Fortsett for å fullføre.",
+      "error_missing": "Vennligst oppgi både IP-adresse og port.",
+      "error_connect": "Kunne ikke koble til pelletskaminen. Sjekk IP-adresse og port.",
+      "error_invalid": "Vennligst oppgi et gyldig portnummer (1-65535)."
+    }
+  }
+}

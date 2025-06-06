@@ -1,0 +1,34 @@
+{
+  "title": {
+    "en": "Fumes",
+    "da": "Røg (g/m³)",
+    "nl": "Rook (g/m³)",
+    "de": "Rauch (g/m³)",
+    "fr": "Fumées (g/m³)",
+    "no": "Røyk (g/m³)",
+    "sv": "Rök (g/m³)",
+    "fi": "Savu (g/m³)",
+    "it": "Fumi (g/m³)",
+    "es": "Humo (g/m³)",
+    "pl": "Dym (g/m³)"
+  },
+  "type": "number",
+  "uiComponent": "sensor",
+  "units": {
+    "en": "g/m³",
+    "da": "g/m³",
+    "nl": "g/m³",
+    "de": "g/m³",
+    "fr": "g/m³",
+    "no": "g/m³",
+    "sv": "g/m³",
+    "fi": "g/m³",
+    "it": "g/m³",
+    "es": "g/m³",
+    "pl": "g/m³"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

@@ -1,0 +1,16 @@
+{
+  "id": "is_target_temperature_reached",
+  "title": {
+    "en": "Target temperature reached",
+    "da": "Måltemperatur nået",
+    "nl": "Doeltemperatuur bereikt",
+    "de": "Zieltemperatur erreicht",
+    "fr": "Température cible atteinte",
+    "no": "Måltemperatur nådd",
+    "sv": "Målt temperatur uppnådd",
+    "fi": "Tavoitelämpötila saavutettu",
+    "it": "Temperatura target raggiunta",
+    "es": "Temperatura objetivo alcanzada",
+    "pl": "Osiągnięto temperaturę docelową"
+  }
+}

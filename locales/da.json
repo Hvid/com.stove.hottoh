@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Tilføj pilleovn manuelt",
+      "desc": "Indtast pilleovnens IP-adresse og port for at tilføje den til Homey.",
+      "ip_label": "IP-adresse",
+      "port_label": "Port",
+      "submit": "Tilføj pilleovn",
+      "continue": "Fortsæt",
+      "success": "Pilleovn tilføjet! Tryk på Fortsæt for at afslutte.",
+      "error_missing": "Indtast både IP-adresse og port.",
+      "error_connect": "Kunne ikke oprette forbindelse til pilleovnen. Tjek IP-adresse og port.",
+      "error_invalid": "Indtast et gyldigt portnummer (1-65535)."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "power_level_changed",
+  "title": {
+    "en": "Power level changed",
+    "da": "Effektniveau ændret",
+    "nl": "Vermogensniveau gewijzigd",
+    "de": "Leistungsstufe geändert",
+    "fr": "Niveau de puissance modifié",
+    "no": "Effektnivå endret",
+    "sv": "Effektnivå ändrad",
+    "fi": "Tehotaso muuttunut",
+    "it": "Livello di potenza cambiato",
+    "es": "Nivel de potencia cambiado",
+    "pl": "Poziom mocy zmieniony"
+  },
+  "titleFormatted": {
+    "en": "Power level changed to [[level]]"
+  },
+  "args": [
+    {
+      "name": "level",
+      "type": "number",
+      "title": {
+        "en": "New Power Level",
+        "da": "Nyt effektniveau",
+        "nl": "Nieuw vermogensniveau",
+        "de": "Neue Leistungsstufe",
+        "fr": "Nouveau niveau de puissance",
+        "no": "Nytt effektnivå",
+        "sv": "Nytt effektnivå",
+        "fi": "Uusi tehotaso",
+        "it": "Nuovo livello di potenza",
+        "es": "Nuevo nivel de potencia",
+        "pl": "Nowy poziom mocy"
+      },
+      "min": 1,
+      "max": 5
+    }
+  ]
+}

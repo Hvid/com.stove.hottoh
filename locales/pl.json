@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Dodaj piec na pellet ręcznie",
+      "desc": "Wprowadź adres IP i port pieca na pellet, aby połączyć go z Homey.",
+      "ip_label": "Adres IP",
+      "port_label": "Port",
+      "submit": "Dodaj piec na pellet",
+      "continue": "Kontynuuj",
+      "success": "Piec na pellet dodany! Kliknij Kontynuuj, aby zakończyć.",
+      "error_missing": "Wprowadź zarówno adres IP, jak i port.",
+      "error_connect": "Nie można połączyć się z piecem na pellet. Sprawdź adres IP i port.",
+      "error_invalid": "Wprowadź prawidłowy numer portu (1-65535)."
+    }
+  }
+}

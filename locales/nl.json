@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Pelletkachel handmatig toevoegen",
+      "desc": "Voer het IP-adres en de poort van uw pelletkachel in om deze met Homey te verbinden.",
+      "ip_label": "IP-adres",
+      "port_label": "Poort",
+      "submit": "Pelletkachel toevoegen",
+      "continue": "Doorgaan",
+      "success": "Pelletkachel toegevoegd! Klik op Doorgaan om te voltooien.",
+      "error_missing": "Voer zowel het IP-adres als de poort in.",
+      "error_connect": "Kan geen verbinding maken met de pelletkachel. Controleer het IP-adres en de poort.",
+      "error_invalid": "Voer een geldig poortnummer in (1-65535)."
+    }
+  }
+}

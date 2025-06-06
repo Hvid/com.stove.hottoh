@@ -1,0 +1,19 @@
+{
+  "id": "stove_turned_on",
+  "title": {
+    "en": "Stove turned on",
+    "da": "Brændeovnen tændt",
+    "nl": "Pelletkachel ingeschakeld",
+    "de": "Pelletofen eingeschaltet",
+    "fr": "Poêle allumé",
+    "no": "Pelletskaminen slått på",
+    "sv": "Pelletskaminen påslagen",
+    "fi": "Pellettitakka käynnistetty",
+    "it": "Stufa accesa",
+    "es": "Estufa encendida",
+    "pl": "Piec włączony"
+  },
+  "titleFormatted": {
+    "en": "Stove turned on"
+  }
+}

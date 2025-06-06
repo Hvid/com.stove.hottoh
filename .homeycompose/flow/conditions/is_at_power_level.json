@@ -1,0 +1,40 @@
+{
+  "id": "is_at_power_level",
+  "title": {
+    "en": "Stove is at power level [[level]]",
+    "da": "Brændeovnen er på effektniveau [[level]]",
+    "nl": "Pelletkachel is op vermogensniveau [[level]]",
+    "de": "Pelletofen ist auf Leistungsstufe [[level]]",
+    "fr": "Le poêle est au niveau de puissance [[level]]",
+    "no": "Pelletskaminen er på effektnivå [[level]]",
+    "sv": "Pelletskaminen är på effektnivå [[level]]",
+    "fi": "Pellettitakka on tehotasolla [[level]]",
+    "it": "La stufa è al livello di potenza [[level]]",
+    "es": "La estufa está en nivel de potencia [[level]]",
+    "pl": "Piec jest na poziomie mocy [[level]]"
+  },
+  "titleFormatted": {
+    "en": "Stove is at power level [[level]]"
+  },
+  "args": [
+    {
+      "name": "level",
+      "type": "number",
+      "title": {
+        "en": "Power Level",
+        "da": "Effektniveau",
+        "nl": "Vermogensniveau",
+        "de": "Leistungsstufe",
+        "fr": "Niveau de puissance",
+        "no": "Effektnivå",
+        "sv": "Effektnivå",
+        "fi": "Tehotaso",
+        "it": "Livello di potenza",
+        "es": "Nivel de potencia",
+        "pl": "Poziom mocy"
+      },
+      "min": 1,
+      "max": 5
+    }
+  ]
+}

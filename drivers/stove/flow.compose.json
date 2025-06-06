@@ -1,0 +1,126 @@
+{
+  "triggers": [
+    {
+      "id": "hottoh_stove_state",
+      "title": {
+        "en": "Stove state changed",
+        "da": "Brændeovnens tilstand ændret",
+        "nl": "Status pelletkachel gewijzigd",
+        "de": "Status des Pelletofens geändert",
+        "fr": "État du poêle à granulés modifié",
+        "no": "Pelletskaminens tilstand endret",
+        "sv": "Pelletskaminens tillstånd ändrat",
+        "fi": "Pellettitakan tila muuttunut",
+        "it": "Stato della stufa a pellet cambiato",
+        "es": "Estado de la estufa de pellets cambiado",
+        "pl": "Stan pieca na pellet zmieniony"
+      },
+      "args": [
+        {
+          "name": "state",
+          "type": "text",
+          "title": {
+            "en": "New state",
+            "da": "Ny tilstand",
+            "nl": "Nieuwe status",
+            "de": "Neuer Status",
+            "fr": "Nouvel état",
+            "no": "Ny tilstand",
+            "sv": "Nytt tillstånd",
+            "fi": "Uusi tila",
+            "it": "Nuovo stato",
+            "es": "Nuevo estado",
+            "pl": "Nowy stan"
+          }
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "is_stove_on",
+      "title": {
+        "en": "Stove is on",
+        "da": "Brændeovnen er tændt",
+        "nl": "Pelletkachel is aan",
+        "de": "Pelletofen ist an",
+        "fr": "Le poêle à granulés est allumé",
+        "no": "Pelletskaminen er på",
+        "sv": "Pelletskaminen är på",
+        "fi": "Pellettitakka on päällä",
+        "it": "La stufa a pellet è accesa",
+        "es": "La estufa de pellets está encendida",
+        "pl": "Piec na pellet jest włączony"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "turn_on_stove",
+      "title": {
+        "en": "Turn on stove",
+        "da": "Tænd brændeovn",
+        "nl": "Zet pelletkachel aan",
+        "de": "Pelletofen einschalten",
+        "fr": "Allumer le poêle à granulés",
+        "no": "Slå på pelletskamin",
+        "sv": "Slå på pelletskamin",
+        "fi": "Kytke pellettitakka päälle",
+        "it": "Accendi la stufa a pellet",
+        "es": "Encender estufa de pellets",
+        "pl": "Włącz piec na pellet"
+      }
+    },
+    {
+      "id": "turn_off_stove",
+      "title": {
+        "en": "Turn off stove",
+        "da": "Sluk brændeovn",
+        "nl": "Zet pelletkachel uit",
+        "de": "Pelletofen ausschalten",
+        "fr": "Éteindre le poêle à granulés",
+        "no": "Slå av pelletskamin",
+        "sv": "Stäng av pelletskamin",
+        "fi": "Sammuta pellettitakka",
+        "it": "Spegni la stufa a pellet",
+        "es": "Apagar estufa de pellets",
+        "pl": "Wyłącz piec na pellet"
+      }
+    },
+    {
+      "id": "set_target_temperature",
+      "title": {
+        "en": "Set target temperature",
+        "da": "Indstil måltemperatur",
+        "nl": "Stel doeldtemperatuur in",
+        "de": "Zieltemperatur einstellen",
+        "fr": "Définir la température cible",
+        "no": "Sett måltemperatur",
+        "sv": "Ställ in målt temperatur",
+        "fi": "Aseta tavoitelämpötila",
+        "it": "Imposta temperatura target",
+        "es": "Establecer temperatura objetivo",
+        "pl": "Ustaw temperaturę docelową"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target temperature",
+            "da": "Måltemperatur",
+            "nl": "Doeltemperatuur",
+            "de": "Zieltemperatur",
+            "fr": "Température cible",
+            "no": "Måltemperatur",
+            "sv": "Målt temperatur",
+            "fi": "Tavoitelämpötila",
+            "it": "Temperatura target",
+            "es": "Temperatura objetivo",
+            "pl": "Temperatura docelowa"
+          }
+        }
+      ]
+    }
+  ]
+}

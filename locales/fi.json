@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Lisää pellettitakka manuaalisesti",
+      "desc": "Anna pellettitakan IP-osoite ja portti yhdistääksesi sen Homeyyn.",
+      "ip_label": "IP-osoite",
+      "port_label": "Portti",
+      "submit": "Lisää pellettitakka",
+      "continue": "Jatka",
+      "success": "Pellettitakka lisätty! Napsauta Jatka viimeistelläksesi.",
+      "error_missing": "Anna sekä IP-osoite että portti.",
+      "error_connect": "Yhteyttä pellettitakkaan ei voitu muodostaa. Tarkista IP-osoite ja portti.",
+      "error_invalid": "Anna kelvollinen porttinumero (1-65535)."
+    }
+  }
+}

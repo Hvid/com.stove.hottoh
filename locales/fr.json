@@ -1,0 +1,16 @@
+{
+  "pair": {
+    "manual": {
+      "title": "Ajouter un poêle à granulés manuellement",
+      "desc": "Saisissez l'adresse IP et le port de votre poêle à granulés pour le connecter à Homey.",
+      "ip_label": "Adresse IP",
+      "port_label": "Port",
+      "submit": "Ajouter le poêle à granulés",
+      "continue": "Continuer",
+      "success": "Poêle à granulés ajouté ! Cliquez sur Continuer pour terminer.",
+      "error_missing": "Veuillez saisir l'adresse IP et le port.",
+      "error_connect": "Impossible de se connecter au poêle à granulés. Vérifiez l'adresse IP et le port.",
+      "error_invalid": "Veuillez saisir un numéro de port valide (1-65535)."
+    }
+  }
+}

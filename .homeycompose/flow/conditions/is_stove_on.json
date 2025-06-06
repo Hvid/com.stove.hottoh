@@ -1,0 +1,12 @@
+{
+  "title": {
+    "en": "Stove is on",
+    "da": "Brændeovnen er tændt"
+  },
+  "hint": {
+    "en": "Checks if the stove is currently on.",
+    "da": "Tjekker om brændeovnen er tændt."
+  },
+  "args": [],
+  "tokens": []
+}

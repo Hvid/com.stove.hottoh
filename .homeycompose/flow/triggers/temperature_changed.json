@@ -1,0 +1,38 @@
+{
+  "id": "temperature_changed",
+  "title": {
+    "en": "Temperature changed",
+    "da": "Temperatur ændret",
+    "nl": "Temperatuur gewijzigd",
+    "de": "Temperatur geändert",
+    "fr": "Température modifiée",
+    "no": "Temperatur endret",
+    "sv": "Temperatur ändrad",
+    "fi": "Lämpötila muuttunut",
+    "it": "Temperatura cambiata",
+    "es": "Temperatura cambiada",
+    "pl": "Temperatura zmieniona"
+  },
+  "titleFormatted": {
+    "en": "Temperature changed to [[temperature]]"
+  },
+  "args": [
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "New Temperature",
+        "da": "Ny temperatur",
+        "nl": "Nieuwe temperatuur",
+        "de": "Neue Temperatur",
+        "fr": "Nouvelle température",
+        "no": "Ny temperatur",
+        "sv": "Ny temperatur",
+        "fi": "Uusi lämpötila",
+        "it": "Nuova temperatura",
+        "es": "Nueva temperatura",
+        "pl": "Nowa temperatura"
+      }
+    }
+  ]
+}

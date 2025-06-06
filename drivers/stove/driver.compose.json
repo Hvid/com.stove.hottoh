@@ -1,0 +1,76 @@
+{
+  "name": {
+    "en": "Pellet Stove",
+    "da": "Pilleovn",
+    "nl": "Pelletkachel",
+    "de": "Pelletofen",
+    "fr": "Poêle à granulés",
+    "no": "Pelletskamin",
+    "sv": "Pelletskamin",
+    "fi": "Pellettitakka",
+    "it": "Stufa a pellet",
+    "es": "Estufa de pellets",
+    "pl": "Piec na pellet"
+  },
+  "class": "heater",
+  "capabilities": [
+    "onoff",
+    "hottoh_fan_speed",
+    "target_temperature",
+    "measure_temperature",
+    "hottoh_fumes",
+    "hottoh_power_level",
+    "hottoh_smoke_temperature",
+    "hottoh_stove_state"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    { "id": "manual" },
+    { "id": "done", "template": "done" }
+  ],
+  "compatibility": {
+    "homey": ">=12.2.0"
+  },
+  "mobile": {
+    "components": [
+      { "id": "onoff" },
+      { "id": "target_temperature" },
+      { "id": "measure_temperature" },
+      { "id": "hottoh_fan_speed" },
+      { "id": "hottoh_fumes" },
+      { "id": "hottoh_power_level" },
+      { "id": "hottoh_smoke_temperature" },
+      { "id": "hottoh_stove_state" },
+      {
+        "type": "label",
+        "label": {
+          "en": "Stove State",
+          "da": "Brændeovnens tilstand",
+          "nl": "Status pelletkachel",
+          "de": "Status des Pelletofens",
+          "fr": "État du poêle à granulés",
+          "no": "Pelletskaminens tilstand",
+          "sv": "Pelletskaminens tillstånd",
+          "fi": "Pellettitakan tila",
+          "it": "Stato della stufa a pellet",
+          "es": "Estado de la estufa de pellets",
+          "pl": "Stan pieca na pellet"
+        },
+        "value": {
+          "type": "capability",
+          "id": "hottoh_stove_state"
+        }
+      }
+    ]
+  }
+}

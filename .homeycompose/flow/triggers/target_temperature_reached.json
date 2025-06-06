@@ -1,0 +1,38 @@
+{
+  "id": "target_temperature_reached",
+  "title": {
+    "en": "Target temperature reached",
+    "da": "Måltemperatur nået",
+    "nl": "Doeltemperatuur bereikt",
+    "de": "Zieltemperatur erreicht",
+    "fr": "Température cible atteinte",
+    "no": "Måltemperatur nådd",
+    "sv": "Målt temperatur uppnådd",
+    "fi": "Tavoitelämpötila saavutettu",
+    "it": "Temperatura target raggiunta",
+    "es": "Temperatura objetivo alcanzada",
+    "pl": "Osiągnięto temperaturę docelową"
+  },
+  "titleFormatted": {
+    "en": "Target temperature reached ([[temperature]]°C)"
+  },
+  "args": [
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "da": "Temperatur",
+        "nl": "Temperatuur",
+        "de": "Temperatur",
+        "fr": "Température",
+        "no": "Temperatur",
+        "sv": "Temperatur",
+        "fi": "Lämpötila",
+        "it": "Temperatura",
+        "es": "Temperatura",
+        "pl": "Temperatura"
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "title": {
+    "en": "Power Level",
+    "da": "Effektniveau",
+    "nl": "Vermogensniveau",
+    "de": "Leistungsstufe",
+    "fr": "Niveau de puissance",
+    "no": "Effektnivå",
+    "sv": "Effektnivå",
+    "fi": "Tehotaso",
+    "it": "Livello di potenza",
+    "es": "Nivel de potencia",
+    "pl": "Poziom mocy"
+  },
+  "type": "number",
+  "uiComponent": "slider",
+  "units": {
+    "en": "level",
+    "da": "niveau",
+    "nl": "niveau",
+    "de": "Stufe",
+    "fr": "niveau",
+    "no": "nivå",
+    "sv": "nivå",
+    "fi": "taso",
+    "it": "livello",
+    "es": "nivel",
+    "pl": "poziom"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": true,
+  "insights": true,
+  "min": 1,
+  "max": 5
+}

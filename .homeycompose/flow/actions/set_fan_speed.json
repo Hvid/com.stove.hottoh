@@ -1,0 +1,50 @@
+{
+  "id": "set_fan_speed",
+  "title": {
+    "en": "Set Fan Speed",
+    "da": "Indstil blæserhastighed",
+    "nl": "Stel ventilatorsnelheid in",
+    "de": "Lüftergeschwindigkeit einstellen",
+    "fr": "Définir la vitesse du ventilateur",
+    "no": "Sett viftehastighet",
+    "sv": "Ställ in fläkthastighet",
+    "fi": "Aseta puhaltimen nopeus",
+    "it": "Imposta velocità ventola",
+    "es": "Establecer velocidad del ventilador",
+    "pl": "Ustaw prędkość wentylatora"
+  },
+  "titleFormatted": {
+    "en": "Set Fan Speed to [[speed]]",
+    "da": "Indstil blæserhastighed til [[speed]]",
+    "nl": "Stel ventilatorsnelheid in op [[speed]]",
+    "de": "Lüftergeschwindigkeit einstellen auf [[speed]]",
+    "fr": "Définir la vitesse du ventilateur à [[speed]]",
+    "no": "Sett viftehastighet til [[speed]]",
+    "sv": "Ställ in fläkthastighet till [[speed]]",
+    "fi": "Aseta puhaltimen nopeus arvoon [[speed]]",
+    "it": "Imposta velocità ventola a [[speed]]",
+    "es": "Establecer velocidad del ventilador en [[speed]]",
+    "pl": "Ustaw prędkość wentylatora na [[speed]]"
+  },
+  "args": [
+    {
+      "name": "speed",
+      "type": "number",
+      "title": {
+        "en": "Fan Speed",
+        "da": "Blæserhastighed",
+        "nl": "Ventilatorsnelheid",
+        "de": "Lüftergeschwindigkeit",
+        "fr": "Vitesse du ventilateur",
+        "no": "Viftehastighet",
+        "sv": "Fläkthastighet",
+        "fi": "Puhaltimen nopeus",
+        "it": "Velocità ventola",
+        "es": "Velocidad del ventilador",
+        "pl": "Prędkość wentylatora"
+      },
+      "min": 1,
+      "max": 5
+    }
+  ]
+}

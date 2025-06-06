@@ -1,0 +1,12 @@
+{
+  "title": {
+    "en": "Turn on stove",
+    "da": "Tænd brændeovn"
+  },
+  "hint": {
+    "en": "Turns the stove on.",
+    "da": "Tænder brændeovnen."
+  },
+  "args": [],
+  "tokens": []
+}

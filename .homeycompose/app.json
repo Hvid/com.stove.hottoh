@@ -20,17 +20,17 @@
     "pl": "HottoH"
   },
   "description": {
-    "en": "Adds support for Hottoh devices",
-    "da": "Tilføjer support for Hottoh-enheder",
-    "nl": "Voegt ondersteuning toe voor Hottoh-apparaten",
-    "de": "Fügt Unterstützung für Hottoh-Geräte hinzu",
-    "fr": "Ajoute la prise en charge des appareils Hottoh",
-    "no": "Legger til støtte for Hottoh-enheter",
-    "sv": "Lägger till stöd för Hottoh-enheter",
-    "fi": "Lisää tuen Hottoh-laitteille",
-    "it": "Aggiunge il supporto per dispositivi Hottoh",
-    "es": "Agrega soporte para dispositivos Hottoh",
-    "pl": "Dodaje obsługę urządzeń Hottoh"
+    "en": "Control and monitor your Hottoh pellet stove with Homey. This app allows you to adjust fan speed, set target temperature, monitor stove state, and more—all from your Homey app. Enjoy a smarter, more comfortable home climate with seamless integration.",
+    "da": "Styr og overvåg din Hottoh pilleovn med Homey. Med denne app kan du justere blæserhastighed, indstille måltemperatur, overvåge ovnens tilstand og meget mere – alt sammen fra Homey-appen. Få et smartere og mere behageligt hjemmeklima med nem integration.",
+    "nl": "Bedien en monitor je Hottoh pelletkachel met Homey. Met deze app kun je de ventilatorsnelheid aanpassen, de doelt temperatuur instellen, de status van de kachel monitoren en meer – allemaal vanuit de Homey-app. Geniet van een slimmer en comfortabeler binnenklimaat met naadloze integratie.",
+    "de": "Steuern und überwachen Sie Ihren Hottoh Pelletofen mit Homey. Mit dieser App können Sie die Lüftergeschwindigkeit anpassen, die Zieltemperatur einstellen, den Ofenzustand überwachen und mehr – alles bequem über die Homey-App. Genießen Sie ein intelligenteres und komfortableres Raumklima mit nahtloser Integration.",
+    "fr": "Contrôlez et surveillez votre poêle à granulés Hottoh avec Homey. Cette application vous permet d’ajuster la vitesse du ventilateur, de définir la température cible, de surveiller l’état du poêle et plus encore – tout cela depuis l’application Homey. Profitez d’un climat intérieur plus intelligent et confortable grâce à une intégration transparente.",
+    "no": "Styr og overvåk din Hottoh pelletskamin med Homey. Med denne appen kan du justere viftehastighet, sette måltemperatur, overvåke ovnens tilstand og mer – alt fra Homey-appen. Få et smartere og mer behagelig inneklima med sømløs integrasjon.",
+    "sv": "Styr och övervaka din Hottoh pelletskamin med Homey. Med denna app kan du justera fläkthastighet, ställa in måltemperatur, övervaka kaminens tillstånd och mycket mer – allt från Homey-appen. Få ett smartare och mer behagligt inomhusklimat med smidig integration.",
+    "fi": "Ohjaa ja seuraa Hottoh pellettitakkaasi Homeyn avulla. Tällä sovelluksella voit säätää puhaltimen nopeutta, asettaa tavoitelämpötilan, seurata takan tilaa ja paljon muuta – kaikki Homey-sovelluksesta. Nauti älykkäämmästä ja mukavammasta sisäilmastosta saumattomalla integraatiolla.",
+    "it": "Controlla e monitora la tua stufa a pellet Hottoh con Homey. Questa app ti consente di regolare la velocità della ventola, impostare la temperatura target, monitorare lo stato della stufa e altro ancora – tutto dall’app Homey. Goditi un clima domestico più intelligente e confortevole con un’integrazione perfetta.",
+    "es": "Controla y supervisa tu estufa de pellets Hottoh con Homey. Esta app te permite ajustar la velocidad del ventilador, establecer la temperatura objetivo, monitorizar el estado de la estufa y mucho más, todo desde la app de Homey. Disfruta de un clima interior más inteligente y cómodo con una integración perfecta.",
+    "pl": "Steruj i monitoruj swój piec na pellet Hottoh za pomocą Homey. Ta aplikacja pozwala regulować prędkość wentylatora, ustawiać temperaturę docelową, monitorować stan pieca i wiele więcej – wszystko z poziomu aplikacji Homey. Ciesz się inteligentniejszym i bardziej komfortowym klimatem w domu dzięki płynnej integracji."
   },
   "category": [
     "climate"
@@ -79,16 +79,173 @@
       "getable": true,
       "setable": false,
       "values": [
-        { "id": "off", "title": { "en": "Off", "da": "Slukket", "nl": "Uit", "de": "Aus", "fr": "Éteint", "no": "Av", "sv": "Av", "fi": "Pois", "it": "Spento", "es": "Apagado", "pl": "Wyłączony" } },
-        { "id": "ignition", "title": { "en": "Ignition", "da": "Tænding", "nl": "Ontsteking", "de": "Zündung", "fr": "Allumage", "no": "Tenning", "sv": "Tändning", "fi": "Sytytys", "it": "Accensione", "es": "Encendido", "pl": "Zapłon" } },
-        { "id": "heating", "title": { "en": "Heating", "da": "Opvarmning", "nl": "Verwarmen", "de": "Heizen", "fr": "Chauffage", "no": "Oppvarming", "sv": "Uppvärmning", "fi": "Lämmitys", "it": "Riscaldamento", "es": "Calentando", "pl": "Ogrzewanie" } },
-        { "id": "modulation", "title": { "en": "Modulation", "da": "Modulation", "nl": "Modulatie", "de": "Modulation", "fr": "Modulation", "no": "Modulasjon", "sv": "Modulering", "fi": "Modulointi", "it": "Modulazione", "es": "Modulación", "pl": "Modulacja" } },
-        { "id": "stopping", "title": { "en": "Stopping", "da": "Stopper", "nl": "Stoppen", "de": "Stoppt", "fr": "Arrêt", "no": "Stopper", "sv": "Stoppar", "fi": "Pysäyttää", "it": "Arresto", "es": "Deteniendo", "pl": "Zatrzymywanie" } },
-        { "id": "cooling", "title": { "en": "Cooling", "da": "Nedkøling", "nl": "Koelen", "de": "Kühlen", "fr": "Refroidissement", "no": "Nedkjøling", "sv": "Nedkylning", "fi": "Jäähdytys", "it": "Raffreddamento", "es": "Enfriando", "pl": "Chłodzenie" } },
-        { "id": "alarm", "title": { "en": "Alarm", "da": "Alarm", "nl": "Alarm", "de": "Alarm", "fr": "Alarme", "no": "Alarm", "sv": "Larm", "fi": "Hälytys", "it": "Allarme", "es": "Alarma", "pl": "Alarm" } },
-        { "id": "out_of_fuel", "title": { "en": "Out of fuel", "da": "Tom for brændsel", "nl": "Geen brandstof", "de": "Kein Brennstoff", "fr": "Plus de combustible", "no": "Tom for brensel", "sv": "Slut på bränsle", "fi": "Polttoaine loppu", "it": "Senza combustibile", "es": "Sin combustible", "pl": "Brak paliwa" } },
-        { "id": "unknown", "title": { "en": "Unknown", "da": "Ukendt", "nl": "Onbekend", "de": "Unbekannt", "fr": "Inconnu", "no": "Ukjent", "sv": "Okänd", "fi": "Tuntematon", "it": "Sconosciuto", "es": "Desconocido", "pl": "Nieznany" } }
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "da": "Slukket",
+            "nl": "Uit",
+            "de": "Aus",
+            "fr": "Éteint",
+            "no": "Av",
+            "sv": "Av",
+            "fi": "Pois",
+            "it": "Spento",
+            "es": "Apagado",
+            "pl": "Wyłączony"
+          }
+        },
+        {
+          "id": "ignition",
+          "title": {
+            "en": "Ignition",
+            "da": "Tænding",
+            "nl": "Ontsteking",
+            "de": "Zündung",
+            "fr": "Allumage",
+            "no": "Tenning",
+            "sv": "Tändning",
+            "fi": "Sytytys",
+            "it": "Accensione",
+            "es": "Encendido",
+            "pl": "Zapłon"
+          }
+        },
+        {
+          "id": "heating",
+          "title": {
+            "en": "Heating",
+            "da": "Opvarmning",
+            "nl": "Verwarmen",
+            "de": "Heizen",
+            "fr": "Chauffage",
+            "no": "Oppvarming",
+            "sv": "Uppvärmning",
+            "fi": "Lämmitys",
+            "it": "Riscaldamento",
+            "es": "Calentando",
+            "pl": "Ogrzewanie"
+          }
+        },
+        {
+          "id": "modulation",
+          "title": {
+            "en": "Modulation",
+            "da": "Modulation",
+            "nl": "Modulatie",
+            "de": "Modulation",
+            "fr": "Modulation",
+            "no": "Modulasjon",
+            "sv": "Modulering",
+            "fi": "Modulointi",
+            "it": "Modulazione",
+            "es": "Modulación",
+            "pl": "Modulacja"
+          }
+        },
+        {
+          "id": "stopping",
+          "title": {
+            "en": "Stopping",
+            "da": "Stopper",
+            "nl": "Stoppen",
+            "de": "Stoppt",
+            "fr": "Arrêt",
+            "no": "Stopper",
+            "sv": "Stoppar",
+            "fi": "Pysäyttää",
+            "it": "Arresto",
+            "es": "Deteniendo",
+            "pl": "Zatrzymywanie"
+          }
+        },
+        {
+          "id": "cooling",
+          "title": {
+            "en": "Cooling",
+            "da": "Nedkøling",
+            "nl": "Koelen",
+            "de": "Kühlen",
+            "fr": "Refroidissement",
+            "no": "Nedkjøling",
+            "sv": "Nedkylning",
+            "fi": "Jäähdytys",
+            "it": "Raffreddamento",
+            "es": "Enfriando",
+            "pl": "Chłodzenie"
+          }
+        },
+        {
+          "id": "alarm",
+          "title": {
+            "en": "Alarm",
+            "da": "Alarm",
+            "nl": "Alarm",
+            "de": "Alarm",
+            "fr": "Alarme",
+            "no": "Alarm",
+            "sv": "Larm",
+            "fi": "Hälytys",
+            "it": "Allarme",
+            "es": "Alarma",
+            "pl": "Alarm"
+          }
+        },
+        {
+          "id": "out_of_fuel",
+          "title": {
+            "en": "Out of fuel",
+            "da": "Tom for brændsel",
+            "nl": "Geen brandstof",
+            "de": "Kein Brennstoff",
+            "fr": "Plus de combustible",
+            "no": "Tom for brensel",
+            "sv": "Slut på bränsle",
+            "fi": "Polttoaine loppu",
+            "it": "Senza combustibile",
+            "es": "Sin combustible",
+            "pl": "Brak paliwa"
+          }
+        },
+        {
+          "id": "unknown",
+          "title": {
+            "en": "Unknown",
+            "da": "Ukendt",
+            "nl": "Onbekend",
+            "de": "Unbekannt",
+            "fr": "Inconnu",
+            "no": "Ukjent",
+            "sv": "Okänd",
+            "fi": "Tuntematon",
+            "it": "Sconosciuto",
+            "es": "Desconocido",
+            "pl": "Nieznany"
+          }
+        }
       ]
     }
+  },
+  "support": "https://github.com/Hvid/com.stove.hottoh",
+  "source": "https://github.com/Hvid/com.stove.hottoh",
+  "homepage": "https://github.com/Hvid/com.stove.hottoh",
+  "bugs": {
+    "url": "https://github.com/Hvid/com.stove.hottoh/issues"
+  },
+  "keywords": [
+    "stove",
+    "pellet stove",
+    "Hottoh",
+    "climate",
+    "heating",
+    "smart home"
+  ],
+  "changelog": {
+    "en": [
+      {
+        "version": "1.0.0",
+        "description": "Initial release with support for Hottoh stoves."
+      }
+    ]
   }
 }

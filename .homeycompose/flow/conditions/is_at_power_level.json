@@ -1,27 +1,37 @@
 {
   "id": "is_at_power_level",
   "title": {
-    "en": "Stove is at power level [[level]]",
-    "da": "Brændeovnen er på effektniveau [[level]]",
-    "nl": "Pelletkachel is op vermogensniveau [[level]]",
-    "de": "Pelletofen ist auf Leistungsstufe [[level]]",
-    "fr": "Le poêle est au niveau de puissance [[level]]",
-    "no": "Pelletskaminen er på effektnivå [[level]]",
-    "sv": "Pelletskaminen är på effektnivå [[level]]",
-    "fi": "Pellettitakka on tehotasolla [[level]]",
-    "it": "La stufa è al livello di potenza [[level]]",
-    "es": "La estufa está en nivel de potencia [[level]]",
-    "pl": "Piec jest na poziomie mocy [[level]]"
+    "en": "Power level is at specific level",
+    "da": "Effektniveau er på bestemt niveau",
+    "nl": "Vermogensniveau staat op specifiek niveau",
+    "de": "Leistungsstufe ist auf bestimmter Stufe",
+    "fr": "Le niveau de puissance est à un niveau spécifique",
+    "no": "Effektnivå er på spesifikt nivå",
+    "sv": "Effektnivå är på specifik nivå",
+    "fi": "Tehotaso on tietyllä tasolla",
+    "it": "Il livello di potenza è a un livello specifico",
+    "es": "El nivel de potencia está en un nivel específico",
+    "pl": "Poziom mocy jest na określonym poziomie"
   },
   "titleFormatted": {
-    "en": "Stove is at power level [[level]]"
+    "en": "Power level is !{{at|not at}} [[level]]",
+    "da": "Effektniveau er !{{på|ikke på}} [[level]]",
+    "nl": "Vermogensniveau is !{{op|niet op}} [[level]]",
+    "de": "Leistungsstufe ist !{{auf|nicht auf}} [[level]]",
+    "fr": "Le niveau de puissance est !{{à|pas à}} [[level]]",
+    "no": "Effektnivå er !{{på|ikke på}} [[level]]",
+    "sv": "Effektnivå är !{{på|inte på}} [[level]]",
+    "fi": "Tehotaso on !{{tasolla|ei tasolla}} [[level]]",
+    "it": "Il livello di potenza è !{{a|non a}} [[level]]",
+    "es": "El nivel de potencia está !{{en|no en}} [[level]]",
+    "pl": "Poziom mocy jest !{{na|nie na}} [[level]]"
   },
   "args": [
     {
       "name": "level",
       "type": "number",
       "title": {
-        "en": "Power Level",
+        "en": "Power level",
         "da": "Effektniveau",
         "nl": "Vermogensniveau",
         "de": "Leistungsstufe",

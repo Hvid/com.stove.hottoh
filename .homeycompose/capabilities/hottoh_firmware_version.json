@@ -1,0 +1,33 @@
+{
+  "title": {
+    "en": "Firmware Version",
+    "da": "Firmwareversion",
+    "nl": "Firmwareversie",
+    "de": "Firmware-Version",
+    "fr": "Version du firmware",
+    "no": "Fastvareversjon",
+    "sv": "Firmwareversion",
+    "fi": "Laiteohjelmistoversio",
+    "it": "Versione firmware",
+    "es": "Versión de firmware",
+    "pl": "Wersja oprogramowania"
+  },
+  "type": "string",
+  "uiComponent": "sensor",
+  "desc": {
+    "en": "Current version of the stove's firmware. Important for troubleshooting and compatibility.",
+    "da": "Aktuel version af ovnens firmware. Vigtig for fejlfinding og kompatibilitet.",
+    "nl": "Huidige versie van de kachel-firmware. Belangrijk voor probleemoplossing en compatibiliteit.",
+    "de": "Aktuelle Version der Ofen-Firmware. Wichtig für Fehlerbehebung und Kompatibilität.",
+    "fr": "Version actuelle du firmware du poêle. Important pour le dépannage et la compatibilité.",
+    "no": "Gjeldende versjon av ovnens fastvare. Viktig for feilsøking og kompatibilitet.",
+    "sv": "Aktuell version av kaminens firmware. Viktigt för felsökning och kompatibilitet.",
+    "fi": "Takan laiteohjelmiston nykyinen versio. Tärkeä vianmäärityksen ja yhteensopivuuden kannalta.",
+    "it": "Versione attuale del firmware della stufa. Importante per la risoluzione dei problemi e la compatibilità.",
+    "es": "Versión actual del firmware de la estufa. Importante para la resolución de problemas y compatibilidad.",
+    "pl": "Aktualna wersja oprogramowania pieca. Ważne dla rozwiązywania problemów i kompatybilności."
+  },
+  "getable": true,
+  "setable": false,
+  "insights": false
+}

@@ -1,27 +1,37 @@
 {
   "id": "is_at_fan_speed",
   "title": {
-    "en": "Stove is at fan speed [[speed]]",
-    "da": "Brændeovnen er på blæserhastighed [[speed]]",
-    "nl": "Pelletkachel is op ventilatorsnelheid [[speed]]",
-    "de": "Pelletofen ist auf Lüftergeschwindigkeit [[speed]]",
-    "fr": "Le poêle est à la vitesse du ventilateur [[speed]]",
-    "no": "Pelletskaminen er på viftehastighet [[speed]]",
-    "sv": "Pelletskaminen är på fläkthastighet [[speed]]",
-    "fi": "Pellettitakka on puhaltimen nopeudella [[speed]]",
-    "it": "La stufa è alla velocità ventola [[speed]]",
-    "es": "La estufa está en velocidad del ventilador [[speed]]",
-    "pl": "Piec jest na prędkości wentylatora [[speed]]"
+    "en": "Fan speed is at specific level",
+    "da": "Blæserhastighed er på bestemt niveau",
+    "nl": "Ventilatorsnelheid staat op specifiek niveau",
+    "de": "Lüftergeschwindigkeit ist auf bestimmter Stufe",
+    "fr": "La vitesse du ventilateur est à un niveau spécifique",
+    "no": "Viftehastighet er på spesifikt nivå",
+    "sv": "Fläkthastighet är på specifik nivå",
+    "fi": "Puhaltimen nopeus on tietyllä tasolla",
+    "it": "La velocità della ventola è a un livello specifico",
+    "es": "La velocidad del ventilador está en un nivel específico",
+    "pl": "Prędkość wentylatora jest na określonym poziomie"
   },
   "titleFormatted": {
-    "en": "Stove is at fan speed [[speed]]"
+    "en": "Fan speed is !{{at|not at}} [[speed]]",
+    "da": "Blæserhastighed er !{{på|ikke på}} [[speed]]",
+    "nl": "Ventilatorsnelheid is !{{op|niet op}} [[speed]]",
+    "de": "Lüftergeschwindigkeit ist !{{auf|nicht auf}} [[speed]]",
+    "fr": "La vitesse du ventilateur est !{{à|pas à}} [[speed]]",
+    "no": "Viftehastighet er !{{på|ikke på}} [[speed]]",
+    "sv": "Fläkthastighet är !{{på|inte på}} [[speed]]",
+    "fi": "Puhaltimen nopeus on !{{tasolla|ei tasolla}} [[speed]]",
+    "it": "La velocità della ventola è !{{a|non a}} [[speed]]",
+    "es": "La velocidad del ventilador está !{{en|no en}} [[speed]]",
+    "pl": "Prędkość wentylatora jest !{{na|nie na}} [[speed]]"
   },
   "args": [
     {
       "name": "speed",
       "type": "number",
       "title": {
-        "en": "Fan Speed",
+        "en": "Fan speed",
         "da": "Blæserhastighed",
         "nl": "Ventilatorsnelheid",
         "de": "Lüftergeschwindigkeit",

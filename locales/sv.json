@@ -12,5 +12,108 @@
       "error_connect": "Kunde inte ansluta till pelletskaminen. Kontrollera IP-adress och port.",
       "error_invalid": "Ange ett giltigt portnummer (1-65535)."
     }
+  },
+  "state": {
+    "off": "Av",
+    "ignition": "Tändningsfas",
+    "on": "I drift",
+    "modulation": "Modulering",
+    "cleaning": "Rengöring",
+    "alarm": "Larm/Fel",
+    "cooling": "Nedkylning",
+    "standby": "Vänteläge",
+    "loading": "Fyller pellets",
+    "test": "Testläge",
+    "unknown": "Okänd"
+  },
+  "phase": {
+    "0": "Inaktiv",
+    "1": "Tändning",
+    "2": "Uppvärmning",
+    "3": "Rengöring",
+    "4": "Nedkylning",
+    "5": "Fyllning"
+  },
+  "substate": {
+    "0": "Ingen",
+    "1": "Förvärmning",
+    "2": "Förbränning",
+    "3": "Askborttagning",
+    "4": "Pelletsmatning"
+  },
+  "capability": {
+    "firmware_version": "Firmwareversion",
+    "manufacturer": "Tillverkare",
+    "wifi_signal": "WiFi-signal",
+    "error_code": "Felkod",
+    "phase": "Kaminfas",
+    "substate": "Kaminens delstatus",
+    "last_update": "Senaste uppdatering",
+    "state_description": "Statusbeskrivning",
+    "stove_state_raw": "Kaminstatus (rå)"
+  },
+  "flow": {
+    "hottoh_stove_state": "Pelletskaminens tillstånd ändrat",
+    "stove_enters_alarm": "Pelletskaminen går in i larm-/felstatus",
+    "stove_resumes_from_error": "Pelletskaminen återupptar efter fel",
+    "stove_unreachable": "Pelletskaminen otillgänglig",
+    "target_temperature_reached": "Pelletskaminen når målt temperatur",
+    "is_stove_on": "Pelletskaminen är på",
+    "is_in_phase": "Pelletskaminen är i fas",
+    "turn_on_stove": "Slå på pelletskamin",
+    "turn_off_stove": "Stäng av pelletskamin",
+    "set_target_temperature": {
+      "title": "Ställ in målt temperatur",
+      "args": {
+        "temperature": {
+          "title": "Målt temperatur"
+        }
+      }
+    },
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Felkod"
+      }
+    },
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minuter otillgänglig"
+      }
+    },
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Rumstemperatur"
+      }
+    },
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Fas"
+      }
+    },
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Nytt tillstånd"
+      }
+    }
+  },
+  "diagnostics": {
+    "firmware": "Firmwareversion",
+    "manufacturer": "Tillverkare",
+    "wifi_signal": "WiFi-signal (dBm)",
+    "raw_state": "Rå status",
+    "composite_state": "Sammansatt status",
+    "error_code": "Felkod",
+    "phase": "Fas",
+    "substate": "Delstatus",
+    "last_update": "Senaste uppdatering",
+    "state_description": "Statusbeskrivning"
+  },
+  "error": {
+    "unreachable": "Enheten är otillgänglig",
+    "alarm": "Larm-/felstatus",
+    "resume": "Återupptagen efter fel",
+    "invalid_state": "Ogiltig eller okänd status",
+    "invalid_phase": "Ogiltig eller okänd fas",
+    "invalid_substate": "Ogiltig eller okänd delstatus"
   }
 }

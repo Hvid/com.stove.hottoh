@@ -1,0 +1,31 @@
+{
+  "title": {
+    "en": "Last Error Code",
+    "da": "Sidste fejlkode",
+    "nl": "Laatste foutcode",
+    "de": "Letzter Fehlercode",
+    "fr": "Dernier code d'erreur",
+    "no": "Siste feilkode",
+    "sv": "Senaste felkod",
+    "fi": "Viimeisin virhekoodi",
+    "it": "Codice errore",
+    "es": "Último código de error",
+    "pl": "Ostatni kod błędu"
+  },
+  "type": "string",
+  "uiComponent": "sensor",
+  "getable": true,
+  "desc": {
+    "en": "The last error or alarm code reported by the stove.",
+    "da": "Den seneste fejl- eller alarmkode rapporteret af ovnen.",
+    "nl": "De laatste fout- of alarmcode van de kachel.",
+    "de": "Der letzte Fehler- oder Alarmcode, der vom Ofen gemeldet wurde.",
+    "fr": "Le dernier code d'erreur ou d'alarme signalé par le poêle.",
+    "no": "Siste feil- eller alarmkode rapportert av ovnen.",
+    "sv": "Senaste fel- eller larmkod rapporterad av kaminen.",
+    "fi": "Takan viimeisin virhe- tai hälytyskoodi.",
+    "it": "L'ultimo codice di errore o allarme segnalato dalla stufa.",
+    "es": "El último código de error o alarma informado por la estufa.",
+    "pl": "Ostatni kod błędu lub alarmu zgłoszony przez piec."
+  }
+}

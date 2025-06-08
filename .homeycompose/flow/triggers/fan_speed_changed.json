@@ -14,24 +14,34 @@
     "pl": "Prędkość wentylatora zmieniona"
   },
   "titleFormatted": {
-    "en": "Fan speed changed to [[speed]]"
+    "en": "Fan speed changed to [[speed]]",
+    "da": "Blæserhastighed ændret til [[speed]]",
+    "nl": "Ventilatorsnelheid gewijzigd naar [[speed]]",
+    "de": "Lüftergeschwindigkeit geändert zu [[speed]]",
+    "fr": "Vitesse du ventilateur modifiée à [[speed]]",
+    "no": "Viftehastighet endret til [[speed]]",
+    "sv": "Fläkthastighet ändrad till [[speed]]",
+    "fi": "Puhaltimen nopeus muuttunut arvoon [[speed]]",
+    "it": "Velocità ventola cambiata a [[speed]]",
+    "es": "Velocidad del ventilador cambiada a [[speed]]",
+    "pl": "Prędkość wentylatora zmieniona na [[speed]]"
   },
   "args": [
     {
       "name": "speed",
       "type": "number",
       "title": {
-        "en": "New Fan Speed",
-        "da": "Ny blæserhastighed",
-        "nl": "Nieuwe ventilatorsnelheid",
-        "de": "Neue Lüftergeschwindigkeit",
-        "fr": "Nouvelle vitesse du ventilateur",
-        "no": "Ny viftehastighet",
-        "sv": "Ny fläkthastighet",
-        "fi": "Uusi puhaltimen nopeus",
-        "it": "Nuova velocità ventola",
-        "es": "Nueva velocidad del ventilador",
-        "pl": "Nowa prędkość wentylatora"
+        "en": "Fan speed",
+        "da": "Blæserhastighed",
+        "nl": "Ventilatorsnelheid",
+        "de": "Lüftergeschwindigkeit",
+        "fr": "Vitesse du ventilateur",
+        "no": "Viftehastighet",
+        "sv": "Fläkthastighet",
+        "fi": "Puhaltimen nopeus",
+        "it": "Velocità ventola",
+        "es": "Velocidad del ventilador",
+        "pl": "Prędkość wentylatora"
       },
       "min": 1,
       "max": 5

@@ -1,14 +1,43 @@
 {
+  "id": "stove_state_changed",
   "title": {
     "en": "Stove state changed",
-    "da": "Brændeovnens tilstand ændret"
+    "da": "Ovnstatus ændret",
+    "nl": "Kachelstatus gewijzigd",
+    "de": "Kaminstatus geändert",
+    "fr": "État du poêle modifié",
+    "no": "Kaminstatus endret",
+    "sv": "Kaminstatus ändrad",
+    "fi": "Takan tila muuttunut",
+    "it": "Stato stufa cambiato",
+    "es": "Estado de la estufa cambiado",
+    "pl": "Zmieniono stan pieca"
   },
   "hint": {
-    "en": "Triggers when a stove state changes.",
-    "da": "Udløses når brændeovnens tilstand ændres."
+    "en": "Triggers when a stove state changes",
+    "da": "Udløses når en ovnstatus ændres",
+    "nl": "Wordt geactiveerd wanneer een kachelstatus verandert",
+    "de": "Wird ausgelöst, wenn sich ein Kaminstatus ändert",
+    "fr": "Se déclenche lorsqu'un état du poêle change",
+    "no": "Utløses når en kaminstatus endres",
+    "sv": "Utlöses när en kaminstatus ändras",
+    "fi": "Laukeaa, kun takan tila muuttuu",
+    "it": "Si attiva quando cambia uno stato della stufa",
+    "es": "Se activa cuando cambia un estado de la estufa",
+    "pl": "Uruchamia się, gdy zmienia się stan pieca"
   },
   "titleFormatted": {
-  "en": "Stove state changed: [[state]] → [[new_value]]"
+    "en": "Stove [[state]] changed to [[new_value]]",
+    "da": "Ovn [[state]] ændret til [[new_value]]",
+    "nl": "Kachel [[state]] gewijzigd naar [[new_value]]",
+    "de": "Kamin [[state]] geändert zu [[new_value]]",
+    "fr": "Poêle [[state]] modifié à [[new_value]]",
+    "no": "Kamin [[state]] endret til [[new_value]]",
+    "sv": "Kamin [[state]] ändrad till [[new_value]]",
+    "fi": "Takka [[state]] muuttunut arvoon [[new_value]]",
+    "it": "Stufa [[state]] cambiata a [[new_value]]",
+    "es": "Estufa [[state]] cambiada a [[new_value]]",
+    "pl": "Piec [[state]] zmieniony na [[new_value]]"
   },
   "args": [
     {
@@ -16,14 +45,98 @@
       "name": "state",
       "title": {
         "en": "State",
-        "da": "Tilstand"
+        "da": "Status",
+        "nl": "Status",
+        "de": "Status",
+        "fr": "État",
+        "no": "Status",
+        "sv": "Status",
+        "fi": "Tila",
+        "it": "Stato",
+        "es": "Estado",
+        "pl": "Stan"
       },
       "values": [
-        { "id": "power", "label": { "en": "Power", "da": "Tænd/sluk" } },
-        { "id": "fan_speed", "label": { "en": "Fan Speed", "da": "Blæserhastighed" } },
-        { "id": "fumes", "label": { "en": "Fumes", "da": "Røg" } },
-        { "id": "power_level", "label": { "en": "Power Level", "da": "Effektniveau" } },
-        { "id": "smoke_temperature", "label": { "en": "Smoke Temperature", "da": "Røgtemperatur" } }
+        {
+          "id": "power",
+          "label": {
+            "en": "Power",
+            "da": "Strøm",
+            "nl": "Vermogen",
+            "de": "Leistung",
+            "fr": "Puissance",
+            "no": "Strøm",
+            "sv": "Ström",
+            "fi": "Virta",
+            "it": "Potenza",
+            "es": "Potencia",
+            "pl": "Moc"
+          }
+        },
+        {
+          "id": "fan_speed",
+          "label": {
+            "en": "Fan speed",
+            "da": "Blæserhastighed",
+            "nl": "Ventilatorsnelheid",
+            "de": "Lüftergeschwindigkeit",
+            "fr": "Vitesse du ventilateur",
+            "no": "Viftehastighet",
+            "sv": "Fläkthastighet",
+            "fi": "Puhaltimen nopeus",
+            "it": "Velocità ventola",
+            "es": "Velocidad del ventilador",
+            "pl": "Prędkość wentylatora"
+          }
+        },
+        {
+          "id": "fumes",
+          "label": {
+            "en": "Fumes",
+            "da": "Røg",
+            "nl": "Rook",
+            "de": "Rauch",
+            "fr": "Fumées",
+            "no": "Røyk",
+            "sv": "Rök",
+            "fi": "Savut",
+            "it": "Fumi",
+            "es": "Humos",
+            "pl": "Dym"
+          }
+        },
+        {
+          "id": "power_level",
+          "label": {
+            "en": "Power level",
+            "da": "Effektniveau",
+            "nl": "Vermogensniveau",
+            "de": "Leistungsstufe",
+            "fr": "Niveau de puissance",
+            "no": "Effektnivå",
+            "sv": "Effektnivå",
+            "fi": "Tehotaso",
+            "it": "Livello di potenza",
+            "es": "Nivel de potencia",
+            "pl": "Poziom mocy"
+          }
+        },
+        {
+          "id": "smoke_temperature",
+          "label": {
+            "en": "Smoke temperature",
+            "da": "Røgtemperatur",
+            "nl": "Rooktemperatuur",
+            "de": "Rauchtemperatur",
+            "fr": "Température des fumées",
+            "no": "Røyktemperatur",
+            "sv": "Röktemperatur",
+            "fi": "Savun lämpötila",
+            "it": "Temperatura fumi",
+            "es": "Temperatura de humo",
+            "pl": "Temperatura dymu"
+          }
+        }
       ]
     },
     {
@@ -31,11 +144,16 @@
       "name": "new_value",
       "title": {
         "en": "New value",
-        "da": "Ny værdi"
-      },
-      "placeholder": {
-        "en": "New value",
-        "da": "Ny værdi"
+        "da": "Ny værdi",
+        "nl": "Nieuwe waarde",
+        "de": "Neuer Wert",
+        "fr": "Nouvelle valeur",
+        "no": "Ny verdi",
+        "sv": "Nytt värde",
+        "fi": "Uusi arvo",
+        "it": "Nuovo valore",
+        "es": "Nuevo valor",
+        "pl": "Nowa wartość"
       }
     }
   ],
@@ -44,12 +162,30 @@
       "type": "string",
       "name": "stove_state_change",
       "title": {
-        "en": "Stove state change",
-        "da": "Brændeovnens tilstandsændring"
+        "en": "State change",
+        "da": "Statusændring",
+        "nl": "Statuswijziging",
+        "de": "Statusänderung",
+        "fr": "Changement d'état",
+        "no": "Statusendring",
+        "sv": "Statusändring",
+        "fi": "Tilamuutos",
+        "it": "Cambio di stato",
+        "es": "Cambio de estado",
+        "pl": "Zmiana stanu"
       },
       "example": {
-        "en": "E.g. 'fan_speed: 3', 'power: on'",
-        "da": "F.eks. 'blæserhastighed: 3', 'tænd/sluk: tændt'"
+        "en": "Power changed to on",
+        "da": "Strøm ændret til tændt",
+        "nl": "Vermogen gewijzigd naar aan",
+        "de": "Leistung geändert zu an",
+        "fr": "Puissance modifiée à allumé",
+        "no": "Strøm endret til på",
+        "sv": "Ström ändrad till på",
+        "fi": "Virta muuttunut päälle",
+        "it": "Potenza cambiata a acceso",
+        "es": "Potencia cambiada a encendido",
+        "pl": "Moc zmieniona na włączona"
       }
     }
   ]

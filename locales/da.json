@@ -1,16 +1,119 @@
 {
+  "capability": {
+    "error_code": "Fejlkode",
+    "firmware_version": "Firmwareversion",
+    "last_update": "Sidste opdateringstid",
+    "manufacturer": "Producent",
+    "phase": "Ovnfase",
+    "state_description": "Statusbeskrivelse",
+    "stove_state_raw": "Ovnstatus (rå)",
+    "substate": "Ovns delstatus",
+    "wifi_signal": "WiFi-signal"
+  },
+  "diagnostics": {
+    "composite_state": "Sammensat status",
+    "error_code": "Fejlkode",
+    "firmware": "Firmwareversion",
+    "last_update": "Sidste opdatering",
+    "manufacturer": "Producent",
+    "phase": "Fase",
+    "raw_state": "Rå status",
+    "state_description": "Statusbeskrivelse",
+    "substate": "Delstatus",
+    "wifi_signal": "WiFi-signal (dBm)"
+  },
+  "error": {
+    "alarm": "Alarm-/fejltilstand",
+    "invalid_phase": "Ugyldig eller ukendt fase",
+    "invalid_state": "Ugyldig eller ukendt status",
+    "invalid_substate": "Ugyldig eller ukendt delstatus",
+    "resume": "Genoptaget fra fejl",
+    "unreachable": "Enhed utilgængelig"
+  },
+  "flow": {
+    "hottoh_stove_state": "Brændeovnens tilstand ændret",
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Ny tilstand"
+      }
+    },
+    "is_in_phase": "Brændeovnen er i fase",
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Fase"
+      }
+    },
+    "is_stove_on": "Brændeovnen er tændt",
+    "set_target_temperature": {
+      "args": {
+        "temperature": {
+          "title": "Måltemperatur"
+        }
+      },
+      "title": "Indstil måltemperatur"
+    },
+    "stove_enters_alarm": "Brændeovnen går i alarm/fejltilstand",
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Fejlkode"
+      }
+    },
+    "stove_resumes_from_error": "Brændeovnen genoptager fra fejl",
+    "stove_unreachable": "Brændeovnen utilgængelig",
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minutter utilgængelig"
+      }
+    },
+    "target_temperature_reached": "Brændeovnen når måltemperatur",
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Rumtemperatur"
+      }
+    },
+    "turn_off_stove": "Sluk brændeovn",
+    "turn_on_stove": "Tænd brændeovn"
+  },
   "pair": {
     "manual": {
-      "title": "Tilføj pilleovn manuelt",
-      "desc": "Indtast pilleovnens IP-adresse og port for at tilføje den til Homey.",
+      "continue": "Fortsæt",
+      "desc": "Indtast IP-adresse og port på din pilleovn for at forbinde den til Homey.",
+      "error_connect": "Kunne ikke oprette forbindelse til pilleovnen. Tjek IP-adresse og port.",
+      "error_invalid": "Indtast et gyldigt portnummer (1-65535).",
+      "error_missing": "Indtast både IP-adresse og port.",
       "ip_label": "IP-adresse",
       "port_label": "Port",
       "submit": "Tilføj pilleovn",
-      "continue": "Fortsæt",
-      "success": "Pilleovn tilføjet! Tryk på Fortsæt for at afslutte.",
-      "error_missing": "Indtast både IP-adresse og port.",
-      "error_connect": "Kunne ikke oprette forbindelse til pilleovnen. Tjek IP-adresse og port.",
-      "error_invalid": "Indtast et gyldigt portnummer (1-65535)."
+      "success": "Pilleovn tilføjet! Klik på Fortsæt for at afslutte.",
+      "title": "Tilføj pilleovn manuelt"
     }
+  },
+  "phase": {
+    "0": "Inaktiv",
+    "1": "Tænding",
+    "2": "Opvarmning",
+    "3": "Rengøring",
+    "4": "Nedkøling",
+    "5": "Lader"
+  },
+  "state": {
+    "alarm": "Alarm/Fejl",
+    "cleaning": "Rengøring",
+    "cooling": "Nedkøling",
+    "ignition": "Tændingsfase",
+    "loading": "Lader piller",
+    "modulation": "Modulation",
+    "off": "Slukket",
+    "on": "I drift",
+    "standby": "Standby",
+    "test": "Testtilstand",
+    "unknown": "Ukendt"
+  },
+  "substate": {
+    "0": "Ingen",
+    "1": "Forvarmning",
+    "2": "Forbrænding",
+    "3": "Askefjernelse",
+    "4": "Pillefremføring"
   }
 }

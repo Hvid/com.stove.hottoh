@@ -2,15 +2,118 @@
   "pair": {
     "manual": {
       "title": "Aggiungi stufa a pellet manualmente",
-      "desc": "Inserisci l'indirizzo IP e la porta della stufa a pellet per collegarla a Homey.",
+      "desc": "Inserisci l'indirizzo IP e la porta della tua stufa a pellet per collegarla a Homey.",
       "ip_label": "Indirizzo IP",
       "port_label": "Porta",
       "submit": "Aggiungi stufa a pellet",
       "continue": "Continua",
-      "success": "Stufa a pellet aggiunta! Fai clic su Continua per terminare.",
+      "success": "Stufa a pellet aggiunta! Clicca su Continua per terminare.",
       "error_missing": "Inserisci sia l'indirizzo IP che la porta.",
       "error_connect": "Impossibile connettersi alla stufa a pellet. Controlla l'indirizzo IP e la porta.",
       "error_invalid": "Inserisci un numero di porta valido (1-65535)."
     }
+  },
+  "state": {
+    "off": "Spenta",
+    "ignition": "Fase di accensione",
+    "on": "In funzione",
+    "modulation": "Modulazione",
+    "cleaning": "Pulizia",
+    "alarm": "Allarme/Errore",
+    "cooling": "Raffreddamento",
+    "standby": "Standby",
+    "loading": "Caricamento pellet",
+    "test": "Modalità test",
+    "unknown": "Sconosciuto"
+  },
+  "phase": {
+    "0": "Inattivo",
+    "1": "Accensione",
+    "2": "Riscaldamento",
+    "3": "Pulizia",
+    "4": "Raffreddamento",
+    "5": "Caricamento"
+  },
+  "substate": {
+    "0": "Nessuno",
+    "1": "Pre-riscaldamento",
+    "2": "Combustione",
+    "3": "Rimozione cenere",
+    "4": "Alimentazione pellet"
+  },
+  "capability": {
+    "firmware_version": "Versione firmware",
+    "manufacturer": "Produttore",
+    "wifi_signal": "Segnale WiFi",
+    "error_code": "Codice errore",
+    "phase": "Fase stufa",
+    "substate": "Sottofase stufa",
+    "last_update": "Ultimo aggiornamento",
+    "state_description": "Descrizione stato",
+    "stove_state_raw": "Stato stufa (grezzo)"
+  },
+  "flow": {
+    "hottoh_stove_state": "Stato della stufa a pellet cambiato",
+    "stove_enters_alarm": "La stufa entra in stato di allarme/errore",
+    "stove_resumes_from_error": "La stufa riprende dopo errore",
+    "stove_unreachable": "Stufa a pellet irraggiungibile",
+    "target_temperature_reached": "La stufa raggiunge la temperatura target",
+    "is_stove_on": "La stufa a pellet è accesa",
+    "is_in_phase": "La stufa è in fase",
+    "turn_on_stove": "Accendi la stufa a pellet",
+    "turn_off_stove": "Spegni la stufa a pellet",
+    "set_target_temperature": {
+      "title": "Imposta temperatura target",
+      "args": {
+        "temperature": {
+          "title": "Temperatura target"
+        }
+      }
+    },
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Codice errore"
+      }
+    },
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minuti irraggiungibile"
+      }
+    },
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Temperatura ambiente"
+      }
+    },
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Fase"
+      }
+    },
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Nuovo stato"
+      }
+    }
+  },
+  "diagnostics": {
+    "firmware": "Versione firmware",
+    "manufacturer": "Produttore",
+    "wifi_signal": "Segnale WiFi (dBm)",
+    "raw_state": "Stato grezzo",
+    "composite_state": "Stato composito",
+    "error_code": "Codice errore",
+    "phase": "Fase",
+    "substate": "Sottofase",
+    "last_update": "Ultimo aggiornamento",
+    "state_description": "Descrizione stato"
+  },
+  "error": {
+    "unreachable": "Dispositivo non raggiungibile",
+    "alarm": "Stato di allarme/errore",
+    "resume": "Ripreso dopo errore",
+    "invalid_state": "Stato non valido o sconosciuto",
+    "invalid_phase": "Fase non valida o sconosciuta",
+    "invalid_substate": "Sottofase non valida o sconosciuta"
   }
 }

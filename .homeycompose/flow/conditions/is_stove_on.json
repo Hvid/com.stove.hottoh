@@ -1,11 +1,43 @@
 {
+  "id": "is_stove_on",
   "title": {
     "en": "Stove is on",
-    "da": "Brændeovnen er tændt"
+    "da": "Brændeovnen er tændt",
+    "nl": "Pelletkachel is aan",
+    "de": "Pelletofen ist eingeschaltet",
+    "fr": "Le poêle est allumé",
+    "no": "Pelletskaminen er på",
+    "sv": "Pelletskaminen är på",
+    "fi": "Pellettitakka on päällä",
+    "it": "La stufa è accesa",
+    "es": "La estufa está encendida",
+    "pl": "Piec jest włączony"
+  },
+  "titleFormatted": {
+    "en": "Stove is !{{on|not on}}",
+    "da": "Brændeovnen er !{{tændt|ikke tændt}}",
+    "nl": "Pelletkachel is !{{aan|niet aan}}",
+    "de": "Pelletofen ist !{{eingeschaltet|nicht eingeschaltet}}",
+    "fr": "Le poêle est !{{allumé|pas allumé}}",
+    "no": "Pelletskaminen er !{{på|ikke på}}",
+    "sv": "Pelletskaminen är !{{på|inte på}}",
+    "fi": "Pellettitakka on !{{päällä|ei päällä}}",
+    "it": "La stufa è !{{accesa|non accesa}}",
+    "es": "La estufa está !{{encendida|no encendida}}",
+    "pl": "Piec jest !{{włączony|nie włączony}}"
   },
   "hint": {
-    "en": "Checks if the stove is currently on.",
-    "da": "Tjekker om brændeovnen er tændt."
+    "en": "Checks if the stove is currently on",
+    "da": "Kontrollerer om brændeovnen er tændt",
+    "nl": "Controleert of de pelletkachel aan staat",
+    "de": "Prüft, ob der Pelletofen eingeschaltet ist",
+    "fr": "Vérifie si le poêle est actuellement allumé",
+    "no": "Sjekker om pelletskaminen er på",
+    "sv": "Kontrollerar om pelletskaminen är på",
+    "fi": "Tarkistaa, onko pellettitakka päällä",
+    "it": "Controlla se la stufa è attualmente accesa",
+    "es": "Comprueba si la estufa está encendida",
+    "pl": "Sprawdza, czy piec jest włączony"
   },
   "args": [],
   "tokens": []

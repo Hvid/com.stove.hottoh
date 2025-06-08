@@ -1,16 +1,119 @@
 {
   "pair": {
     "manual": {
-      "title": "Pelletofen manuell hinzufügen",
-      "desc": "Geben Sie die IP-Adresse und den Port Ihres Pelletofens ein, um ihn mit Homey zu verbinden.",
+      "title": "Pelletkamin manuell hinzufügen",
+      "desc": "Geben Sie die IP-Adresse und den Port Ihres Pelletkamins ein, um ihn mit Homey zu verbinden.",
       "ip_label": "IP-Adresse",
       "port_label": "Port",
-      "submit": "Pelletofen hinzufügen",
+      "submit": "Pelletkamin hinzufügen",
       "continue": "Weiter",
-      "success": "Pelletofen hinzugefügt! Klicken Sie auf Weiter, um abzuschließen.",
+      "success": "Pelletkamin hinzugefügt! Klicken Sie auf Weiter, um abzuschließen.",
       "error_missing": "Bitte geben Sie sowohl die IP-Adresse als auch den Port ein.",
-      "error_connect": "Verbindung zum Pelletofen konnte nicht hergestellt werden. Bitte überprüfen Sie die IP-Adresse und den Port.",
+      "error_connect": "Verbindung zum Pelletkamin konnte nicht hergestellt werden. Bitte überprüfen Sie die IP-Adresse und den Port.",
       "error_invalid": "Bitte geben Sie eine gültige Portnummer ein (1-65535)."
     }
+  },
+  "state": {
+    "off": "Aus",
+    "ignition": "Zündphase",
+    "on": "In Betrieb",
+    "modulation": "Modulation",
+    "cleaning": "Reinigung",
+    "alarm": "Alarm/Fehler",
+    "cooling": "Abkühlung",
+    "standby": "Standby",
+    "loading": "Pellets werden geladen",
+    "test": "Testmodus",
+    "unknown": "Unbekannt"
+  },
+  "phase": {
+    "0": "Leerlauf",
+    "1": "Zündung",
+    "2": "Heizen",
+    "3": "Reinigung",
+    "4": "Abkühlung",
+    "5": "Laden"
+  },
+  "substate": {
+    "0": "Keine",
+    "1": "Vorheizen",
+    "2": "Brennen",
+    "3": "Ascheentfernung",
+    "4": "Pelletzufuhr"
+  },
+  "capability": {
+    "error_code": "Fehlercode",
+    "firmware_version": "Firmware-Version",
+    "last_update": "Letzte Aktualisierung",
+    "manufacturer": "Hersteller",
+    "phase": "Kaminphase",
+    "state_description": "Statusbeschreibung",
+    "stove_state_raw": "Kaminstatus (roh)",
+    "substate": "Kamin-Teilstatus",
+    "wifi_signal": "WiFi-Signal"
+  },
+  "flow": {
+    "hottoh_stove_state": "Status des Pelletofens geändert",
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Neuer Status"
+      }
+    },
+    "is_in_phase": "Pelletofen ist in Phase",
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Phase"
+      }
+    },
+    "is_stove_on": "Pelletofen ist an",
+    "set_target_temperature": {
+      "args": {
+        "temperature": {
+          "title": "Zieltemperatur"
+        }
+      },
+      "title": "Zieltemperatur einstellen"
+    },
+    "stove_enters_alarm": "Pelletofen geht in Alarm-/Fehlerstatus",
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Fehlercode"
+      }
+    },
+    "stove_resumes_from_error": "Pelletofen setzt nach Fehler fort",
+    "stove_unreachable": "Pelletofen nicht erreichbar",
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minuten nicht erreichbar"
+      }
+    },
+    "target_temperature_reached": "Pelletofen erreicht Zieltemperatur",
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Raumtemperatur"
+      }
+    },
+    "turn_off_stove": "Pelletofen ausschalten",
+    "turn_on_stove": "Pelletofen einschalten"
+  },
+  "diagnostics": {
+    "composite_state": "Zusammengesetzter Status",
+    "error_code": "Fehlercode",
+    "firmware": "Firmware-Version",
+    "last_update": "Letzte Aktualisierung",
+    "manufacturer": "Hersteller",
+    "phase": "Phase",
+    "raw_state": "Rohstatus",
+    "state_description": "Statusbeschreibung",
+    "substate": "Teilstatus",
+    "wifi_signal": "WiFi-Signal (dBm)"
+  },
+  "error": {
+    "alarm": "Alarm-/Fehlerstatus",
+    "invalid_phase": "Ungültige oder unbekannte Phase",
+    "invalid_state": "Ungültiger oder unbekannter Status",
+    "invalid_substate": "Ungültiger oder unbekannter Teilstatus",
+    "resume": "Von Fehler fortgesetzt",
+    "unreachable": "Gerät nicht erreichbar"
   }
 }

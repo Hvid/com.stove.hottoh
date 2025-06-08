@@ -1,16 +1,119 @@
 {
+  "capability": {
+    "error_code": "Error Code",
+    "firmware_version": "Firmware Version",
+    "last_update": "Last Update Time",
+    "manufacturer": "Manufacturer",
+    "phase": "Stove Phase",
+    "state_description": "State Description",
+    "stove_state_raw": "Stove State (Raw)",
+    "substate": "Stove Substate",
+    "wifi_signal": "WiFi Signal"
+  },
+  "diagnostics": {
+    "composite_state": "Composite State",
+    "error_code": "Error Code",
+    "firmware": "Firmware Version",
+    "last_update": "Last Update",
+    "manufacturer": "Manufacturer",
+    "phase": "Phase",
+    "raw_state": "Raw State",
+    "state_description": "State Description",
+    "substate": "Substate",
+    "wifi_signal": "WiFi Signal (dBm)"
+  },
+  "error": {
+    "alarm": "Alarm/Error state",
+    "invalid_phase": "Invalid or unknown phase",
+    "invalid_state": "Invalid or unknown state",
+    "invalid_substate": "Invalid or unknown substate",
+    "resume": "Resumed from error",
+    "unreachable": "Device unreachable"
+  },
+  "flow": {
+    "hottoh_stove_state": "Stove state changed",
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "New state"
+      }
+    },
+    "is_in_phase": "Stove is in phase",
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Phase"
+      }
+    },
+    "is_stove_on": "Stove is on",
+    "set_target_temperature": {
+      "args": {
+        "temperature": {
+          "title": "Target temperature"
+        }
+      },
+      "title": "Set target temperature"
+    },
+    "stove_enters_alarm": "Stove enters alarm/error state",
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Error code"
+      }
+    },
+    "stove_resumes_from_error": "Stove resumes from error",
+    "stove_unreachable": "Stove unreachable",
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minutes unreachable"
+      }
+    },
+    "target_temperature_reached": "Stove reaches target temperature",
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Room temperature"
+      }
+    },
+    "turn_off_stove": "Turn off stove",
+    "turn_on_stove": "Turn on stove"
+  },
   "pair": {
     "manual": {
-      "title": "Add Pellet Stove Manually",
+      "continue": "Continue",
       "desc": "Enter the IP address and port of your pellet stove to connect it to Homey.",
+      "error_connect": "Could not connect to the pellet stove. Please check the IP address and port.",
+      "error_invalid": "Please enter a valid port number (1-65535).",
+      "error_missing": "Please enter both the IP address and port.",
       "ip_label": "IP Address",
       "port_label": "Port",
       "submit": "Add Pellet Stove",
-      "continue": "Continue",
       "success": "Pellet stove added! Click Continue to finish.",
-      "error_missing": "Please enter both the IP address and port.",
-      "error_connect": "Could not connect to the pellet stove. Please check the IP address and port.",
-      "error_invalid": "Please enter a valid port number (1-65535)."
+      "title": "Add Pellet Stove Manually"
     }
+  },
+  "phase": {
+    "0": "Idle",
+    "1": "Ignition",
+    "2": "Heating",
+    "3": "Cleaning",
+    "4": "Cooling",
+    "5": "Loading"
+  },
+  "state": {
+    "alarm": "Alarm/Error",
+    "cleaning": "Cleaning",
+    "cooling": "Cooling down",
+    "ignition": "Ignition phase",
+    "loading": "Loading pellets",
+    "modulation": "Modulation",
+    "off": "Off",
+    "on": "Running",
+    "standby": "Standby",
+    "test": "Test mode",
+    "unknown": "Unknown"
+  },
+  "substate": {
+    "0": "None",
+    "1": "Pre-heating",
+    "2": "Burning",
+    "3": "Ash removal",
+    "4": "Pellet feed"
   }
 }

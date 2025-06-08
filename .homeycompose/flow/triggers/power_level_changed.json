@@ -11,27 +11,37 @@
     "fi": "Tehotaso muuttunut",
     "it": "Livello di potenza cambiato",
     "es": "Nivel de potencia cambiado",
-    "pl": "Poziom mocy zmieniony"
+    "pl": "Zmieniono poziom mocy"
   },
   "titleFormatted": {
-    "en": "Power level changed to [[level]]"
+    "en": "Power level changed to [[level]]",
+    "da": "Effektniveau ændret til [[level]]",
+    "nl": "Vermogensniveau gewijzigd naar [[level]]",
+    "de": "Leistungsstufe geändert zu [[level]]",
+    "fr": "Niveau de puissance modifié à [[level]]",
+    "no": "Effektnivå endret til [[level]]",
+    "sv": "Effektnivå ändrad till [[level]]",
+    "fi": "Tehotaso muuttunut arvoon [[level]]",
+    "it": "Livello di potenza cambiato a [[level]]",
+    "es": "Nivel de potencia cambiado a [[level]]",
+    "pl": "Poziom mocy zmieniony na [[level]]"
   },
   "args": [
     {
       "name": "level",
       "type": "number",
       "title": {
-        "en": "New Power Level",
-        "da": "Nyt effektniveau",
-        "nl": "Nieuw vermogensniveau",
-        "de": "Neue Leistungsstufe",
-        "fr": "Nouveau niveau de puissance",
-        "no": "Nytt effektnivå",
-        "sv": "Nytt effektnivå",
-        "fi": "Uusi tehotaso",
-        "it": "Nuovo livello di potenza",
-        "es": "Nuevo nivel de potencia",
-        "pl": "Nowy poziom mocy"
+        "en": "Power level",
+        "da": "Effektniveau",
+        "nl": "Vermogensniveau",
+        "de": "Leistungsstufe",
+        "fr": "Niveau de puissance",
+        "no": "Effektnivå",
+        "sv": "Effektnivå",
+        "fi": "Tehotaso",
+        "it": "Livello di potenza",
+        "es": "Nivel de potencia",
+        "pl": "Poziom mocy"
       },
       "min": 1,
       "max": 5

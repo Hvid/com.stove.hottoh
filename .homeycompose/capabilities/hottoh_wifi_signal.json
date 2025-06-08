@@ -1,0 +1,47 @@
+{
+  "title": {
+    "en": "WiFi Signal",
+    "da": "WiFi-signal",
+    "nl": "WiFi-signaal",
+    "de": "WiFi-Signal",
+    "fr": "Signal WiFi",
+    "no": "WiFi-signal",
+    "sv": "WiFi-signal",
+    "fi": "WiFi-signaali",
+    "it": "Segnale WiFi",
+    "es": "Señal WiFi",
+    "pl": "Sygnał WiFi"
+  },
+  "type": "number",
+  "uiComponent": "sensor",
+  "desc": {
+    "en": "WiFi signal strength (dBm). Higher values (closer to 0) indicate better connection quality.",
+    "da": "WiFi-signalstyrke (dBm). Højere værdier (tættere på 0) indikerer bedre forbindelseskvalitet.",
+    "nl": "WiFi-signaalsterkte (dBm). Hogere waarden (dichter bij 0) duiden op betere verbindingskwaliteit.",
+    "de": "WiFi-Signalstärke (dBm). Höhere Werte (näher an 0) zeigen eine bessere Verbindungsqualität an.",
+    "fr": "Puissance du signal WiFi (dBm). Des valeurs plus élevées (plus proches de 0) indiquent une meilleure qualité de connexion.",
+    "no": "WiFi-signalstyrke (dBm). Høyere verdier (nærmere 0) indikerer bedre tilkoblingskvalitet.",
+    "sv": "WiFi-signalstyrka (dBm). Högre värden (närmare 0) indikerar bättre anslutningskvalitet.",
+    "fi": "WiFi-signaalin voimakkuus (dBm). Korkeammat arvot (lähempänä 0) osoittavat parempaa yhteyslaatua.",
+    "it": "Potenza del segnale WiFi (dBm). Valori più alti (più vicini a 0) indicano una migliore qualità della connessione.",
+    "es": "Intensidad de la señal WiFi (dBm). Valores más altos (más cercanos a 0) indican mejor calidad de conexión.",
+    "pl": "Siła sygnału WiFi (dBm). Wyższe wartości (bliższe 0) wskazują na lepszą jakość połączenia."
+  },
+  "units": {
+    "en": "dBm",
+    "da": "dBm",
+    "nl": "dBm",
+    "de": "dBm",
+    "fr": "dBm",
+    "no": "dBm",
+    "sv": "dBm",
+    "fi": "dBm",
+    "it": "dBm",
+    "es": "dBm",
+    "pl": "dBm"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "insights": false
+}

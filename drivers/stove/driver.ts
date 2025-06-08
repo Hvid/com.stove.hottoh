@@ -8,7 +8,6 @@ module.exports = class StoveDriver extends Homey.Driver {
 
   async onPair(session: any) {
     session.setHandler('add_device', async (data: any) => {
-      // Only log pairing errors and successful device addition
       const { address, port } = data;
       if (!address || !port) {
         this.log('Pairing error: Missing address or port');

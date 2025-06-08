@@ -1,0 +1,42 @@
+{
+  "id": "stove_enters_alarm",
+  "title": {
+    "en": "Stove enters alarm state",
+    "da": "Brændeovnen går i alarmtilstand",
+    "nl": "Pelletkachel gaat naar alarmstatus",
+    "de": "Pelletofen geht in Alarmzustand",
+    "fr": "Le poêle entre en état d'alarme",
+    "no": "Pelletskaminen går i alarmtilstand",
+    "sv": "Pelletskaminen går in i larmtillstånd",
+    "fi": "Pellettitakka siirtyy hälytystilaan",
+    "it": "La stufa entra in stato di allarme",
+    "es": "La estufa entra en estado de alarma",
+    "pl": "Piec przechodzi w stan alarmu"
+  },
+  "titleFormatted": {
+    "en": "Stove enters alarm state",
+    "da": "Brændeovnen går i alarmtilstand",
+    "nl": "Pelletkachel gaat naar alarmstatus",
+    "de": "Pelletofen geht in Alarmzustand",
+    "fr": "Le poêle entre en état d'alarme",
+    "no": "Pelletskaminen går i alarmtilstand",
+    "sv": "Pelletskaminen går in i larmtillstånd",
+    "fi": "Pellettitakka siirtyy hälytystilaan",
+    "it": "La stufa entra in stato di allarme",
+    "es": "La estufa entra en estado de alarma",
+    "pl": "Piec przechodzi w stan alarmu"
+  },
+  "hint": {
+    "en": "Triggered when the stove enters an alarm state",
+    "da": "Udløses når brændeovnen går i alarmtilstand",
+    "nl": "Wordt geactiveerd wanneer de pelletkachel naar alarmstatus gaat",
+    "de": "Wird ausgelöst, wenn der Pelletofen in den Alarmzustand wechselt",
+    "fr": "Déclenché lorsque le poêle entre en état d'alarme",
+    "no": "Utløses når pelletskaminen går i alarmtilstand",
+    "sv": "Utlöses när pelletskaminen går in i larmtillstånd",
+    "fi": "Laukeaa, kun pellettitakka siirtyy hälytystilaan",
+    "it": "Attivato quando la stufa entra in stato di allarme",
+    "es": "Se activa cuando la estufa entra en estado de alarma",
+    "pl": "Uruchamiane, gdy piec przechodzi w stan alarmu"
+  }
+}

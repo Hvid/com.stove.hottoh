@@ -14,6 +14,19 @@
   },
   "type": "number",
   "uiComponent": "slider",
+  "desc": {
+    "en": "Current speed of the stove's ventilation fan (1-5, where 5 is maximum speed).",
+    "da": "Aktuel hastighed af ovnens ventilationsblæser (1-5, hvor 5 er maksimal hastighed).",
+    "nl": "Huidige snelheid van de ventilator van de kachel (1-5, waarbij 5 maximale snelheid is).",
+    "de": "Aktuelle Geschwindigkeit des Ofenventilators (1-5, wobei 5 maximale Geschwindigkeit ist).",
+    "fr": "Vitesse actuelle du ventilateur du poêle (1-5, où 5 est la vitesse maximale).",
+    "no": "Gjeldende hastighet på ovnens ventilasjonsvifte (1-5, der 5 er maksimal hastighet).",
+    "sv": "Aktuell hastighet på kaminens ventilationsfläkt (1-5, där 5 är maximal hastighet).",
+    "fi": "Takan tuulettimen nykyinen nopeus (1-5, jossa 5 on maksiminopeus).",
+    "it": "Velocità attuale della ventola di ventilazione della stufa (1-5, dove 5 è la velocità massima).",
+    "es": "Velocidad actual del ventilador de la estufa (1-5, donde 5 es velocidad máxima).",
+    "pl": "Aktualna prędkość wentylatora pieca (1-5, gdzie 5 to maksymalna prędkość)."
+  },
   "units": {
     "en": "rpm",
     "da": "omdr./min.",

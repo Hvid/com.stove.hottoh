@@ -2,7 +2,7 @@
   "pair": {
     "manual": {
       "title": "Ajouter un poêle à granulés manuellement",
-      "desc": "Saisissez l'adresse IP et le port de votre poêle à granulés pour le connecter à Homey.",
+      "desc": "Entrez l'adresse IP et le port de votre poêle à granulés pour le connecter à Homey.",
       "ip_label": "Adresse IP",
       "port_label": "Port",
       "submit": "Ajouter le poêle à granulés",
@@ -12,5 +12,108 @@
       "error_connect": "Impossible de se connecter au poêle à granulés. Vérifiez l'adresse IP et le port.",
       "error_invalid": "Veuillez saisir un numéro de port valide (1-65535)."
     }
+  },
+  "state": {
+    "off": "Éteint",
+    "ignition": "Phase d'allumage",
+    "on": "En fonctionnement",
+    "modulation": "Modulation",
+    "cleaning": "Nettoyage",
+    "alarm": "Alarme/Erreur",
+    "cooling": "Refroidissement",
+    "standby": "Veille",
+    "loading": "Chargement des granulés",
+    "test": "Mode test",
+    "unknown": "Inconnu"
+  },
+  "phase": {
+    "0": "Repos",
+    "1": "Allumage",
+    "2": "Chauffage",
+    "3": "Nettoyage",
+    "4": "Refroidissement",
+    "5": "Chargement"
+  },
+  "substate": {
+    "0": "Aucun",
+    "1": "Préchauffage",
+    "2": "Combustion",
+    "3": "Évacuation des cendres",
+    "4": "Alimentation en granulés"
+  },
+  "capability": {
+    "firmware_version": "Version du firmware",
+    "manufacturer": "Fabricant",
+    "wifi_signal": "Signal WiFi",
+    "error_code": "Code d'erreur",
+    "phase": "Phase du poêle",
+    "substate": "Sous-état du poêle",
+    "last_update": "Dernière mise à jour",
+    "state_description": "Description de l'état",
+    "stove_state_raw": "État du poêle (brut)"
+  },
+  "flow": {
+    "hottoh_stove_state": "État du poêle à granulés modifié",
+    "stove_enters_alarm": "Le poêle entre en état d'alarme/erreur",
+    "stove_resumes_from_error": "Le poêle reprend après une erreur",
+    "stove_unreachable": "Poêle à granulés injoignable",
+    "target_temperature_reached": "Le poêle atteint la température cible",
+    "is_stove_on": "Le poêle à granulés est allumé",
+    "is_in_phase": "Le poêle est dans la phase",
+    "turn_on_stove": "Allumer le poêle à granulés",
+    "turn_off_stove": "Éteindre le poêle à granulés",
+    "set_target_temperature": {
+      "title": "Définir la température cible",
+      "args": {
+        "temperature": {
+          "title": "Température cible"
+        }
+      }
+    },
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Code d'erreur"
+      }
+    },
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minutes injoignable"
+      }
+    },
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Température ambiante"
+      }
+    },
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Phase"
+      }
+    },
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Nouvel état"
+      }
+    }
+  },
+  "diagnostics": {
+    "firmware": "Version du firmware",
+    "manufacturer": "Fabricant",
+    "wifi_signal": "Signal WiFi (dBm)",
+    "raw_state": "État brut",
+    "composite_state": "État composite",
+    "error_code": "Code d'erreur",
+    "phase": "Phase",
+    "substate": "Sous-état",
+    "last_update": "Dernière mise à jour",
+    "state_description": "Description de l'état"
+  },
+  "error": {
+    "unreachable": "Appareil injoignable",
+    "alarm": "État d'alarme/erreur",
+    "resume": "Reprise après erreur",
+    "invalid_state": "État invalide ou inconnu",
+    "invalid_phase": "Phase invalide ou inconnue",
+    "invalid_substate": "Sous-état invalide ou inconnu"
   }
 }

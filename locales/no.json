@@ -7,10 +7,113 @@
       "port_label": "Port",
       "submit": "Legg til pelletskamin",
       "continue": "Fortsett",
-      "success": "Pelletskamin lagt til! Klikk Fortsett for å fullføre.",
+      "success": "Pelletskamin lagt til! Klikk Fortsett for å avslutte.",
       "error_missing": "Vennligst oppgi både IP-adresse og port.",
       "error_connect": "Kunne ikke koble til pelletskaminen. Sjekk IP-adresse og port.",
       "error_invalid": "Vennligst oppgi et gyldig portnummer (1-65535)."
     }
+  },
+  "state": {
+    "off": "Av",
+    "ignition": "Tenningsfase",
+    "on": "I drift",
+    "modulation": "Modulasjon",
+    "cleaning": "Rengjøring",
+    "alarm": "Alarm/Feil",
+    "cooling": "Nedkjøling",
+    "standby": "Standby",
+    "loading": "Laster pellets",
+    "test": "Testmodus",
+    "unknown": "Ukjent"
+  },
+  "phase": {
+    "0": "Inaktiv",
+    "1": "Tenning",
+    "2": "Oppvarming",
+    "3": "Rengjøring",
+    "4": "Nedkjøling",
+    "5": "Laster"
+  },
+  "substate": {
+    "0": "Ingen",
+    "1": "Forvarming",
+    "2": "Brenning",
+    "3": "Aske fjerning",
+    "4": "Pelletsmating"
+  },
+  "capability": {
+    "firmware_version": "Firmwareversjon",
+    "manufacturer": "Produsent",
+    "wifi_signal": "WiFi-signal",
+    "error_code": "Feilkode",
+    "phase": "Kaminfase",
+    "substate": "Kaminens delstatus",
+    "last_update": "Siste oppdateringstid",
+    "state_description": "Statusbeskrivelse",
+    "stove_state_raw": "Kaminstatus (rå)"
+  },
+  "flow": {
+    "hottoh_stove_state": "Pelletskaminens tilstand endret",
+    "stove_enters_alarm": "Pelletskaminen går i alarm/feiltilstand",
+    "stove_resumes_from_error": "Pelletskaminen gjenopptar etter feil",
+    "stove_unreachable": "Pelletskaminen utilgjengelig",
+    "target_temperature_reached": "Pelletskaminen når måltemperatur",
+    "is_stove_on": "Pelletskaminen er på",
+    "is_in_phase": "Pelletskaminen er i fase",
+    "turn_on_stove": "Slå på pelletskamin",
+    "turn_off_stove": "Slå av pelletskamin",
+    "set_target_temperature": {
+      "title": "Sett måltemperatur",
+      "args": {
+        "temperature": {
+          "title": "Måltemperatur"
+        }
+      }
+    },
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Feilkode"
+      }
+    },
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minutter utilgjengelig"
+      }
+    },
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Romtemperatur"
+      }
+    },
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Fase"
+      }
+    },
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Ny tilstand"
+      }
+    }
+  },
+  "diagnostics": {
+    "firmware": "Firmwareversjon",
+    "manufacturer": "Produsent",
+    "wifi_signal": "WiFi-signal (dBm)",
+    "raw_state": "Rå status",
+    "composite_state": "Sammensatt status",
+    "error_code": "Feilkode",
+    "phase": "Fase",
+    "substate": "Delstatus",
+    "last_update": "Siste oppdatering",
+    "state_description": "Statusbeskrivelse"
+  },
+  "error": {
+    "unreachable": "Enhet utilgjengelig",
+    "alarm": "Alarm-/feiltilstand",
+    "resume": "Gjenopptatt etter feil",
+    "invalid_state": "Ugyldig eller ukjent status",
+    "invalid_phase": "Ugyldig eller ukjent fase",
+    "invalid_substate": "Ugyldig eller ukjent delstatus"
   }
 }

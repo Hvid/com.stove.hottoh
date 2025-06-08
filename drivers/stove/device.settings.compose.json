@@ -1,0 +1,14 @@
+[
+  {
+    "id": "poll_interval",
+    "type": "number",
+    "label": {
+      "en": "Poll interval (ms)",
+      "nl": "Polling interval (ms)"
+    },
+    "value": 10000,
+    "min": 5000,
+    "max": 60000,
+    "step": 1000
+  }
+]

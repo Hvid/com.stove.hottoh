@@ -14,6 +14,19 @@
   },
   "type": "number",
   "uiComponent": "slider",
+  "desc": {
+    "en": "Current power level of the stove (1-5, where 5 is maximum power).",
+    "da": "Aktuelt effektniveau for ovnen (1-5, hvor 5 er maksimal effekt).",
+    "nl": "Huidig vermogensniveau van de kachel (1-5, waarbij 5 maximaal vermogen is).",
+    "de": "Aktuelle Leistungsstufe des Ofens (1-5, wobei 5 maximale Leistung ist).",
+    "fr": "Niveau de puissance actuel du poêle (1-5, où 5 est la puissance maximale).",
+    "no": "Gjeldende effektnivå for ovnen (1-5, der 5 er maksimal effekt).",
+    "sv": "Aktuell effektnivå för kaminen (1-5, där 5 är maximal effekt).",
+    "fi": "Takan nykyinen tehotaso (1-5, jossa 5 on maksimiteho).",
+    "it": "Livello di potenza attuale della stufa (1-5, dove 5 è la potenza massima).",
+    "es": "Nivel de potencia actual de la estufa (1-5, donde 5 es potencia máxima).",
+    "pl": "Aktualny poziom mocy pieca (1-5, gdzie 5 to maksymalna moc)."
+  },
   "units": {
     "en": "level",
     "da": "niveau",

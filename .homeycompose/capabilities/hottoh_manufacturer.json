@@ -1,0 +1,20 @@
+{
+  "title": {
+    "en": "Manufacturer",
+    "da": "Producent",
+    "nl": "Fabrikant",
+    "de": "Hersteller",
+    "fr": "Fabricant",
+    "no": "Produsent",
+    "sv": "Tillverkare",
+    "fi": "Valmistaja",
+    "it": "Produttore",
+    "es": "Fabricante",
+    "pl": "Producent"
+  },
+  "type": "string",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "insights": false
+}

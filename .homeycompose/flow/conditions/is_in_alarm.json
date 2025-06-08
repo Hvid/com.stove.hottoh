@@ -1,0 +1,42 @@
+{
+  "id": "is_in_alarm",
+  "title": {
+    "en": "Stove is in alarm state",
+    "da": "Brændeovnen er i alarmtilstand",
+    "nl": "Pelletkachel is in alarmstatus",
+    "de": "Pelletofen ist im Alarmzustand",
+    "fr": "Le poêle est en état d'alarme",
+    "no": "Pelletskaminen er i alarmtilstand",
+    "sv": "Pelletskaminen är i larmtillstånd",
+    "fi": "Pellettitakka on hälytystilassa",
+    "it": "La stufa è in stato di allarme",
+    "es": "La estufa está en estado de alarma",
+    "pl": "Piec jest w stanie alarmu"
+  },
+  "titleFormatted": {
+    "en": "Stove is !{{in|not in}} alarm state",
+    "da": "Brændeovnen er !{{i|ikke i}} alarmtilstand",
+    "nl": "Pelletkachel is !{{in|niet in}} alarmstatus",
+    "de": "Pelletofen ist !{{im|nicht im}} Alarmzustand",
+    "fr": "Le poêle est !{{en|pas en}} état d'alarme",
+    "no": "Pelletskaminen er !{{i|ikke i}} alarmtilstand",
+    "sv": "Pelletskaminen är !{{i|inte i}} larmtillstånd",
+    "fi": "Pellettitakka on !{{hälytystilassa|ei hälytystilassa}}",
+    "it": "La stufa è !{{in|non in}} stato di allarme",
+    "es": "La estufa está !{{en|no en}} estado de alarma",
+    "pl": "Piec jest !{{w|nie w}} stanie alarmu"
+  },
+  "hint": {
+    "en": "Check if the stove is currently in an alarm state",
+    "da": "Kontrollerer om brændeovnen er i en alarmtilstand",
+    "nl": "Controleert of de pelletkachel in alarmstatus is",
+    "de": "Prüft, ob sich der Pelletofen im Alarmzustand befindet",
+    "fr": "Vérifie si le poêle est actuellement en état d'alarme",
+    "no": "Sjekker om pelletskaminen er i alarmtilstand",
+    "sv": "Kontrollerar om pelletskaminen är i larmtillstånd",
+    "fi": "Tarkistaa, onko pellettitakka hälytystilassa",
+    "it": "Controlla se la stufa è attualmente in stato di allarme",
+    "es": "Comprueba si la estufa está actualmente en estado de alarma",
+    "pl": "Sprawdza, czy piec jest w stanie alarmu"
+  }
+}

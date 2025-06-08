@@ -1,0 +1,42 @@
+{
+  "id": "stove_resumes_from_error",
+  "title": {
+    "en": "Stove resumes from error",
+    "da": "Brændeovnen genoptager efter fejl",
+    "nl": "Pelletkachel hervat na fout",
+    "de": "Pelletofen setzt nach Fehler fort",
+    "fr": "Le poêle reprend après erreur",
+    "no": "Pelletskaminen gjenopptar etter feil",
+    "sv": "Pelletskaminen återupptar efter fel",
+    "fi": "Pellettitakka jatkaa virheen jälkeen",
+    "it": "La stufa riprende dopo errore",
+    "es": "La estufa se recupera del error",
+    "pl": "Piec wznawia po błędzie"
+  },
+  "titleFormatted": {
+    "en": "Stove resumes from error state",
+    "da": "Brændeovnen genoptager efter fejltilstand",
+    "nl": "Pelletkachel hervat na foutstatus",
+    "de": "Pelletofen setzt nach Fehlerzustand fort",
+    "fr": "Le poêle reprend après état d'erreur",
+    "no": "Pelletskaminen gjenopptar etter feiltilstand",
+    "sv": "Pelletskaminen återupptar efter feltillstånd",
+    "fi": "Pellettitakka jatkaa virhetilan jälkeen",
+    "it": "La stufa riprende dopo stato di errore",
+    "es": "La estufa se recupera del estado de error",
+    "pl": "Piec wznawia po stanie błędu"
+  },
+  "hint": {
+    "en": "Triggered when the stove resumes normal operation after an error",
+    "da": "Udløses når brændeovnen genoptager normal drift efter en fejl",
+    "nl": "Wordt geactiveerd wanneer de pelletkachel normale werking hervat na een fout",
+    "de": "Wird ausgelöst, wenn der Pelletofen nach einem Fehler den normalen Betrieb wieder aufnimmt",
+    "fr": "Déclenché lorsque le poêle reprend son fonctionnement normal après une erreur",
+    "no": "Utløses når pelletskaminen gjenopptar normal drift etter en feil",
+    "sv": "Utlöses när pelletskaminen återupptar normal drift efter ett fel",
+    "fi": "Laukeaa, kun pellettitakka jatkaa normaalia toimintaa virheen jälkeen",
+    "it": "Attivato quando la stufa riprende il funzionamento normale dopo un errore",
+    "es": "Se activa cuando la estufa reanuda el funcionamiento normal después de un error",
+    "pl": "Uruchamiane, gdy piec wznawia normalną pracę po błędzie"
+  }
+}

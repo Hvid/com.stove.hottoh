@@ -15,75 +15,55 @@
   "class": "heater",
   "capabilities": [
     "onoff",
-    "hottoh_fan_speed",
     "target_temperature",
     "measure_temperature",
-    "hottoh_fumes",
+    "hottoh_fan_speed",
     "hottoh_power_level",
     "hottoh_smoke_temperature",
-    "hottoh_stove_state"
+    "hottoh_stove_state",
+    "hottoh_state_description",
+    "hottoh_firmware_version",
+    "hottoh_wifi_signal",
+    "hottoh_manufacturer",
+    "hottoh_stove_state_raw",
+    "hottoh_fumes",
+    "hottoh_last_error_code",
+    "hottoh_last_update_time"
   ],
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "lan"
-  ],
+  "platforms": ["local"],
+  "connectivity": ["lan"],
   "images": {
     "small": "{{driverAssetsPath}}/images/small.png",
     "large": "{{driverAssetsPath}}/images/large.png",
     "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
   },
-  "pair": [
-    { "id": "manual" },
-    { "id": "done", "template": "done" }
-  ],
-  "compatibility": {
-    "homey": ">=12.2.0"
-  },
+  "compatibility": { "homey": ">=12.2.0" },
   "mobile": {
     "components": [
-      { "id": "onoff" },
-      { "id": "target_temperature" },
-      { "id": "measure_temperature" },
-      { "id": "hottoh_fan_speed" },
-      { "id": "hottoh_fumes" },
-      { "id": "hottoh_power_level" },
-      { "id": "hottoh_smoke_temperature" },
-      { "id": "hottoh_stove_state" },
       {
-        "type": "label",
-        "label": {
-          "en": "Stove State",
-          "da": "Brændeovnens tilstand",
-          "nl": "Status pelletkachel",
-          "de": "Status des Pelletofens",
-          "fr": "État du poêle à granulés",
-          "no": "Pelletskaminens tilstand",
-          "sv": "Pelletskaminens tillstånd",
-          "fi": "Pellettitakan tila",
-          "it": "Stato della stufa a pellet",
-          "es": "Estado de la estufa de pellets",
-          "pl": "Stan pieca na pellet"
-        },
-        "value": {
-          "type": "capability",
-          "id": "hottoh_stove_state"
-        }
+        "id": "onoff",
+        "capabilities": ["onoff"]
+      },
+      {
+        "id": "sensor",
+        "capabilities": ["measure_temperature", "target_temperature"]
+      },
+      {
+        "id": "thermostat",
+        "capabilities": ["hottoh_power_level", "hottoh_fan_speed"]
+      },
+      {
+        "id": "sensor",
+        "capabilities": ["hottoh_fumes", "hottoh_smoke_temperature"]
+      },
+      {
+        "id": "sensor",
+        "capabilities": ["hottoh_stove_state"]
       }
     ]
   },
-  "description": {
-    "en": "Control your Hottoh pellet stove from Homey. Adjust power, fan speed, and temperature, and monitor the stove’s state for a smarter, more comfortable home.",
-    "da": "Styr din Hottoh pilleovn fra Homey. Juster effekt, blæserhastighed og temperatur, og overvåg ovnens tilstand for et smartere og mere behageligt hjem.",
-    "nl": "Bedien je Hottoh pelletkachel vanuit Homey. Pas vermogen, ventilatorsnelheid en temperatuur aan en monitor de status van de kachel voor een slimmer en comfortabeler huis.",
-    "de": "Steuern Sie Ihren Hottoh Pelletofen mit Homey. Passen Sie Leistung, Lüftergeschwindigkeit und Temperatur an und überwachen Sie den Ofenzustand für ein intelligenteres und komfortableres Zuhause.",
-    "fr": "Contrôlez votre poêle à granulés Hottoh depuis Homey. Ajustez la puissance, la vitesse du ventilateur et la température, et surveillez l’état du poêle pour une maison plus intelligente et confortable.",
-    "no": "Styr din Hottoh pelletskamin fra Homey. Juster effekt, viftehastighet og temperatur, og overvåk ovnens tilstand for et smartere og mer behagelig hjem.",
-    "sv": "Styr din Hottoh pelletskamin från Homey. Justera effekt, fläkthastighet och temperatur och övervaka kaminens tillstånd för ett smartare och mer behagligt hem.",
-    "fi": "Ohjaa Hottoh pellettitakkaasi Homeyn kautta. Säädä tehoa, puhaltimen nopeutta ja lämpötilaa sekä seuraa takan tilaa älykkäämpää ja mukavampaa kotia varten.",
-    "it": "Controlla la tua stufa a pellet Hottoh da Homey. Regola potenza, velocità della ventola e temperatura e monitora lo stato della stufa per una casa più intelligente e confortevole.",
-    "es": "Controla tu estufa de pellets Hottoh desde Homey. Ajusta la potencia, la velocidad del ventilador y la temperatura, y monitoriza el estado de la estufa para un hogar más inteligente y cómodo.",
-    "pl": "Steruj piecem na pellet Hottoh z poziomu Homey. Reguluj moc, prędkość wentylatora i temperaturę oraz monitoruj stan pieca dla inteligentniejszego i bardziej komfortowego domu."
-  }
+  "pair": [
+    { "id": "manual" },
+    { "id": "done", "template": "done" }
+  ]
 }

@@ -1,27 +1,73 @@
 {
+  "id": "set_target_temperature",
   "title": {
     "en": "Set target temperature",
-    "da": "Indstil måltemperatur"
+    "da": "Indstil måltemperatur",
+    "nl": "Stel doeltemperatuur in",
+    "de": "Zieltemperatur einstellen",
+    "fr": "Définir la température cible",
+    "no": "Still inn måltemperatur",
+    "sv": "Ställ in måltemperatur",
+    "fi": "Aseta tavoitelämpötila",
+    "it": "Imposta temperatura target",
+    "es": "Establecer temperatura objetivo",
+    "pl": "Ustaw temperaturę docelową"
   },
   "hint": {
-    "en": "Sets the stove's target temperature.",
-    "da": "Indstiller brændeovnens måltemperatur."
+    "en": "Sets the target temperature for the stove",
+    "da": "Indstiller måltemperaturen for brændeovnen",
+    "nl": "Stelt de doeltemperatuur in voor de kachel",
+    "de": "Stellt die Zieltemperatur für den Kamin ein",
+    "fr": "Définit la température cible pour le poêle",
+    "no": "Stiller inn måltemperaturen for kaminen",
+    "sv": "Ställer in måltemperaturen för kaminen",
+    "fi": "Asettaa takan tavoitelämpötilan",
+    "it": "Imposta la temperatura target per la stufa",
+    "es": "Establece la temperatura objetivo para la estufa",
+    "pl": "Ustawia temperaturę docelową dla pieca"
   },
   "titleFormatted": {
-    "en": "Set target temperature to [[temperature]]°C",
-    "da": "Indstil måltemperatur til [[temperature]]°C"
+    "en": "Set target temperature to [[temperature]] °C",
+    "da": "Indstil måltemperatur til [[temperature]] °C",
+    "nl": "Stel doeltemperatuur in op [[temperature]] °C",
+    "de": "Zieltemperatur auf [[temperature]] °C einstellen",
+    "fr": "Définir la température cible à [[temperature]] °C",
+    "no": "Still inn måltemperatur til [[temperature]] °C",
+    "sv": "Ställ in måltemperatur till [[temperature]] °C",
+    "fi": "Aseta tavoitelämpötila arvoon [[temperature]] °C",
+    "it": "Imposta temperatura target a [[temperature]] °C",
+    "es": "Establecer temperatura objetivo a [[temperature]] °C",
+    "pl": "Ustaw temperaturę docelową na [[temperature]] °C"
   },
   "args": [
     {
       "type": "number",
       "name": "temperature",
       "title": {
-        "en": "Target temperature",
-        "da": "Måltemperatur"
+        "en": "Temperature",
+        "da": "Temperatur",
+        "nl": "Temperatuur",
+        "de": "Temperatur",
+        "fr": "Température",
+        "no": "Temperatur",
+        "sv": "Temperatur",
+        "fi": "Lämpötila",
+        "it": "Temperatura",
+        "es": "Temperatura",
+        "pl": "Temperatura"
       },
       "placeholder": {
-        "en": "e.g. 21.5",
-        "da": "f.eks. 21,5"
+        "en": "20.0",
+        "da": "20,0",
+        "nl": "20,0",
+        "de": "20,0",
+        "fr": "20,0",
+        "no": "20,0",
+        "sv": "20,0",
+        "fi": "20,0",
+        "it": "20,0",
+        "es": "20,0",
+        "pl": "20,0"
       }
     }
   ],

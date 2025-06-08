@@ -1,0 +1,45 @@
+{
+  "title": {
+    "en": "Last Update Time",
+    "da": "Sidste opdateringstid",
+    "nl": "Laatste update tijd",
+    "de": "Letzte Aktualisierungszeit",
+    "fr": "Heure de la dernière mise à jour",
+    "no": "Siste oppdateringstid",
+    "sv": "Senaste uppdateringstid",
+    "fi": "Viimeisin päivitysaika",
+    "it": "Ultimo aggiornamento",
+    "es": "Hora de la última actualización",
+    "pl": "Czas ostatniej aktualizacji"
+  },
+  "type": "number",
+  "uiComponent": "sensor",
+  "desc": {
+    "en": "Timestamp of the last successful data poll from the stove.",
+    "da": "Tidsstempel for den seneste vellykkede dataopdatering fra ovnen.",
+    "nl": "Tijdstip van de laatste succesvolle gegevenspoll van de kachel.",
+    "de": "Zeitstempel der letzten erfolgreichen Datenabfrage vom Ofen.",
+    "fr": "Horodatage de la dernière collecte de données réussie du poêle.",
+    "no": "Tidsstempel for siste vellykkede dataoppdatering fra ovnen.",
+    "sv": "Tidsstämpel för den senaste lyckade datainsamlingen från kaminen.",
+    "fi": "Ajanleima viimeisimmästä onnistuneesta tiedonhausta takasta.",
+    "it": "Timestamp dell'ultimo recupero dati riuscito dalla stufa.",
+    "es": "Marca de tiempo de la última recopilación de datos exitosa de la estufa.",
+    "pl": "Znacznik czasu ostatniego udanego odczytu danych z pieca."
+  },
+  "units": {
+    "en": "timestamp",
+    "da": "tidsstempel",
+    "nl": "tijdstempel",
+    "de": "Zeitstempel",
+    "fr": "horodatage",
+    "no": "tidsstempel",
+    "sv": "tidsstämpel",
+    "fi": "aikaleima",
+    "it": "timestamp",
+    "es": "marca de tiempo",
+    "pl": "znacznik czasu"
+  },
+  "getable": true,
+  "setable": false
+}

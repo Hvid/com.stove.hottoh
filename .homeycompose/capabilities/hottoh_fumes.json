@@ -14,6 +14,19 @@
   },
   "type": "number",
   "uiComponent": "sensor",
+  "desc": {
+    "en": "Concentration of smoke particles in the exhaust. Higher values indicate less efficient combustion.",
+    "da": "Koncentration af røgpartikler i udstødningen. Højere værdier indikerer mindre effektiv forbrænding.",
+    "nl": "Concentratie rookdeeltjes in de uitlaat. Hogere waarden duiden op minder efficiënte verbranding.",
+    "de": "Konzentration von Rauchpartikeln im Abgas. Höhere Werte zeigen eine weniger effiziente Verbrennung an.",
+    "fr": "Concentration de particules de fumée dans l'échappement. Des valeurs plus élevées indiquent une combustion moins efficace.",
+    "no": "Konsentrasjon av røykpartikler i avgassen. Høyere verdier indikerer mindre effektiv forbrenning.",
+    "sv": "Koncentration av rökpartiklar i avgaserna. Högre värden indikerar mindre effektiv förbränning.",
+    "fi": "Savuhiukkasten pitoisuus pakokaasussa. Korkeammat arvot viittaavat vähemmän tehokkaaseen palamiseen.",
+    "it": "Concentrazione di particelle di fumo nei gas di scarico. Valori più alti indicano una combustione meno efficiente.",
+    "es": "Concentración de partículas de humo en el escape. Valores más altos indican una combustión menos eficiente.",
+    "pl": "Stężenie cząstek dymu w spalinach. Wyższe wartości wskazują na mniej wydajne spalanie."
+  },
   "units": {
     "en": "g/m³",
     "da": "g/m³",

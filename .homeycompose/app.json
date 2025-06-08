@@ -243,6 +243,10 @@
   "changelog": {
     "en": [
       {
+        "version": "1.0.1",
+        "description": "Bug fixes and improvements for stove state handling"
+      },
+      {
         "version": "1.0.0",
         "description": "Initial release with support for Hottoh stoves."
       }

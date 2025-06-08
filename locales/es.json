@@ -1,16 +1,119 @@
 {
+  "capability": {
+    "error_code": "Código de error",
+    "firmware_version": "Versión de firmware",
+    "last_update": "Última actualización",
+    "manufacturer": "Fabricante",
+    "phase": "Fase de la estufa",
+    "state_description": "Descripción del estado",
+    "stove_state_raw": "Estado de la estufa (crudo)",
+    "substate": "Subestado de la estufa",
+    "wifi_signal": "Señal WiFi"
+  },
+  "diagnostics": {
+    "composite_state": "Estado compuesto",
+    "error_code": "Código de error",
+    "firmware": "Versión de firmware",
+    "last_update": "Última actualización",
+    "manufacturer": "Fabricante",
+    "phase": "Fase",
+    "raw_state": "Estado crudo",
+    "state_description": "Descripción del estado",
+    "substate": "Subestado",
+    "wifi_signal": "Señal WiFi (dBm)"
+  },
+  "error": {
+    "alarm": "Estado de alarma/error",
+    "invalid_phase": "Fase no válida o desconocida",
+    "invalid_state": "Estado no válido o desconocido",
+    "invalid_substate": "Subestado no válido o desconocido",
+    "resume": "Reanudado tras error",
+    "unreachable": "Dispositivo inalcanzable"
+  },
+  "flow": {
+    "hottoh_stove_state": "Estado de la estufa de pellets cambiado",
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Nuevo estado"
+      }
+    },
+    "is_in_phase": "La estufa está en fase",
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Fase"
+      }
+    },
+    "is_stove_on": "La estufa de pellets está encendida",
+    "set_target_temperature": {
+      "args": {
+        "temperature": {
+          "title": "Temperatura objetivo"
+        }
+      },
+      "title": "Establecer temperatura objetivo"
+    },
+    "stove_enters_alarm": "La estufa entra en estado de alarma/error",
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Código de error"
+      }
+    },
+    "stove_resumes_from_error": "La estufa se reanuda tras error",
+    "stove_unreachable": "Estufa de pellets inalcanzable",
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minutos inalcanzable"
+      }
+    },
+    "target_temperature_reached": "La estufa alcanza la temperatura objetivo",
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Temperatura ambiente"
+      }
+    },
+    "turn_off_stove": "Apagar estufa de pellets",
+    "turn_on_stove": "Encender estufa de pellets"
+  },
   "pair": {
     "manual": {
-      "title": "Agregar estufa de pellets manualmente",
-      "desc": "Ingrese la dirección IP y el puerto de su estufa de pellets para conectarla a Homey.",
+      "continue": "Continuar",
+      "desc": "Introduce la dirección IP y el puerto de tu estufa de pellets para conectarla a Homey.",
+      "error_connect": "No se pudo conectar con la estufa de pellets. Verifica la dirección IP y el puerto.",
+      "error_invalid": "Introduce un número de puerto válido (1-65535).",
+      "error_missing": "Por favor, introduce la dirección IP y el puerto.",
       "ip_label": "Dirección IP",
       "port_label": "Puerto",
       "submit": "Agregar estufa de pellets",
-      "continue": "Continuar",
-      "success": "¡Estufa de pellets agregada! Haga clic en Continuar para finalizar.",
-      "error_missing": "Por favor, ingrese la dirección IP y el puerto.",
-      "error_connect": "No se pudo conectar con la estufa de pellets. Verifique la dirección IP y el puerto.",
-      "error_invalid": "Ingrese un número de puerto válido (1-65535)."
+      "success": "¡Estufa de pellets agregada! Haz clic en Continuar para finalizar.",
+      "title": "Agregar estufa de pellets manualmente"
     }
+  },
+  "phase": {
+    "0": "Reposo",
+    "1": "Encendido",
+    "2": "Calentando",
+    "3": "Limpieza",
+    "4": "Enfriando",
+    "5": "Cargando"
+  },
+  "state": {
+    "alarm": "Alarma/Error",
+    "cleaning": "Limpieza",
+    "cooling": "Enfriando",
+    "ignition": "Fase de encendido",
+    "loading": "Cargando pellets",
+    "modulation": "Modulación",
+    "off": "Apagada",
+    "on": "En funcionamiento",
+    "standby": "En espera",
+    "test": "Modo de prueba",
+    "unknown": "Desconocido"
+  },
+  "substate": {
+    "0": "Ninguno",
+    "1": "Precalentamiento",
+    "2": "Combustión",
+    "3": "Eliminación de cenizas",
+    "4": "Alimentación de pellets"
   }
 }

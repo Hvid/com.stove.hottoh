@@ -12,5 +12,108 @@
       "error_connect": "Yhteyttä pellettitakkaan ei voitu muodostaa. Tarkista IP-osoite ja portti.",
       "error_invalid": "Anna kelvollinen porttinumero (1-65535)."
     }
+  },
+  "state": {
+    "off": "Pois päältä",
+    "ignition": "Sytytysvaihe",
+    "on": "Käynnissä",
+    "modulation": "Modulointi",
+    "cleaning": "Puhdistus",
+    "alarm": "Hälytys/Virhe",
+    "cooling": "Jäähdytys",
+    "standby": "Valmiustila",
+    "loading": "Ladataan pellettejä",
+    "test": "Testitila",
+    "unknown": "Tuntematon"
+  },
+  "phase": {
+    "0": "Lepotila",
+    "1": "Sytytys",
+    "2": "Lämmitys",
+    "3": "Puhdistus",
+    "4": "Jäähdytys",
+    "5": "Lataus"
+  },
+  "substate": {
+    "0": "Ei mitään",
+    "1": "Esilämmitys",
+    "2": "Poltto",
+    "3": "Tuhkan poisto",
+    "4": "Pellettisyöttö"
+  },
+  "capability": {
+    "firmware_version": "Laiteohjelmistoversio",
+    "manufacturer": "Valmistaja",
+    "wifi_signal": "WiFi-signaali",
+    "error_code": "Virhekoodi",
+    "phase": "Takan vaihe",
+    "substate": "Takan alavaihe",
+    "last_update": "Viimeisin päivitys",
+    "state_description": "Tilakuvaus",
+    "stove_state_raw": "Takan tila (raaka)"
+  },
+  "flow": {
+    "hottoh_stove_state": "Pellettitakan tila muuttunut",
+    "stove_enters_alarm": "Pellettitakka siirtyy hälytys-/virhetilaan",
+    "stove_resumes_from_error": "Pellettitakka jatkaa virheen jälkeen",
+    "stove_unreachable": "Pellettitakka tavoittamattomissa",
+    "target_temperature_reached": "Pellettitakka saavuttaa tavoitelämpötilan",
+    "is_stove_on": "Pellettitakka on päällä",
+    "is_in_phase": "Pellettitakka on vaiheessa",
+    "turn_on_stove": "Kytke pellettitakka päälle",
+    "turn_off_stove": "Sammuta pellettitakka",
+    "set_target_temperature": {
+      "title": "Aseta tavoitelämpötila",
+      "args": {
+        "temperature": {
+          "title": "Tavoitelämpötila"
+        }
+      }
+    },
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Virhekoodi"
+      }
+    },
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minuuttia tavoittamattomissa"
+      }
+    },
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Huonelämpötila"
+      }
+    },
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Vaihe"
+      }
+    },
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Uusi tila"
+      }
+    }
+  },
+  "diagnostics": {
+    "firmware": "Laiteohjelmistoversio",
+    "manufacturer": "Valmistaja",
+    "wifi_signal": "WiFi-signaali (dBm)",
+    "raw_state": "Raakatila",
+    "composite_state": "Yhdistetty tila",
+    "error_code": "Virhekoodi",
+    "phase": "Vaihe",
+    "substate": "Alavaihe",
+    "last_update": "Viimeisin päivitys",
+    "state_description": "Tilakuvaus"
+  },
+  "error": {
+    "unreachable": "Laite tavoittamattomissa",
+    "alarm": "Hälytys-/virhetila",
+    "resume": "Jatkettu virheen jälkeen",
+    "invalid_state": "Virheellinen tai tuntematon tila",
+    "invalid_phase": "Virheellinen tai tuntematon vaihe",
+    "invalid_substate": "Virheellinen tai tuntematon alavaihe"
   }
 }

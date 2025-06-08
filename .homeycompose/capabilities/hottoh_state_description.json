@@ -1,0 +1,32 @@
+{
+  "title": {
+    "en": "State Description",
+    "da": "Tilstandsbeskrivelse",
+    "nl": "Statusbeschrijving",
+    "de": "Statusbeschreibung",
+    "fr": "Description de l'état",
+    "no": "Tilstandsbeskrivelse",
+    "sv": "Tillståndsbeskrivning",
+    "fi": "Tilankuvaus",
+    "it": "Descrizione stato",
+    "es": "Descripción del estado",
+    "pl": "Opis stanu"
+  },
+  "type": "string",
+  "uiComponent": "sensor",
+  "desc": {
+    "en": "Human-readable description of the current stove state.",
+    "da": "Menneskeligt læsbar beskrivelse af den aktuelle ovntilstand.",
+    "nl": "Menselijk leesbare beschrijving van de huidige kachelstatus.",
+    "de": "Menschenlesbare Beschreibung des aktuellen Ofenzustands.",
+    "fr": "Description lisible de l'état actuel du poêle.",
+    "no": "Menneskelesbar beskrivelse av gjeldende ovnstilstand.",
+    "sv": "Mänskligt läsbar beskrivning av nuvarande kamintillstånd.",
+    "fi": "Ihmisen luettavissa oleva kuvaus nykyisestä takan tilasta.",
+    "it": "Descrizione leggibile dello stato attuale della stufa.",
+    "es": "Descripción legible del estado actual de la estufa.",
+    "pl": "Opis aktualnego stanu pieca w formie czytelnej dla człowieka."
+  },
+  "getable": true,
+  "setable": false
+}

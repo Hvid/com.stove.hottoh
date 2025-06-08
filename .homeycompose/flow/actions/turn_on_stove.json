@@ -1,11 +1,43 @@
 {
+  "id": "turn_on_stove",
   "title": {
     "en": "Turn on stove",
-    "da": "Tænd brændeovn"
+    "da": "Tænd brændeovn",
+    "nl": "Zet pelletkachel aan",
+    "de": "Pelletofen einschalten",
+    "fr": "Allumer le poêle",
+    "no": "Slå på pelletskamin",
+    "sv": "Slå på pelletskamin",
+    "fi": "Kytke pellettitakka päälle",
+    "it": "Accendi la stufa",
+    "es": "Encender estufa",
+    "pl": "Włącz piec"
+  },
+  "titleFormatted": {
+    "en": "Turn on stove",
+    "da": "Tænd brændeovn",
+    "nl": "Zet pelletkachel aan",
+    "de": "Pelletofen einschalten",
+    "fr": "Allumer le poêle",
+    "no": "Slå på pelletskamin",
+    "sv": "Slå på pelletskamin",
+    "fi": "Kytke pellettitakka päälle",
+    "it": "Accendi la stufa",
+    "es": "Encender estufa",
+    "pl": "Włącz piec"
   },
   "hint": {
-    "en": "Turns the stove on.",
-    "da": "Tænder brændeovnen."
+    "en": "Turns on the stove",
+    "da": "Tænder brændeovnen",
+    "nl": "Zet de pelletkachel aan",
+    "de": "Schaltet den Pelletofen ein",
+    "fr": "Allume le poêle",
+    "no": "Slår på pelletskaminen",
+    "sv": "Slår på pelletskaminen",
+    "fi": "Kytkee pellettitakan päälle",
+    "it": "Accende la stufa",
+    "es": "Enciende la estufa",
+    "pl": "Włącza piec"
   },
   "args": [],
   "tokens": []

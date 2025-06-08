@@ -1,11 +1,43 @@
 {
+  "id": "turn_off_stove",
   "title": {
     "en": "Turn off stove",
-    "da": "Sluk brændeovn"
+    "da": "Sluk brændeovn",
+    "nl": "Zet pelletkachel uit",
+    "de": "Pelletofen ausschalten",
+    "fr": "Éteindre le poêle",
+    "no": "Slå av pelletskamin",
+    "sv": "Stäng av pelletskamin",
+    "fi": "Sammuta pellettitakka",
+    "it": "Spegni la stufa",
+    "es": "Apagar estufa",
+    "pl": "Wyłącz piec"
+  },
+  "titleFormatted": {
+    "en": "Turn off stove",
+    "da": "Sluk brændeovn",
+    "nl": "Zet pelletkachel uit",
+    "de": "Pelletofen ausschalten",
+    "fr": "Éteindre le poêle",
+    "no": "Slå av pelletskamin",
+    "sv": "Stäng av pelletskamin",
+    "fi": "Sammuta pellettitakka",
+    "it": "Spegni la stufa",
+    "es": "Apagar estufa",
+    "pl": "Wyłącz piec"
   },
   "hint": {
-    "en": "Turns the stove off.",
-    "da": "Slukker brændeovnen."
+    "en": "Turns off the stove",
+    "da": "Slukker brændeovnen",
+    "nl": "Zet de pelletkachel uit",
+    "de": "Schaltet den Pelletofen aus",
+    "fr": "Éteint le poêle",
+    "no": "Slår av pelletskaminen",
+    "sv": "Stänger av pelletskaminen",
+    "fi": "Sammuttaa pellettitakan",
+    "it": "Spegne la stufa",
+    "es": "Apaga la estufa",
+    "pl": "Wyłącza piec"
   },
   "args": [],
   "tokens": []

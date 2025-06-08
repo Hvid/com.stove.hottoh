@@ -2,7 +2,7 @@
   "pair": {
     "manual": {
       "title": "Dodaj piec na pellet ręcznie",
-      "desc": "Wprowadź adres IP i port pieca na pellet, aby połączyć go z Homey.",
+      "desc": "Wprowadź adres IP i port swojego pieca na pellet, aby połączyć go z Homey.",
       "ip_label": "Adres IP",
       "port_label": "Port",
       "submit": "Dodaj piec na pellet",
@@ -12,5 +12,108 @@
       "error_connect": "Nie można połączyć się z piecem na pellet. Sprawdź adres IP i port.",
       "error_invalid": "Wprowadź prawidłowy numer portu (1-65535)."
     }
+  },
+  "state": {
+    "off": "Wyłączony",
+    "ignition": "Faza zapłonu",
+    "on": "Włączony",
+    "modulation": "Modulacja",
+    "cleaning": "Czyszczenie",
+    "alarm": "Alarm/Błąd",
+    "cooling": "Chłodzenie",
+    "standby": "Tryb czuwania",
+    "loading": "Ładowanie pelletu",
+    "test": "Tryb testowy",
+    "unknown": "Nieznany"
+  },
+  "phase": {
+    "0": "Bezczynny",
+    "1": "Zapłon",
+    "2": "Ogrzewanie",
+    "3": "Czyszczenie",
+    "4": "Chłodzenie",
+    "5": "Ładowanie"
+  },
+  "substate": {
+    "0": "Brak",
+    "1": "Podgrzewanie wstępne",
+    "2": "Spalanie",
+    "3": "Usuwanie popiołu",
+    "4": "Podawanie pelletu"
+  },
+  "capability": {
+    "firmware_version": "Wersja oprogramowania",
+    "manufacturer": "Producent",
+    "wifi_signal": "Sygnał WiFi",
+    "error_code": "Kod błędu",
+    "phase": "Faza pieca",
+    "substate": "Podstan pieca",
+    "last_update": "Ostatnia aktualizacja",
+    "state_description": "Opis stanu",
+    "stove_state_raw": "Stan pieca (surowy)"
+  },
+  "flow": {
+    "hottoh_stove_state": "Stan pieca na pellet zmieniony",
+    "stove_enters_alarm": "Piec wchodzi w stan alarmu/błędu",
+    "stove_resumes_from_error": "Piec wznawia po błędzie",
+    "stove_unreachable": "Piec na pellet nieosiągalny",
+    "target_temperature_reached": "Piec osiąga temperaturę docelową",
+    "is_stove_on": "Piec na pellet jest włączony",
+    "is_in_phase": "Piec jest w fazie",
+    "turn_on_stove": "Włącz piec na pellet",
+    "turn_off_stove": "Wyłącz piec na pellet",
+    "set_target_temperature": {
+      "title": "Ustaw temperaturę docelową",
+      "args": {
+        "temperature": {
+          "title": "Temperatura docelowa"
+        }
+      }
+    },
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Kod błędu"
+      }
+    },
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minuty nieosiągalny"
+      }
+    },
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Temperatura w pomieszczeniu"
+      }
+    },
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Faza"
+      }
+    },
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Nowy stan"
+      }
+    }
+  },
+  "diagnostics": {
+    "firmware": "Wersja oprogramowania",
+    "manufacturer": "Producent",
+    "wifi_signal": "Sygnał WiFi (dBm)",
+    "raw_state": "Stan surowy",
+    "composite_state": "Stan złożony",
+    "error_code": "Kod błędu",
+    "phase": "Faza",
+    "substate": "Podstan",
+    "last_update": "Ostatnia aktualizacja",
+    "state_description": "Opis stanu"
+  },
+  "error": {
+    "unreachable": "Urządzenie nieosiągalne",
+    "alarm": "Stan alarmu/błędu",
+    "resume": "Wznowiono po błędzie",
+    "invalid_state": "Nieprawidłowy lub nieznany stan",
+    "invalid_phase": "Nieprawidłowa lub nieznana faza",
+    "invalid_substate": "Nieprawidłowy lub nieznany podstan"
   }
 }

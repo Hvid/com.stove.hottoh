@@ -1,0 +1,20 @@
+{
+  "title": {
+    "en": "Stove State (Raw)",
+    "da": "Ovnens tilstand (rå)",
+    "nl": "Kachelstatus (ruw)",
+    "de": "Ofenzustand (roh)",
+    "fr": "État du poêle (brut)",
+    "no": "Ovnstilstand (rå)",
+    "sv": "Kamintillstånd (rå)",
+    "fi": "Takan tila (raaka)",
+    "it": "Stato stufa (grezzo)",
+    "es": "Estado de la estufa (crudo)",
+    "pl": "Stan pieca (surowy)"
+  },
+  "type": "string",
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "insights": false
+}

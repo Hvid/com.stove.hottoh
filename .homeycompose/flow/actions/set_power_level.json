@@ -1,12 +1,12 @@
 {
   "id": "set_power_level",
   "title": {
-    "en": "Set Power Level",
+    "en": "Set power level",
     "da": "Indstil effektniveau",
     "nl": "Stel vermogensniveau in",
     "de": "Leistungsstufe einstellen",
-    "fr": "Définir le niveau de puissance",
-    "no": "Sett effektnivå",
+    "fr": "Régler le niveau de puissance",
+    "no": "Still inn effektnivå",
     "sv": "Ställ in effektnivå",
     "fi": "Aseta tehotaso",
     "it": "Imposta livello di potenza",
@@ -14,16 +14,16 @@
     "pl": "Ustaw poziom mocy"
   },
   "titleFormatted": {
-    "en": "Set Power Level to [[level]]",
+    "en": "Set power level to [[level]]",
     "da": "Indstil effektniveau til [[level]]",
     "nl": "Stel vermogensniveau in op [[level]]",
-    "de": "Leistungsstufe einstellen auf [[level]]",
-    "fr": "Définir le niveau de puissance à [[level]]",
-    "no": "Sett effektnivå til [[level]]",
+    "de": "Leistungsstufe auf [[level]] einstellen",
+    "fr": "Régler le niveau de puissance à [[level]]",
+    "no": "Still inn effektnivå til [[level]]",
     "sv": "Ställ in effektnivå till [[level]]",
     "fi": "Aseta tehotaso arvoon [[level]]",
     "it": "Imposta livello di potenza a [[level]]",
-    "es": "Establecer nivel de potencia en [[level]]",
+    "es": "Establecer nivel de potencia a [[level]]",
     "pl": "Ustaw poziom mocy na [[level]]"
   },
   "args": [
@@ -31,7 +31,7 @@
       "name": "level",
       "type": "number",
       "title": {
-        "en": "Power Level",
+        "en": "Power level",
         "da": "Effektniveau",
         "nl": "Vermogensniveau",
         "de": "Leistungsstufe",

@@ -77,6 +77,10 @@
   "changelog": {
     "en": [
       {
+        "version": "1.0.1",
+        "description": "Bug fixes and improvements for stove state handling"
+      },
+      {
         "version": "1.0.0",
         "description": "Initial release with support for Hottoh stoves."
       }
@@ -100,24 +104,34 @@
           "pl": "Prędkość wentylatora zmieniona"
         },
         "titleFormatted": {
-          "en": "Fan speed changed to [[speed]]"
+          "en": "Fan speed changed to [[speed]]",
+          "da": "Blæserhastighed ændret til [[speed]]",
+          "nl": "Ventilatorsnelheid gewijzigd naar [[speed]]",
+          "de": "Lüftergeschwindigkeit geändert zu [[speed]]",
+          "fr": "Vitesse du ventilateur modifiée à [[speed]]",
+          "no": "Viftehastighet endret til [[speed]]",
+          "sv": "Fläkthastighet ändrad till [[speed]]",
+          "fi": "Puhaltimen nopeus muuttunut arvoon [[speed]]",
+          "it": "Velocità ventola cambiata a [[speed]]",
+          "es": "Velocidad del ventilador cambiada a [[speed]]",
+          "pl": "Prędkość wentylatora zmieniona na [[speed]]"
         },
         "args": [
           {
             "name": "speed",
             "type": "number",
             "title": {
-              "en": "New Fan Speed",
-              "da": "Ny blæserhastighed",
-              "nl": "Nieuwe ventilatorsnelheid",
-              "de": "Neue Lüftergeschwindigkeit",
-              "fr": "Nouvelle vitesse du ventilateur",
-              "no": "Ny viftehastighet",
-              "sv": "Ny fläkthastighet",
-              "fi": "Uusi puhaltimen nopeus",
-              "it": "Nuova velocità ventola",
-              "es": "Nueva velocidad del ventilador",
-              "pl": "Nowa prędkość wentylatora"
+              "en": "Fan speed",
+              "da": "Blæserhastighed",
+              "nl": "Ventilatorsnelheid",
+              "de": "Lüftergeschwindigkeit",
+              "fr": "Vitesse du ventilateur",
+              "no": "Viftehastighet",
+              "sv": "Fläkthastighet",
+              "fi": "Puhaltimen nopeus",
+              "it": "Velocità ventola",
+              "es": "Velocidad del ventilador",
+              "pl": "Prędkość wentylatora"
             },
             "min": 1,
             "max": 5
@@ -128,39 +142,49 @@
         "id": "mode_changed",
         "title": {
           "en": "Stove mode changed",
-          "da": "Brændeovnens tilstand ændret",
-          "nl": "Pelletkachelmodus gewijzigd",
-          "de": "Modus des Pelletofens geändert",
+          "da": "Ovnens tilstand ændret",
+          "nl": "Kachelmodus gewijzigd",
+          "de": "Kaminmodus geändert",
           "fr": "Mode du poêle modifié",
-          "no": "Pelletskaminens modus endret",
-          "sv": "Pelletskaminens läge ändrat",
-          "fi": "Pellettitakan tila muuttunut",
+          "no": "Kaminmodus endret",
+          "sv": "Kaminläge ändrat",
+          "fi": "Takan tila muuttunut",
           "it": "Modalità stufa cambiata",
           "es": "Modo de la estufa cambiado",
-          "pl": "Tryb pieca zmieniony"
+          "pl": "Zmieniono tryb pieca"
+        },
+        "titleFormatted": {
+          "en": "Stove mode changed to [[mode]]",
+          "da": "Ovnens tilstand ændret til [[mode]]",
+          "nl": "Kachelmodus gewijzigd naar [[mode]]",
+          "de": "Kaminmodus geändert zu [[mode]]",
+          "fr": "Mode du poêle modifié à [[mode]]",
+          "no": "Kaminmodus endret til [[mode]]",
+          "sv": "Kaminläge ändrat till [[mode]]",
+          "fi": "Takan tila muuttunut arvoon [[mode]]",
+          "it": "Modalità stufa cambiata a [[mode]]",
+          "es": "Modo de la estufa cambiado a [[mode]]",
+          "pl": "Tryb pieca zmieniony na [[mode]]"
         },
         "args": [
           {
             "name": "mode",
             "type": "text",
             "title": {
-              "en": "New Mode",
-              "da": "Ny tilstand",
-              "nl": "Nieuwe modus",
-              "de": "Neuer Modus",
-              "fr": "Nouveau mode",
-              "no": "Ny modus",
-              "sv": "Nytt läge",
-              "fi": "Uusi tila",
-              "it": "Nuova modalità",
-              "es": "Nuevo modo",
-              "pl": "Nowy tryb"
+              "en": "Mode",
+              "da": "Tilstand",
+              "nl": "Modus",
+              "de": "Modus",
+              "fr": "Mode",
+              "no": "Modus",
+              "sv": "Läge",
+              "fi": "Tila",
+              "it": "Modalità",
+              "es": "Modo",
+              "pl": "Tryb"
             }
           }
-        ],
-        "titleFormatted": {
-          "en": "Mode changed to [[mode]]"
-        }
+        ]
       },
       {
         "id": "power_level_changed",
@@ -175,27 +199,37 @@
           "fi": "Tehotaso muuttunut",
           "it": "Livello di potenza cambiato",
           "es": "Nivel de potencia cambiado",
-          "pl": "Poziom mocy zmieniony"
+          "pl": "Zmieniono poziom mocy"
         },
         "titleFormatted": {
-          "en": "Power level changed to [[level]]"
+          "en": "Power level changed to [[level]]",
+          "da": "Effektniveau ændret til [[level]]",
+          "nl": "Vermogensniveau gewijzigd naar [[level]]",
+          "de": "Leistungsstufe geändert zu [[level]]",
+          "fr": "Niveau de puissance modifié à [[level]]",
+          "no": "Effektnivå endret til [[level]]",
+          "sv": "Effektnivå ändrad till [[level]]",
+          "fi": "Tehotaso muuttunut arvoon [[level]]",
+          "it": "Livello di potenza cambiato a [[level]]",
+          "es": "Nivel de potencia cambiado a [[level]]",
+          "pl": "Poziom mocy zmieniony na [[level]]"
         },
         "args": [
           {
             "name": "level",
             "type": "number",
             "title": {
-              "en": "New Power Level",
-              "da": "Nyt effektniveau",
-              "nl": "Nieuw vermogensniveau",
-              "de": "Neue Leistungsstufe",
-              "fr": "Nouveau niveau de puissance",
-              "no": "Nytt effektnivå",
-              "sv": "Nytt effektnivå",
-              "fi": "Uusi tehotaso",
-              "it": "Nuovo livello di potenza",
-              "es": "Nuevo nivel de potencia",
-              "pl": "Nowy poziom mocy"
+              "en": "Power level",
+              "da": "Effektniveau",
+              "nl": "Vermogensniveau",
+              "de": "Leistungsstufe",
+              "fr": "Niveau de puissance",
+              "no": "Effektnivå",
+              "sv": "Effektnivå",
+              "fi": "Tehotaso",
+              "it": "Livello di potenza",
+              "es": "Nivel de potencia",
+              "pl": "Poziom mocy"
             },
             "min": 1,
             "max": 5
@@ -203,16 +237,129 @@
         ]
       },
       {
+        "id": "stove_enters_alarm",
         "title": {
-          "en": "Stove state changed",
-          "da": "Brændeovnens tilstand ændret"
-        },
-        "hint": {
-          "en": "Triggers when a stove state changes.",
-          "da": "Udløses når brændeovnens tilstand ændres."
+          "en": "Stove enters alarm state",
+          "da": "Brændeovnen går i alarmtilstand",
+          "nl": "Pelletkachel gaat naar alarmstatus",
+          "de": "Pelletofen geht in Alarmzustand",
+          "fr": "Le poêle entre en état d'alarme",
+          "no": "Pelletskaminen går i alarmtilstand",
+          "sv": "Pelletskaminen går in i larmtillstånd",
+          "fi": "Pellettitakka siirtyy hälytystilaan",
+          "it": "La stufa entra in stato di allarme",
+          "es": "La estufa entra en estado de alarma",
+          "pl": "Piec przechodzi w stan alarmu"
         },
         "titleFormatted": {
-          "en": "Stove state changed: [[state]] → [[new_value]]"
+          "en": "Stove enters alarm state",
+          "da": "Brændeovnen går i alarmtilstand",
+          "nl": "Pelletkachel gaat naar alarmstatus",
+          "de": "Pelletofen geht in Alarmzustand",
+          "fr": "Le poêle entre en état d'alarme",
+          "no": "Pelletskaminen går i alarmtilstand",
+          "sv": "Pelletskaminen går in i larmtillstånd",
+          "fi": "Pellettitakka siirtyy hälytystilaan",
+          "it": "La stufa entra in stato di allarme",
+          "es": "La estufa entra en estado de alarma",
+          "pl": "Piec przechodzi w stan alarmu"
+        },
+        "hint": {
+          "en": "Triggered when the stove enters an alarm state",
+          "da": "Udløses når brændeovnen går i alarmtilstand",
+          "nl": "Wordt geactiveerd wanneer de pelletkachel naar alarmstatus gaat",
+          "de": "Wird ausgelöst, wenn der Pelletofen in den Alarmzustand wechselt",
+          "fr": "Déclenché lorsque le poêle entre en état d'alarme",
+          "no": "Utløses når pelletskaminen går i alarmtilstand",
+          "sv": "Utlöses när pelletskaminen går in i larmtillstånd",
+          "fi": "Laukeaa, kun pellettitakka siirtyy hälytystilaan",
+          "it": "Attivato quando la stufa entra in stato di allarme",
+          "es": "Se activa cuando la estufa entra en estado de alarma",
+          "pl": "Uruchamiane, gdy piec przechodzi w stan alarmu"
+        }
+      },
+      {
+        "id": "stove_resumes_from_error",
+        "title": {
+          "en": "Stove resumes from error",
+          "da": "Brændeovnen genoptager efter fejl",
+          "nl": "Pelletkachel hervat na fout",
+          "de": "Pelletofen setzt nach Fehler fort",
+          "fr": "Le poêle reprend après erreur",
+          "no": "Pelletskaminen gjenopptar etter feil",
+          "sv": "Pelletskaminen återupptar efter fel",
+          "fi": "Pellettitakka jatkaa virheen jälkeen",
+          "it": "La stufa riprende dopo errore",
+          "es": "La estufa se recupera del error",
+          "pl": "Piec wznawia po błędzie"
+        },
+        "titleFormatted": {
+          "en": "Stove resumes from error state",
+          "da": "Brændeovnen genoptager efter fejltilstand",
+          "nl": "Pelletkachel hervat na foutstatus",
+          "de": "Pelletofen setzt nach Fehlerzustand fort",
+          "fr": "Le poêle reprend après état d'erreur",
+          "no": "Pelletskaminen gjenopptar etter feiltilstand",
+          "sv": "Pelletskaminen återupptar efter feltillstånd",
+          "fi": "Pellettitakka jatkaa virhetilan jälkeen",
+          "it": "La stufa riprende dopo stato di errore",
+          "es": "La estufa se recupera del estado de error",
+          "pl": "Piec wznawia po stanie błędu"
+        },
+        "hint": {
+          "en": "Triggered when the stove resumes normal operation after an error",
+          "da": "Udløses når brændeovnen genoptager normal drift efter en fejl",
+          "nl": "Wordt geactiveerd wanneer de pelletkachel normale werking hervat na een fout",
+          "de": "Wird ausgelöst, wenn der Pelletofen nach einem Fehler den normalen Betrieb wieder aufnimmt",
+          "fr": "Déclenché lorsque le poêle reprend son fonctionnement normal après une erreur",
+          "no": "Utløses når pelletskaminen gjenopptar normal drift etter en feil",
+          "sv": "Utlöses när pelletskaminen återupptar normal drift efter ett fel",
+          "fi": "Laukeaa, kun pellettitakka jatkaa normaalia toimintaa virheen jälkeen",
+          "it": "Attivato quando la stufa riprende il funzionamento normale dopo un errore",
+          "es": "Se activa cuando la estufa reanuda el funcionamiento normal después de un error",
+          "pl": "Uruchamiane, gdy piec wznawia normalną pracę po błędzie"
+        }
+      },
+      {
+        "id": "stove_state_changed",
+        "title": {
+          "en": "Stove state changed",
+          "da": "Ovnstatus ændret",
+          "nl": "Kachelstatus gewijzigd",
+          "de": "Kaminstatus geändert",
+          "fr": "État du poêle modifié",
+          "no": "Kaminstatus endret",
+          "sv": "Kaminstatus ändrad",
+          "fi": "Takan tila muuttunut",
+          "it": "Stato stufa cambiato",
+          "es": "Estado de la estufa cambiado",
+          "pl": "Zmieniono stan pieca"
+        },
+        "hint": {
+          "en": "Triggers when a stove state changes",
+          "da": "Udløses når en ovnstatus ændres",
+          "nl": "Wordt geactiveerd wanneer een kachelstatus verandert",
+          "de": "Wird ausgelöst, wenn sich ein Kaminstatus ändert",
+          "fr": "Se déclenche lorsqu'un état du poêle change",
+          "no": "Utløses når en kaminstatus endres",
+          "sv": "Utlöses när en kaminstatus ändras",
+          "fi": "Laukeaa, kun takan tila muuttuu",
+          "it": "Si attiva quando cambia uno stato della stufa",
+          "es": "Se activa cuando cambia un estado de la estufa",
+          "pl": "Uruchamia się, gdy zmienia się stan pieca"
+        },
+        "titleFormatted": {
+          "en": "Stove [[state]] changed to [[new_value]]",
+          "da": "Ovn [[state]] ændret til [[new_value]]",
+          "nl": "Kachel [[state]] gewijzigd naar [[new_value]]",
+          "de": "Kamin [[state]] geändert zu [[new_value]]",
+          "fr": "Poêle [[state]] modifié à [[new_value]]",
+          "no": "Kamin [[state]] endret til [[new_value]]",
+          "sv": "Kamin [[state]] ändrad till [[new_value]]",
+          "fi": "Takka [[state]] muuttunut arvoon [[new_value]]",
+          "it": "Stufa [[state]] cambiata a [[new_value]]",
+          "es": "Estufa [[state]] cambiada a [[new_value]]",
+          "pl": "Piec [[state]] zmieniony na [[new_value]]"
         },
         "args": [
           {
@@ -220,42 +367,96 @@
             "name": "state",
             "title": {
               "en": "State",
-              "da": "Tilstand"
+              "da": "Status",
+              "nl": "Status",
+              "de": "Status",
+              "fr": "État",
+              "no": "Status",
+              "sv": "Status",
+              "fi": "Tila",
+              "it": "Stato",
+              "es": "Estado",
+              "pl": "Stan"
             },
             "values": [
               {
                 "id": "power",
                 "label": {
                   "en": "Power",
-                  "da": "Tænd/sluk"
+                  "da": "Strøm",
+                  "nl": "Vermogen",
+                  "de": "Leistung",
+                  "fr": "Puissance",
+                  "no": "Strøm",
+                  "sv": "Ström",
+                  "fi": "Virta",
+                  "it": "Potenza",
+                  "es": "Potencia",
+                  "pl": "Moc"
                 }
               },
               {
                 "id": "fan_speed",
                 "label": {
-                  "en": "Fan Speed",
-                  "da": "Blæserhastighed"
+                  "en": "Fan speed",
+                  "da": "Blæserhastighed",
+                  "nl": "Ventilatorsnelheid",
+                  "de": "Lüftergeschwindigkeit",
+                  "fr": "Vitesse du ventilateur",
+                  "no": "Viftehastighet",
+                  "sv": "Fläkthastighet",
+                  "fi": "Puhaltimen nopeus",
+                  "it": "Velocità ventola",
+                  "es": "Velocidad del ventilador",
+                  "pl": "Prędkość wentylatora"
                 }
               },
               {
                 "id": "fumes",
                 "label": {
                   "en": "Fumes",
-                  "da": "Røg"
+                  "da": "Røg",
+                  "nl": "Rook",
+                  "de": "Rauch",
+                  "fr": "Fumées",
+                  "no": "Røyk",
+                  "sv": "Rök",
+                  "fi": "Savut",
+                  "it": "Fumi",
+                  "es": "Humos",
+                  "pl": "Dym"
                 }
               },
               {
                 "id": "power_level",
                 "label": {
-                  "en": "Power Level",
-                  "da": "Effektniveau"
+                  "en": "Power level",
+                  "da": "Effektniveau",
+                  "nl": "Vermogensniveau",
+                  "de": "Leistungsstufe",
+                  "fr": "Niveau de puissance",
+                  "no": "Effektnivå",
+                  "sv": "Effektnivå",
+                  "fi": "Tehotaso",
+                  "it": "Livello di potenza",
+                  "es": "Nivel de potencia",
+                  "pl": "Poziom mocy"
                 }
               },
               {
                 "id": "smoke_temperature",
                 "label": {
-                  "en": "Smoke Temperature",
-                  "da": "Røgtemperatur"
+                  "en": "Smoke temperature",
+                  "da": "Røgtemperatur",
+                  "nl": "Rooktemperatuur",
+                  "de": "Rauchtemperatur",
+                  "fr": "Température des fumées",
+                  "no": "Røyktemperatur",
+                  "sv": "Röktemperatur",
+                  "fi": "Savun lämpötila",
+                  "it": "Temperatura fumi",
+                  "es": "Temperatura de humo",
+                  "pl": "Temperatura dymu"
                 }
               }
             ]
@@ -265,11 +466,16 @@
             "name": "new_value",
             "title": {
               "en": "New value",
-              "da": "Ny værdi"
-            },
-            "placeholder": {
-              "en": "New value",
-              "da": "Ny værdi"
+              "da": "Ny værdi",
+              "nl": "Nieuwe waarde",
+              "de": "Neuer Wert",
+              "fr": "Nouvelle valeur",
+              "no": "Ny verdi",
+              "sv": "Nytt värde",
+              "fi": "Uusi arvo",
+              "it": "Nuovo valore",
+              "es": "Nuevo valor",
+              "pl": "Nowa wartość"
             }
           }
         ],
@@ -278,16 +484,33 @@
             "type": "string",
             "name": "stove_state_change",
             "title": {
-              "en": "Stove state change",
-              "da": "Brændeovnens tilstandsændring"
+              "en": "State change",
+              "da": "Statusændring",
+              "nl": "Statuswijziging",
+              "de": "Statusänderung",
+              "fr": "Changement d'état",
+              "no": "Statusendring",
+              "sv": "Statusändring",
+              "fi": "Tilamuutos",
+              "it": "Cambio di stato",
+              "es": "Cambio de estado",
+              "pl": "Zmiana stanu"
             },
             "example": {
-              "en": "E.g. 'fan_speed: 3', 'power: on'",
-              "da": "F.eks. 'blæserhastighed: 3', 'tænd/sluk: tændt'"
+              "en": "Power changed to on",
+              "da": "Strøm ændret til tændt",
+              "nl": "Vermogen gewijzigd naar aan",
+              "de": "Leistung geändert zu an",
+              "fr": "Puissance modifiée à allumé",
+              "no": "Strøm endret til på",
+              "sv": "Ström ändrad till på",
+              "fi": "Virta muuttunut päälle",
+              "it": "Potenza cambiata a acceso",
+              "es": "Potencia cambiada a encendido",
+              "pl": "Moc zmieniona na włączona"
             }
           }
-        ],
-        "id": "stove_state_changed"
+        ]
       },
       {
         "id": "stove_turned_off",
@@ -381,7 +604,17 @@
           "pl": "Temperatura zmieniona"
         },
         "titleFormatted": {
-          "en": "Temperature changed to [[temperature]]"
+          "en": "Temperature changed to [[temperature]]",
+          "da": "Temperatur ændret til [[temperature]]",
+          "nl": "Temperatuur gewijzigd naar [[temperature]]",
+          "de": "Temperatur geändert zu [[temperature]]",
+          "fr": "Température modifiée à [[temperature]]",
+          "no": "Temperatur endret til [[temperature]]",
+          "sv": "Temperatur ändrad till [[temperature]]",
+          "fi": "Lämpötila muuttunut arvoon [[temperature]]",
+          "it": "Temperatura cambiata a [[temperature]]",
+          "es": "Temperatura cambiada a [[temperature]]",
+          "pl": "Temperatura zmieniona na [[temperature]]"
         },
         "args": [
           {
@@ -408,27 +641,37 @@
       {
         "id": "is_at_fan_speed",
         "title": {
-          "en": "Stove is at fan speed [[speed]]",
-          "da": "Brændeovnen er på blæserhastighed [[speed]]",
-          "nl": "Pelletkachel is op ventilatorsnelheid [[speed]]",
-          "de": "Pelletofen ist auf Lüftergeschwindigkeit [[speed]]",
-          "fr": "Le poêle est à la vitesse du ventilateur [[speed]]",
-          "no": "Pelletskaminen er på viftehastighet [[speed]]",
-          "sv": "Pelletskaminen är på fläkthastighet [[speed]]",
-          "fi": "Pellettitakka on puhaltimen nopeudella [[speed]]",
-          "it": "La stufa è alla velocità ventola [[speed]]",
-          "es": "La estufa está en velocidad del ventilador [[speed]]",
-          "pl": "Piec jest na prędkości wentylatora [[speed]]"
+          "en": "Fan speed is at specific level",
+          "da": "Blæserhastighed er på bestemt niveau",
+          "nl": "Ventilatorsnelheid staat op specifiek niveau",
+          "de": "Lüftergeschwindigkeit ist auf bestimmter Stufe",
+          "fr": "La vitesse du ventilateur est à un niveau spécifique",
+          "no": "Viftehastighet er på spesifikt nivå",
+          "sv": "Fläkthastighet är på specifik nivå",
+          "fi": "Puhaltimen nopeus on tietyllä tasolla",
+          "it": "La velocità della ventola è a un livello specifico",
+          "es": "La velocidad del ventilador está en un nivel específico",
+          "pl": "Prędkość wentylatora jest na określonym poziomie"
         },
         "titleFormatted": {
-          "en": "Stove is at fan speed [[speed]]"
+          "en": "Fan speed is !{{at|not at}} [[speed]]",
+          "da": "Blæserhastighed er !{{på|ikke på}} [[speed]]",
+          "nl": "Ventilatorsnelheid is !{{op|niet op}} [[speed]]",
+          "de": "Lüftergeschwindigkeit ist !{{auf|nicht auf}} [[speed]]",
+          "fr": "La vitesse du ventilateur est !{{à|pas à}} [[speed]]",
+          "no": "Viftehastighet er !{{på|ikke på}} [[speed]]",
+          "sv": "Fläkthastighet är !{{på|inte på}} [[speed]]",
+          "fi": "Puhaltimen nopeus on !{{tasolla|ei tasolla}} [[speed]]",
+          "it": "La velocità della ventola è !{{a|non a}} [[speed]]",
+          "es": "La velocidad del ventilador está !{{en|no en}} [[speed]]",
+          "pl": "Prędkość wentylatora jest !{{na|nie na}} [[speed]]"
         },
         "args": [
           {
             "name": "speed",
             "type": "number",
             "title": {
-              "en": "Fan Speed",
+              "en": "Fan speed",
               "da": "Blæserhastighed",
               "nl": "Ventilatorsnelheid",
               "de": "Lüftergeschwindigkeit",
@@ -448,27 +691,37 @@
       {
         "id": "is_at_power_level",
         "title": {
-          "en": "Stove is at power level [[level]]",
-          "da": "Brændeovnen er på effektniveau [[level]]",
-          "nl": "Pelletkachel is op vermogensniveau [[level]]",
-          "de": "Pelletofen ist auf Leistungsstufe [[level]]",
-          "fr": "Le poêle est au niveau de puissance [[level]]",
-          "no": "Pelletskaminen er på effektnivå [[level]]",
-          "sv": "Pelletskaminen är på effektnivå [[level]]",
-          "fi": "Pellettitakka on tehotasolla [[level]]",
-          "it": "La stufa è al livello di potenza [[level]]",
-          "es": "La estufa está en nivel de potencia [[level]]",
-          "pl": "Piec jest na poziomie mocy [[level]]"
+          "en": "Power level is at specific level",
+          "da": "Effektniveau er på bestemt niveau",
+          "nl": "Vermogensniveau staat op specifiek niveau",
+          "de": "Leistungsstufe ist auf bestimmter Stufe",
+          "fr": "Le niveau de puissance est à un niveau spécifique",
+          "no": "Effektnivå er på spesifikt nivå",
+          "sv": "Effektnivå är på specifik nivå",
+          "fi": "Tehotaso on tietyllä tasolla",
+          "it": "Il livello di potenza è a un livello specifico",
+          "es": "El nivel de potencia está en un nivel específico",
+          "pl": "Poziom mocy jest na określonym poziomie"
         },
         "titleFormatted": {
-          "en": "Stove is at power level [[level]]"
+          "en": "Power level is !{{at|not at}} [[level]]",
+          "da": "Effektniveau er !{{på|ikke på}} [[level]]",
+          "nl": "Vermogensniveau is !{{op|niet op}} [[level]]",
+          "de": "Leistungsstufe ist !{{auf|nicht auf}} [[level]]",
+          "fr": "Le niveau de puissance est !{{à|pas à}} [[level]]",
+          "no": "Effektnivå er !{{på|ikke på}} [[level]]",
+          "sv": "Effektnivå är !{{på|inte på}} [[level]]",
+          "fi": "Tehotaso on !{{tasolla|ei tasolla}} [[level]]",
+          "it": "Il livello di potenza è !{{a|non a}} [[level]]",
+          "es": "El nivel de potencia está !{{en|no en}} [[level]]",
+          "pl": "Poziom mocy jest !{{na|nie na}} [[level]]"
         },
         "args": [
           {
             "name": "level",
             "type": "number",
             "title": {
-              "en": "Power Level",
+              "en": "Power level",
               "da": "Effektniveau",
               "nl": "Vermogensniveau",
               "de": "Leistungsstufe",
@@ -486,32 +739,118 @@
         ]
       },
       {
+        "id": "is_in_alarm",
         "title": {
-          "en": "Stove is on",
-          "da": "Brændeovnen er tændt"
+          "en": "Stove is in alarm state",
+          "da": "Brændeovnen er i alarmtilstand",
+          "nl": "Pelletkachel is in alarmstatus",
+          "de": "Pelletofen ist im Alarmzustand",
+          "fr": "Le poêle est en état d'alarme",
+          "no": "Pelletskaminen er i alarmtilstand",
+          "sv": "Pelletskaminen är i larmtillstånd",
+          "fi": "Pellettitakka on hälytystilassa",
+          "it": "La stufa è in stato di allarme",
+          "es": "La estufa está en estado de alarma",
+          "pl": "Piec jest w stanie alarmu"
+        },
+        "titleFormatted": {
+          "en": "Stove is !{{in|not in}} alarm state",
+          "da": "Brændeovnen er !{{i|ikke i}} alarmtilstand",
+          "nl": "Pelletkachel is !{{in|niet in}} alarmstatus",
+          "de": "Pelletofen ist !{{im|nicht im}} Alarmzustand",
+          "fr": "Le poêle est !{{en|pas en}} état d'alarme",
+          "no": "Pelletskaminen er !{{i|ikke i}} alarmtilstand",
+          "sv": "Pelletskaminen är !{{i|inte i}} larmtillstånd",
+          "fi": "Pellettitakka on !{{hälytystilassa|ei hälytystilassa}}",
+          "it": "La stufa è !{{in|non in}} stato di allarme",
+          "es": "La estufa está !{{en|no en}} estado de alarma",
+          "pl": "Piec jest !{{w|nie w}} stanie alarmu"
         },
         "hint": {
-          "en": "Checks if the stove is currently on.",
-          "da": "Tjekker om brændeovnen er tændt."
+          "en": "Check if the stove is currently in an alarm state",
+          "da": "Kontrollerer om brændeovnen er i en alarmtilstand",
+          "nl": "Controleert of de pelletkachel in alarmstatus is",
+          "de": "Prüft, ob sich der Pelletofen im Alarmzustand befindet",
+          "fr": "Vérifie si le poêle est actuellement en état d'alarme",
+          "no": "Sjekker om pelletskaminen er i alarmtilstand",
+          "sv": "Kontrollerar om pelletskaminen är i larmtillstånd",
+          "fi": "Tarkistaa, onko pellettitakka hälytystilassa",
+          "it": "Controlla se la stufa è attualmente in stato di allarme",
+          "es": "Comprueba si la estufa está actualmente en estado de alarma",
+          "pl": "Sprawdza, czy piec jest w stanie alarmu"
+        }
+      },
+      {
+        "id": "is_stove_on",
+        "title": {
+          "en": "Stove is on",
+          "da": "Brændeovnen er tændt",
+          "nl": "Pelletkachel is aan",
+          "de": "Pelletofen ist eingeschaltet",
+          "fr": "Le poêle est allumé",
+          "no": "Pelletskaminen er på",
+          "sv": "Pelletskaminen är på",
+          "fi": "Pellettitakka on päällä",
+          "it": "La stufa è accesa",
+          "es": "La estufa está encendida",
+          "pl": "Piec jest włączony"
+        },
+        "titleFormatted": {
+          "en": "Stove is !{{on|not on}}",
+          "da": "Brændeovnen er !{{tændt|ikke tændt}}",
+          "nl": "Pelletkachel is !{{aan|niet aan}}",
+          "de": "Pelletofen ist !{{eingeschaltet|nicht eingeschaltet}}",
+          "fr": "Le poêle est !{{allumé|pas allumé}}",
+          "no": "Pelletskaminen er !{{på|ikke på}}",
+          "sv": "Pelletskaminen är !{{på|inte på}}",
+          "fi": "Pellettitakka on !{{päällä|ei päällä}}",
+          "it": "La stufa è !{{accesa|non accesa}}",
+          "es": "La estufa está !{{encendida|no encendida}}",
+          "pl": "Piec jest !{{włączony|nie włączony}}"
+        },
+        "hint": {
+          "en": "Checks if the stove is currently on",
+          "da": "Kontrollerer om brændeovnen er tændt",
+          "nl": "Controleert of de pelletkachel aan staat",
+          "de": "Prüft, ob der Pelletofen eingeschaltet ist",
+          "fr": "Vérifie si le poêle est actuellement allumé",
+          "no": "Sjekker om pelletskaminen er på",
+          "sv": "Kontrollerar om pelletskaminen är på",
+          "fi": "Tarkistaa, onko pellettitakka päällä",
+          "it": "Controlla se la stufa è attualmente accesa",
+          "es": "Comprueba si la estufa está encendida",
+          "pl": "Sprawdza, czy piec jest włączony"
         },
         "args": [],
-        "tokens": [],
-        "id": "is_stove_on"
+        "tokens": []
       },
       {
         "id": "is_target_temperature_reached",
         "title": {
-          "en": "Target temperature reached",
-          "da": "Måltemperatur nået",
-          "nl": "Doeltemperatuur bereikt",
-          "de": "Zieltemperatur erreicht",
-          "fr": "Température cible atteinte",
-          "no": "Måltemperatur nådd",
-          "sv": "Målt temperatur uppnådd",
-          "fi": "Tavoitelämpötila saavutettu",
-          "it": "Temperatura target raggiunta",
-          "es": "Temperatura objetivo alcanzada",
-          "pl": "Osiągnięto temperaturę docelową"
+          "en": "Target temperature is reached",
+          "da": "Måltemperatur er nået",
+          "nl": "Doeltemperatuur is bereikt",
+          "de": "Zieltemperatur ist erreicht",
+          "fr": "La température cible est atteinte",
+          "no": "Måltemperatur er nådd",
+          "sv": "Måltemperatur är uppnådd",
+          "fi": "Tavoitelämpötila on saavutettu",
+          "it": "La temperatura target è stata raggiunta",
+          "es": "La temperatura objetivo se ha alcanzado",
+          "pl": "Temperatura docelowa została osiągnięta"
+        },
+        "titleFormatted": {
+          "en": "Target temperature is !{{reached|not reached}}",
+          "da": "Måltemperatur er !{{nået|ikke nået}}",
+          "nl": "Doeltemperatuur is !{{bereikt|niet bereikt}}",
+          "de": "Zieltemperatur ist !{{erreicht|nicht erreicht}}",
+          "fr": "La température cible est !{{atteinte|pas atteinte}}",
+          "no": "Måltemperatur er !{{nådd|ikke nådd}}",
+          "sv": "Måltemperatur är !{{uppnådd|inte uppnådd}}",
+          "fi": "Tavoitelämpötila on !{{saavutettu|ei saavutettu}}",
+          "it": "La temperatura target è !{{raggiunta|non raggiunta}}",
+          "es": "La temperatura objetivo está !{{alcanzada|no alcanzada}}",
+          "pl": "Temperatura docelowa jest !{{osiągnięta|nie osiągnięta}}"
         }
       }
     ],
@@ -519,12 +858,12 @@
       {
         "id": "set_fan_speed",
         "title": {
-          "en": "Set Fan Speed",
+          "en": "Set fan speed",
           "da": "Indstil blæserhastighed",
           "nl": "Stel ventilatorsnelheid in",
           "de": "Lüftergeschwindigkeit einstellen",
-          "fr": "Définir la vitesse du ventilateur",
-          "no": "Sett viftehastighet",
+          "fr": "Régler la vitesse du ventilateur",
+          "no": "Still inn viftehastighet",
           "sv": "Ställ in fläkthastighet",
           "fi": "Aseta puhaltimen nopeus",
           "it": "Imposta velocità ventola",
@@ -532,16 +871,16 @@
           "pl": "Ustaw prędkość wentylatora"
         },
         "titleFormatted": {
-          "en": "Set Fan Speed to [[speed]]",
+          "en": "Set fan speed to [[speed]]",
           "da": "Indstil blæserhastighed til [[speed]]",
           "nl": "Stel ventilatorsnelheid in op [[speed]]",
-          "de": "Lüftergeschwindigkeit einstellen auf [[speed]]",
-          "fr": "Définir la vitesse du ventilateur à [[speed]]",
-          "no": "Sett viftehastighet til [[speed]]",
+          "de": "Lüftergeschwindigkeit auf [[speed]] einstellen",
+          "fr": "Régler la vitesse du ventilateur à [[speed]]",
+          "no": "Still inn viftehastighet til [[speed]]",
           "sv": "Ställ in fläkthastighet till [[speed]]",
           "fi": "Aseta puhaltimen nopeus arvoon [[speed]]",
           "it": "Imposta velocità ventola a [[speed]]",
-          "es": "Establecer velocidad del ventilador en [[speed]]",
+          "es": "Establecer velocidad del ventilador a [[speed]]",
           "pl": "Ustaw prędkość wentylatora na [[speed]]"
         },
         "args": [
@@ -549,7 +888,7 @@
             "name": "speed",
             "type": "number",
             "title": {
-              "en": "Fan Speed",
+              "en": "Fan speed",
               "da": "Blæserhastighed",
               "nl": "Ventilatorsnelheid",
               "de": "Lüftergeschwindigkeit",
@@ -569,12 +908,12 @@
       {
         "id": "set_power_level",
         "title": {
-          "en": "Set Power Level",
+          "en": "Set power level",
           "da": "Indstil effektniveau",
           "nl": "Stel vermogensniveau in",
           "de": "Leistungsstufe einstellen",
-          "fr": "Définir le niveau de puissance",
-          "no": "Sett effektnivå",
+          "fr": "Régler le niveau de puissance",
+          "no": "Still inn effektnivå",
           "sv": "Ställ in effektnivå",
           "fi": "Aseta tehotaso",
           "it": "Imposta livello di potenza",
@@ -582,16 +921,16 @@
           "pl": "Ustaw poziom mocy"
         },
         "titleFormatted": {
-          "en": "Set Power Level to [[level]]",
+          "en": "Set power level to [[level]]",
           "da": "Indstil effektniveau til [[level]]",
           "nl": "Stel vermogensniveau in op [[level]]",
-          "de": "Leistungsstufe einstellen auf [[level]]",
-          "fr": "Définir le niveau de puissance à [[level]]",
-          "no": "Sett effektnivå til [[level]]",
+          "de": "Leistungsstufe auf [[level]] einstellen",
+          "fr": "Régler le niveau de puissance à [[level]]",
+          "no": "Still inn effektnivå til [[level]]",
           "sv": "Ställ in effektnivå till [[level]]",
           "fi": "Aseta tehotaso arvoon [[level]]",
           "it": "Imposta livello di potenza a [[level]]",
-          "es": "Establecer nivel de potencia en [[level]]",
+          "es": "Establecer nivel de potencia a [[level]]",
           "pl": "Ustaw poziom mocy na [[level]]"
         },
         "args": [
@@ -599,7 +938,7 @@
             "name": "level",
             "type": "number",
             "title": {
-              "en": "Power Level",
+              "en": "Power level",
               "da": "Effektniveau",
               "nl": "Vermogensniveau",
               "de": "Leistungsstufe",
@@ -617,60 +956,167 @@
         ]
       },
       {
+        "id": "set_target_temperature",
         "title": {
           "en": "Set target temperature",
-          "da": "Indstil måltemperatur"
+          "da": "Indstil måltemperatur",
+          "nl": "Stel doeltemperatuur in",
+          "de": "Zieltemperatur einstellen",
+          "fr": "Définir la température cible",
+          "no": "Still inn måltemperatur",
+          "sv": "Ställ in måltemperatur",
+          "fi": "Aseta tavoitelämpötila",
+          "it": "Imposta temperatura target",
+          "es": "Establecer temperatura objetivo",
+          "pl": "Ustaw temperaturę docelową"
         },
         "hint": {
-          "en": "Sets the stove's target temperature.",
-          "da": "Indstiller brændeovnens måltemperatur."
+          "en": "Sets the target temperature for the stove",
+          "da": "Indstiller måltemperaturen for brændeovnen",
+          "nl": "Stelt de doeltemperatuur in voor de kachel",
+          "de": "Stellt die Zieltemperatur für den Kamin ein",
+          "fr": "Définit la température cible pour le poêle",
+          "no": "Stiller inn måltemperaturen for kaminen",
+          "sv": "Ställer in måltemperaturen för kaminen",
+          "fi": "Asettaa takan tavoitelämpötilan",
+          "it": "Imposta la temperatura target per la stufa",
+          "es": "Establece la temperatura objetivo para la estufa",
+          "pl": "Ustawia temperaturę docelową dla pieca"
         },
         "titleFormatted": {
-          "en": "Set target temperature to [[temperature]]°C",
-          "da": "Indstil måltemperatur til [[temperature]]°C"
+          "en": "Set target temperature to [[temperature]] °C",
+          "da": "Indstil måltemperatur til [[temperature]] °C",
+          "nl": "Stel doeltemperatuur in op [[temperature]] °C",
+          "de": "Zieltemperatur auf [[temperature]] °C einstellen",
+          "fr": "Définir la température cible à [[temperature]] °C",
+          "no": "Still inn måltemperatur til [[temperature]] °C",
+          "sv": "Ställ in måltemperatur till [[temperature]] °C",
+          "fi": "Aseta tavoitelämpötila arvoon [[temperature]] °C",
+          "it": "Imposta temperatura target a [[temperature]] °C",
+          "es": "Establecer temperatura objetivo a [[temperature]] °C",
+          "pl": "Ustaw temperaturę docelową na [[temperature]] °C"
         },
         "args": [
           {
             "type": "number",
             "name": "temperature",
             "title": {
-              "en": "Target temperature",
-              "da": "Måltemperatur"
+              "en": "Temperature",
+              "da": "Temperatur",
+              "nl": "Temperatuur",
+              "de": "Temperatur",
+              "fr": "Température",
+              "no": "Temperatur",
+              "sv": "Temperatur",
+              "fi": "Lämpötila",
+              "it": "Temperatura",
+              "es": "Temperatura",
+              "pl": "Temperatura"
             },
             "placeholder": {
-              "en": "e.g. 21.5",
-              "da": "f.eks. 21,5"
+              "en": "20.0",
+              "da": "20,0",
+              "nl": "20,0",
+              "de": "20,0",
+              "fr": "20,0",
+              "no": "20,0",
+              "sv": "20,0",
+              "fi": "20,0",
+              "it": "20,0",
+              "es": "20,0",
+              "pl": "20,0"
             }
           }
         ],
-        "tokens": [],
-        "id": "set_target_temperature"
+        "tokens": []
       },
       {
+        "id": "turn_off_stove",
         "title": {
           "en": "Turn off stove",
-          "da": "Sluk brændeovn"
+          "da": "Sluk brændeovn",
+          "nl": "Zet pelletkachel uit",
+          "de": "Pelletofen ausschalten",
+          "fr": "Éteindre le poêle",
+          "no": "Slå av pelletskamin",
+          "sv": "Stäng av pelletskamin",
+          "fi": "Sammuta pellettitakka",
+          "it": "Spegni la stufa",
+          "es": "Apagar estufa",
+          "pl": "Wyłącz piec"
+        },
+        "titleFormatted": {
+          "en": "Turn off stove",
+          "da": "Sluk brændeovn",
+          "nl": "Zet pelletkachel uit",
+          "de": "Pelletofen ausschalten",
+          "fr": "Éteindre le poêle",
+          "no": "Slå av pelletskamin",
+          "sv": "Stäng av pelletskamin",
+          "fi": "Sammuta pellettitakka",
+          "it": "Spegni la stufa",
+          "es": "Apagar estufa",
+          "pl": "Wyłącz piec"
         },
         "hint": {
-          "en": "Turns the stove off.",
-          "da": "Slukker brændeovnen."
+          "en": "Turns off the stove",
+          "da": "Slukker brændeovnen",
+          "nl": "Zet de pelletkachel uit",
+          "de": "Schaltet den Pelletofen aus",
+          "fr": "Éteint le poêle",
+          "no": "Slår av pelletskaminen",
+          "sv": "Stänger av pelletskaminen",
+          "fi": "Sammuttaa pellettitakan",
+          "it": "Spegne la stufa",
+          "es": "Apaga la estufa",
+          "pl": "Wyłącza piec"
         },
         "args": [],
-        "tokens": [],
-        "id": "turn_off_stove"
+        "tokens": []
       },
       {
+        "id": "turn_on_stove",
         "title": {
           "en": "Turn on stove",
-          "da": "Tænd brændeovn"
+          "da": "Tænd brændeovn",
+          "nl": "Zet pelletkachel aan",
+          "de": "Pelletofen einschalten",
+          "fr": "Allumer le poêle",
+          "no": "Slå på pelletskamin",
+          "sv": "Slå på pelletskamin",
+          "fi": "Kytke pellettitakka päälle",
+          "it": "Accendi la stufa",
+          "es": "Encender estufa",
+          "pl": "Włącz piec"
+        },
+        "titleFormatted": {
+          "en": "Turn on stove",
+          "da": "Tænd brændeovn",
+          "nl": "Zet pelletkachel aan",
+          "de": "Pelletofen einschalten",
+          "fr": "Allumer le poêle",
+          "no": "Slå på pelletskamin",
+          "sv": "Slå på pelletskamin",
+          "fi": "Kytke pellettitakka päälle",
+          "it": "Accendi la stufa",
+          "es": "Encender estufa",
+          "pl": "Włącz piec"
         },
         "hint": {
-          "en": "Turns the stove on.",
-          "da": "Tænder brændeovnen."
+          "en": "Turns on the stove",
+          "da": "Tænder brændeovnen",
+          "nl": "Zet de pelletkachel aan",
+          "de": "Schaltet den Pelletofen ein",
+          "fr": "Allume le poêle",
+          "no": "Slår på pelletskaminen",
+          "sv": "Slår på pelletskaminen",
+          "fi": "Kytkee pellettitakan päälle",
+          "it": "Accende la stufa",
+          "es": "Enciende la estufa",
+          "pl": "Włącza piec"
         },
         "args": [],
-        "tokens": [],
-        "id": "turn_on_stove"
+        "tokens": []
       }
     ]
   },
@@ -692,13 +1138,20 @@
       "class": "heater",
       "capabilities": [
         "onoff",
-        "hottoh_fan_speed",
         "target_temperature",
         "measure_temperature",
-        "hottoh_fumes",
+        "hottoh_fan_speed",
         "hottoh_power_level",
         "hottoh_smoke_temperature",
-        "hottoh_stove_state"
+        "hottoh_stove_state",
+        "hottoh_state_description",
+        "hottoh_firmware_version",
+        "hottoh_wifi_signal",
+        "hottoh_manufacturer",
+        "hottoh_stove_state_raw",
+        "hottoh_fumes",
+        "hottoh_last_error_code",
+        "hottoh_last_update_time"
       ],
       "platforms": [
         "local"
@@ -711,6 +1164,46 @@
         "large": "/drivers/stove/assets/images/large.png",
         "xlarge": "/drivers/stove/assets/images/xlarge.png"
       },
+      "compatibility": {
+        "homey": ">=12.2.0"
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "onoff",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_temperature",
+              "target_temperature"
+            ]
+          },
+          {
+            "id": "thermostat",
+            "capabilities": [
+              "hottoh_power_level",
+              "hottoh_fan_speed"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "hottoh_fumes",
+              "hottoh_smoke_temperature"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "hottoh_stove_state"
+            ]
+          }
+        ]
+      },
       "pair": [
         {
           "id": "manual"
@@ -720,70 +1213,6 @@
           "template": "done"
         }
       ],
-      "compatibility": {
-        "homey": ">=12.2.0"
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "onoff"
-          },
-          {
-            "id": "target_temperature"
-          },
-          {
-            "id": "measure_temperature"
-          },
-          {
-            "id": "hottoh_fan_speed"
-          },
-          {
-            "id": "hottoh_fumes"
-          },
-          {
-            "id": "hottoh_power_level"
-          },
-          {
-            "id": "hottoh_smoke_temperature"
-          },
-          {
-            "id": "hottoh_stove_state"
-          },
-          {
-            "type": "label",
-            "label": {
-              "en": "Stove State",
-              "da": "Brændeovnens tilstand",
-              "nl": "Status pelletkachel",
-              "de": "Status des Pelletofens",
-              "fr": "État du poêle à granulés",
-              "no": "Pelletskaminens tilstand",
-              "sv": "Pelletskaminens tillstånd",
-              "fi": "Pellettitakan tila",
-              "it": "Stato della stufa a pellet",
-              "es": "Estado de la estufa de pellets",
-              "pl": "Stan pieca na pellet"
-            },
-            "value": {
-              "type": "capability",
-              "id": "hottoh_stove_state"
-            }
-          }
-        ]
-      },
-      "description": {
-        "en": "Control your Hottoh pellet stove from Homey. Adjust power, fan speed, and temperature, and monitor the stove’s state for a smarter, more comfortable home.",
-        "da": "Styr din Hottoh pilleovn fra Homey. Juster effekt, blæserhastighed og temperatur, og overvåg ovnens tilstand for et smartere og mere behageligt hjem.",
-        "nl": "Bedien je Hottoh pelletkachel vanuit Homey. Pas vermogen, ventilatorsnelheid en temperatuur aan en monitor de status van de kachel voor een slimmer en comfortabeler huis.",
-        "de": "Steuern Sie Ihren Hottoh Pelletofen mit Homey. Passen Sie Leistung, Lüftergeschwindigkeit und Temperatur an und überwachen Sie den Ofenzustand für ein intelligenteres und komfortableres Zuhause.",
-        "fr": "Contrôlez votre poêle à granulés Hottoh depuis Homey. Ajustez la puissance, la vitesse du ventilateur et la température, et surveillez l’état du poêle pour une maison plus intelligente et confortable.",
-        "no": "Styr din Hottoh pelletskamin fra Homey. Juster effekt, viftehastighet og temperatur, og overvåk ovnens tilstand for et smartere og mer behagelig hjem.",
-        "sv": "Styr din Hottoh pelletskamin från Homey. Justera effekt, fläkthastighet och temperatur och övervaka kaminens tillstånd för ett smartare och mer behagligt hem.",
-        "fi": "Ohjaa Hottoh pellettitakkaasi Homeyn kautta. Säädä tehoa, puhaltimen nopeutta ja lämpötilaa sekä seuraa takan tilaa älykkäämpää ja mukavampaa kotia varten.",
-        "it": "Controlla la tua stufa a pellet Hottoh da Homey. Regola potenza, velocità della ventola e temperatura e monitora lo stato della stufa per una casa più intelligente e confortevole.",
-        "es": "Controla tu estufa de pellets Hottoh desde Homey. Ajusta la potencia, la velocidad del ventilador y la temperatura, y monitoriza el estado de la estufa para un hogar más inteligente y cómodo.",
-        "pl": "Steruj piecem na pellet Hottoh z poziomu Homey. Reguluj moc, prędkość wentylatora i temperaturę oraz monitoruj stan pieca dla inteligentniejszego i bardziej komfortowego domu."
-      },
       "id": "stove"
     }
   ],
@@ -804,6 +1233,19 @@
       },
       "type": "number",
       "uiComponent": "slider",
+      "desc": {
+        "en": "Current speed of the stove's ventilation fan (1-5, where 5 is maximum speed).",
+        "da": "Aktuel hastighed af ovnens ventilationsblæser (1-5, hvor 5 er maksimal hastighed).",
+        "nl": "Huidige snelheid van de ventilator van de kachel (1-5, waarbij 5 maximale snelheid is).",
+        "de": "Aktuelle Geschwindigkeit des Ofenventilators (1-5, wobei 5 maximale Geschwindigkeit ist).",
+        "fr": "Vitesse actuelle du ventilateur du poêle (1-5, où 5 est la vitesse maximale).",
+        "no": "Gjeldende hastighet på ovnens ventilasjonsvifte (1-5, der 5 er maksimal hastighet).",
+        "sv": "Aktuell hastighet på kaminens ventilationsfläkt (1-5, där 5 är maximal hastighet).",
+        "fi": "Takan tuulettimen nykyinen nopeus (1-5, jossa 5 on maksiminopeus).",
+        "it": "Velocità attuale della ventola di ventilazione della stufa (1-5, dove 5 è la velocità massima).",
+        "es": "Velocidad actual del ventilador de la estufa (1-5, donde 5 es velocidad máxima).",
+        "pl": "Aktualna prędkość wentylatora pieca (1-5, gdzie 5 to maksymalna prędkość)."
+      },
       "units": {
         "en": "rpm",
         "da": "omdr./min.",
@@ -824,6 +1266,39 @@
       "min": 1,
       "max": 5
     },
+    "hottoh_firmware_version": {
+      "title": {
+        "en": "Firmware Version",
+        "da": "Firmwareversion",
+        "nl": "Firmwareversie",
+        "de": "Firmware-Version",
+        "fr": "Version du firmware",
+        "no": "Fastvareversjon",
+        "sv": "Firmwareversion",
+        "fi": "Laiteohjelmistoversio",
+        "it": "Versione firmware",
+        "es": "Versión de firmware",
+        "pl": "Wersja oprogramowania"
+      },
+      "type": "string",
+      "uiComponent": "sensor",
+      "desc": {
+        "en": "Current version of the stove's firmware. Important for troubleshooting and compatibility.",
+        "da": "Aktuel version af ovnens firmware. Vigtig for fejlfinding og kompatibilitet.",
+        "nl": "Huidige versie van de kachel-firmware. Belangrijk voor probleemoplossing en compatibiliteit.",
+        "de": "Aktuelle Version der Ofen-Firmware. Wichtig für Fehlerbehebung und Kompatibilität.",
+        "fr": "Version actuelle du firmware du poêle. Important pour le dépannage et la compatibilité.",
+        "no": "Gjeldende versjon av ovnens fastvare. Viktig for feilsøking og kompatibilitet.",
+        "sv": "Aktuell version av kaminens firmware. Viktigt för felsökning och kompatibilitet.",
+        "fi": "Takan laiteohjelmiston nykyinen versio. Tärkeä vianmäärityksen ja yhteensopivuuden kannalta.",
+        "it": "Versione attuale del firmware della stufa. Importante per la risoluzione dei problemi e la compatibilità.",
+        "es": "Versión actual del firmware de la estufa. Importante para la resolución de problemas y compatibilidad.",
+        "pl": "Aktualna wersja oprogramowania pieca. Ważne dla rozwiązywania problemów i kompatybilności."
+      },
+      "getable": true,
+      "setable": false,
+      "insights": false
+    },
     "hottoh_fumes": {
       "title": {
         "en": "Fumes",
@@ -840,6 +1315,19 @@
       },
       "type": "number",
       "uiComponent": "sensor",
+      "desc": {
+        "en": "Concentration of smoke particles in the exhaust. Higher values indicate less efficient combustion.",
+        "da": "Koncentration af røgpartikler i udstødningen. Højere værdier indikerer mindre effektiv forbrænding.",
+        "nl": "Concentratie rookdeeltjes in de uitlaat. Hogere waarden duiden op minder efficiënte verbranding.",
+        "de": "Konzentration von Rauchpartikeln im Abgas. Höhere Werte zeigen eine weniger effiziente Verbrennung an.",
+        "fr": "Concentration de particules de fumée dans l'échappement. Des valeurs plus élevées indiquent une combustion moins efficace.",
+        "no": "Konsentrasjon av røykpartikler i avgassen. Høyere verdier indikerer mindre effektiv forbrenning.",
+        "sv": "Koncentration av rökpartiklar i avgaserna. Högre värden indikerar mindre effektiv förbränning.",
+        "fi": "Savuhiukkasten pitoisuus pakokaasussa. Korkeammat arvot viittaavat vähemmän tehokkaaseen palamiseen.",
+        "it": "Concentrazione di particelle di fumo nei gas di scarico. Valori più alti indicano una combustione meno efficiente.",
+        "es": "Concentración de partículas de humo en el escape. Valores más altos indican una combustión menos eficiente.",
+        "pl": "Stężenie cząstek dymu w spalinach. Wyższe wartości wskazują na mniej wydajne spalanie."
+      },
       "units": {
         "en": "g/m³",
         "da": "g/m³",
@@ -858,6 +1346,102 @@
       "setable": false,
       "insights": true
     },
+    "hottoh_last_error_code": {
+      "title": {
+        "en": "Last Error Code",
+        "da": "Sidste fejlkode",
+        "nl": "Laatste foutcode",
+        "de": "Letzter Fehlercode",
+        "fr": "Dernier code d'erreur",
+        "no": "Siste feilkode",
+        "sv": "Senaste felkod",
+        "fi": "Viimeisin virhekoodi",
+        "it": "Codice errore",
+        "es": "Último código de error",
+        "pl": "Ostatni kod błędu"
+      },
+      "type": "string",
+      "uiComponent": "sensor",
+      "getable": true,
+      "desc": {
+        "en": "The last error or alarm code reported by the stove.",
+        "da": "Den seneste fejl- eller alarmkode rapporteret af ovnen.",
+        "nl": "De laatste fout- of alarmcode van de kachel.",
+        "de": "Der letzte Fehler- oder Alarmcode, der vom Ofen gemeldet wurde.",
+        "fr": "Le dernier code d'erreur ou d'alarme signalé par le poêle.",
+        "no": "Siste feil- eller alarmkode rapportert av ovnen.",
+        "sv": "Senaste fel- eller larmkod rapporterad av kaminen.",
+        "fi": "Takan viimeisin virhe- tai hälytyskoodi.",
+        "it": "L'ultimo codice di errore o allarme segnalato dalla stufa.",
+        "es": "El último código de error o alarma informado por la estufa.",
+        "pl": "Ostatni kod błędu lub alarmu zgłoszony przez piec."
+      }
+    },
+    "hottoh_last_update_time": {
+      "title": {
+        "en": "Last Update Time",
+        "da": "Sidste opdateringstid",
+        "nl": "Laatste update tijd",
+        "de": "Letzte Aktualisierungszeit",
+        "fr": "Heure de la dernière mise à jour",
+        "no": "Siste oppdateringstid",
+        "sv": "Senaste uppdateringstid",
+        "fi": "Viimeisin päivitysaika",
+        "it": "Ultimo aggiornamento",
+        "es": "Hora de la última actualización",
+        "pl": "Czas ostatniej aktualizacji"
+      },
+      "type": "number",
+      "uiComponent": "sensor",
+      "desc": {
+        "en": "Timestamp of the last successful data poll from the stove.",
+        "da": "Tidsstempel for den seneste vellykkede dataopdatering fra ovnen.",
+        "nl": "Tijdstip van de laatste succesvolle gegevenspoll van de kachel.",
+        "de": "Zeitstempel der letzten erfolgreichen Datenabfrage vom Ofen.",
+        "fr": "Horodatage de la dernière collecte de données réussie du poêle.",
+        "no": "Tidsstempel for siste vellykkede dataoppdatering fra ovnen.",
+        "sv": "Tidsstämpel för den senaste lyckade datainsamlingen från kaminen.",
+        "fi": "Ajanleima viimeisimmästä onnistuneesta tiedonhausta takasta.",
+        "it": "Timestamp dell'ultimo recupero dati riuscito dalla stufa.",
+        "es": "Marca de tiempo de la última recopilación de datos exitosa de la estufa.",
+        "pl": "Znacznik czasu ostatniego udanego odczytu danych z pieca."
+      },
+      "units": {
+        "en": "timestamp",
+        "da": "tidsstempel",
+        "nl": "tijdstempel",
+        "de": "Zeitstempel",
+        "fr": "horodatage",
+        "no": "tidsstempel",
+        "sv": "tidsstämpel",
+        "fi": "aikaleima",
+        "it": "timestamp",
+        "es": "marca de tiempo",
+        "pl": "znacznik czasu"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "hottoh_manufacturer": {
+      "title": {
+        "en": "Manufacturer",
+        "da": "Producent",
+        "nl": "Fabrikant",
+        "de": "Hersteller",
+        "fr": "Fabricant",
+        "no": "Produsent",
+        "sv": "Tillverkare",
+        "fi": "Valmistaja",
+        "it": "Produttore",
+        "es": "Fabricante",
+        "pl": "Producent"
+      },
+      "type": "string",
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "insights": false
+    },
     "hottoh_power_level": {
       "title": {
         "en": "Power Level",
@@ -874,6 +1458,19 @@
       },
       "type": "number",
       "uiComponent": "slider",
+      "desc": {
+        "en": "Current power level of the stove (1-5, where 5 is maximum power).",
+        "da": "Aktuelt effektniveau for ovnen (1-5, hvor 5 er maksimal effekt).",
+        "nl": "Huidig vermogensniveau van de kachel (1-5, waarbij 5 maximaal vermogen is).",
+        "de": "Aktuelle Leistungsstufe des Ofens (1-5, wobei 5 maximale Leistung ist).",
+        "fr": "Niveau de puissance actuel du poêle (1-5, où 5 est la puissance maximale).",
+        "no": "Gjeldende effektnivå for ovnen (1-5, der 5 er maksimal effekt).",
+        "sv": "Aktuell effektnivå för kaminen (1-5, där 5 är maximal effekt).",
+        "fi": "Takan nykyinen tehotaso (1-5, jossa 5 on maksimiteho).",
+        "it": "Livello di potenza attuale della stufa (1-5, dove 5 è la potenza massima).",
+        "es": "Nivel de potencia actual de la estufa (1-5, donde 5 es potencia máxima).",
+        "pl": "Aktualny poziom mocy pieca (1-5, gdzie 5 to maksymalna moc)."
+      },
       "units": {
         "en": "level",
         "da": "niveau",
@@ -906,15 +1503,23 @@
         "fi": "Savun lämpötila",
         "it": "Temperatura del fumo",
         "es": "Temperatura del humo",
-        "pl": "Temperatura dymu",
-        "pt": "Temperatura da fumaça",
-        "ru": "Температура дыма",
-        "zh": "烟雾温度",
-        "ja": "煙の温度",
-        "ko": "연기 온도"
+        "pl": "Temperatura dymu"
       },
       "type": "number",
       "uiComponent": "sensor",
+      "desc": {
+        "en": "Temperature of the exhaust gases from the stove. Provides insight into combustion efficiency.",
+        "da": "Temperaturen af røggasserne fra ovnen. Giver indblik i forbrændingseffektiviteten.",
+        "nl": "Temperatuur van de uitlaatgassen van de kachel. Geeft inzicht in de verbrandingsefficiëntie.",
+        "de": "Temperatur der Abgase aus dem Ofen. Gibt Einblick in die Verbrennungseffizienz.",
+        "fr": "Température des gaz d'échappement du poêle. Donne un aperçu de l'efficacité de la combustion.",
+        "no": "Temperatur på avgassene fra ovnen. Gir innsikt i forbrenningseffektiviteten.",
+        "sv": "Temperatur på avgaserna från kaminen. Ger insikt i förbränningseffektiviteten.",
+        "fi": "Takan poistokaasun lämpötila. Antaa tietoa palamisen tehokkuudesta.",
+        "it": "Temperatura dei gas di scarico della stufa. Fornisce informazioni sull'efficienza della combustione.",
+        "es": "Temperatura de los gases de escape de la estufa. Proporciona información sobre la eficiencia de la combustión.",
+        "pl": "Temperatura spalin z pieca. Dostarcza informacji o efektywności spalania."
+      },
       "units": {
         "en": "°C",
         "da": "°C",
@@ -926,17 +1531,44 @@
         "fi": "°C",
         "it": "°C",
         "es": "°C",
-        "pl": "°C",
-        "pt": "°C",
-        "ru": "°C",
-        "zh": "°C",
-        "ja": "°C",
-        "ko": "°C"
+        "pl": "°C"
       },
       "decimals": 1,
       "getable": true,
       "setable": false,
       "insights": true
+    },
+    "hottoh_state_description": {
+      "title": {
+        "en": "State Description",
+        "da": "Tilstandsbeskrivelse",
+        "nl": "Statusbeschrijving",
+        "de": "Statusbeschreibung",
+        "fr": "Description de l'état",
+        "no": "Tilstandsbeskrivelse",
+        "sv": "Tillståndsbeskrivning",
+        "fi": "Tilankuvaus",
+        "it": "Descrizione stato",
+        "es": "Descripción del estado",
+        "pl": "Opis stanu"
+      },
+      "type": "string",
+      "uiComponent": "sensor",
+      "desc": {
+        "en": "Human-readable description of the current stove state.",
+        "da": "Menneskeligt læsbar beskrivelse af den aktuelle ovntilstand.",
+        "nl": "Menselijk leesbare beschrijving van de huidige kachelstatus.",
+        "de": "Menschenlesbare Beschreibung des aktuellen Ofenzustands.",
+        "fr": "Description lisible de l'état actuel du poêle.",
+        "no": "Menneskelesbar beskrivelse av gjeldende ovnstilstand.",
+        "sv": "Mänskligt läsbar beskrivning av nuvarande kamintillstånd.",
+        "fi": "Ihmisen luettavissa oleva kuvaus nykyisestä takan tilasta.",
+        "it": "Descrizione leggibile dello stato attuale della stufa.",
+        "es": "Descripción legible del estado actual de la estufa.",
+        "pl": "Opis aktualnego stanu pieca w formie czytelnej dla człowieka."
+      },
+      "getable": true,
+      "setable": false
     },
     "hottoh_stove_state": {
       "id": "hottoh_stove_state",
@@ -1103,6 +1735,73 @@
           }
         }
       ]
+    },
+    "hottoh_stove_state_raw": {
+      "title": {
+        "en": "Stove State (Raw)",
+        "da": "Ovnens tilstand (rå)",
+        "nl": "Kachelstatus (ruw)",
+        "de": "Ofenzustand (roh)",
+        "fr": "État du poêle (brut)",
+        "no": "Ovnstilstand (rå)",
+        "sv": "Kamintillstånd (rå)",
+        "fi": "Takan tila (raaka)",
+        "it": "Stato stufa (grezzo)",
+        "es": "Estado de la estufa (crudo)",
+        "pl": "Stan pieca (surowy)"
+      },
+      "type": "string",
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "insights": false
+    },
+    "hottoh_wifi_signal": {
+      "title": {
+        "en": "WiFi Signal",
+        "da": "WiFi-signal",
+        "nl": "WiFi-signaal",
+        "de": "WiFi-Signal",
+        "fr": "Signal WiFi",
+        "no": "WiFi-signal",
+        "sv": "WiFi-signal",
+        "fi": "WiFi-signaali",
+        "it": "Segnale WiFi",
+        "es": "Señal WiFi",
+        "pl": "Sygnał WiFi"
+      },
+      "type": "number",
+      "uiComponent": "sensor",
+      "desc": {
+        "en": "WiFi signal strength (dBm). Higher values (closer to 0) indicate better connection quality.",
+        "da": "WiFi-signalstyrke (dBm). Højere værdier (tættere på 0) indikerer bedre forbindelseskvalitet.",
+        "nl": "WiFi-signaalsterkte (dBm). Hogere waarden (dichter bij 0) duiden op betere verbindingskwaliteit.",
+        "de": "WiFi-Signalstärke (dBm). Höhere Werte (näher an 0) zeigen eine bessere Verbindungsqualität an.",
+        "fr": "Puissance du signal WiFi (dBm). Des valeurs plus élevées (plus proches de 0) indiquent une meilleure qualité de connexion.",
+        "no": "WiFi-signalstyrke (dBm). Høyere verdier (nærmere 0) indikerer bedre tilkoblingskvalitet.",
+        "sv": "WiFi-signalstyrka (dBm). Högre värden (närmare 0) indikerar bättre anslutningskvalitet.",
+        "fi": "WiFi-signaalin voimakkuus (dBm). Korkeammat arvot (lähempänä 0) osoittavat parempaa yhteyslaatua.",
+        "it": "Potenza del segnale WiFi (dBm). Valori più alti (più vicini a 0) indicano una migliore qualità della connessione.",
+        "es": "Intensidad de la señal WiFi (dBm). Valores más altos (más cercanos a 0) indican mejor calidad de conexión.",
+        "pl": "Siła sygnału WiFi (dBm). Wyższe wartości (bliższe 0) wskazują na lepszą jakość połączenia."
+      },
+      "units": {
+        "en": "dBm",
+        "da": "dBm",
+        "nl": "dBm",
+        "de": "dBm",
+        "fr": "dBm",
+        "no": "dBm",
+        "sv": "dBm",
+        "fi": "dBm",
+        "it": "dBm",
+        "es": "dBm",
+        "pl": "dBm"
+      },
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "insights": false
     }
   }
 }

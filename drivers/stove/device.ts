@@ -1,15 +1,10 @@
 import Homey from 'homey';
 import { HottohStove } from '../../lib/HottohStove';
+import { NetworkConstants, StoveRegisters } from '../../lib/constants';
 
 module.exports = class StoveDevice extends Homey.Device {
   private stove: HottohStove | null = null;
   private pollInterval: NodeJS.Timeout | null = null;
-  private prevPowerLevel?: number;
-  private prevFanSpeed?: number;
-  private prevStoveState?: string;
-  private prevIsOn?: boolean;
-  private prevRoomTemp?: number;
-  private prevTargetTempReached?: boolean;
 
   /**
    * onInit is called when the device is initialized.
@@ -24,9 +19,9 @@ module.exports = class StoveDevice extends Homey.Device {
     this.stove = new HottohStove(host, port);
     try {
       await this.stove.connect();
-      this.startPolling();
       this.setAvailable();
       this.log('Connected to stove at', host, port);
+      this.startPolling();
     } catch (err) {
       this.setUnavailable('Failed to connect to stove');
       this.error('Failed to connect to stove:', err);
@@ -55,12 +50,8 @@ module.exports = class StoveDevice extends Homey.Device {
    * onDeleted is called when the user deleted the device.
    */
   async onDeleted() {
-    if (this.stove) {
-      this.stove.disconnect();
-    }
-    if (this.pollInterval) {
-      clearInterval(this.pollInterval);
-    }
+    if (this.stove) this.stove.disconnect();
+    if (this.pollInterval) clearInterval(this.pollInterval);
     this.log('Device deleted and connection closed');
   }
 
@@ -70,12 +61,19 @@ module.exports = class StoveDevice extends Homey.Device {
       try {
         if (value) {
           await this.stove.turnOn();
+          this.log('Set onoff to', value, '(turnOn called)');
         } else {
           await this.stove.turnOff();
+          this.log('Set onoff to', value, '(turnOff called)');
         }
-        this.log('Set onoff to', value);
+        // Immediately poll for updated state and update capability
+        await this.stove.fetchStoveStatus();
+        const newVal = this.stove.getIsOn();
+        await this.setCapabilityValue('onoff', newVal);
+        this.log('[CAP onoff] (after set)', newVal);
       } catch (err) {
         this.error('Failed to set onoff:', err);
+        throw err;
       }
     });
     this.registerCapabilityListener('target_temperature', async (value) => {
@@ -105,7 +103,6 @@ module.exports = class StoveDevice extends Homey.Device {
         this.error('Failed to set hottoh_power_level:', err);
       }
     });
-    // Add more listeners as needed for settable capabilities
   }
 
   /**
@@ -113,12 +110,16 @@ module.exports = class StoveDevice extends Homey.Device {
    */
   registerFlowActions() {
     // Turn ON stove
-    this.homey.flow.getActionCard('turn_on_stove').registerRunListener(async (args, state) => {
+    this.homey.flow.getActionCard('turn_on_stove').registerRunListener(async () => {
       this.log('Flow action: turn_on_stove triggered');
       if (!this.stove) throw new Error('Stove not connected');
       try {
         await this.stove.turnOn();
-        this.log('Stove turned ON via flow');
+        this.log('Stove turnOn command sent, waiting 3s for stove to update...');
+        await new Promise(res => setTimeout(res, 3000));
+        await this.stove.fetchStoveStatus();
+        await this.updateAllCapabilities();
+        this.log('Stove turned ON via flow (after wait and poll)');
         return true;
       } catch (err) {
         this.error('Failed to turn ON stove via flow:', err);
@@ -126,12 +127,16 @@ module.exports = class StoveDevice extends Homey.Device {
       }
     });
     // Turn OFF stove
-    this.homey.flow.getActionCard('turn_off_stove').registerRunListener(async (args, state) => {
+    this.homey.flow.getActionCard('turn_off_stove').registerRunListener(async () => {
       this.log('Flow action: turn_off_stove triggered');
       if (!this.stove) throw new Error('Stove not connected');
       try {
         await this.stove.turnOff();
-        this.log('Stove turned OFF via flow');
+        this.log('Stove turnOff command sent, waiting 3s for stove to update...');
+        await new Promise(res => setTimeout(res, 3000));
+        await this.stove.fetchStoveStatus();
+        await this.updateAllCapabilities();
+        this.log('Stove turned OFF via flow (after wait and poll)');
         return true;
       } catch (err) {
         this.error('Failed to turn OFF stove via flow:', err);
@@ -139,13 +144,17 @@ module.exports = class StoveDevice extends Homey.Device {
       }
     });
     // Set target temperature
-    this.homey.flow.getActionCard('set_target_temperature').registerRunListener(async (args, state) => {
+    this.homey.flow.getActionCard('set_target_temperature').registerRunListener(async (args) => {
       this.log('Flow action: set_target_temperature triggered', args);
       if (!this.stove) throw new Error('Stove not connected');
       if (typeof args.temperature !== 'number') throw new Error('Missing or invalid temperature');
       try {
         await this.stove.setTargetTemperature(args.temperature);
-        this.log('Target temperature set via flow:', args.temperature);
+        this.log('Set target_temperature command sent, waiting 3s for stove to update...');
+        await new Promise(res => setTimeout(res, 3000));
+        await this.stove.fetchStoveStatus();
+        await this.updateAllCapabilities();
+        this.log('Target temperature set via flow (after wait and poll):', args.temperature);
         return true;
       } catch (err) {
         this.error('Failed to set target temperature via flow:', err);
@@ -164,98 +173,136 @@ module.exports = class StoveDevice extends Homey.Device {
       const current = await this.stove.getFanSpeed();
       return current === args.speed;
     });
+
     // Is target temperature reached
     this.homey.flow.getConditionCard('is_target_temperature_reached').registerRunListener(async () => {
       if (!this.stove) throw new Error('Stove not connected');
       const current = await this.stove.getRoomTemperature();
       const target = await this.stove.getTargetTemperature();
+      if (current === undefined || target === undefined) return false;
       return current >= target;
     });
-    // Removed: is_in_chrono_mode, is_in_cleaning_mode, is_in_eco_mode
+
+    // Is in alarm state
+    this.homey.flow.getConditionCard('is_in_alarm').registerRunListener(async () => {
+      if (!this.stove) throw new Error('Stove not connected');
+      return this.stove.isInAlarm();
+    });
   }
 
+  /**
+   * Update all Homey capabilities from the current stove state
+   */
+  private async updateAllCapabilities() {
+    if (!this.stove) return;
+    // Log raw data received from the stove
+    this.log('[RAW INFO]', this.stove.getRawInfo());
+    this.log('[RAW DATR0]', this.stove.getRawDATR0());
+    // Update and log capabilities
+    if (this.hasCapability('onoff')) {
+      const val = this.stove.getIsOn();
+      await this.setCapabilityValue('onoff', val);
+      this.log('[CAP onoff]', val);
+    }
+    if (this.hasCapability('measure_temperature')) {
+      const val = this.stove.getRoomTemperature();
+      await this.setCapabilityValue('measure_temperature', val);
+      this.log('[CAP measure_temperature]', val);
+    }
+    if (this.hasCapability('target_temperature')) {
+      const val = this.stove.getTargetTemperature();
+      await this.setCapabilityValue('target_temperature', val);
+      this.log('[CAP target_temperature]', val);
+    }
+    if (this.hasCapability('hottoh_fan_speed')) {
+      const val = this.stove.getFanSpeed();
+      await this.setCapabilityValue('hottoh_fan_speed', val);
+      this.log('[CAP hottoh_fan_speed]', val);
+    }
+    if (this.hasCapability('hottoh_power_level')) {
+      const val = this.stove.getPowerLevel();
+      await this.setCapabilityValue('hottoh_power_level', val);
+      this.log('[CAP hottoh_power_level]', val);
+    }
+    if (this.hasCapability('hottoh_smoke_temperature')) {
+      const val = this.stove.getSmokeTemperature();
+      await this.setCapabilityValue('hottoh_smoke_temperature', val);
+      this.log('[CAP hottoh_smoke_temperature]', val);
+    }
+    if (this.hasCapability('hottoh_stove_state')) {
+      const val = this.stove.getState();
+      await this.setCapabilityValue('hottoh_stove_state', val);
+      this.log('[CAP hottoh_stove_state]', val);
+    }
+    if (this.hasCapability('hottoh_state_description')) {
+      // Compose a human-readable description from state only
+      const state = this.stove.getState();
+      const desc = `State: ${state}`;
+      await this.setCapabilityValue('hottoh_state_description', desc);
+      this.log('[CAP hottoh_state_description]', desc);
+    }
+    if (this.hasCapability('hottoh_firmware_version')) {
+      const val = this.stove.getFirmwareVersion();
+      await this.setCapabilityValue('hottoh_firmware_version', val);
+      this.log('[CAP hottoh_firmware_version]', val);
+    }
+    if (this.hasCapability('hottoh_wifi_signal')) {
+      const val = this.stove.getWifiSignal();
+      await this.setCapabilityValue('hottoh_wifi_signal', val);
+      this.log('[CAP hottoh_wifi_signal]', val);
+    }
+    if (this.hasCapability('hottoh_manufacturer')) {
+      const val = this.stove.getManufacturer();
+      await this.setCapabilityValue('hottoh_manufacturer', val);
+      this.log('[CAP hottoh_manufacturer]', val);
+    }
+    if (this.hasCapability('hottoh_stove_state_raw')) {
+      // Import StoveRegisters at the top if not already
+      const val = String(this.stove['dataDATR0'] ? this.stove['dataDATR0'][StoveRegisters.INDEX_STOVE_STATE] : undefined);
+      await this.setCapabilityValue('hottoh_stove_state_raw', val);
+      this.log('[CAP hottoh_stove_state_raw]', val);
+    }
+    if (this.hasCapability('hottoh_fumes')) {
+      const val = this.stove.getSmokeTemperature();
+      await this.setCapabilityValue('hottoh_fumes', val);
+      this.log('[CAP hottoh_fumes]', val);
+    }
+    if (this.hasCapability('hottoh_last_error_code')) {
+      // No substate, so set to undefined or empty string
+      const val = '';
+      await this.setCapabilityValue('hottoh_last_error_code', val);
+      this.log('[CAP hottoh_last_error_code]', val);
+    }
+    if (this.hasCapability('hottoh_last_update_time')) {
+      const val = Date.now();
+      await this.setCapabilityValue('hottoh_last_update_time', val);
+      this.log('[CAP hottoh_last_update_time]', val);
+    }
+    this.setAvailable();
+    this.log('Stove status updated');
+  }
+
+  /**
+   * Start polling the stove for updates
+   */
   startPolling() {
-    this.pollInterval = setInterval(async () => {
-      if (!this.stove) {
-        this.setUnavailable('No stove instance');
-        return;
-      }
+    this.log('Starting stove status polling');
+    const pollInterval = this.getSetting('poll_interval') || NetworkConstants.POLL_INTERVAL_MS;
+    this.log(`Polling interval set to ${pollInterval}ms`);
+    if (this.pollInterval) this.homey.clearInterval(this.pollInterval);
+    this.pollInterval = this.homey.setInterval(async () => {
       try {
-        const isOn = await this.stove.getIsOn();
-        const roomTemp = await this.stove.getRoomTemperature();
-        const targetTemp = await this.stove.getTargetTemperature();
-        const smokeTemp = await this.stove.getSmokeTemperature();
-        const fanSpeed = await this.stove.getFanSpeed();
-        const fumes = await this.stove.getFumes();
-        const powerLevel = await this.stove.getPowerLevel();
-        const stoveState = await this.stove.getStoveState();
-        // Removed: ecoMode = await this.stove.getEcoMode();
-        await this.setCapabilityValue('onoff', isOn);
-        if (this.hasCapability('measure_temperature')) await this.setCapabilityValue('measure_temperature', roomTemp);
-        if (this.hasCapability('target_temperature')) await this.setCapabilityValue('target_temperature', targetTemp);
-        if (this.hasCapability('hottoh_smoke_temperature')) await this.setCapabilityValue('hottoh_smoke_temperature', smokeTemp);
-        if (this.hasCapability('hottoh_fan_speed')) await this.setCapabilityValue('hottoh_fan_speed', fanSpeed);
-        if (this.hasCapability('hottoh_fumes')) await this.setCapabilityValue('hottoh_fumes', fumes);
-        if (this.hasCapability('hottoh_power_level')) await this.setCapabilityValue('hottoh_power_level', powerLevel);
-        if (this.hasCapability('hottoh_stove_state')) await this.setCapabilityValue('hottoh_stove_state', stoveState);
-        // Removed: if (this.hasCapability('hottoh_eco_mode')) await this.setCapabilityValue('hottoh_eco_mode', ecoMode);
-        this.setAvailable();
-        this.log('Polling stove for status update');
-
-        // --- FLOW TRIGGER LOGIC ---
-        // Power level changed
-        if (this.prevPowerLevel !== undefined && powerLevel !== this.prevPowerLevel) {
-          this.homey.flow.getTriggerCard('power_level_changed').trigger({ level: powerLevel }, this);
-          this.log('Flow trigger: power_level_changed', powerLevel);
+        if (!this.stove) {
+          this.setUnavailable('Stove not connected');
+          return;
         }
-        this.prevPowerLevel = powerLevel;
-
-        // Fan speed changed
-        if (this.prevFanSpeed !== undefined && fanSpeed !== this.prevFanSpeed) {
-          this.homey.flow.getTriggerCard('fan_speed_changed').trigger({ speed: fanSpeed }, this);
-          this.log('Flow trigger: fan_speed_changed', fanSpeed);
-        }
-        this.prevFanSpeed = fanSpeed;
-
-        // Stove state (mode) changed
-        if (this.prevStoveState !== undefined && stoveState !== this.prevStoveState) {
-          this.homey.flow.getTriggerCard('mode_changed').trigger({ mode: stoveState }, this);
-          this.log('Flow trigger: mode_changed', stoveState);
-        }
-        this.prevStoveState = stoveState;
-
-        // Temperature changed
-        if (this.prevRoomTemp !== undefined && roomTemp !== this.prevRoomTemp) {
-          this.homey.flow.getTriggerCard('temperature_changed').trigger({ temperature: roomTemp }, this);
-          this.log('Flow trigger: temperature_changed', roomTemp);
-        }
-        this.prevRoomTemp = roomTemp;
-
-        // On/off triggers
-        if (this.prevIsOn !== undefined && isOn !== this.prevIsOn) {
-          if (isOn) {
-            this.homey.flow.getTriggerCard('stove_turned_on').trigger({}, this);
-            this.log('Flow trigger: stove_turned_on');
-          } else {
-            this.homey.flow.getTriggerCard('stove_turned_off').trigger({}, this);
-            this.log('Flow trigger: stove_turned_off');
-          }
-        }
-        this.prevIsOn = isOn;
-
-        // Target temperature reached
-        const targetReached = roomTemp >= targetTemp;
-        if (this.prevTargetTempReached !== undefined && targetReached && !this.prevTargetTempReached) {
-          this.homey.flow.getTriggerCard('target_temperature_reached').trigger({ temperature: roomTemp }, this);
-          this.log('Flow trigger: target_temperature_reached', roomTemp);
-        }
-        this.prevTargetTempReached = targetReached;
-        // --- END FLOW TRIGGER LOGIC ---
+        await this.stove.fetchStoveStatus();
+        await this.updateAllCapabilities();
       } catch (err) {
         this.setUnavailable('Polling error');
         this.error('Polling error:', err);
       }
-    }, 10000);
+    }, pollInterval);
   }
 };
 // All logs from this file will appear in the Homey CLI stdout when running `homey app run`.

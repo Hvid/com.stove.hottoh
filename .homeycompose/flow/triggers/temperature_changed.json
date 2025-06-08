@@ -14,7 +14,17 @@
     "pl": "Temperatura zmieniona"
   },
   "titleFormatted": {
-    "en": "Temperature changed to [[temperature]]"
+    "en": "Temperature changed to [[temperature]]",
+    "da": "Temperatur ændret til [[temperature]]",
+    "nl": "Temperatuur gewijzigd naar [[temperature]]",
+    "de": "Temperatur geändert zu [[temperature]]",
+    "fr": "Température modifiée à [[temperature]]",
+    "no": "Temperatur endret til [[temperature]]",
+    "sv": "Temperatur ändrad till [[temperature]]",
+    "fi": "Lämpötila muuttunut arvoon [[temperature]]",
+    "it": "Temperatura cambiata a [[temperature]]",
+    "es": "Temperatura cambiada a [[temperature]]",
+    "pl": "Temperatura zmieniona na [[temperature]]"
   },
   "args": [
     {

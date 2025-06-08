@@ -2,37 +2,47 @@
   "id": "mode_changed",
   "title": {
     "en": "Stove mode changed",
-    "da": "Brændeovnens tilstand ændret",
-    "nl": "Pelletkachelmodus gewijzigd",
-    "de": "Modus des Pelletofens geändert",
+    "da": "Ovnens tilstand ændret",
+    "nl": "Kachelmodus gewijzigd",
+    "de": "Kaminmodus geändert",
     "fr": "Mode du poêle modifié",
-    "no": "Pelletskaminens modus endret",
-    "sv": "Pelletskaminens läge ändrat",
-    "fi": "Pellettitakan tila muuttunut",
+    "no": "Kaminmodus endret",
+    "sv": "Kaminläge ändrat",
+    "fi": "Takan tila muuttunut",
     "it": "Modalità stufa cambiata",
     "es": "Modo de la estufa cambiado",
-    "pl": "Tryb pieca zmieniony"
+    "pl": "Zmieniono tryb pieca"
+  },
+  "titleFormatted": {
+    "en": "Stove mode changed to [[mode]]",
+    "da": "Ovnens tilstand ændret til [[mode]]",
+    "nl": "Kachelmodus gewijzigd naar [[mode]]",
+    "de": "Kaminmodus geändert zu [[mode]]",
+    "fr": "Mode du poêle modifié à [[mode]]",
+    "no": "Kaminmodus endret til [[mode]]",
+    "sv": "Kaminläge ändrat till [[mode]]",
+    "fi": "Takan tila muuttunut arvoon [[mode]]",
+    "it": "Modalità stufa cambiata a [[mode]]",
+    "es": "Modo de la estufa cambiado a [[mode]]",
+    "pl": "Tryb pieca zmieniony na [[mode]]"
   },
   "args": [
     {
       "name": "mode",
       "type": "text",
       "title": {
-        "en": "New Mode",
-        "da": "Ny tilstand",
-        "nl": "Nieuwe modus",
-        "de": "Neuer Modus",
-        "fr": "Nouveau mode",
-        "no": "Ny modus",
-        "sv": "Nytt läge",
-        "fi": "Uusi tila",
-        "it": "Nuova modalità",
-        "es": "Nuevo modo",
-        "pl": "Nowy tryb"
+        "en": "Mode",
+        "da": "Tilstand",
+        "nl": "Modus",
+        "de": "Modus",
+        "fr": "Mode",
+        "no": "Modus",
+        "sv": "Läge",
+        "fi": "Tila",
+        "it": "Modalità",
+        "es": "Modo",
+        "pl": "Tryb"
       }
     }
-  ],
-  "titleFormatted": {
-    "en": "Mode changed to [[mode]]"
-  }
+  ]
 }

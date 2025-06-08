@@ -2,15 +2,118 @@
   "pair": {
     "manual": {
       "title": "Pelletkachel handmatig toevoegen",
-      "desc": "Voer het IP-adres en de poort van uw pelletkachel in om deze met Homey te verbinden.",
+      "desc": "Voer het IP-adres en de poort van je pelletkachel in om deze met Homey te verbinden.",
       "ip_label": "IP-adres",
       "port_label": "Poort",
       "submit": "Pelletkachel toevoegen",
       "continue": "Doorgaan",
-      "success": "Pelletkachel toegevoegd! Klik op Doorgaan om te voltooien.",
+      "success": "Pelletkachel toegevoegd! Klik op Doorgaan om af te ronden.",
       "error_missing": "Voer zowel het IP-adres als de poort in.",
       "error_connect": "Kan geen verbinding maken met de pelletkachel. Controleer het IP-adres en de poort.",
       "error_invalid": "Voer een geldig poortnummer in (1-65535)."
     }
+  },
+  "state": {
+    "off": "Uit",
+    "ignition": "Ontstekingsfase",
+    "on": "In bedrijf",
+    "modulation": "Modulatie",
+    "cleaning": "Reiniging",
+    "alarm": "Alarm/Fout",
+    "cooling": "Afkoelen",
+    "standby": "Stand-by",
+    "loading": "Pellets laden",
+    "test": "Testmodus",
+    "unknown": "Onbekend"
+  },
+  "phase": {
+    "0": "Idle",
+    "1": "Ontsteking",
+    "2": "Verwarmen",
+    "3": "Reinigen",
+    "4": "Afkoelen",
+    "5": "Laden"
+  },
+  "substate": {
+    "0": "Geen",
+    "1": "Voorverwarmen",
+    "2": "Branden",
+    "3": "As verwijderen",
+    "4": "Pellettoevoer"
+  },
+  "capability": {
+    "firmware_version": "Firmwareversie",
+    "manufacturer": "Fabrikant",
+    "wifi_signal": "WiFi-signaal",
+    "error_code": "Foutcode",
+    "phase": "Kachel Fase",
+    "substate": "Kachel Substatus",
+    "last_update": "Laatste update tijd",
+    "state_description": "Statusbeschrijving",
+    "stove_state_raw": "Kachelstatus (rauw)"
+  },
+  "flow": {
+    "hottoh_stove_state": "Status pelletkachel gewijzigd",
+    "stove_enters_alarm": "Kachel in alarm/foutstatus",
+    "stove_resumes_from_error": "Kachel hervat na fout",
+    "stove_unreachable": "Kachel onbereikbaar",
+    "target_temperature_reached": "Kachel bereikt doeldtemperatuur",
+    "is_stove_on": "Pelletkachel is aan",
+    "is_in_phase": "Kachel is in fase",
+    "turn_on_stove": "Zet pelletkachel aan",
+    "turn_off_stove": "Zet pelletkachel uit",
+    "set_target_temperature": {
+      "title": "Stel doeldtemperatuur in",
+      "args": {
+        "temperature": {
+          "title": "Doeltemperatuur"
+        }
+      }
+    },
+    "stove_enters_alarm_args": {
+      "error_code": {
+        "title": "Foutcode"
+      }
+    },
+    "stove_unreachable_args": {
+      "minutes": {
+        "title": "Minuten onbereikbaar"
+      }
+    },
+    "target_temperature_reached_args": {
+      "temperature": {
+        "title": "Ruimtetemperatuur"
+      }
+    },
+    "is_in_phase_args": {
+      "phase": {
+        "title": "Fase"
+      }
+    },
+    "hottoh_stove_state_args": {
+      "state": {
+        "title": "Nieuwe status"
+      }
+    }
+  },
+  "diagnostics": {
+    "firmware": "Firmwareversie",
+    "manufacturer": "Fabrikant",
+    "wifi_signal": "WiFi-signaal (dBm)",
+    "raw_state": "Rauwe status",
+    "composite_state": "Samengestelde status",
+    "error_code": "Foutcode",
+    "phase": "Fase",
+    "substate": "Substatus",
+    "last_update": "Laatste update",
+    "state_description": "Statusbeschrijving"
+  },
+  "error": {
+    "unreachable": "Apparaat niet bereikbaar",
+    "alarm": "Alarm-/foutstatus",
+    "resume": "Hervat na fout",
+    "invalid_state": "Ongeldige of onbekende status",
+    "invalid_phase": "Ongeldige of onbekende fase",
+    "invalid_substate": "Ongeldige of onbekende substatus"
   }
 }

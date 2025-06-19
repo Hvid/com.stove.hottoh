@@ -1,0 +1,123 @@
+{
+  "id": "wifi_signal_is",
+  "title": {
+    "en": "WiFi signal !{{is|is not}}",
+    "nl": "WiFi-signaal !{{is|is niet}}",
+    "fr": "Le signal WiFi !{{est|n'est pas}}",
+    "de": "WLAN-Signal !{{ist|ist nicht}}",
+    "it": "Il segnale WiFi !{{è|non è}}",
+    "es": "La señal WiFi !{{es|no es}}",
+    "sv": "WiFi-signal !{{är|är inte}}",
+    "no": "WiFi-signal !{{er|er ikke}}",
+    "da": "WiFi-signal !{{er|er ikke}}",
+    "ru": "Сигнал WiFi !{{|не}}",
+    "pl": "Sygnał WiFi !{{jest|nie jest}}",
+    "ko": "WiFi 신호가 !{{입니다|아닙니다}}"
+  },
+  "titleFormatted": {
+    "en": "WiFi signal !{{is|is not}} [[strength]]",
+    "nl": "WiFi-signaal !{{is|is niet}} [[strength]]",
+    "fr": "Le signal WiFi !{{est|n'est pas}} [[strength]]",
+    "de": "WLAN-Signal !{{ist|ist nicht}} [[strength]]",
+    "it": "Il segnale WiFi !{{è|non è}} [[strength]]",
+    "es": "La señal WiFi !{{es|no es}} [[strength]]",
+    "sv": "WiFi-signal !{{är|är inte}} [[strength]]",
+    "no": "WiFi-signal !{{er|er ikke}} [[strength]]",
+    "da": "WiFi-signal !{{er|er ikke}} [[strength]]",
+    "ru": "Сигнал WiFi !{{|не}} [[strength]]",
+    "pl": "Sygnał WiFi !{{jest|nie jest}} [[strength]]",
+    "ko": "WiFi 신호가 [[strength]] !{{입니다|아닙니다}}"
+  },
+  "hint": {
+    "en": "Check if the WiFi signal strength is strong/medium/weak",
+    "nl": "Controleer of de WiFi-signaalsterkte sterk/gemiddeld/zwak is",
+    "fr": "Vérifiez si la force du signal WiFi est forte/moyenne/faible",
+    "de": "Prüfen, ob die WLAN-Signalstärke stark/mittel/schwach ist",
+    "it": "Controlla se la potenza del segnale WiFi è forte/media/debole",
+    "es": "Comprobar si la intensidad de la señal WiFi es fuerte/media/débil",
+    "sv": "Kontrollera om WiFi-signalstyrkan är stark/medel/svag",
+    "no": "Sjekk om WiFi-signalstyrken er sterk/middels/svak",
+    "da": "Tjek om WiFi-signalstyrken er stærk/medium/svag",
+    "ru": "Проверить, является ли уровень сигнала WiFi сильным/средним/слабым",
+    "pl": "Sprawdź, czy siła sygnału WiFi jest silna/średnia/słaba",
+    "ko": "WiFi 신호 강도가 강함/중간/약함인지 확인합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "strength",
+      "type": "dropdown",
+      "title": {
+        "en": "Signal Strength",
+        "nl": "Signaalsterkte",
+        "fr": "Force du signal",
+        "de": "Signalstärke",
+        "it": "Potenza del segnale",
+        "es": "Intensidad de señal",
+        "sv": "Signalstyrka",
+        "no": "Signalstyrke",
+        "da": "Signalstyrke",
+        "ru": "Сила сигнала",
+        "pl": "Siła sygnału",
+        "ko": "신호 강도"
+      },
+      "values": [
+        {
+          "id": "strong",
+          "label": {
+            "en": "Strong (>75%)",
+            "nl": "Sterk (>75%)",
+            "fr": "Fort (>75%)",
+            "de": "Stark (>75%)",
+            "it": "Forte (>75%)",
+            "es": "Fuerte (>75%)",
+            "sv": "Stark (>75%)",
+            "no": "Sterk (>75%)",
+            "da": "Stærk (>75%)",
+            "ru": "Сильный (>75%)",
+            "pl": "Silny (>75%)",
+            "ko": "강함 (>75%)"
+          }
+        },
+        {
+          "id": "medium",
+          "label": {
+            "en": "Medium (30-75%)",
+            "nl": "Gemiddeld (30-75%)",
+            "fr": "Moyen (30-75%)",
+            "de": "Mittel (30-75%)",
+            "it": "Medio (30-75%)",
+            "es": "Medio (30-75%)",
+            "sv": "Medel (30-75%)",
+            "no": "Middels (30-75%)",
+            "da": "Medium (30-75%)",
+            "ru": "Средний (30-75%)",
+            "pl": "Średni (30-75%)",
+            "ko": "중간 (30-75%)"
+          }
+        },
+        {
+          "id": "weak",
+          "label": {
+            "en": "Weak (<30%)",
+            "nl": "Zwak (<30%)",
+            "fr": "Faible (<30%)",
+            "de": "Schwach (<30%)",
+            "it": "Debole (<30%)",
+            "es": "Débil (<30%)",
+            "sv": "Svag (<30%)",
+            "no": "Svak (<30%)",
+            "da": "Svag (<30%)",
+            "ru": "Слабый (<30%)",
+            "pl": "Słaby (<30%)",
+            "ko": "약함 (<30%)"
+          }
+        }
+      ]
+    }
+  ]
+}

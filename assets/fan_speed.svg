@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fan blades -->
+  <path d="M12 6c-0.5-2-2-3-3.5-2.5C10 2 13 3 12 6z" fill="currentColor"/>
+  <path d="M18 12c2-0.5 3-2 2.5-3.5C22 10 21 13 18 12z" fill="currentColor"/>
+  <path d="M12 18c0.5 2 2 3 3.5 2.5C14 22 11 21 12 18z" fill="currentColor"/>
+  <path d="M6 12c-2 0.5-3 2-2.5 3.5C2 14 3 11 6 12z" fill="currentColor"/>
+
+  <!-- Fan center -->
+  <circle cx="12" cy="12" r="2" fill="currentColor"/>
+
+  <!-- Outer ring -->
+  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+
+  <!-- Speed lines -->
+  <path d="M17 7L19 5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <path d="M19 17L21 19" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <path d="M7 17L5 19" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+  <path d="M5 5L7 7" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+</svg>

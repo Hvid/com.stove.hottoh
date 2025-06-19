@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Fan Speed",
+    "da": "Blæserhastighed",
+    "de": "Lüftergeschwindigkeit",
+    "es": "Velocidad del Ventilador",
+    "fr": "Vitesse du Ventilateur",
+    "it": "Velocità Ventilatore",
+    "ko": "팬 속도",
+    "nl": "Ventilatorsnelheid",
+    "no": "Viftehastighet",
+    "pl": "Prędkość Wentylatora",
+    "ru": "Скорость Вентилятора",
+    "sv": "Fläkthastighet"
+  },
+  "min": 1,
+  "max": 5,
+  "step": 1,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "icon": "/assets/fan_speed.svg"
+}

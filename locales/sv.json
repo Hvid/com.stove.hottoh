@@ -1,0 +1,116 @@
+{
+  "driver": {
+    "name": "HottoH kamin"
+  },
+  "pair": {
+    "title": "HottoH kamin parkoppling",
+    "subtitle": "Välj hur du vill lägga till din kamin",
+    "options": "Anslutningsalternativ",
+    "continue": "Fortsätt",
+    "discovery": {
+      "intro": "Välj hur du vill ansluta till din HottoH kamin.",
+      "button": "Starta sökning",
+      "option": "Automatisk sökning",
+      "title": "Hittade kaminer",
+      "titleError": "Fel under sökning",
+      "singular": "kamin",
+      "plural": "kaminer",
+      "timeout_error": "Sökningen tar längre tid än väntat. Detta kan hända om det finns många enheter i ditt nätverk. Kontrollera att din kamin är påslagen och ansluten till WiFi, försök sedan igen."
+    },
+    "manual": {
+      "button": "Ange IP manuellt",
+      "option": "Manuell IP-inmatning",
+      "title": "Ange IP-adress",
+      "subtitle": "Ange IP-adressen för din HottoH kamin",
+      "ip_label": "IP-adress",
+      "submit": "Testa och lägg till",
+      "error": {
+        "invalid": "Ogiltigt IP-adress format.",
+        "null_device": "Enhetsobjekt är null eller odefinierat",
+        "create_device": "Kunde inte skapa enhet",
+        "connect": "Kunde inte ansluta till kamin på denna IP-adress"
+      }
+    },
+    "tips": {
+      "title": "Tips för lyckad anslutning",
+      "item1": "Se till att din kamin är påslagen",
+      "item2": "Verifiera att din kamin är ansluten till ditt WiFi-nätverk",
+      "item3": "Kontrollera att din Homey är på samma nätverk som din kamin",
+      "item4": "Om automatisk sökning misslyckas kan du ange kaminens IP-adress manuellt"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "Någon kamin är !{{påslagen|avstängd}}",
+        "hint": "Utlöses när någon kamin slås på eller av"
+      },
+      "power_level_changed": {
+        "title": "Effektnivå har ändrats",
+        "hint": "Utlöses när kaminens effektnivå ändras"
+      },
+      "smoke_temperature_threshold": {
+        "title": "Röktemperatur !{{har stigit över|har sjunkit under}} tröskelvärdet",
+        "titleFormatted": "Röktemperatur !{{har stigit över|har sjunkit under}} [[threshold]] °C",
+        "hint": "Utlöses när röktemperaturen korsar ett tröskelvärde"
+      },
+      "stove_state_changed": {
+        "title": "Kaminstatus har ändrats",
+        "hint": "Utlöses när kaminen ändras från ett tillstånd till ett annat"
+      },
+      "temperature_reached": {
+        "title": "Måltemperatur uppnådd",
+        "hint": "Utlöses när rumstemperaturen når måltemperaturen"
+      },
+      "wifi_signal_changed": {
+        "title": "WiFi-signal har ändrats avsevärt",
+        "hint": "Utlöses när WiFi-signalstyrkan ändras med 10dBm eller mer"
+      }
+    },
+    "tokens": {
+      "name": "Namn",
+      "state": "Tillstånd",
+      "power_level": "Effektnivå",
+      "temperature": "Temperatur",
+      "state_string": "Tillstånd",
+      "signal": "Signal"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "Kaminläge",
+      "values": {
+        "Off": "Avstängd",
+        "Starting": "Startar",
+        "Preheating": "Förvärmer",
+        "Running": "I drift",
+        "Cooling Down": "Kyler ner",
+        "Cleaning": "Rengöring",
+        "Standby": "Standby"
+      }
+    },
+    "fan_speed": {
+      "title": "Fläkthastighet"
+    },
+    "power_level": {
+      "title": "Effektnivå"
+    },
+    "smoke_temperature": {
+      "title": "Röktemperatur"
+    },
+    "fumes_flow": {
+      "title": "Rökflöde"
+    },
+    "wifi_signal": {
+      "title": "WiFi-signal",
+      "values": {
+        "strong": "Stark (>75%)",
+        "medium": "Medel (30-75%)",
+        "weak": "Svag (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "Firmwareversion"
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "driver": {
+    "name": "HottoH kachel"
+  },
+  "pair": {
+    "title": "HottoH kachel koppelen",
+    "subtitle": "Kies hoe je je kachel wilt toevoegen",
+    "options": "Verbindingsopties",
+    "continue": "Doorgaan",
+    "discovery": {
+      "intro": "Kies hoe je verbinding wilt maken met je HottoH kachel.",
+      "button": "Start zoeken",
+      "option": "Automatisch zoeken",
+      "title": "Gevonden kachels",
+      "titleError": "Fout tijdens zoeken",
+      "singular": "kachel",
+      "plural": "kachels",
+      "timeout_error": "Zoeken duurt langer dan verwacht. Dit kan gebeuren als er veel apparaten in je netwerk zijn. Controleer of je kachel is ingeschakeld en verbonden is met WiFi, en probeer het dan opnieuw."
+    },
+    "manual": {
+      "button": "IP handmatig invoeren",
+      "option": "Handmatige IP invoer",
+      "title": "Voer IP-adres in",
+      "subtitle": "Geef het IP-adres van je HottoH kachel op",
+      "ip_label": "IP-adres",
+      "submit": "Testen en toevoegen",
+      "error": {
+        "invalid": "Ongeldig IP-adres formaat.",
+        "null_device": "Apparaatobject is null of ongedefinieerd",
+        "create_device": "Kon apparaat niet aanmaken",
+        "connect": "Kon geen verbinding maken met kachel op dit IP-adres"
+      }
+    },
+    "tips": {
+      "title": "Tips voor succesvolle verbinding",
+      "item1": "Zorg ervoor dat je kachel is ingeschakeld",
+      "item2": "Controleer of je kachel is verbonden met je WiFi-netwerk",
+      "item3": "Controleer of je Homey zich in hetzelfde netwerk bevindt als je kachel",
+      "item4": "Als automatisch zoeken mislukt, kun je het IP-adres van je kachel handmatig invoeren"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "Een kachel is ingeschakeld of uitgeschakeld",
+        "hint": "Wordt geactiveerd wanneer een kachel wordt in- of uitgeschakeld"
+      },
+      "power_level_changed": {
+        "title": "Vermogensniveau is gewijzigd",
+        "hint": "Wordt geactiveerd wanneer het vermogensniveau van de kachel verandert"
+      },
+      "smoke_temperature_threshold": {
+        "title": "Rooktemperatuur !{{is boven|is onder}} drempelwaarde",
+        "titleFormatted": "Rooktemperatuur !{{is boven|is onder}} [[threshold]] °C",
+        "hint": "Wordt geactiveerd wanneer de rooktemperatuur een drempelwaarde overschrijdt"
+      },
+      "stove_state_changed": {
+        "title": "Kachelstatus is gewijzigd",
+        "hint": "Wordt geactiveerd wanneer de kachel van de ene status naar de andere verandert"
+      },
+      "temperature_reached": {
+        "title": "Doeltemperatuur bereikt",
+        "hint": "Wordt geactiveerd wanneer de kamertemperatuur de doeltemperatuur bereikt"
+      },
+      "wifi_signal_changed": {
+        "title": "WiFi-signaal is aanzienlijk gewijzigd",
+        "hint": "Wordt geactiveerd wanneer de WiFi-signaalsterkte met 10dBm of meer verandert"
+      }
+    },
+    "conditions": {
+      "fan_speed_is": {
+        "title": "Ventilatorsnelheid !{{is|is niet}}",
+        "hint": "Controleer of de ventilatorsnelheid op een specifiek niveau is"
+      },
+      "power_level_is": {
+        "title": "Vermogensniveau !{{is|is niet}}",
+        "hint": "Controleer of het vermogensniveau op een specifieke waarde is"
+      },
+      "room_temperature_is": {
+        "title": "Kamertemperatuur !{{is|is niet}}",
+        "hint": "Controleer of de kamertemperatuur een specifieke waarde heeft"
+      },
+      "stove_is_in_state": {
+        "title": "Kachel !{{is|is niet}} in status",
+        "hint": "Controleer of de kachel in een specifieke status is"
+      },
+      "wifi_signal_is": {
+        "title": "WiFi-signaal !{{is|is niet}}",
+        "hint": "Controleer of de WiFi-signaalsterkte sterk/gemiddeld/zwak is"
+      }
+    },
+    "actions": {
+      "set_fan_speed": {
+        "title": "Ventilatorsnelheid instellen",
+        "hint": "Stel de ventilatorsnelheid van de kachel in"
+      },
+      "set_power_level": {
+        "title": "Vermogensniveau instellen",
+        "hint": "Stel het vermogensniveau van de kachel in"
+      },
+      "set_power_state": {
+        "title": "!{{Inschakelen|Uitschakelen}}",
+        "hint": "De kachel in- of uitschakelen"
+      },
+      "set_target_temperature": {
+        "title": "Doeltemperatuur instellen",
+        "hint": "Stel de doelkamertemperatuur in"
+      },
+      "turn_off_when_temperature_reached": {
+        "title": "Uitschakelen wanneer temperatuur bereikt",
+        "hint": "De kachel uitschakelen wanneer een specifieke kamertemperatuur is bereikt"
+      }
+    },
+    "tokens": {
+      "name": "Naam",
+      "state": "Status",
+      "power_level": "Vermogensniveau",
+      "temperature": "Temperatuur",
+      "state_string": "Statusbeschrijving",
+      "signal": "WiFi-signaalsterkte"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "Kachel Status",
+      "values": {
+        "Off": "Uit",
+        "Starting": "Opstarten",
+        "Preheating": "Voorverwarmen",
+        "Running": "In werking",
+        "Cooling Down": "Afkoelen",
+        "Cleaning": "Reinigen",
+        "Standby": "Standby"
+      }
+    },
+    "fan_speed": {
+      "title": "Ventilatorsnelheid"
+    },
+    "power_level": {
+      "title": "Vermogensniveau"
+    },
+    "smoke_temperature": {
+      "title": "Rooktemperatuur"
+    },
+    "fumes_flow": {
+      "title": "Rookgasstroom"
+    },
+    "wifi_signal": {
+      "title": "WiFi-signaal",
+      "values": {
+        "strong": "Sterk (>75%)",
+        "medium": "Gemiddeld (30-75%)",
+        "weak": "Zwak (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "Firmware-versie"
+    }
+  }
+}

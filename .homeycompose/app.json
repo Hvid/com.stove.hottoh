@@ -1,0 +1,53 @@
+{
+  "id": "com.stove.hottoh",
+  "version": "1.0.1",
+  "compatibility": ">=12.1.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "HottoH stove",
+    "da": "HottoH ovn",
+    "de": "HottoH Ofen",
+    "es": "Estufa HottoH",
+    "fr": "Poêle HottoH",
+    "it": "Stufa HottoH",
+    "ko": "HottoH 스토브",
+    "nl": "HottoH kachel",
+    "no": "HottoH ovn",
+    "pl": "Piec HottoH",
+    "ru": "Печь HottoH",
+    "sv": "HottoH kamin"
+  },
+  "description": {
+    "en": "Control your HottoH pellet stove with Homey",
+    "da": "Styr din HottoH pilleovn med Homey",
+    "de": "Steuern Sie Ihren HottoH Pelletofen mit Homey",
+    "es": "Controla tu estufa de pellets HottoH con Homey",
+    "fr": "Contrôlez votre poêle à granulés HottoH avec Homey",
+    "it": "Controlla la tua stufa a pellet HottoH con Homey",
+    "ko": "Homey로 HottoH 펠릿 스토브를 제어하세요",
+    "nl": "Bedien je HottoH pelletkachel met Homey",
+    "no": "Styr HottoH pelletovnen din med Homey",
+    "pl": "Steruj piecem na pellet HottoH za pomocą Homey",
+    "ru": "Управляйте пеллетной печью HottoH с помощью Homey",
+    "sv": "Styr din HottoH pelletskamin med Homey"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "brandColor": "#F57C00",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Mikkel Hvid",
+    "email": "mikkelhvid@gmail.com"
+  },
+  "support": "https://github.com/Hvid/com.stove.hottoh/issues",
+  "source": "https://github.com/Hvid/com.stove.hottoh"
+}

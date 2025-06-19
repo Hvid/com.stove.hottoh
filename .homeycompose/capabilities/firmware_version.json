@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Firmware Version",
+    "da": "Firmware Version",
+    "de": "Firmware-Version",
+    "es": "Versión de Firmware",
+    "fr": "Version du Firmware",
+    "it": "Versione Firmware",
+    "ko": "펌웨어 버전",
+    "nl": "Firmware Versie",
+    "no": "Firmware Versjon",
+    "pl": "Wersja Oprogramowania",
+    "ru": "Версия Прошивки",
+    "sv": "Firmware Version"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor"
+}

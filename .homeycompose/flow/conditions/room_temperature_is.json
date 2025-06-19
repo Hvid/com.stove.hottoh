@@ -1,0 +1,127 @@
+{
+  "id": "room_temperature_is",
+  "title": {
+    "en": "Room temperature !{{is|is not}}",
+    "nl": "Kamertemperatuur !{{is|is niet}}",
+    "fr": "La température ambiante !{{est|n'est pas}}",
+    "de": "Raumtemperatur !{{ist|ist nicht}}",
+    "it": "La temperatura ambiente !{{è|non è}}",
+    "es": "La temperatura ambiente !{{es|no es}}",
+    "sv": "Rumstemperatur !{{är|är inte}}",
+    "no": "Romtemperatur !{{er|er ikke}}",
+    "da": "Rumtemperatur !{{er|er ikke}}",
+    "ru": "Температура в помещении !{{|не}}",
+    "pl": "Temperatura pomieszczenia !{{jest|nie jest}}",
+    "ko": "실내 온도가 !{{입니다|아닙니다}}"
+  },
+  "titleFormatted": {
+    "en": "Room temperature !{{is|is not}} [[comparison]] [[temperature]] °C",
+    "nl": "Kamertemperatuur !{{is|is niet}} [[comparison]] [[temperature]] °C",
+    "fr": "La température ambiante !{{est|n'est pas}} [[comparison]] [[temperature]] °C",
+    "de": "Raumtemperatur !{{ist|ist nicht}} [[comparison]] [[temperature]] °C",
+    "it": "La temperatura ambiente !{{è|non è}} [[comparison]] [[temperature]] °C",
+    "es": "La temperatura ambiente !{{es|no es}} [[comparison]] [[temperature]] °C",
+    "sv": "Rumstemperatur !{{är|är inte}} [[comparison]] [[temperature]] °C",
+    "no": "Romtemperatur !{{er|er ikke}} [[comparison]] [[temperature]] °C",
+    "da": "Rumtemperatur !{{er|er ikke}} [[comparison]] [[temperature]] °C",
+    "ru": "Температура в помещении !{{|не}} [[comparison]] [[temperature]] °C",
+    "pl": "Temperatura pomieszczenia !{{jest|nie jest}} [[comparison]] [[temperature]] °C",
+    "ko": "실내 온도가 [[comparison]] [[temperature]] °C !{{입니다|아닙니다}}"
+  },
+  "hint": {
+    "en": "Check if the room temperature is above/below a certain value",
+    "nl": "Controleer of de kamertemperatuur boven/onder een bepaalde waarde ligt",
+    "fr": "Vérifiez si la température ambiante est supérieure/inférieure à une certaine valeur",
+    "de": "Prüfen, ob die Raumtemperatur über/unter einem bestimmten Wert liegt",
+    "it": "Controlla se la temperatura ambiente è sopra/sotto un certo valore",
+    "es": "Comprobar si la temperatura ambiente está por encima/debajo de un valor determinado",
+    "sv": "Kontrollera om rumstemperaturen är över/under ett visst värde",
+    "no": "Sjekk om romtemperaturen er over/under en bestemt verdi",
+    "da": "Tjek om rumtemperaturen er over/under en bestemt værdi",
+    "ru": "Проверить, находится ли температура в помещении выше/ниже определенного значения",
+    "pl": "Sprawdź, czy temperatura pomieszczenia jest powyżej/poniżej określonej wartości",
+    "ko": "실내 온도가 특정 값보다 높은지/낮은지 확인합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "comparison",
+      "type": "dropdown",
+      "title": {
+        "en": "Comparison",
+        "nl": "Vergelijking",
+        "fr": "Comparaison",
+        "de": "Vergleich",
+        "it": "Confronto",
+        "es": "Comparación",
+        "sv": "Jämförelse",
+        "no": "Sammenligning",
+        "da": "Sammenligning",
+        "ru": "Сравнение",
+        "pl": "Porównanie",
+        "ko": "비교"
+      },
+      "values": [
+        {
+          "id": "above",
+          "label": {
+            "en": "above",
+            "nl": "boven",
+            "fr": "au-dessus de",
+            "de": "über",
+            "it": "sopra",
+            "es": "por encima de",
+            "sv": "över",
+            "no": "over",
+            "da": "over",
+            "ru": "выше",
+            "pl": "powyżej",
+            "ko": "초과"
+          }
+        },
+        {
+          "id": "below",
+          "label": {
+            "en": "below",
+            "nl": "onder",
+            "fr": "en dessous de",
+            "de": "unter",
+            "it": "sotto",
+            "es": "por debajo de",
+            "sv": "under",
+            "no": "under",
+            "da": "under",
+            "ru": "ниже",
+            "pl": "poniżej",
+            "ko": "미만"
+          }
+        }
+      ]
+    },
+    {
+      "name": "temperature",
+      "type": "number",
+      "min": 5,
+      "max": 35,
+      "step": 0.5,
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "fr": "Température",
+        "de": "Temperatur",
+        "it": "Temperatura",
+        "es": "Temperatura",
+        "sv": "Temperatur",
+        "no": "Temperatur",
+        "da": "Temperatur",
+        "ru": "Температура",
+        "pl": "Temperatura",
+        "ko": "온도"
+      }
+    }
+  ]
+}

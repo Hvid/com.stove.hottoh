@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="700" viewBox="0 0 1000 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stove body -->
+  <rect x="350" y="150" width="300" height="420" rx="16" fill="#404040" />
+  <rect x="360" y="160" width="280" height="400" rx="10" fill="#303030" />
+
+  <!-- Stove window -->
+  <rect x="390" y="190" width="220" height="260" rx="12" fill="#1a1a1a" />
+  <rect x="400" y="200" width="200" height="240" rx="8" fill="#111111" />
+
+  <!-- Flames -->
+  <path d="M430 350C430 290 500 275 500 240C500 275 570 290 570 350C570 385 535 400 500 400C465 400 430 385 430 350Z" fill="#f8692b" />
+  <path d="M440 350C440 300 500 290 500 255C500 290 560 300 560 350C560 380 530 390 500 390C470 390 440 380 440 350Z" fill="#fcae30" />
+  <path d="M450 350C450 310 500 300 500 270C500 300 550 310 550 350C550 370 525 380 500 380C475 380 450 370 450 350Z" fill="#ffdb44" />
+
+  <!-- Stove top -->
+  <rect x="350" y="130" width="300" height="20" rx="5" fill="#505050" />
+
+  <!-- Stove legs -->
+  <rect x="360" y="570" width="60" height="20" rx="5" fill="#505050" />
+  <rect x="580" y="570" width="60" height="20" rx="5" fill="#505050" />
+
+  <!-- Controls -->
+  <circle cx="500" cy="500" r="15" fill="#707070" />
+  <circle cx="450" cy="500" r="10" fill="#707070" />
+  <circle cx="550" cy="500" r="10" fill="#707070" />
+
+  <!-- Pellet container -->
+  <rect x="580" y="190" width="40" height="80" rx="5" fill="#505050" />
+  <rect x="585" y="195" width="30" height="70" rx="3" fill="#606060" />
+
+</svg>

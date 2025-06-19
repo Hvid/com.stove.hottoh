@@ -1,0 +1,144 @@
+{
+  "name": {
+    "en": "HottoH stove",
+    "nl": "HottoH kachel",
+    "de": "HottoH ofen",
+    "fr": "Poêle HottoH",
+    "it": "Stufa HottoH",
+    "sv": "HottoH kamin",
+    "no": "HottoH ovn",
+    "es": "Estufa HottoH",
+    "da": "HottoH ovn",
+    "ru": "Печь HottoH",
+    "pl": "Piec HottoH",
+    "ko": "HottoH 스토브"
+  },
+  "class": "heater",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "onoff",
+    "fumes_flow",
+    "smoke_temperature",
+    "power_level",
+    "fan_speed",
+    "firmware_version",
+    "wifi_signal",
+    "stove_state"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "start",
+      "options": {
+        "title": "{{pair.title}}",
+        "subtitle": "{{pair.subtitle}}"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "options": {
+        "title": {
+          "en": "Discovered Stoves",
+          "nl": "Gevonden Kachels",
+          "de": "Gefundene Öfen",
+          "fr": "Poêles Découverts",
+          "it": "Stufe Trovate",
+          "sv": "Upptäckta Kaminer",
+          "no": "Oppdagede Ovner",
+          "es": "Estufas Descubiertas",
+          "da": "Fundne Ovne",
+          "ru": "Обнаруженные Печи",
+          "pl": "Znalezione Piece",
+          "ko": "발견된 스토브"
+        },
+        "titleError": {
+          "en": "Error during discovery",
+          "nl": "Fout tijdens zoeken",
+          "de": "Fehler bei der Suche",
+          "fr": "Erreur pendant la découverte",
+          "it": "Errore durante la ricerca",
+          "sv": "Fel under upptäckt",
+          "no": "Feil under oppdagelse",
+          "es": "Error durante la búsqueda",
+          "da": "Fejl under opdagelse",
+          "ru": "Ошибка во время поиска",
+          "pl": "Błąd podczas wykrywania",
+          "ko": "검색 중 오류 발생"
+        },
+        "singular": {
+          "en": "stove",
+          "nl": "kachel",
+          "de": "Ofen",
+          "fr": "poêle",
+          "it": "stufa",
+          "sv": "kamin",
+          "no": "ovn",
+          "es": "estufa",
+          "da": "ovn",
+          "ru": "печь",
+          "pl": "piec",
+          "ko": "스토브"
+        },
+        "plural": {
+          "en": "stoves",
+          "nl": "kachels",
+          "de": "Öfen",
+          "fr": "poêles",
+          "it": "stufe",
+          "sv": "kaminer",
+          "no": "ovner",
+          "es": "estufas",
+          "da": "ovne",
+          "ru": "печи",
+          "pl": "piece",
+          "ko": "스토브"
+        }
+      },
+      "navigation": {
+        "next": "add_devices",
+        "buttons": {
+          "manual": {
+            "label": {
+              "en": "Manual IP Entry",
+              "nl": "Handmatige IP Invoer",
+              "de": "Manuelle IP-Eingabe",
+              "fr": "Saisie manuelle de l'IP",
+              "it": "Inserimento Manuale IP",
+              "sv": "Manuell IP-inmatning",
+              "no": "Manuell IP-oppføring",
+              "es": "Entrada Manual de IP",
+              "da": "Manuel IP-indtastning",
+              "ru": "Ручной ввод IP",
+              "pl": "Ręczne Wprowadzanie IP",
+              "ko": "수동 IP 입력"
+            },
+            "next": "manual_ip"
+          }
+        }
+      }
+    },
+    {
+      "id": "manual_ip",
+      "options": {
+        "title": "{{pair.manual.title}}"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "discovery": "hottoh"
+}

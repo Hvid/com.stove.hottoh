@@ -1,0 +1,59 @@
+{
+  "id": "power_level_changed",
+  "title": {
+    "en": "Power level has changed",
+    "nl": "Vermogensniveau is gewijzigd",
+    "fr": "Le niveau de puissance a changé",
+    "de": "Leistungsstufe hat sich geändert",
+    "it": "Il livello di potenza è cambiato",
+    "es": "El nivel de potencia ha cambiado",
+    "sv": "Effektnivå har ändrats",
+    "no": "Effektnivå er endret",
+    "da": "Effektniveau er ændret",
+    "ru": "Уровень мощности изменился",
+    "pl": "Poziom mocy się zmienił",
+    "ko": "전원 레벨이 변경됨"
+  },
+  "hint": {
+    "en": "Triggered when the power level of the stove changes",
+    "nl": "Wordt geactiveerd wanneer het vermogensniveau van de kachel verandert",
+    "fr": "Déclenché lorsque le niveau de puissance du poêle change",
+    "de": "Wird ausgelöst, wenn sich die Leistungsstufe des Ofens ändert",
+    "it": "Attivato quando cambia il livello di potenza della stufa",
+    "es": "Se activa cuando cambia el nivel de potencia de la estufa",
+    "sv": "Utlöses när kaminens effektnivå ändras",
+    "no": "Utløses når ovnens effektnivå endres",
+    "da": "Udløses når ovnens effektniveau ændres",
+    "ru": "Срабатывает при изменении уровня мощности печи",
+    "pl": "Wyzwalane, gdy poziom mocy pieca ulega zmianie",
+    "ko": "스토브의 전원 레벨이 변경될 때 트리거됩니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "power_level",
+      "type": "number",
+      "title": {
+        "en": "Power Level",
+        "nl": "Vermogensniveau",
+        "fr": "Niveau de Puissance",
+        "de": "Leistungsstufe",
+        "it": "Livello di Potenza",
+        "es": "Nivel de Potencia",
+        "sv": "Effektnivå",
+        "no": "Effektnivå",
+        "da": "Effektniveau",
+        "ru": "Уровень Мощности",
+        "pl": "Poziom Mocy",
+        "ko": "전원 레벨"
+      },
+      "example": 3
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "driver": {
+    "name": "HottoH 스토브"
+  },
+  "pair": {
+    "title": "HottoH 스토브 페어링",
+    "subtitle": "스토브를 추가하는 방법 선택",
+    "options": "연결 옵션",
+    "continue": "계속",
+    "discovery": {
+      "intro": "HottoH 스토브에 연결하는 방법을 선택하세요.",
+      "button": "검색 시작",
+      "option": "자동 검색",
+      "title": "발견된 스토브",
+      "titleError": "검색 중 오류 발생",
+      "singular": "스토브",
+      "plural": "스토브",
+      "timeout_error": "검색이 예상보다 오래 걸리고 있습니다. 네트워크에 많은 장치가 있는 경우 이런 일이 발생할 수 있습니다. 스토브가 켜져 있고 WiFi에 연결되어 있는지 확인한 후 다시 시도하세요."
+    },
+    "manual": {
+      "button": "수동으로 IP 입력",
+      "option": "수동 IP 입력",
+      "title": "IP 주소 입력",
+      "subtitle": "HottoH 스토브의 IP 주소 제공",
+      "ip_label": "IP 주소",
+      "submit": "테스트 및 추가",
+      "error": {
+        "invalid": "잘못된 IP 주소 형식.",
+        "null_device": "기기 객체가 null이거나 정의되지 않음",
+        "create_device": "기기 생성 실패",
+        "connect": "이 IP 주소의 스토브에 연결 실패"
+      }
+    },
+    "tips": {
+      "title": "성공적인 연결을 위한 팁",
+      "item1": "스토브가 켜져 있는지 확인하세요",
+      "item2": "스토브가 WiFi 네트워크에 연결되어 있는지 확인하세요",
+      "item3": "Homey가 스토브와 동일한 네트워크에 있는지 확인하세요",
+      "item4": "자동 검색이 실패하면 스토브의 IP 주소를 수동으로 입력할 수 있습니다"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "스토브가 !{{켜짐|꺼짐}}",
+        "hint": "스토브가 켜지거나 꺼질 때 트리거됩니다"
+      },
+      "power_level_changed": {
+        "title": "전원 레벨이 변경됨",
+        "hint": "스토브의 전원 레벨이 변경될 때 트리거됩니다"
+      },
+      "smoke_temperature_threshold": {
+        "title": "연기 온도가 !{{임계값 이상으로 상승|임계값 이하로 하락}}",
+        "titleFormatted": "연기 온도가 !{{[[threshold]] °C 이상으로 상승|[[threshold]] °C 이하로 하락}}",
+        "hint": "연기 온도가 임계값을 넘을 때 트리거됩니다"
+      },
+      "stove_state_changed": {
+        "title": "스토브 상태가 변경됨",
+        "hint": "스토브가 한 상태에서 다른 상태로 변경될 때 트리거됩니다"
+      },
+      "temperature_reached": {
+        "title": "목표 온도에 도달함",
+        "hint": "실내 온도가 목표 온도에 도달했을 때 트리거됩니다"
+      },
+      "wifi_signal_changed": {
+        "title": "WiFi 신호가 크게 변경됨",
+        "hint": "WiFi 신호 강도가 10dBm 이상 변경될 때 트리거됩니다"
+      }
+    },
+    "tokens": {
+      "name": "이름",
+      "state": "상태",
+      "power_level": "전원 레벨",
+      "temperature": "온도",
+      "state_string": "상태",
+      "signal": "신호"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "스토브 상태",
+      "values": {
+        "Off": "꺼짐",
+        "Starting": "시작 중",
+        "Preheating": "예열 중",
+        "Running": "작동 중",
+        "Cooling Down": "냉각 중",
+        "Cleaning": "청소 중",
+        "Standby": "대기 중"
+      }
+    },
+    "fan_speed": {
+      "title": "팬 속도"
+    },
+    "power_level": {
+      "title": "전원 레벨"
+    },
+    "smoke_temperature": {
+      "title": "연기 온도"
+    },
+    "fumes_flow": {
+      "title": "연기 흐름"
+    },
+    "wifi_signal": {
+      "title": "WiFi 신호",
+      "values": {
+        "strong": "강함 (>75%)",
+        "medium": "중간 (30-75%)",
+        "weak": "약함 (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "펌웨어 버전"
+    }
+  }
+}

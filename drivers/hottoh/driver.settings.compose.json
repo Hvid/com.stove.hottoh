@@ -1,0 +1,87 @@
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "General Settings",
+      "da": "Generelle indstillinger",
+      "de": "Allgemeine Einstellungen",
+      "es": "Configuración general",
+      "fr": "Paramètres généraux",
+      "it": "Impostazioni generali",
+      "ko": "일반 설정",
+      "nl": "Algemene instellingen",
+      "no": "Generelle innstillinger",
+      "pl": "Ustawienia ogólne",
+      "ru": "Общие настройки",
+      "sv": "Allmänna inställningar"
+    },
+    "children": [
+      {
+        "id": "ipAddress",
+        "type": "text",
+        "label": {
+          "en": "IP Address",
+          "da": "IP-adresse",
+          "de": "IP-Adresse",
+          "es": "Dirección IP",
+          "fr": "Adresse IP",
+          "it": "Indirizzo IP",
+          "ko": "IP 주소",
+          "nl": "IP-adres",
+          "no": "IP-adresse",
+          "pl": "Adres IP",
+          "ru": "IP-адрес",
+          "sv": "IP-adress"
+        },
+        "value": "",
+        "hint": {
+          "en": "The IP address of your HottoH stove",
+          "da": "IP-adressen på din HottoH ovn",
+          "de": "Die IP-Adresse Ihres HottoH Ofens",
+          "es": "La dirección IP de tu estufa HottoH",
+          "fr": "L'adresse IP de votre poêle HottoH",
+          "it": "L'indirizzo IP della tua stufa HottoH",
+          "ko": "HottoH 스토브의 IP 주소",
+          "nl": "Het IP-adres van uw HottoH kachel",
+          "no": "IP-adressen til din HottoH ovn",
+          "pl": "Adres IP twojego pieca HottoH",
+          "ru": "IP-адрес вашей печи HottoH",
+          "sv": "IP-adressen till din HottoH kamin"
+        }
+      },
+      {
+        "id": "deviceName",
+        "type": "text",
+        "label": {
+          "en": "Device Name",
+          "da": "Enhedsnavn",
+          "de": "Gerätename",
+          "es": "Nombre del dispositivo",
+          "fr": "Nom de l'appareil",
+          "it": "Nome dispositivo",
+          "ko": "기기 이름",
+          "nl": "Apparaatnaam",
+          "no": "Enhetsnavn",
+          "pl": "Nazwa urządzenia",
+          "ru": "Имя устройства",
+          "sv": "Enhetsnamn"
+        },
+        "value": "",
+        "hint": {
+          "en": "Custom name for your stove (leave empty to use default naming)",
+          "da": "Tilpasset navn til din ovn (lad være tom for at bruge standardnavngivning)",
+          "de": "Benutzerdefinierter Name für Ihren Ofen (leer lassen, um Standardbenennung zu verwenden)",
+          "es": "Nombre personalizado para tu estufa (déjalo en blanco para usar la nomenclatura predeterminada)",
+          "fr": "Nom personnalisé pour votre poêle (laissez vide pour utiliser la dénomination par défaut)",
+          "it": "Nome personalizzato per la tua stufa (lascia vuoto per utilizzare la denominazione predefinita)",
+          "ko": "스토브의 사용자 지정 이름 (기본 이름을 사용하려면 비워 두세요)",
+          "nl": "Aangepaste naam voor uw kachel (laat leeg om standaardnaamgeving te gebruiken)",
+          "no": "Tilpasset navn for ovnen din (la stå tomt for å bruke standard navngivning)",
+          "pl": "Niestandardowa nazwa dla twojego pieca (pozostaw puste, aby użyć domyślnego nazewnictwa)",
+          "ru": "Пользовательское имя для вашей печи (оставьте пустым для использования имени по умолчанию)",
+          "sv": "Anpassat namn för din kamin (lämna tomt för att använda standardnamn)"
+        }
+      }
+    ]
+  }
+]

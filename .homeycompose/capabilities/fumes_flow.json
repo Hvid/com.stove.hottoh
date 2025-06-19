@@ -1,0 +1,26 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Fumes Flow",
+    "da": "Røgstrøm",
+    "de": "Rauchgas-Durchfluss",
+    "es": "Flujo de Humos",
+    "fr": "Débit des Fumées",
+    "it": "Flusso Fumi",
+    "ko": "연기 흐름",
+    "nl": "Rookgasstroom",
+    "no": "Røykstrøm",
+    "pl": "Przepływ Dymu",
+    "ru": "Поток Дыма",
+    "sv": "Rökflöde"
+  },
+  "units": {
+    "en": "m³/s"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/fumes_flow.svg"
+}

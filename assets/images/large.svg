@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="350" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stove body -->
+  <rect x="150" y="40" width="200" height="280" rx="12" fill="#404040" />
+  <rect x="160" y="50" width="180" height="260" rx="8" fill="#303030" />
+
+  <!-- Stove window -->
+  <rect x="180" y="70" width="140" height="180" rx="10" fill="#1a1a1a" />
+  <rect x="190" y="80" width="120" height="160" rx="6" fill="#111111" />
+
+  <!-- Flames -->
+  <path d="M210 200C210 160 250 150 250 130C250 150 290 160 290 200C290 220 270 230 250 230C230 230 210 220 210 200Z" fill="#f8692b" />
+  <path d="M220 200C220 170 250 162 250 140C250 162 280 170 280 200C280 215 265 222 250 222C235 222 220 215 220 200Z" fill="#fcae30" />
+  <path d="M230 200C230 175 250 170 250 150C250 170 270 175 270 200C270 210 260 215 250 215C240 215 230 210 230 200Z" fill="#ffdb44" />
+
+  <!-- Controls -->
+  <circle cx="250" cy="280" r="10" fill="#707070" />
+  <circle cx="220" cy="280" r="7" fill="#707070" />
+  <circle cx="280" cy="280" r="7" fill="#707070" />
+</svg>

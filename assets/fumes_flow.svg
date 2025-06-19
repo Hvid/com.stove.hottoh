@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Smoke stack -->
+  <rect x="10" y="14" width="4" height="8" fill="currentColor"/>
+
+  <!-- Smoke/fumes -->
+  <path d="M7 10C7 8 9 8 9 6C9 8 11 8 11 10C11 12 9 12 9 14C9 12 7 12 7 10Z" fill="currentColor" opacity="0.8"/>
+  <path d="M11 8C11 6 13 6 13 4C13 6 15 6 15 8C15 10 13 10 13 12C13 10 11 10 11 8Z" fill="currentColor" opacity="0.8"/>
+  <path d="M15 10C15 8 17 8 17 6C17 8 19 8 19 10C19 12 17 12 17 14C17 12 15 12 15 10Z" fill="currentColor" opacity="0.6"/>
+
+  <!-- Flow arrows -->
+  <path d="M4 18 L8 18 L6 16 Z" fill="currentColor"/>
+  <path d="M16 18 L20 18 L18 16 Z" fill="currentColor"/>
+</svg>

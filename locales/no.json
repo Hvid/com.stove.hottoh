@@ -1,0 +1,116 @@
+{
+  "driver": {
+    "name": "HottoH ovn"
+  },
+  "pair": {
+    "title": "HottoH ovn paring",
+    "subtitle": "Velg hvordan du vil legge til ovnen din",
+    "options": "Tilkoblingsalternativer",
+    "continue": "Fortsett",
+    "discovery": {
+      "intro": "Velg hvordan du vil koble til HottoH ovnen din.",
+      "button": "Start søk",
+      "option": "Automatisk søk",
+      "title": "Oppdagede ovner",
+      "titleError": "Feil under søk",
+      "singular": "ovn",
+      "plural": "ovner",
+      "timeout_error": "Søket tar lengre tid enn forventet. Dette kan skje hvis det er mange enheter på nettverket ditt. Vennligst sjekk at ovnen er slått på og koblet til WiFi, prøv deretter igjen."
+    },
+    "manual": {
+      "button": "Skriv inn IP manuelt",
+      "option": "Manuell IP-innskriving",
+      "title": "Skriv inn IP-adressen",
+      "subtitle": "Oppgi IP-adressen til HottoH ovnen din",
+      "ip_label": "IP-adresse",
+      "submit": "Test og legg til",
+      "error": {
+        "invalid": "Ugyldig IP-adresse format.",
+        "null_device": "Enhetsobjekt er null eller udefinert",
+        "create_device": "Kunne ikke opprette enhet",
+        "connect": "Kunne ikke koble til ovn på denne IP-adressen"
+      }
+    },
+    "tips": {
+      "title": "Tips for vellykket tilkobling",
+      "item1": "Sørg for at ovnen din er slått på",
+      "item2": "Bekreft at ovnen din er koblet til WiFi-nettverket ditt",
+      "item3": "Sjekk at Homey er på samme nettverk som ovnen din",
+      "item4": "Hvis automatisk søk mislykkes, kan du skrive inn ovnens IP-adresse manuelt"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "En ovn er !{{slått på|slått av}}",
+        "hint": "Utløses når en ovn blir slått på eller av"
+      },
+      "power_level_changed": {
+        "title": "Effektnivå er endret",
+        "hint": "Utløses når ovnens effektnivå endres"
+      },
+      "smoke_temperature_threshold": {
+        "title": "Røyktemperatur !{{har steget over|har sunket under}} terskelverdi",
+        "titleFormatted": "Røyktemperatur !{{har steget over|har sunket under}} [[threshold]] °C",
+        "hint": "Utløses når røyktemperaturen krysser en terskelverdi"
+      },
+      "stove_state_changed": {
+        "title": "Ovnstilstand er endret",
+        "hint": "Utløses når ovnen endrer seg fra en tilstand til en annen"
+      },
+      "temperature_reached": {
+        "title": "Måltemperatur nådd",
+        "hint": "Utløses når romtemperaturen når måltemperaturen"
+      },
+      "wifi_signal_changed": {
+        "title": "WiFi-signal har endret seg betydelig",
+        "hint": "Utløses når WiFi-signalstyrken endres med 10dBm eller mer"
+      }
+    },
+    "tokens": {
+      "name": "Navn",
+      "state": "Tilstand",
+      "power_level": "Effektnivå",
+      "temperature": "Temperatur",
+      "state_string": "Tilstand",
+      "signal": "Signal"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "Ovnstilstand",
+      "values": {
+        "Off": "Av",
+        "Starting": "Starter",
+        "Preheating": "Forvarmer",
+        "Running": "Kjører",
+        "Cooling Down": "Kjøler ned",
+        "Cleaning": "Rengjør",
+        "Standby": "Standby"
+      }
+    },
+    "fan_speed": {
+      "title": "Viftehastighet"
+    },
+    "power_level": {
+      "title": "Effektnivå"
+    },
+    "smoke_temperature": {
+      "title": "Røyktemperatur"
+    },
+    "fumes_flow": {
+      "title": "Røykstrøm"
+    },
+    "wifi_signal": {
+      "title": "WiFi-signal",
+      "values": {
+        "strong": "Sterkt (>75%)",
+        "medium": "Medium (30-75%)",
+        "weak": "Svakt (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "Fastvareversjon"
+    }
+  }
+}

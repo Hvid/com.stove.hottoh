@@ -1,0 +1,73 @@
+{
+  "id": "power_level_is",
+  "title": {
+    "en": "Power level !{{is|is not}}",
+    "nl": "Vermogensniveau !{{is|is niet}}",
+    "fr": "Le niveau de puissance !{{est|n'est pas}}",
+    "de": "Leistungsstufe !{{ist|ist nicht}}",
+    "it": "Il livello di potenza !{{è|non è}}",
+    "es": "El nivel de potencia !{{es|no es}}",
+    "sv": "Effektnivå !{{är|är inte}}",
+    "no": "Effektnivå !{{er|er ikke}}",
+    "da": "Effektniveau !{{er|er ikke}}",
+    "ru": "Уровень мощности !{{|не}}",
+    "pl": "Poziom mocy !{{jest|nie jest}}",
+    "ko": "전원 레벨이 !{{입니다|아닙니다}}"
+  },
+  "titleFormatted": {
+    "en": "Power level !{{is|is not}} [[level]]",
+    "nl": "Vermogensniveau !{{is|is niet}} [[level]]",
+    "fr": "Le niveau de puissance !{{est|n'est pas}} [[level]]",
+    "de": "Leistungsstufe !{{ist|ist nicht}} [[level]]",
+    "it": "Il livello di potenza !{{è|non è}} [[level]]",
+    "es": "El nivel de potencia !{{es|no es}} [[level]]",
+    "sv": "Effektnivå !{{är|är inte}} [[level]]",
+    "no": "Effektnivå !{{er|er ikke}} [[level]]",
+    "da": "Effektniveau !{{er|er ikke}} [[level]]",
+    "ru": "Уровень мощности !{{|не}} [[level]]",
+    "pl": "Poziom mocy !{{jest|nie jest}} [[level]]",
+    "ko": "전원 레벨이 [[level]] !{{입니다|아닙니다}}"
+  },
+  "hint": {
+    "en": "Check if the power level is at a specific setting",
+    "nl": "Controleer of het vermogensniveau op een specifieke instelling staat",
+    "fr": "Vérifiez si le niveau de puissance est à un réglage spécifique",
+    "de": "Prüfen, ob die Leistungsstufe auf einer bestimmten Einstellung steht",
+    "it": "Controlla se il livello di potenza è su un'impostazione specifica",
+    "es": "Comprobar si el nivel de potencia está en un ajuste específico",
+    "sv": "Kontrollera om effektnivån är på en specifik inställning",
+    "no": "Sjekk om effektnivået er på en bestemt innstilling",
+    "da": "Tjek om effektniveauet er på en bestemt indstilling",
+    "ru": "Проверить, установлен ли уровень мощности на определенное значение",
+    "pl": "Sprawdź, czy poziom mocy jest na określonym ustawieniu",
+    "ko": "전원 레벨이 특정 설정인지 확인합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "level",
+      "type": "number",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "title": {
+        "en": "Level",
+        "nl": "Niveau",
+        "fr": "Niveau",
+        "de": "Stufe",
+        "it": "Livello",
+        "es": "Nivel",
+        "sv": "Nivå",
+        "no": "Nivå",
+        "da": "Niveau",
+        "ru": "Уровень",
+        "pl": "Poziom",
+        "ko": "레벨"
+      }
+    }
+  ]
+}

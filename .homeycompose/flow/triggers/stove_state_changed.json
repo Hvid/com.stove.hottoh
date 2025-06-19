@@ -1,0 +1,59 @@
+{
+  "id": "stove_state_changed",
+  "title": {
+    "en": "Stove state has changed",
+    "nl": "Kachelstatus is gewijzigd",
+    "fr": "L'état du poêle a changé",
+    "de": "Ofenzustand hat sich geändert",
+    "it": "Lo stato della stufa è cambiato",
+    "es": "El estado de la estufa ha cambiado",
+    "sv": "Kaminstatus har ändrats",
+    "no": "Ovnstilstand er endret",
+    "da": "Ovntilstand er ændret",
+    "ru": "Состояние печи изменилось",
+    "pl": "Stan pieca się zmienił",
+    "ko": "스토브 상태가 변경됨"
+  },
+  "hint": {
+    "en": "Triggered when the stove changes from one state to another (e.g., from Off to Startup)",
+    "nl": "Wordt geactiveerd wanneer de kachel van de ene naar de andere status verandert (bijv. van Uit naar Opstarten)",
+    "fr": "Déclenché lorsque le poêle change d'un état à un autre (par exemple, de Éteint à Démarrage)",
+    "de": "Wird ausgelöst, wenn der Ofen von einem Zustand in einen anderen wechselt (z.B. von Aus zu Starten)",
+    "it": "Attivato quando la stufa passa da uno stato all'altro (ad es., da Spenta ad Avvio)",
+    "es": "Se activa cuando la estufa cambia de un estado a otro (por ejemplo, de Apagado a Inicio)",
+    "sv": "Utlöses när kaminen ändras från ett tillstånd till ett annat (t.ex. från Av till Uppstart)",
+    "no": "Utløses når ovnen endrer seg fra en tilstand til en annen (f.eks. fra Av til Oppstart)",
+    "da": "Udløses når ovnen skifter fra en tilstand til en anden (f.eks. fra Slukket til Opstart)",
+    "ru": "Срабатывает, когда печь переходит из одного состояния в другое (например, из Выкл. в Запуск)",
+    "pl": "Wyzwalane, gdy piec zmienia stan z jednego na drugi (np. z Wyłączony na Uruchamianie)",
+    "ko": "스토브가 한 상태에서 다른 상태로 변경될 때 트리거됩니다 (예: 꺼짐에서 시작으로)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "state",
+      "type": "string",
+      "title": {
+        "en": "State",
+        "nl": "Status",
+        "fr": "État",
+        "de": "Zustand",
+        "it": "Stato",
+        "es": "Estado",
+        "sv": "Tillstånd",
+        "no": "Tilstand",
+        "da": "Tilstand",
+        "ru": "Состояние",
+        "pl": "Stan",
+        "ko": "상태"
+      },
+      "example": "Running"
+    }
+  ]
+}

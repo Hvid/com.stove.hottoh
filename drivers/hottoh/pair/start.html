@@ -1,0 +1,43 @@
+<header class="homey-header">
+  <h1 class="homey-title" data-i18n="pair.title">HottoH Stove Pairing</h1>
+  <p class="homey-subtitle" data-i18n="pair.subtitle">Choose how you want to add your stove</p>
+</header>
+
+<div class="homey-form">
+  <fieldset class="homey-form-fieldset">
+    <legend class="homey-form-legend" data-i18n="pair.options">Connection Options</legend>
+
+    <div class="homey-form-group">
+      <p data-i18n="pair.discovery.intro">Choose how you want to connect to your HottoH stove.</p>
+
+      <div class="homey-form-group">
+        <a class="homey-button-primary-full" id="discoveryButton" href="javascript:void(0);" onclick="Homey.showView('list_devices')">
+          <span data-i18n="pair.discovery.button">Start Discovery</span>
+        </a>
+      </div>
+
+      <div class="homey-form-group">
+        <a class="homey-button-secondary-full" id="manualButton" href="javascript:void(0);" onclick="Homey.showView('manual_ip')">
+          <span data-i18n="pair.manual.button">Enter IP Manually</span>
+        </a>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="homey-form-fieldset">
+    <legend class="homey-form-legend" data-i18n="pair.tips.title">Tips for successful connection</legend>
+
+    <div class="homey-form-group">
+      <ul>
+        <li data-i18n="pair.tips.item1">Make sure your stove is powered on</li>
+        <li data-i18n="pair.tips.item2">Verify that your stove is connected to your WiFi network</li>
+        <li data-i18n="pair.tips.item3">Check that your Homey is on the same network as your stove</li>
+        <li data-i18n="pair.tips.item4">If automatic discovery fails, you can enter your stove's IP address manually</li>
+      </ul>
+    </div>
+  </fieldset>
+</div>
+
+<script type="text/javascript">
+  // Initialize the start view
+</script>

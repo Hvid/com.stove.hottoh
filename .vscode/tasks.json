@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Debug Homey Widget",
+			"type": "shell",
+			"command": "echo 'To debug the widget, use the Homey CLI tools: homey app run'",
+			"group": "test",
+			"problemMatcher": []
+		}
+	]
+}

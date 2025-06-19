@@ -1,0 +1,33 @@
+# Development files
+.git/
+.gitignore
+node_modules/
+npm-debug.log
+*.log
+.DS_Store
+.idea/
+.vscode/
+.env
+.env.*
+env.json
+
+# Build and temporary files
+.homeybuild/
+*.map
+
+# Test files
+jest.config.js
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+tests/
+__tests__/
+__mocks__/
+
+# Documentation and non-essential files
+drivers/*/assets/images/README.txt
+temp/
+
+# Development/debug folders
+debug/

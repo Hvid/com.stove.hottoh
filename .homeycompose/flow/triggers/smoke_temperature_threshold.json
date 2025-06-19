@@ -1,0 +1,93 @@
+{
+  "id": "smoke_temperature_threshold",
+  "title": {
+    "en": "Smoke temperature !{{has risen above|has dropped below}} threshold",
+    "nl": "Rooktemperatuur !{{is gestegen boven|is gedaald onder}} drempelwaarde",
+    "fr": "La température des fumées !{{a dépassé|est descendue en dessous de}} le seuil",
+    "de": "Rauchtemperatur !{{ist über|ist unter}} Schwellenwert",
+    "it": "La temperatura dei fumi !{{è salita sopra|è scesa sotto}} la soglia",
+    "es": "La temperatura del humo !{{ha subido por encima|ha bajado por debajo}} del umbral",
+    "sv": "Röktemperatur !{{har stigit över|har sjunkit under}} tröskelvärdet",
+    "no": "Røyktemperatur !{{har steget over|har sunket under}} terskelverdi",
+    "da": "Røgtemperatur !{{er steget over|er faldet under}} tærskelværdi",
+    "ru": "Температура дыма !{{поднялась выше|опустилась ниже}} порогового значения",
+    "pl": "Temperatura dymu !{{wzrosła powyżej|spadła poniżej}} progu",
+    "ko": "연기 온도가 !{{임계값 이상으로 상승|임계값 이하로 하락}}"
+  },
+  "titleFormatted": {
+    "en": "Smoke temperature !{{has risen above|has dropped below}} [[threshold]] °C",
+    "nl": "Rooktemperatuur !{{is gestegen boven|is gedaald onder}} [[threshold]] °C",
+    "fr": "La température des fumées !{{a dépassé|est descendue en dessous de}} [[threshold]] °C",
+    "de": "Rauchtemperatur !{{ist über|ist unter}} [[threshold]] °C",
+    "it": "La temperatura dei fumi !{{è salita sopra|è scesa sotto}} [[threshold]] °C",
+    "es": "La temperatura del humo !{{ha subido por encima|ha bajado por debajo}} de [[threshold]] °C",
+    "sv": "Röktemperatur !{{har stigit över|har sjunkit under}} [[threshold]] °C",
+    "no": "Røyktemperatur !{{har steget over|har sunket under}} [[threshold]] °C",
+    "da": "Røgtemperatur !{{er steget over|er faldet under}} [[threshold]] °C",
+    "ru": "Температура дыма !{{поднялась выше|опустилась ниже}} [[threshold]] °C",
+    "pl": "Temperatura dymu !{{wzrosła powyżej|spadła poniżej}} [[threshold]] °C",
+    "ko": "연기 온도가 [[threshold]] °C !{{이상으로 상승|이하로 하락}}"
+  },
+  "hint": {
+    "en": "Triggered when the smoke temperature crosses a threshold",
+    "nl": "Wordt geactiveerd wanneer de rooktemperatuur een drempelwaarde overschrijdt",
+    "fr": "Déclenché lorsque la température des fumées franchit un seuil",
+    "de": "Wird ausgelöst, wenn die Rauchtemperatur einen Schwellenwert überschreitet",
+    "it": "Attivato quando la temperatura dei fumi supera una soglia",
+    "es": "Se activa cuando la temperatura del humo cruza un umbral",
+    "sv": "Utlöses när röktemperaturen korsar ett tröskelvärde",
+    "no": "Utløses når røyktemperaturen krysser en terskelverdi",
+    "da": "Udløses når røgtemperaturen krydser en tærskelværdi",
+    "ru": "Срабатывает, когда температура дыма пересекает пороговое значение",
+    "pl": "Wyzwalane, gdy temperatura dymu przekracza próg",
+    "ko": "연기 온도가 임계값을 넘을 때 트리거됩니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "min": 0,
+      "max": 300,
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "fr": "Température",
+        "de": "Temperatur",
+        "it": "Temperatura",
+        "es": "Temperatura",
+        "sv": "Temperatur",
+        "no": "Temperatur",
+        "da": "Temperatur",
+        "ru": "Температура",
+        "pl": "Temperatura",
+        "ko": "온도"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "fr": "Température",
+        "de": "Temperatur",
+        "it": "Temperatura",
+        "es": "Temperatura",
+        "sv": "Temperatur",
+        "no": "Temperatur",
+        "da": "Temperatur",
+        "ru": "Температура",
+        "pl": "Temperatura",
+        "ko": "온도"
+      },
+      "example": 150
+    }
+  ]
+}

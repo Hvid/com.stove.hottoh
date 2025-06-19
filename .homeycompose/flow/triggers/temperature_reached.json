@@ -1,0 +1,59 @@
+{
+  "id": "temperature_reached",
+  "title": {
+    "en": "Room temperature has reached target",
+    "nl": "Kamertemperatuur heeft streefwaarde bereikt",
+    "fr": "La température ambiante a atteint la cible",
+    "de": "Raumtemperatur hat Zielwert erreicht",
+    "it": "La temperatura ambiente ha raggiunto l'obiettivo",
+    "es": "La temperatura ambiente ha alcanzado el objetivo",
+    "sv": "Rumstemperatur har nått målvärdet",
+    "no": "Romtemperaturen har nådd målverdien",
+    "da": "Rumtemperatur har nået målværdien",
+    "ru": "Температура в помещении достигла целевой",
+    "pl": "Temperatura pomieszczenia osiągnęła wartość docelową",
+    "ko": "실내 온도가 목표에 도달했습니다"
+  },
+  "hint": {
+    "en": "Triggered when the room temperature reaches the target temperature",
+    "nl": "Wordt geactiveerd wanneer de kamertemperatuur de streeftemperatuur bereikt",
+    "fr": "Déclenché lorsque la température ambiante atteint la température cible",
+    "de": "Wird ausgelöst, wenn die Raumtemperatur die Zieltemperatur erreicht",
+    "it": "Attivato quando la temperatura ambiente raggiunge la temperatura obiettivo",
+    "es": "Se activa cuando la temperatura ambiente alcanza la temperatura objetivo",
+    "sv": "Utlöses när rumstemperaturen når måltemperaturen",
+    "no": "Utløses når romtemperaturen når måltemperaturen",
+    "da": "Udløses når rumtemperaturen når måltemperaturen",
+    "ru": "Срабатывает, когда температура в помещении достигает целевой температуры",
+    "pl": "Wyzwalane, gdy temperatura pomieszczenia osiąga temperaturę docelową",
+    "ko": "실내 온도가 목표 온도에 도달할 때 트리거됩니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "temperature",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "fr": "Température",
+        "de": "Temperatur",
+        "it": "Temperatura",
+        "es": "Temperatura",
+        "sv": "Temperatur",
+        "no": "Temperatur",
+        "da": "Temperatur",
+        "ru": "Температура",
+        "pl": "Temperatura",
+        "ko": "온도"
+      },
+      "example": 21
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "driver": {
+    "name": "Poêle HottoH"
+  },
+  "pair": {
+    "title": "Appairage du poêle HottoH",
+    "subtitle": "Choisissez comment ajouter votre poêle",
+    "options": "Options de connexion",
+    "continue": "Continuer",
+    "discovery": {
+      "intro": "Choisissez comment vous connecter à votre poêle HottoH.",
+      "button": "Démarrer la recherche",
+      "option": "Recherche automatique",
+      "title": "Poêles découverts",
+      "titleError": "Erreur lors de la recherche",
+      "singular": "poêle",
+      "plural": "poêles",
+      "timeout_error": "La recherche prend plus de temps que prévu. Cela peut se produire s'il y a de nombreux appareils sur votre réseau. Veuillez vérifier que votre poêle est allumé et connecté au WiFi, puis réessayez."
+    },
+    "manual": {
+      "button": "Saisir l'IP manuellement",
+      "option": "Saisie manuelle de l'IP",
+      "title": "Saisir l'adresse IP",
+      "subtitle": "Fournissez l'adresse IP de votre poêle HottoH",
+      "ip_label": "Adresse IP",
+      "submit": "Tester et ajouter",
+      "error": {
+        "invalid": "Format d'adresse IP invalide.",
+        "null_device": "L'objet appareil est nul ou non défini",
+        "create_device": "Échec de la création de l'appareil",
+        "connect": "Échec de la connexion au poêle à cette adresse IP"
+      }
+    },
+    "tips": {
+      "title": "Conseils pour une connexion réussie",
+      "item1": "Assurez-vous que votre poêle est allumé",
+      "item2": "Vérifiez que votre poêle est connecté à votre réseau WiFi",
+      "item3": "Vérifiez que votre Homey est sur le même réseau que votre poêle",
+      "item4": "Si la recherche automatique échoue, vous pouvez saisir manuellement l'adresse IP de votre poêle"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "N'importe quel poêle est allumé ou éteint",
+        "hint": "Déclenché lorsqu'un poêle est allumé ou éteint"
+      },
+      "power_level_changed": {
+        "title": "Le niveau de puissance a changé",
+        "hint": "Déclenché lorsque le niveau de puissance du poêle change"
+      },
+      "smoke_temperature_threshold": {
+        "title": "Température de fumée !{{a dépassé|est passée sous}} le seuil",
+        "titleFormatted": "Température de fumée !{{a dépassé|est passée sous}} [[threshold]] °C",
+        "hint": "Déclenché lorsque la température de fumée franchit un seuil"
+      },
+      "stove_state_changed": {
+        "title": "L'état du poêle a changé",
+        "hint": "Déclenché lorsque le poêle passe d'un état à un autre"
+      },
+      "temperature_reached": {
+        "title": "Température cible atteinte",
+        "hint": "Déclenché lorsque la température ambiante atteint la température cible"
+      },
+      "wifi_signal_changed": {
+        "title": "Le signal WiFi a changé significativement",
+        "hint": "Déclenché lorsque la force du signal WiFi change de 10dBm ou plus"
+      }
+    },
+    "conditions": {
+      "fan_speed_is": {
+        "title": "Vitesse du ventilateur !{{est|n'est pas}}",
+        "hint": "Vérifier si la vitesse du ventilateur est à un niveau spécifique"
+      },
+      "power_level_is": {
+        "title": "Niveau de puissance !{{est|n'est pas}}",
+        "hint": "Vérifier si le niveau de puissance est à une valeur spécifique"
+      },
+      "room_temperature_is": {
+        "title": "Température ambiante !{{est|n'est pas}}",
+        "hint": "Vérifier si la température ambiante est à une valeur spécifique"
+      },
+      "stove_is_in_state": {
+        "title": "Le poêle !{{est|n'est pas}} dans l'état",
+        "hint": "Vérifier si le poêle est dans un état spécifique"
+      },
+      "wifi_signal_is": {
+        "title": "Signal WiFi !{{est|n'est pas}}",
+        "hint": "Vérifier si la force du signal WiFi est forte/moyenne/faible"
+      }
+    },
+    "actions": {
+      "set_fan_speed": {
+        "title": "Régler la vitesse du ventilateur",
+        "hint": "Régler la vitesse du ventilateur du poêle"
+      },
+      "set_power_level": {
+        "title": "Régler le niveau de puissance",
+        "hint": "Régler le niveau de puissance du poêle"
+      },
+      "set_power_state": {
+        "title": "!{{Allumer|Éteindre}}",
+        "hint": "Allumer ou éteindre le poêle"
+      },
+      "set_target_temperature": {
+        "title": "Définir la température cible",
+        "hint": "Définir la température ambiante cible"
+      },
+      "turn_off_when_temperature_reached": {
+        "title": "Éteindre quand la température est atteinte",
+        "hint": "Éteindre le poêle lorsqu'une température ambiante spécifique est atteinte"
+      }
+    },
+    "tokens": {
+      "name": "Nom",
+      "state": "État",
+      "power_level": "Niveau de puissance",
+      "temperature": "Température",
+      "state_string": "Description de l'état",
+      "signal": "Force du signal WiFi"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "État du Poêle",
+      "values": {
+        "Off": "Éteint",
+        "Starting": "Démarrage",
+        "Preheating": "Préchauffage",
+        "Running": "En fonctionnement",
+        "Cooling Down": "Refroidissement",
+        "Cleaning": "Nettoyage",
+        "Standby": "En veille"
+      }
+    },
+    "fan_speed": {
+      "title": "Vitesse du Ventilateur"
+    },
+    "power_level": {
+      "title": "Niveau de Puissance"
+    },
+    "smoke_temperature": {
+      "title": "Température de Fumée"
+    },
+    "fumes_flow": {
+      "title": "Flux de Fumées"
+    },
+    "wifi_signal": {
+      "title": "Signal WiFi",
+      "values": {
+        "strong": "Fort (>75%)",
+        "medium": "Moyen (30-75%)",
+        "weak": "Faible (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "Version du Firmware"
+    }
+  }
+}

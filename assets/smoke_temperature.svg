@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Thermometer -->
+  <rect x="10" y="5" width="4" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <circle cx="12" cy="17" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+  <rect x="11" y="6" width="2" height="9" rx="1" fill="currentColor"/>
+  <circle cx="12" cy="17" r="2" fill="currentColor"/>
+
+  <!-- Smoke/steam -->
+  <path d="M7 9C7 7.5 8 7 8 6C8 7 9 7.5 9 9C9 10 8 10.5 7 9Z" fill="currentColor" opacity="0.7"/>
+  <path d="M14 7C14 5.5 15 5 15 4C15 5 16 5.5 16 7C16 8 15 8.5 14 7Z" fill="currentColor" opacity="0.7"/>
+  <path d="M16 10C16 8.5 17 8 17 7C17 8 18 8.5 18 10C18 11 17 11.5 16 10Z" fill="currentColor" opacity="0.7"/>
+</svg>

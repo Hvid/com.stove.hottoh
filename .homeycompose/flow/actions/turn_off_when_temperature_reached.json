@@ -1,0 +1,38 @@
+{
+  "id": "turn_off_when_temperature_reached",
+  "title": {
+    "en": "Turn off when temperature reached",
+    "nl": "Uitschakelen wanneer temperatuur bereikt is",
+    "fr": "Éteindre lorsque la température est atteinte",
+    "de": "Ausschalten, wenn Temperatur erreicht ist",
+    "it": "Spegni quando la temperatura è raggiunta",
+    "es": "Apagar cuando se alcance la temperatura",
+    "sv": "Stäng av när temperaturen nås",
+    "no": "Slå av når temperaturen er nådd",
+    "da": "Sluk når temperaturen er nået",
+    "ru": "Выключить при достижении температуры",
+    "pl": "Wyłącz po osiągnięciu temperatury",
+    "ko": "온도 도달 시 끄기"
+  },
+  "hint": {
+    "en": "Sets the stove to turn off automatically when the target temperature is reached",
+    "nl": "Stelt de kachel in om automatisch uit te schakelen wanneer de streeftemperatuur is bereikt",
+    "fr": "Règle le poêle pour qu'il s'éteigne automatiquement lorsque la température cible est atteinte",
+    "de": "Stellt den Ofen so ein, dass er sich automatisch ausschaltet, wenn die Zieltemperatur erreicht ist",
+    "it": "Imposta la stufa per spegnersi automaticamente quando viene raggiunta la temperatura obiettivo",
+    "es": "Configura la estufa para que se apague automáticamente cuando se alcance la temperatura objetivo",
+    "sv": "Ställer in kaminen för att stängas av automatiskt när måltemperaturen nås",
+    "no": "Setter ovnen til å slå seg av automatisk når måltemperaturen er nådd",
+    "da": "Indstiller ovnen til at slukke automatisk, når måltemperaturen er nået",
+    "ru": "Настраивает печь на автоматическое выключение при достижении целевой температуры",
+    "pl": "Ustawia piec na automatyczne wyłączenie po osiągnięciu temperatury docelowej",
+    "ko": "목표 온도에 도달했을 때 스토브가 자동으로 꺼지도록 설정합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    }
+  ]
+}

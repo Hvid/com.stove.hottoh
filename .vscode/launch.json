@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Homey App",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "zsh",
+            "runtimeArgs": [
+                "-c",
+                "cd /home/mhj/git/com.stove.hottoh && homey app run -c -l debug -n host"
+            ],
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}

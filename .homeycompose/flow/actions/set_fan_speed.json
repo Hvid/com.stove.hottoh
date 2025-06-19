@@ -1,0 +1,73 @@
+{
+  "id": "set_fan_speed",
+  "title": {
+    "en": "Set fan speed",
+    "nl": "Stel ventilatorsnelheid in",
+    "fr": "Régler la vitesse du ventilateur",
+    "de": "Lüftergeschwindigkeit einstellen",
+    "it": "Imposta velocità ventola",
+    "es": "Establecer velocidad del ventilador",
+    "sv": "Ställ in fläkthastighet",
+    "no": "Still inn viftehastighet",
+    "da": "Indstil blæserhastighed",
+    "ru": "Установить скорость вентилятора",
+    "pl": "Ustaw prędkość wentylatora",
+    "ko": "팬 속도 설정"
+  },
+  "titleFormatted": {
+    "en": "Set fan speed to [[speed]]",
+    "nl": "Stel ventilatorsnelheid in op [[speed]]",
+    "fr": "Régler la vitesse du ventilateur à [[speed]]",
+    "de": "Lüftergeschwindigkeit auf [[speed]] einstellen",
+    "it": "Imposta velocità ventola a [[speed]]",
+    "es": "Establecer velocidad del ventilador a [[speed]]",
+    "sv": "Ställ in fläkthastighet till [[speed]]",
+    "no": "Still inn viftehastighet til [[speed]]",
+    "da": "Indstil blæserhastighed til [[speed]]",
+    "ru": "Установить скорость вентилятора на [[speed]]",
+    "pl": "Ustaw prędkość wentylatora na [[speed]]",
+    "ko": "팬 속도를 [[speed]]로 설정"
+  },
+  "hint": {
+    "en": "Set the fan speed",
+    "nl": "Stel de ventilatorsnelheid in",
+    "fr": "Réglez la vitesse du ventilateur",
+    "de": "Stellen Sie die Lüftergeschwindigkeit ein",
+    "it": "Imposta la velocità della ventola",
+    "es": "Establecer la velocidad del ventilador",
+    "sv": "Ställ in fläkthastigheten",
+    "no": "Still inn viftehastigheten",
+    "da": "Indstil blæserhastigheden",
+    "ru": "Установить скорость вентилятора",
+    "pl": "Ustaw prędkość wentylatora",
+    "ko": "팬 속도를 설정합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "title": {
+        "en": "Speed",
+        "nl": "Snelheid",
+        "fr": "Vitesse",
+        "de": "Geschwindigkeit",
+        "it": "Velocità",
+        "es": "Velocidad",
+        "sv": "Hastighet",
+        "no": "Hastighet",
+        "da": "Hastighed",
+        "ru": "Скорость",
+        "pl": "Prędkość",
+        "ko": "속도"
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "fan_speed_is",
+  "title": {
+    "en": "Fan speed !{{is|is not}}",
+    "nl": "Ventilatorsnelheid !{{is|is niet}}",
+    "fr": "La vitesse du ventilateur !{{est|n'est pas}}",
+    "de": "Lüftergeschwindigkeit !{{ist|ist nicht}}",
+    "it": "La velocità della ventola !{{è|non è}}",
+    "es": "La velocidad del ventilador !{{es|no es}}",
+    "sv": "Fläkthastighet !{{är|är inte}}",
+    "no": "Viftehastighet !{{er|er ikke}}",
+    "da": "Blæserhastighed !{{er|er ikke}}",
+    "ru": "Скорость вентилятора !{{|не}}",
+    "pl": "Prędkość wentylatora !{{jest|nie jest}}",
+    "ko": "팬 속도가 !{{입니다|아닙니다}}"
+  },
+  "titleFormatted": {
+    "en": "Fan speed !{{is|is not}} [[speed]]",
+    "nl": "Ventilatorsnelheid !{{is|is niet}} [[speed]]",
+    "fr": "La vitesse du ventilateur !{{est|n'est pas}} [[speed]]",
+    "de": "Lüftergeschwindigkeit !{{ist|ist nicht}} [[speed]]",
+    "it": "La velocità della ventola !{{è|non è}} [[speed]]",
+    "es": "La velocidad del ventilador !{{es|no es}} [[speed]]",
+    "sv": "Fläkthastighet !{{är|är inte}} [[speed]]",
+    "no": "Viftehastighet !{{er|er ikke}} [[speed]]",
+    "da": "Blæserhastighed !{{er|er ikke}} [[speed]]",
+    "ru": "Скорость вентилятора !{{|не}} [[speed]]",
+    "pl": "Prędkość wentylatora !{{jest|nie jest}} [[speed]]",
+    "ko": "팬 속도가 [[speed]] !{{입니다|아닙니다}}"
+  },
+  "hint": {
+    "en": "Check if the fan speed is at a specific setting",
+    "nl": "Controleer of de ventilatorsnelheid op een specifieke instelling staat",
+    "fr": "Vérifiez si la vitesse du ventilateur est à un réglage spécifique",
+    "de": "Prüfen, ob die Lüftergeschwindigkeit auf einer bestimmten Einstellung steht",
+    "it": "Controlla se la velocità della ventola è su un'impostazione specifica",
+    "es": "Comprobar si la velocidad del ventilador está en un ajuste específico",
+    "sv": "Kontrollera om fläkthastigheten är på en specifik inställning",
+    "no": "Sjekk om viftehastigheten er på en bestemt innstilling",
+    "da": "Tjek om blæserhastigheden er på en bestemt indstilling",
+    "ru": "Проверить, установлена ли скорость вентилятора на определенное значение",
+    "pl": "Sprawdź, czy prędkość wentylatora jest na określonym ustawieniu",
+    "ko": "팬 속도가 특정 설정인지 확인합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "title": {
+        "en": "Speed",
+        "nl": "Snelheid",
+        "fr": "Vitesse",
+        "de": "Geschwindigkeit",
+        "it": "Velocità",
+        "es": "Velocidad",
+        "sv": "Hastighet",
+        "no": "Hastighet",
+        "da": "Hastighed",
+        "ru": "Скорость",
+        "pl": "Prędkość",
+        "ko": "속도"
+      }
+    }
+  ]
+}

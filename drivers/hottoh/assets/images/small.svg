@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pellet Stove - more realistic design -->
+  <rect x="15" y="5" width="45" height="65" rx="4" fill="#404040" />
+
+  <!-- Stove front panel -->
+  <rect x="18" y="8" width="39" height="59" rx="3" fill="#2A2A2A" />
+
+  <!-- Stove glass door -->
+  <rect x="22" y="12" width="31" height="35" rx="2" fill="#1a1a1a" />
+
+  <!-- Fire glow effect -->
+  <circle cx="37.5" cy="29.5" r="12" fill="#FF4500" opacity="0.25" />
+  <circle cx="37.5" cy="29.5" r="8" fill="#FF6A00" opacity="0.5" />
+  <circle cx="37.5" cy="29.5" r="4" fill="#FFDD00" opacity="0.75" />
+
+  <!-- Control panel -->
+  <rect x="22" y="52" width="31" height="10" rx="2" fill="#333333" />
+
+  <!-- Control buttons -->
+  <circle cx="28" cy="57" r="2" fill="#555555" />
+  <circle cx="37.5" cy="57" r="2" fill="#555555" />
+  <circle cx="47" cy="57" r="2" fill="#555555" />
+
+  <!-- Stove base -->
+  <rect x="12" y="70" width="51" height="3" rx="1" fill="#333333" />
+</svg>

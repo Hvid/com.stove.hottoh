@@ -1,0 +1,73 @@
+{
+  "id": "set_target_temperature",
+  "title": {
+    "en": "Set target temperature",
+    "nl": "Stel streeftemperatuur in",
+    "fr": "Régler la température cible",
+    "de": "Zieltemperatur einstellen",
+    "it": "Imposta temperatura obiettivo",
+    "es": "Establecer temperatura objetivo",
+    "sv": "Ställ in måltemperatur",
+    "no": "Still inn måltemperatur",
+    "da": "Indstil måltemperatur",
+    "ru": "Установить целевую температуру",
+    "pl": "Ustaw temperaturę docelową",
+    "ko": "목표 온도 설정"
+  },
+  "titleFormatted": {
+    "en": "Set target temperature to [[temperature]] °C",
+    "nl": "Stel streeftemperatuur in op [[temperature]] °C",
+    "fr": "Régler la température cible à [[temperature]] °C",
+    "de": "Zieltemperatur auf [[temperature]] °C einstellen",
+    "it": "Imposta temperatura obiettivo a [[temperature]] °C",
+    "es": "Establecer temperatura objetivo a [[temperature]] °C",
+    "sv": "Ställ in måltemperatur till [[temperature]] °C",
+    "no": "Still inn måltemperatur til [[temperature]] °C",
+    "da": "Indstil måltemperatur til [[temperature]] °C",
+    "ru": "Установить целевую температуру на [[temperature]] °C",
+    "pl": "Ustaw temperaturę docelową na [[temperature]] °C",
+    "ko": "목표 온도를 [[temperature]] °C로 설정"
+  },
+  "hint": {
+    "en": "Set the target temperature for the room",
+    "nl": "Stel de streeftemperatuur voor de kamer in",
+    "fr": "Réglez la température cible pour la pièce",
+    "de": "Stellen Sie die Zieltemperatur für den Raum ein",
+    "it": "Imposta la temperatura obiettivo per la stanza",
+    "es": "Establecer la temperatura objetivo para la habitación",
+    "sv": "Ställ in måltemperaturen för rummet",
+    "no": "Still inn måltemperaturen for rommet",
+    "da": "Indstil måltemperaturen for rummet",
+    "ru": "Установить целевую температуру для помещения",
+    "pl": "Ustaw temperaturę docelową dla pomieszczenia",
+    "ko": "방의 목표 온도를 설정합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "temperature",
+      "type": "number",
+      "min": 5,
+      "max": 35,
+      "step": 0.5,
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "fr": "Température",
+        "de": "Temperatur",
+        "it": "Temperatura",
+        "es": "Temperatura",
+        "sv": "Temperatur",
+        "no": "Temperatur",
+        "da": "Temperatur",
+        "ru": "Температура",
+        "pl": "Temperatura",
+        "ko": "온도"
+      }
+    }
+  ]
+}

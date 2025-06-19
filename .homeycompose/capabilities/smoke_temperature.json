@@ -1,0 +1,26 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Smoke Temperature",
+    "da": "Røgtemperatur",
+    "de": "Rauchtemperatur",
+    "es": "Temperatura de Humo",
+    "fr": "Température des Fumées",
+    "it": "Temperatura Fumi",
+    "ko": "연기 온도",
+    "nl": "Rooktemperatuur",
+    "no": "Røyktemperatur",
+    "pl": "Temperatura Dymu",
+    "ru": "Температура Дыма",
+    "sv": "Röktemperatur"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "uiComponent": "sensor",
+  "icon": "/assets/smoke_temperature.svg"
+}

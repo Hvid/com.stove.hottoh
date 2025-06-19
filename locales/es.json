@@ -1,0 +1,116 @@
+{
+  "driver": {
+    "name": "Estufa HottoH"
+  },
+  "pair": {
+    "title": "Emparejamiento de estufa HottoH",
+    "subtitle": "Elige cómo quieres añadir tu estufa",
+    "options": "Opciones de conexión",
+    "continue": "Continuar",
+    "discovery": {
+      "intro": "Elige cómo quieres conectarte a tu estufa HottoH.",
+      "button": "Iniciar búsqueda",
+      "option": "Búsqueda automática",
+      "title": "Estufas encontradas",
+      "titleError": "Error durante la búsqueda",
+      "singular": "estufa",
+      "plural": "estufas",
+      "timeout_error": "La búsqueda está tardando más de lo esperado. Esto puede ocurrir si hay muchos dispositivos en tu red. Por favor, comprueba que tu estufa está encendida y conectada a WiFi, y vuelve a intentarlo."
+    },
+    "manual": {
+      "button": "Introducir IP manualmente",
+      "option": "Entrada manual de IP",
+      "title": "Introducir dirección IP",
+      "subtitle": "Proporciona la dirección IP de tu estufa HottoH",
+      "ip_label": "Dirección IP",
+      "submit": "Probar y añadir",
+      "error": {
+        "invalid": "Formato de dirección IP inválido.",
+        "null_device": "El objeto del dispositivo es nulo o indefinido",
+        "create_device": "Error al crear el dispositivo",
+        "connect": "Error al conectar con la estufa en esta dirección IP"
+      }
+    },
+    "tips": {
+      "title": "Consejos para una conexión exitosa",
+      "item1": "Asegúrate de que tu estufa está encendida",
+      "item2": "Verifica que tu estufa está conectada a tu red WiFi",
+      "item3": "Comprueba que tu Homey está en la misma red que tu estufa",
+      "item4": "Si la búsqueda automática falla, puedes introducir manualmente la dirección IP de tu estufa"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "Cualquier estufa está !{{encendida|apagada}}",
+        "hint": "Se activa cuando cualquier estufa se enciende o apaga"
+      },
+      "power_level_changed": {
+        "title": "El nivel de potencia ha cambiado",
+        "hint": "Se activa cuando cambia el nivel de potencia de la estufa"
+      },
+      "smoke_temperature_threshold": {
+        "title": "La temperatura del humo !{{ha subido por encima|ha bajado por debajo}} del umbral",
+        "titleFormatted": "La temperatura del humo !{{ha subido por encima|ha bajado por debajo}} de [[threshold]] °C",
+        "hint": "Se activa cuando la temperatura del humo cruza un umbral"
+      },
+      "stove_state_changed": {
+        "title": "El estado de la estufa ha cambiado",
+        "hint": "Se activa cuando la estufa cambia de un estado a otro"
+      },
+      "temperature_reached": {
+        "title": "Temperatura objetivo alcanzada",
+        "hint": "Se activa cuando la temperatura ambiente alcanza la temperatura objetivo"
+      },
+      "wifi_signal_changed": {
+        "title": "La señal WiFi ha cambiado significativamente",
+        "hint": "Se activa cuando la intensidad de la señal WiFi cambia en 10dBm o más"
+      }
+    },
+    "tokens": {
+      "name": "Nombre",
+      "state": "Estado",
+      "power_level": "Nivel de Potencia",
+      "temperature": "Temperatura",
+      "state_string": "Estado",
+      "signal": "Señal"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "Estado de la Estufa",
+      "values": {
+        "Off": "Apagada",
+        "Starting": "Iniciando",
+        "Preheating": "Precalentando",
+        "Running": "Funcionando",
+        "Cooling Down": "Enfriando",
+        "Cleaning": "Limpiando",
+        "Standby": "En espera"
+      }
+    },
+    "fan_speed": {
+      "title": "Velocidad del Ventilador"
+    },
+    "power_level": {
+      "title": "Nivel de Potencia"
+    },
+    "smoke_temperature": {
+      "title": "Temperatura del Humo"
+    },
+    "fumes_flow": {
+      "title": "Flujo de Humos"
+    },
+    "wifi_signal": {
+      "title": "Señal WiFi",
+      "values": {
+        "strong": "Fuerte (>75%)",
+        "medium": "Media (30-75%)",
+        "weak": "Débil (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "Versión de Firmware"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "set_power_level",
+  "title": {
+    "en": "Set power level",
+    "nl": "Stel vermogensniveau in",
+    "fr": "Régler le niveau de puissance",
+    "de": "Leistungsstufe einstellen",
+    "it": "Imposta livello di potenza",
+    "es": "Establecer nivel de potencia",
+    "sv": "Ställ in effektnivå",
+    "no": "Still inn effektnivå",
+    "da": "Indstil effektniveau",
+    "ru": "Установить уровень мощности",
+    "pl": "Ustaw poziom mocy",
+    "ko": "전원 레벨 설정"
+  },
+  "titleFormatted": {
+    "en": "Set power level to [[level]]",
+    "nl": "Stel vermogensniveau in op [[level]]",
+    "fr": "Régler le niveau de puissance à [[level]]",
+    "de": "Leistungsstufe auf [[level]] einstellen",
+    "it": "Imposta livello di potenza a [[level]]",
+    "es": "Establecer nivel de potencia a [[level]]",
+    "sv": "Ställ in effektnivå till [[level]]",
+    "no": "Still inn effektnivå til [[level]]",
+    "da": "Indstil effektniveau til [[level]]",
+    "ru": "Установить уровень мощности на [[level]]",
+    "pl": "Ustaw poziom mocy na [[level]]",
+    "ko": "전원 레벨을 [[level]]로 설정"
+  },
+  "hint": {
+    "en": "Set the power level of the stove",
+    "nl": "Stel het vermogensniveau van de kachel in",
+    "fr": "Réglez le niveau de puissance du poêle",
+    "de": "Stellen Sie die Leistungsstufe des Ofens ein",
+    "it": "Imposta il livello di potenza della stufa",
+    "es": "Establecer el nivel de potencia de la estufa",
+    "sv": "Ställ in kaminens effektnivå",
+    "no": "Still inn ovnens effektnivå",
+    "da": "Indstil ovnens effektniveau",
+    "ru": "Установить уровень мощности печи",
+    "pl": "Ustaw poziom mocy pieca",
+    "ko": "스토브의 전원 레벨을 설정합니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "level",
+      "type": "number",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "title": {
+        "en": "Level",
+        "nl": "Niveau",
+        "fr": "Niveau",
+        "de": "Stufe",
+        "it": "Livello",
+        "es": "Nivel",
+        "sv": "Nivå",
+        "no": "Nivå",
+        "da": "Niveau",
+        "ru": "Уровень",
+        "pl": "Poziom",
+        "ko": "레벨"
+      }
+    }
+  ]
+}

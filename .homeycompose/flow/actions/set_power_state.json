@@ -1,0 +1,38 @@
+{
+  "id": "set_power_state",
+  "title": {
+    "en": "Turn stove !{{on|off}}",
+    "nl": "Zet kachel !{{aan|uit}}",
+    "fr": "!{{Allumer|Éteindre}} le poêle",
+    "de": "Ofen !{{einschalten|ausschalten}}",
+    "it": "!{{Accendi|Spegni}} la stufa",
+    "es": "!{{Encender|Apagar}} la estufa",
+    "sv": "!{{Slå på|Stäng av}} kaminen",
+    "no": "!{{Slå på|Slå av}} ovnen",
+    "da": "!{{Tænd|Sluk}} for ovnen",
+    "ru": "!{{Включить|Выключить}} печь",
+    "pl": "!{{Włącz|Wyłącz}} piec",
+    "ko": "스토브 !{{켜기|끄기}}"
+  },
+  "hint": {
+    "en": "Turn the stove on or off",
+    "nl": "Zet de kachel aan of uit",
+    "fr": "Allumer ou éteindre le poêle",
+    "de": "Schalten Sie den Ofen ein oder aus",
+    "it": "Accendi o spegni la stufa",
+    "es": "Encender o apagar la estufa",
+    "sv": "Slå på eller stäng av kaminen",
+    "no": "Slå ovnen på eller av",
+    "da": "Tænd eller sluk for ovnen",
+    "ru": "Включить или выключить печь",
+    "pl": "Włącz lub wyłącz piec",
+    "ko": "스토브를 켜거나 끕니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    }
+  ]
+}

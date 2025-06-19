@@ -1,0 +1,1792 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.stove.hottoh",
+  "version": "1.0.1",
+  "compatibility": ">=12.1.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "HottoH stove",
+    "da": "HottoH ovn",
+    "de": "HottoH Ofen",
+    "es": "Estufa HottoH",
+    "fr": "Poêle HottoH",
+    "it": "Stufa HottoH",
+    "ko": "HottoH 스토브",
+    "nl": "HottoH kachel",
+    "no": "HottoH ovn",
+    "pl": "Piec HottoH",
+    "ru": "Печь HottoH",
+    "sv": "HottoH kamin"
+  },
+  "description": {
+    "en": "Control your HottoH pellet stove with Homey",
+    "da": "Styr din HottoH pilleovn med Homey",
+    "de": "Steuern Sie Ihren HottoH Pelletofen mit Homey",
+    "es": "Controla tu estufa de pellets HottoH con Homey",
+    "fr": "Contrôlez votre poêle à granulés HottoH avec Homey",
+    "it": "Controlla la tua stufa a pellet HottoH con Homey",
+    "ko": "Homey로 HottoH 펠릿 스토브를 제어하세요",
+    "nl": "Bedien je HottoH pelletkachel met Homey",
+    "no": "Styr HottoH pelletovnen din med Homey",
+    "pl": "Steruj piecem na pellet HottoH za pomocą Homey",
+    "ru": "Управляйте пеллетной печью HottoH с помощью Homey",
+    "sv": "Styr din HottoH pelletskamin med Homey"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "brandColor": "#F57C00",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Mikkel Hvid",
+    "email": "mikkelhvid@gmail.com"
+  },
+  "support": "https://github.com/Hvid/com.stove.hottoh/issues",
+  "source": "https://github.com/Hvid/com.stove.hottoh",
+  "flow": {
+    "triggers": [
+      {
+        "id": "any_stove_on",
+        "title": {
+          "en": "Any stove is turned on or off",
+          "nl": "Een kachel is ingeschakeld of uitgeschakeld",
+          "fr": "N'importe quel poêle est allumé ou éteint",
+          "de": "Ein Ofen ist eingeschaltet oder ausgeschaltet",
+          "it": "Qualsiasi stufa è accesa o spenta",
+          "es": "Cualquier estufa está encendida o apagada",
+          "sv": "Någon kamin är påslagen eller avstängd",
+          "no": "En ovn er slått på eller slått av",
+          "da": "En ovn er tændt eller slukket",
+          "ru": "Любая печь включена или выключена",
+          "pl": "Dowolny piec jest włączony lub wyłączony",
+          "ko": "스토브가 켜짐 또는 꺼짐"
+        },
+        "titleFormatted": {
+          "en": "Any stove is turned [[on|off]]",
+          "nl": "Een kachel is [[ingeschakeld|uitgeschakeld]]",
+          "fr": "N'importe quel poêle est [[allumé|éteint]]",
+          "de": "Ein Ofen ist [[eingeschaltet|ausgeschaltet]]",
+          "it": "Qualsiasi stufa è [[accesa|spenta]]",
+          "es": "Cualquier estufa está [[encendida|apagada]]",
+          "sv": "Någon kamin är [[påslagen|avstängd]]",
+          "no": "En ovn er [[slått på|slått av]]",
+          "da": "En ovn er [[tændt|slukket]]",
+          "ru": "Любая печь [[включена|выключена]]",
+          "pl": "Dowolny piec jest [[włączony|wyłączony]]",
+          "ko": "스토브가 [[켜짐|꺼짐]]"
+        },
+        "hint": {
+          "en": "Triggered when any stove is turned on or off",
+          "nl": "Wordt geactiveerd wanneer een kachel wordt in- of uitgeschakeld",
+          "fr": "Déclenché lorsqu'un poêle est allumé ou éteint",
+          "de": "Wird ausgelöst, wenn ein Ofen ein- oder ausgeschaltet wird",
+          "it": "Attivato quando una stufa viene accesa o spenta",
+          "es": "Se activa cuando cualquier estufa se enciende o apaga",
+          "sv": "Utlöses när någon kamin slås på eller av",
+          "no": "Utløses når en ovn blir slått på eller av",
+          "da": "Udløses når en ovn tændes eller slukkes",
+          "ru": "Срабатывает, когда любая печь включается или выключается",
+          "pl": "Wyzwalane, gdy dowolny piec zostaje włączony lub wyłączony",
+          "ko": "스토브가 켜지거나 꺼질 때 트리거됩니다"
+        },
+        "tokens": [
+          {
+            "name": "name",
+            "type": "string",
+            "title": {
+              "en": "Name",
+              "nl": "Naam",
+              "fr": "Nom",
+              "de": "Name",
+              "it": "Nome",
+              "es": "Nombre",
+              "sv": "Namn",
+              "no": "Navn",
+              "da": "Navn",
+              "ru": "Название",
+              "pl": "Nazwa",
+              "ko": "이름"
+            },
+            "example": "Living Room Stove"
+          }
+        ]
+      },
+      {
+        "id": "power_level_changed",
+        "title": {
+          "en": "Power level has changed",
+          "nl": "Vermogensniveau is gewijzigd",
+          "fr": "Le niveau de puissance a changé",
+          "de": "Leistungsstufe hat sich geändert",
+          "it": "Il livello di potenza è cambiato",
+          "es": "El nivel de potencia ha cambiado",
+          "sv": "Effektnivå har ändrats",
+          "no": "Effektnivå er endret",
+          "da": "Effektniveau er ændret",
+          "ru": "Уровень мощности изменился",
+          "pl": "Poziom mocy się zmienił",
+          "ko": "전원 레벨이 변경됨"
+        },
+        "hint": {
+          "en": "Triggered when the power level of the stove changes",
+          "nl": "Wordt geactiveerd wanneer het vermogensniveau van de kachel verandert",
+          "fr": "Déclenché lorsque le niveau de puissance du poêle change",
+          "de": "Wird ausgelöst, wenn sich die Leistungsstufe des Ofens ändert",
+          "it": "Attivato quando cambia il livello di potenza della stufa",
+          "es": "Se activa cuando cambia el nivel de potencia de la estufa",
+          "sv": "Utlöses när kaminens effektnivå ändras",
+          "no": "Utløses når ovnens effektnivå endres",
+          "da": "Udløses når ovnens effektniveau ændres",
+          "ru": "Срабатывает при изменении уровня мощности печи",
+          "pl": "Wyzwalane, gdy poziom mocy pieca ulega zmianie",
+          "ko": "스토브의 전원 레벨이 변경될 때 트리거됩니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "power_level",
+            "type": "number",
+            "title": {
+              "en": "Power Level",
+              "nl": "Vermogensniveau",
+              "fr": "Niveau de Puissance",
+              "de": "Leistungsstufe",
+              "it": "Livello di Potenza",
+              "es": "Nivel de Potencia",
+              "sv": "Effektnivå",
+              "no": "Effektnivå",
+              "da": "Effektniveau",
+              "ru": "Уровень Мощности",
+              "pl": "Poziom Mocy",
+              "ko": "전원 레벨"
+            },
+            "example": 3
+          }
+        ]
+      },
+      {
+        "id": "smoke_temperature_threshold",
+        "title": {
+          "en": "Smoke temperature !{{has risen above|has dropped below}} threshold",
+          "nl": "Rooktemperatuur !{{is gestegen boven|is gedaald onder}} drempelwaarde",
+          "fr": "La température des fumées !{{a dépassé|est descendue en dessous de}} le seuil",
+          "de": "Rauchtemperatur !{{ist über|ist unter}} Schwellenwert",
+          "it": "La temperatura dei fumi !{{è salita sopra|è scesa sotto}} la soglia",
+          "es": "La temperatura del humo !{{ha subido por encima|ha bajado por debajo}} del umbral",
+          "sv": "Röktemperatur !{{har stigit över|har sjunkit under}} tröskelvärdet",
+          "no": "Røyktemperatur !{{har steget over|har sunket under}} terskelverdi",
+          "da": "Røgtemperatur !{{er steget over|er faldet under}} tærskelværdi",
+          "ru": "Температура дыма !{{поднялась выше|опустилась ниже}} порогового значения",
+          "pl": "Temperatura dymu !{{wzrosła powyżej|spadła poniżej}} progu",
+          "ko": "연기 온도가 !{{임계값 이상으로 상승|임계값 이하로 하락}}"
+        },
+        "titleFormatted": {
+          "en": "Smoke temperature !{{has risen above|has dropped below}} [[threshold]] °C",
+          "nl": "Rooktemperatuur !{{is gestegen boven|is gedaald onder}} [[threshold]] °C",
+          "fr": "La température des fumées !{{a dépassé|est descendue en dessous de}} [[threshold]] °C",
+          "de": "Rauchtemperatur !{{ist über|ist unter}} [[threshold]] °C",
+          "it": "La temperatura dei fumi !{{è salita sopra|è scesa sotto}} [[threshold]] °C",
+          "es": "La temperatura del humo !{{ha subido por encima|ha bajado por debajo}} de [[threshold]] °C",
+          "sv": "Röktemperatur !{{har stigit över|har sjunkit under}} [[threshold]] °C",
+          "no": "Røyktemperatur !{{har steget over|har sunket under}} [[threshold]] °C",
+          "da": "Røgtemperatur !{{er steget over|er faldet under}} [[threshold]] °C",
+          "ru": "Температура дыма !{{поднялась выше|опустилась ниже}} [[threshold]] °C",
+          "pl": "Temperatura dymu !{{wzrosła powyżej|spadła poniżej}} [[threshold]] °C",
+          "ko": "연기 온도가 [[threshold]] °C !{{이상으로 상승|이하로 하락}}"
+        },
+        "hint": {
+          "en": "Triggered when the smoke temperature crosses a threshold",
+          "nl": "Wordt geactiveerd wanneer de rooktemperatuur een drempelwaarde overschrijdt",
+          "fr": "Déclenché lorsque la température des fumées franchit un seuil",
+          "de": "Wird ausgelöst, wenn die Rauchtemperatur einen Schwellenwert überschreitet",
+          "it": "Attivato quando la temperatura dei fumi supera una soglia",
+          "es": "Se activa cuando la temperatura del humo cruza un umbral",
+          "sv": "Utlöses när röktemperaturen korsar ett tröskelvärde",
+          "no": "Utløses når røyktemperaturen krysser en terskelverdi",
+          "da": "Udløses når røgtemperaturen krydser en tærskelværdi",
+          "ru": "Срабатывает, когда температура дыма пересекает пороговое значение",
+          "pl": "Wyzwalane, gdy temperatura dymu przekracza próg",
+          "ko": "연기 온도가 임계값을 넘을 때 트리거됩니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 0,
+            "max": 300,
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur",
+              "fr": "Température",
+              "de": "Temperatur",
+              "it": "Temperatura",
+              "es": "Temperatura",
+              "sv": "Temperatur",
+              "no": "Temperatur",
+              "da": "Temperatur",
+              "ru": "Температура",
+              "pl": "Temperatura",
+              "ko": "온도"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur",
+              "fr": "Température",
+              "de": "Temperatur",
+              "it": "Temperatura",
+              "es": "Temperatura",
+              "sv": "Temperatur",
+              "no": "Temperatur",
+              "da": "Temperatur",
+              "ru": "Температура",
+              "pl": "Temperatura",
+              "ko": "온도"
+            },
+            "example": 150
+          }
+        ]
+      },
+      {
+        "id": "stove_state_changed",
+        "title": {
+          "en": "Stove state has changed",
+          "nl": "Kachelstatus is gewijzigd",
+          "fr": "L'état du poêle a changé",
+          "de": "Ofenzustand hat sich geändert",
+          "it": "Lo stato della stufa è cambiato",
+          "es": "El estado de la estufa ha cambiado",
+          "sv": "Kaminstatus har ändrats",
+          "no": "Ovnstilstand er endret",
+          "da": "Ovntilstand er ændret",
+          "ru": "Состояние печи изменилось",
+          "pl": "Stan pieca się zmienił",
+          "ko": "스토브 상태가 변경됨"
+        },
+        "hint": {
+          "en": "Triggered when the stove changes from one state to another (e.g., from Off to Startup)",
+          "nl": "Wordt geactiveerd wanneer de kachel van de ene naar de andere status verandert (bijv. van Uit naar Opstarten)",
+          "fr": "Déclenché lorsque le poêle change d'un état à un autre (par exemple, de Éteint à Démarrage)",
+          "de": "Wird ausgelöst, wenn der Ofen von einem Zustand in einen anderen wechselt (z.B. von Aus zu Starten)",
+          "it": "Attivato quando la stufa passa da uno stato all'altro (ad es., da Spenta ad Avvio)",
+          "es": "Se activa cuando la estufa cambia de un estado a otro (por ejemplo, de Apagado a Inicio)",
+          "sv": "Utlöses när kaminen ändras från ett tillstånd till ett annat (t.ex. från Av till Uppstart)",
+          "no": "Utløses når ovnen endrer seg fra en tilstand til en annen (f.eks. fra Av til Oppstart)",
+          "da": "Udløses når ovnen skifter fra en tilstand til en anden (f.eks. fra Slukket til Opstart)",
+          "ru": "Срабатывает, когда печь переходит из одного состояния в другое (например, из Выкл. в Запуск)",
+          "pl": "Wyzwalane, gdy piec zmienia stan z jednego na drugi (np. z Wyłączony na Uruchamianie)",
+          "ko": "스토브가 한 상태에서 다른 상태로 변경될 때 트리거됩니다 (예: 꺼짐에서 시작으로)"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "state",
+            "type": "string",
+            "title": {
+              "en": "State",
+              "nl": "Status",
+              "fr": "État",
+              "de": "Zustand",
+              "it": "Stato",
+              "es": "Estado",
+              "sv": "Tillstånd",
+              "no": "Tilstand",
+              "da": "Tilstand",
+              "ru": "Состояние",
+              "pl": "Stan",
+              "ko": "상태"
+            },
+            "example": "Running"
+          }
+        ]
+      },
+      {
+        "id": "temperature_reached",
+        "title": {
+          "en": "Room temperature has reached target",
+          "nl": "Kamertemperatuur heeft streefwaarde bereikt",
+          "fr": "La température ambiante a atteint la cible",
+          "de": "Raumtemperatur hat Zielwert erreicht",
+          "it": "La temperatura ambiente ha raggiunto l'obiettivo",
+          "es": "La temperatura ambiente ha alcanzado el objetivo",
+          "sv": "Rumstemperatur har nått målvärdet",
+          "no": "Romtemperaturen har nådd målverdien",
+          "da": "Rumtemperatur har nået målværdien",
+          "ru": "Температура в помещении достигла целевой",
+          "pl": "Temperatura pomieszczenia osiągnęła wartość docelową",
+          "ko": "실내 온도가 목표에 도달했습니다"
+        },
+        "hint": {
+          "en": "Triggered when the room temperature reaches the target temperature",
+          "nl": "Wordt geactiveerd wanneer de kamertemperatuur de streeftemperatuur bereikt",
+          "fr": "Déclenché lorsque la température ambiante atteint la température cible",
+          "de": "Wird ausgelöst, wenn die Raumtemperatur die Zieltemperatur erreicht",
+          "it": "Attivato quando la temperatura ambiente raggiunge la temperatura obiettivo",
+          "es": "Se activa cuando la temperatura ambiente alcanza la temperatura objetivo",
+          "sv": "Utlöses när rumstemperaturen når måltemperaturen",
+          "no": "Utløses når romtemperaturen når måltemperaturen",
+          "da": "Udløses når rumtemperaturen når måltemperaturen",
+          "ru": "Срабатывает, когда температура в помещении достигает целевой температуры",
+          "pl": "Wyzwalane, gdy temperatura pomieszczenia osiąga temperaturę docelową",
+          "ko": "실내 온도가 목표 온도에 도달할 때 트리거됩니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur",
+              "fr": "Température",
+              "de": "Temperatur",
+              "it": "Temperatura",
+              "es": "Temperatura",
+              "sv": "Temperatur",
+              "no": "Temperatur",
+              "da": "Temperatur",
+              "ru": "Температура",
+              "pl": "Temperatura",
+              "ko": "온도"
+            },
+            "example": 21
+          }
+        ]
+      },
+      {
+        "id": "wifi_signal_changed",
+        "title": {
+          "en": "WiFi signal strength has changed significantly",
+          "nl": "WiFi-signaalsterkte is aanzienlijk veranderd",
+          "fr": "La force du signal WiFi a changé significativement",
+          "de": "WLAN-Signalstärke hat sich deutlich verändert",
+          "it": "La potenza del segnale WiFi è cambiata significativamente",
+          "es": "La intensidad de la señal WiFi ha cambiado significativamente",
+          "sv": "WiFi-signalstyrka har ändrats avsevärt",
+          "no": "WiFi-signalstyrke har endret seg betydelig",
+          "da": "WiFi-signalstyrke er ændret betydeligt",
+          "ru": "Уровень сигнала WiFi значительно изменился",
+          "pl": "Siła sygnału WiFi zmieniła się znacząco",
+          "ko": "WiFi 신호 강도가 크게 변경되었습니다"
+        },
+        "titleFormatted": {
+          "en": "WiFi signal strength has changed by more than [[threshold]]%",
+          "nl": "WiFi-signaalsterkte is meer dan [[threshold]]% veranderd",
+          "fr": "La force du signal WiFi a changé de plus de [[threshold]]%",
+          "de": "WLAN-Signalstärke hat sich um mehr als [[threshold]]% verändert",
+          "it": "La potenza del segnale WiFi è cambiata di più del [[threshold]]%",
+          "es": "La intensidad de la señal WiFi ha cambiado más del [[threshold]]%",
+          "sv": "WiFi-signalstyrka har ändrats med mer än [[threshold]]%",
+          "no": "WiFi-signalstyrke har endret seg med mer enn [[threshold]]%",
+          "da": "WiFi-signalstyrke er ændret med mere end [[threshold]]%",
+          "ru": "Уровень сигнала WiFi изменился более чем на [[threshold]]%",
+          "pl": "Siła sygnału WiFi zmieniła się o więcej niż [[threshold]]%",
+          "ko": "WiFi 신호 강도가 [[threshold]]% 이상 변경되었습니다"
+        },
+        "hint": {
+          "en": "Triggered when the WiFi signal strength changes by more than the specified percentage",
+          "nl": "Wordt geactiveerd wanneer de WiFi-signaalsterkte meer verandert dan het opgegeven percentage",
+          "fr": "Déclenché lorsque la force du signal WiFi change de plus que le pourcentage spécifié",
+          "de": "Wird ausgelöst, wenn sich die WLAN-Signalstärke um mehr als den angegebenen Prozentsatz ändert",
+          "it": "Attivato quando la potenza del segnale WiFi cambia di più della percentuale specificata",
+          "es": "Se activa cuando la intensidad de la señal WiFi cambia más del porcentaje especificado",
+          "sv": "Utlöses när WiFi-signalstyrkan ändras med mer än den angivna procentandelen",
+          "no": "Utløses når WiFi-signalstyrken endres med mer enn den angitte prosentandelen",
+          "da": "Udløses når WiFi-signalstyrken ændres med mere end den angivne procentdel",
+          "ru": "Срабатывает, когда уровень сигнала WiFi изменяется больше, чем на указанный процент",
+          "pl": "Wyzwalane, gdy siła sygnału WiFi zmienia się o więcej niż określony procent",
+          "ko": "WiFi 신호 강도가 지정된 백분율보다 크게 변경될 때 트리거됩니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "threshold",
+            "type": "number",
+            "min": 5,
+            "max": 50,
+            "step": 5,
+            "title": {
+              "en": "Threshold (%)",
+              "nl": "Drempelwaarde (%)",
+              "fr": "Seuil (%)",
+              "de": "Schwellenwert (%)",
+              "it": "Soglia (%)",
+              "es": "Umbral (%)",
+              "sv": "Tröskelvärde (%)",
+              "no": "Terskelverdi (%)",
+              "da": "Tærskelværdi (%)",
+              "ru": "Порог (%)",
+              "pl": "Próg (%)",
+              "ko": "임계값 (%)"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "signal",
+            "type": "number",
+            "title": {
+              "en": "Signal Strength",
+              "nl": "Signaalsterkte",
+              "fr": "Force du Signal",
+              "de": "Signalstärke",
+              "it": "Potenza del Segnale",
+              "es": "Intensidad de la Señal",
+              "sv": "Signalstyrka",
+              "no": "Signalstyrke",
+              "da": "Signalstyrke",
+              "ru": "Уровень Сигнала",
+              "pl": "Siła Sygnału",
+              "ko": "신호 강도"
+            },
+            "example": 75
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "fan_speed_is",
+        "title": {
+          "en": "Fan speed !{{is|is not}}",
+          "nl": "Ventilatorsnelheid !{{is|is niet}}",
+          "fr": "La vitesse du ventilateur !{{est|n'est pas}}",
+          "de": "Lüftergeschwindigkeit !{{ist|ist nicht}}",
+          "it": "La velocità della ventola !{{è|non è}}",
+          "es": "La velocidad del ventilador !{{es|no es}}",
+          "sv": "Fläkthastighet !{{är|är inte}}",
+          "no": "Viftehastighet !{{er|er ikke}}",
+          "da": "Blæserhastighed !{{er|er ikke}}",
+          "ru": "Скорость вентилятора !{{|не}}",
+          "pl": "Prędkość wentylatora !{{jest|nie jest}}",
+          "ko": "팬 속도가 !{{입니다|아닙니다}}"
+        },
+        "titleFormatted": {
+          "en": "Fan speed !{{is|is not}} [[speed]]",
+          "nl": "Ventilatorsnelheid !{{is|is niet}} [[speed]]",
+          "fr": "La vitesse du ventilateur !{{est|n'est pas}} [[speed]]",
+          "de": "Lüftergeschwindigkeit !{{ist|ist nicht}} [[speed]]",
+          "it": "La velocità della ventola !{{è|non è}} [[speed]]",
+          "es": "La velocidad del ventilador !{{es|no es}} [[speed]]",
+          "sv": "Fläkthastighet !{{är|är inte}} [[speed]]",
+          "no": "Viftehastighet !{{er|er ikke}} [[speed]]",
+          "da": "Blæserhastighed !{{er|er ikke}} [[speed]]",
+          "ru": "Скорость вентилятора !{{|не}} [[speed]]",
+          "pl": "Prędkość wentylatora !{{jest|nie jest}} [[speed]]",
+          "ko": "팬 속도가 [[speed]] !{{입니다|아닙니다}}"
+        },
+        "hint": {
+          "en": "Check if the fan speed is at a specific setting",
+          "nl": "Controleer of de ventilatorsnelheid op een specifieke instelling staat",
+          "fr": "Vérifiez si la vitesse du ventilateur est à un réglage spécifique",
+          "de": "Prüfen, ob die Lüftergeschwindigkeit auf einer bestimmten Einstellung steht",
+          "it": "Controlla se la velocità della ventola è su un'impostazione specifica",
+          "es": "Comprobar si la velocidad del ventilador está en un ajuste específico",
+          "sv": "Kontrollera om fläkthastigheten är på en specifik inställning",
+          "no": "Sjekk om viftehastigheten er på en bestemt innstilling",
+          "da": "Tjek om blæserhastigheden er på en bestemt indstilling",
+          "ru": "Проверить, установлена ли скорость вентилятора на определенное значение",
+          "pl": "Sprawdź, czy prędkość wentylatora jest na określonym ustawieniu",
+          "ko": "팬 속도가 특정 설정인지 확인합니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "speed",
+            "type": "number",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "title": {
+              "en": "Speed",
+              "nl": "Snelheid",
+              "fr": "Vitesse",
+              "de": "Geschwindigkeit",
+              "it": "Velocità",
+              "es": "Velocidad",
+              "sv": "Hastighet",
+              "no": "Hastighet",
+              "da": "Hastighed",
+              "ru": "Скорость",
+              "pl": "Prędkość",
+              "ko": "속도"
+            }
+          }
+        ]
+      },
+      {
+        "id": "power_level_is",
+        "title": {
+          "en": "Power level !{{is|is not}}",
+          "nl": "Vermogensniveau !{{is|is niet}}",
+          "fr": "Le niveau de puissance !{{est|n'est pas}}",
+          "de": "Leistungsstufe !{{ist|ist nicht}}",
+          "it": "Il livello di potenza !{{è|non è}}",
+          "es": "El nivel de potencia !{{es|no es}}",
+          "sv": "Effektnivå !{{är|är inte}}",
+          "no": "Effektnivå !{{er|er ikke}}",
+          "da": "Effektniveau !{{er|er ikke}}",
+          "ru": "Уровень мощности !{{|не}}",
+          "pl": "Poziom mocy !{{jest|nie jest}}",
+          "ko": "전원 레벨이 !{{입니다|아닙니다}}"
+        },
+        "titleFormatted": {
+          "en": "Power level !{{is|is not}} [[level]]",
+          "nl": "Vermogensniveau !{{is|is niet}} [[level]]",
+          "fr": "Le niveau de puissance !{{est|n'est pas}} [[level]]",
+          "de": "Leistungsstufe !{{ist|ist nicht}} [[level]]",
+          "it": "Il livello di potenza !{{è|non è}} [[level]]",
+          "es": "El nivel de potencia !{{es|no es}} [[level]]",
+          "sv": "Effektnivå !{{är|är inte}} [[level]]",
+          "no": "Effektnivå !{{er|er ikke}} [[level]]",
+          "da": "Effektniveau !{{er|er ikke}} [[level]]",
+          "ru": "Уровень мощности !{{|не}} [[level]]",
+          "pl": "Poziom mocy !{{jest|nie jest}} [[level]]",
+          "ko": "전원 레벨이 [[level]] !{{입니다|아닙니다}}"
+        },
+        "hint": {
+          "en": "Check if the power level is at a specific setting",
+          "nl": "Controleer of het vermogensniveau op een specifieke instelling staat",
+          "fr": "Vérifiez si le niveau de puissance est à un réglage spécifique",
+          "de": "Prüfen, ob die Leistungsstufe auf einer bestimmten Einstellung steht",
+          "it": "Controlla se il livello di potenza è su un'impostazione specifica",
+          "es": "Comprobar si el nivel de potencia está en un ajuste específico",
+          "sv": "Kontrollera om effektnivån är på en specifik inställning",
+          "no": "Sjekk om effektnivået er på en bestemt innstilling",
+          "da": "Tjek om effektniveauet er på en bestemt indstilling",
+          "ru": "Проверить, установлен ли уровень мощности на определенное значение",
+          "pl": "Sprawdź, czy poziom mocy jest na określonym ustawieniu",
+          "ko": "전원 레벨이 특정 설정인지 확인합니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "title": {
+              "en": "Level",
+              "nl": "Niveau",
+              "fr": "Niveau",
+              "de": "Stufe",
+              "it": "Livello",
+              "es": "Nivel",
+              "sv": "Nivå",
+              "no": "Nivå",
+              "da": "Niveau",
+              "ru": "Уровень",
+              "pl": "Poziom",
+              "ko": "레벨"
+            }
+          }
+        ]
+      },
+      {
+        "id": "room_temperature_is",
+        "title": {
+          "en": "Room temperature !{{is|is not}}",
+          "nl": "Kamertemperatuur !{{is|is niet}}",
+          "fr": "La température ambiante !{{est|n'est pas}}",
+          "de": "Raumtemperatur !{{ist|ist nicht}}",
+          "it": "La temperatura ambiente !{{è|non è}}",
+          "es": "La temperatura ambiente !{{es|no es}}",
+          "sv": "Rumstemperatur !{{är|är inte}}",
+          "no": "Romtemperatur !{{er|er ikke}}",
+          "da": "Rumtemperatur !{{er|er ikke}}",
+          "ru": "Температура в помещении !{{|не}}",
+          "pl": "Temperatura pomieszczenia !{{jest|nie jest}}",
+          "ko": "실내 온도가 !{{입니다|아닙니다}}"
+        },
+        "titleFormatted": {
+          "en": "Room temperature !{{is|is not}} [[comparison]] [[temperature]] °C",
+          "nl": "Kamertemperatuur !{{is|is niet}} [[comparison]] [[temperature]] °C",
+          "fr": "La température ambiante !{{est|n'est pas}} [[comparison]] [[temperature]] °C",
+          "de": "Raumtemperatur !{{ist|ist nicht}} [[comparison]] [[temperature]] °C",
+          "it": "La temperatura ambiente !{{è|non è}} [[comparison]] [[temperature]] °C",
+          "es": "La temperatura ambiente !{{es|no es}} [[comparison]] [[temperature]] °C",
+          "sv": "Rumstemperatur !{{är|är inte}} [[comparison]] [[temperature]] °C",
+          "no": "Romtemperatur !{{er|er ikke}} [[comparison]] [[temperature]] °C",
+          "da": "Rumtemperatur !{{er|er ikke}} [[comparison]] [[temperature]] °C",
+          "ru": "Температура в помещении !{{|не}} [[comparison]] [[temperature]] °C",
+          "pl": "Temperatura pomieszczenia !{{jest|nie jest}} [[comparison]] [[temperature]] °C",
+          "ko": "실내 온도가 [[comparison]] [[temperature]] °C !{{입니다|아닙니다}}"
+        },
+        "hint": {
+          "en": "Check if the room temperature is above/below a certain value",
+          "nl": "Controleer of de kamertemperatuur boven/onder een bepaalde waarde ligt",
+          "fr": "Vérifiez si la température ambiante est supérieure/inférieure à une certaine valeur",
+          "de": "Prüfen, ob die Raumtemperatur über/unter einem bestimmten Wert liegt",
+          "it": "Controlla se la temperatura ambiente è sopra/sotto un certo valore",
+          "es": "Comprobar si la temperatura ambiente está por encima/debajo de un valor determinado",
+          "sv": "Kontrollera om rumstemperaturen är över/under ett visst värde",
+          "no": "Sjekk om romtemperaturen er over/under en bestemt verdi",
+          "da": "Tjek om rumtemperaturen er over/under en bestemt værdi",
+          "ru": "Проверить, находится ли температура в помещении выше/ниже определенного значения",
+          "pl": "Sprawdź, czy temperatura pomieszczenia jest powyżej/poniżej określonej wartości",
+          "ko": "실내 온도가 특정 값보다 높은지/낮은지 확인합니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "comparison",
+            "type": "dropdown",
+            "title": {
+              "en": "Comparison",
+              "nl": "Vergelijking",
+              "fr": "Comparaison",
+              "de": "Vergleich",
+              "it": "Confronto",
+              "es": "Comparación",
+              "sv": "Jämförelse",
+              "no": "Sammenligning",
+              "da": "Sammenligning",
+              "ru": "Сравнение",
+              "pl": "Porównanie",
+              "ko": "비교"
+            },
+            "values": [
+              {
+                "id": "above",
+                "label": {
+                  "en": "above",
+                  "nl": "boven",
+                  "fr": "au-dessus de",
+                  "de": "über",
+                  "it": "sopra",
+                  "es": "por encima de",
+                  "sv": "över",
+                  "no": "over",
+                  "da": "over",
+                  "ru": "выше",
+                  "pl": "powyżej",
+                  "ko": "초과"
+                }
+              },
+              {
+                "id": "below",
+                "label": {
+                  "en": "below",
+                  "nl": "onder",
+                  "fr": "en dessous de",
+                  "de": "unter",
+                  "it": "sotto",
+                  "es": "por debajo de",
+                  "sv": "under",
+                  "no": "under",
+                  "da": "under",
+                  "ru": "ниже",
+                  "pl": "poniżej",
+                  "ko": "미만"
+                }
+              }
+            ]
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur",
+              "fr": "Température",
+              "de": "Temperatur",
+              "it": "Temperatura",
+              "es": "Temperatura",
+              "sv": "Temperatur",
+              "no": "Temperatur",
+              "da": "Temperatur",
+              "ru": "Температура",
+              "pl": "Temperatura",
+              "ko": "온도"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stove_is_in_state",
+        "title": {
+          "en": "Stove !{{is|is not}} in state",
+          "nl": "Kachel !{{is|is niet}} in staat",
+          "fr": "Le poêle !{{est|n'est pas}} dans l'état",
+          "de": "Ofen !{{ist|ist nicht}} im Zustand",
+          "it": "La stufa !{{è|non è}} nello stato",
+          "es": "La estufa !{{está|no está}} en estado",
+          "sv": "Kamin !{{är|är inte}} i tillstånd",
+          "no": "Ovn !{{er|er ikke}} i tilstand",
+          "da": "Ovn !{{er|er ikke}} i tilstand",
+          "ru": "Печь !{{находится|не находится}} в состоянии",
+          "pl": "Piec !{{jest|nie jest}} w stanie",
+          "ko": "스토브가 !{{상태입니다|상태가 아닙니다}}"
+        },
+        "titleFormatted": {
+          "en": "Stove !{{is|is not}} in state [[state]]",
+          "nl": "Kachel !{{is|is niet}} in staat [[state]]",
+          "fr": "Le poêle !{{est|n'est pas}} dans l'état [[state]]",
+          "de": "Ofen !{{ist|ist nicht}} im Zustand [[state]]",
+          "it": "La stufa !{{è|non è}} nello stato [[state]]",
+          "es": "La estufa !{{está|no está}} en estado [[state]]",
+          "sv": "Kamin !{{är|är inte}} i tillstånd [[state]]",
+          "no": "Ovn !{{er|er ikke}} i tilstand [[state]]",
+          "da": "Ovn !{{er|er ikke}} i tilstand [[state]]",
+          "ru": "Печь !{{находится|не находится}} в состоянии [[state]]",
+          "pl": "Piec !{{jest|nie jest}} w stanie [[state]]",
+          "ko": "스토브가 [[state]] !{{상태입니다|상태가 아닙니다}}"
+        },
+        "hint": {
+          "en": "Check if the stove is in a specific state",
+          "nl": "Controleer of de kachel in een specifieke staat is",
+          "fr": "Vérifiez si le poêle est dans un état spécifique",
+          "de": "Prüfen, ob sich der Ofen in einem bestimmten Zustand befindet",
+          "it": "Controlla se la stufa è in uno stato specifico",
+          "es": "Comprobar si la estufa está en un estado específico",
+          "sv": "Kontrollera om kaminen är i ett specifikt tillstånd",
+          "no": "Sjekk om ovnen er i en bestemt tilstand",
+          "da": "Tjek om ovnen er i en bestemt tilstand",
+          "ru": "Проверить, находится ли печь в определенном состоянии",
+          "pl": "Sprawdź, czy piec jest w określonym stanie",
+          "ko": "스토브가 특정 상태인지 확인합니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "title": {
+              "en": "State",
+              "nl": "Status",
+              "fr": "État",
+              "de": "Zustand",
+              "it": "Stato",
+              "es": "Estado",
+              "sv": "Tillstånd",
+              "no": "Tilstand",
+              "da": "Tilstand",
+              "ru": "Состояние",
+              "pl": "Stan",
+              "ko": "상태"
+            },
+            "values": [
+              {
+                "id": "Off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "fr": "Éteint",
+                  "de": "Aus",
+                  "it": "Spenta",
+                  "es": "Apagada",
+                  "sv": "Av",
+                  "no": "Av",
+                  "da": "Slukket",
+                  "ru": "Выключена",
+                  "pl": "Wyłączony",
+                  "ko": "꺼짐"
+                }
+              },
+              {
+                "id": "Starting",
+                "label": {
+                  "en": "Starting",
+                  "nl": "Opstarten",
+                  "fr": "Démarrage",
+                  "de": "Starten",
+                  "it": "Avvio",
+                  "es": "Iniciando",
+                  "sv": "Startar",
+                  "no": "Starter",
+                  "da": "Starter",
+                  "ru": "Запуск",
+                  "pl": "Uruchamianie",
+                  "ko": "시작 중"
+                }
+              },
+              {
+                "id": "Preheating",
+                "label": {
+                  "en": "Preheating",
+                  "nl": "Voorverwarmen",
+                  "fr": "Préchauffage",
+                  "de": "Vorheizen",
+                  "it": "Preriscaldamento",
+                  "es": "Precalentando",
+                  "sv": "Förvärmning",
+                  "no": "Forvarming",
+                  "da": "Forvarmer",
+                  "ru": "Предварительный нагрев",
+                  "pl": "Podgrzewanie",
+                  "ko": "예열 중"
+                }
+              },
+              {
+                "id": "Running",
+                "label": {
+                  "en": "Running",
+                  "nl": "Actief",
+                  "fr": "En marche",
+                  "de": "In Betrieb",
+                  "it": "In funzione",
+                  "es": "Funcionando",
+                  "sv": "I drift",
+                  "no": "I drift",
+                  "da": "Kører",
+                  "ru": "Работает",
+                  "pl": "Pracuje",
+                  "ko": "작동 중"
+                }
+              },
+              {
+                "id": "Cooling Down",
+                "label": {
+                  "en": "Cooling Down",
+                  "nl": "Afkoelen",
+                  "fr": "Refroidissement",
+                  "de": "Abkühlen",
+                  "it": "Raffreddamento",
+                  "es": "Enfriando",
+                  "sv": "Svalnar",
+                  "no": "Avkjøling",
+                  "da": "Køler ned",
+                  "ru": "Охлаждение",
+                  "pl": "Schładzanie",
+                  "ko": "냉각 중"
+                }
+              },
+              {
+                "id": "Cleaning",
+                "label": {
+                  "en": "Cleaning",
+                  "nl": "Reinigen",
+                  "fr": "Nettoyage",
+                  "de": "Reinigung",
+                  "it": "Pulizia",
+                  "es": "Limpiando",
+                  "sv": "Rengöring",
+                  "no": "Rengjøring",
+                  "da": "Rengøring",
+                  "ru": "Очистка",
+                  "pl": "Czyszczenie",
+                  "ko": "청소 중"
+                }
+              },
+              {
+                "id": "Standby",
+                "label": {
+                  "en": "Standby",
+                  "nl": "Stand-by",
+                  "fr": "Veille",
+                  "de": "Standby",
+                  "it": "Standby",
+                  "es": "En espera",
+                  "sv": "Viloläge",
+                  "no": "Standby",
+                  "da": "Standby",
+                  "ru": "Ожидание",
+                  "pl": "Gotowość",
+                  "ko": "대기 중"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wifi_signal_is",
+        "title": {
+          "en": "WiFi signal !{{is|is not}}",
+          "nl": "WiFi-signaal !{{is|is niet}}",
+          "fr": "Le signal WiFi !{{est|n'est pas}}",
+          "de": "WLAN-Signal !{{ist|ist nicht}}",
+          "it": "Il segnale WiFi !{{è|non è}}",
+          "es": "La señal WiFi !{{es|no es}}",
+          "sv": "WiFi-signal !{{är|är inte}}",
+          "no": "WiFi-signal !{{er|er ikke}}",
+          "da": "WiFi-signal !{{er|er ikke}}",
+          "ru": "Сигнал WiFi !{{|не}}",
+          "pl": "Sygnał WiFi !{{jest|nie jest}}",
+          "ko": "WiFi 신호가 !{{입니다|아닙니다}}"
+        },
+        "titleFormatted": {
+          "en": "WiFi signal !{{is|is not}} [[strength]]",
+          "nl": "WiFi-signaal !{{is|is niet}} [[strength]]",
+          "fr": "Le signal WiFi !{{est|n'est pas}} [[strength]]",
+          "de": "WLAN-Signal !{{ist|ist nicht}} [[strength]]",
+          "it": "Il segnale WiFi !{{è|non è}} [[strength]]",
+          "es": "La señal WiFi !{{es|no es}} [[strength]]",
+          "sv": "WiFi-signal !{{är|är inte}} [[strength]]",
+          "no": "WiFi-signal !{{er|er ikke}} [[strength]]",
+          "da": "WiFi-signal !{{er|er ikke}} [[strength]]",
+          "ru": "Сигнал WiFi !{{|не}} [[strength]]",
+          "pl": "Sygnał WiFi !{{jest|nie jest}} [[strength]]",
+          "ko": "WiFi 신호가 [[strength]] !{{입니다|아닙니다}}"
+        },
+        "hint": {
+          "en": "Check if the WiFi signal strength is strong/medium/weak",
+          "nl": "Controleer of de WiFi-signaalsterkte sterk/gemiddeld/zwak is",
+          "fr": "Vérifiez si la force du signal WiFi est forte/moyenne/faible",
+          "de": "Prüfen, ob die WLAN-Signalstärke stark/mittel/schwach ist",
+          "it": "Controlla se la potenza del segnale WiFi è forte/media/debole",
+          "es": "Comprobar si la intensidad de la señal WiFi es fuerte/media/débil",
+          "sv": "Kontrollera om WiFi-signalstyrkan är stark/medel/svag",
+          "no": "Sjekk om WiFi-signalstyrken er sterk/middels/svak",
+          "da": "Tjek om WiFi-signalstyrken er stærk/medium/svag",
+          "ru": "Проверить, является ли уровень сигнала WiFi сильным/средним/слабым",
+          "pl": "Sprawdź, czy siła sygnału WiFi jest silna/średnia/słaba",
+          "ko": "WiFi 신호 강도가 강함/중간/약함인지 확인합니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "strength",
+            "type": "dropdown",
+            "title": {
+              "en": "Signal Strength",
+              "nl": "Signaalsterkte",
+              "fr": "Force du signal",
+              "de": "Signalstärke",
+              "it": "Potenza del segnale",
+              "es": "Intensidad de señal",
+              "sv": "Signalstyrka",
+              "no": "Signalstyrke",
+              "da": "Signalstyrke",
+              "ru": "Сила сигнала",
+              "pl": "Siła sygnału",
+              "ko": "신호 강도"
+            },
+            "values": [
+              {
+                "id": "strong",
+                "label": {
+                  "en": "Strong (>75%)",
+                  "nl": "Sterk (>75%)",
+                  "fr": "Fort (>75%)",
+                  "de": "Stark (>75%)",
+                  "it": "Forte (>75%)",
+                  "es": "Fuerte (>75%)",
+                  "sv": "Stark (>75%)",
+                  "no": "Sterk (>75%)",
+                  "da": "Stærk (>75%)",
+                  "ru": "Сильный (>75%)",
+                  "pl": "Silny (>75%)",
+                  "ko": "강함 (>75%)"
+                }
+              },
+              {
+                "id": "medium",
+                "label": {
+                  "en": "Medium (30-75%)",
+                  "nl": "Gemiddeld (30-75%)",
+                  "fr": "Moyen (30-75%)",
+                  "de": "Mittel (30-75%)",
+                  "it": "Medio (30-75%)",
+                  "es": "Medio (30-75%)",
+                  "sv": "Medel (30-75%)",
+                  "no": "Middels (30-75%)",
+                  "da": "Medium (30-75%)",
+                  "ru": "Средний (30-75%)",
+                  "pl": "Średni (30-75%)",
+                  "ko": "중간 (30-75%)"
+                }
+              },
+              {
+                "id": "weak",
+                "label": {
+                  "en": "Weak (<30%)",
+                  "nl": "Zwak (<30%)",
+                  "fr": "Faible (<30%)",
+                  "de": "Schwach (<30%)",
+                  "it": "Debole (<30%)",
+                  "es": "Débil (<30%)",
+                  "sv": "Svag (<30%)",
+                  "no": "Svak (<30%)",
+                  "da": "Svag (<30%)",
+                  "ru": "Слабый (<30%)",
+                  "pl": "Słaby (<30%)",
+                  "ko": "약함 (<30%)"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "set_fan_speed",
+        "title": {
+          "en": "Set fan speed",
+          "nl": "Stel ventilatorsnelheid in",
+          "fr": "Régler la vitesse du ventilateur",
+          "de": "Lüftergeschwindigkeit einstellen",
+          "it": "Imposta velocità ventola",
+          "es": "Establecer velocidad del ventilador",
+          "sv": "Ställ in fläkthastighet",
+          "no": "Still inn viftehastighet",
+          "da": "Indstil blæserhastighed",
+          "ru": "Установить скорость вентилятора",
+          "pl": "Ustaw prędkość wentylatora",
+          "ko": "팬 속도 설정"
+        },
+        "titleFormatted": {
+          "en": "Set fan speed to [[speed]]",
+          "nl": "Stel ventilatorsnelheid in op [[speed]]",
+          "fr": "Régler la vitesse du ventilateur à [[speed]]",
+          "de": "Lüftergeschwindigkeit auf [[speed]] einstellen",
+          "it": "Imposta velocità ventola a [[speed]]",
+          "es": "Establecer velocidad del ventilador a [[speed]]",
+          "sv": "Ställ in fläkthastighet till [[speed]]",
+          "no": "Still inn viftehastighet til [[speed]]",
+          "da": "Indstil blæserhastighed til [[speed]]",
+          "ru": "Установить скорость вентилятора на [[speed]]",
+          "pl": "Ustaw prędkość wentylatora na [[speed]]",
+          "ko": "팬 속도를 [[speed]]로 설정"
+        },
+        "hint": {
+          "en": "Set the fan speed",
+          "nl": "Stel de ventilatorsnelheid in",
+          "fr": "Réglez la vitesse du ventilateur",
+          "de": "Stellen Sie die Lüftergeschwindigkeit ein",
+          "it": "Imposta la velocità della ventola",
+          "es": "Establecer la velocidad del ventilador",
+          "sv": "Ställ in fläkthastigheten",
+          "no": "Still inn viftehastigheten",
+          "da": "Indstil blæserhastigheden",
+          "ru": "Установить скорость вентилятора",
+          "pl": "Ustaw prędkość wentylatora",
+          "ko": "팬 속도를 설정합니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "speed",
+            "type": "number",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "title": {
+              "en": "Speed",
+              "nl": "Snelheid",
+              "fr": "Vitesse",
+              "de": "Geschwindigkeit",
+              "it": "Velocità",
+              "es": "Velocidad",
+              "sv": "Hastighet",
+              "no": "Hastighet",
+              "da": "Hastighed",
+              "ru": "Скорость",
+              "pl": "Prędkość",
+              "ko": "속도"
+            }
+          }
+        ]
+      },
+      {
+        "id": "set_power_level",
+        "title": {
+          "en": "Set power level",
+          "nl": "Stel vermogensniveau in",
+          "fr": "Régler le niveau de puissance",
+          "de": "Leistungsstufe einstellen",
+          "it": "Imposta livello di potenza",
+          "es": "Establecer nivel de potencia",
+          "sv": "Ställ in effektnivå",
+          "no": "Still inn effektnivå",
+          "da": "Indstil effektniveau",
+          "ru": "Установить уровень мощности",
+          "pl": "Ustaw poziom mocy",
+          "ko": "전원 레벨 설정"
+        },
+        "titleFormatted": {
+          "en": "Set power level to [[level]]",
+          "nl": "Stel vermogensniveau in op [[level]]",
+          "fr": "Régler le niveau de puissance à [[level]]",
+          "de": "Leistungsstufe auf [[level]] einstellen",
+          "it": "Imposta livello di potenza a [[level]]",
+          "es": "Establecer nivel de potencia a [[level]]",
+          "sv": "Ställ in effektnivå till [[level]]",
+          "no": "Still inn effektnivå til [[level]]",
+          "da": "Indstil effektniveau til [[level]]",
+          "ru": "Установить уровень мощности на [[level]]",
+          "pl": "Ustaw poziom mocy na [[level]]",
+          "ko": "전원 레벨을 [[level]]로 설정"
+        },
+        "hint": {
+          "en": "Set the power level of the stove",
+          "nl": "Stel het vermogensniveau van de kachel in",
+          "fr": "Réglez le niveau de puissance du poêle",
+          "de": "Stellen Sie die Leistungsstufe des Ofens ein",
+          "it": "Imposta il livello di potenza della stufa",
+          "es": "Establecer el nivel de potencia de la estufa",
+          "sv": "Ställ in kaminens effektnivå",
+          "no": "Still inn ovnens effektnivå",
+          "da": "Indstil ovnens effektniveau",
+          "ru": "Установить уровень мощности печи",
+          "pl": "Ustaw poziom mocy pieca",
+          "ko": "스토브의 전원 레벨을 설정합니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "title": {
+              "en": "Level",
+              "nl": "Niveau",
+              "fr": "Niveau",
+              "de": "Stufe",
+              "it": "Livello",
+              "es": "Nivel",
+              "sv": "Nivå",
+              "no": "Nivå",
+              "da": "Niveau",
+              "ru": "Уровень",
+              "pl": "Poziom",
+              "ko": "레벨"
+            }
+          }
+        ]
+      },
+      {
+        "id": "set_power_state",
+        "title": {
+          "en": "Turn stove !{{on|off}}",
+          "nl": "Zet kachel !{{aan|uit}}",
+          "fr": "!{{Allumer|Éteindre}} le poêle",
+          "de": "Ofen !{{einschalten|ausschalten}}",
+          "it": "!{{Accendi|Spegni}} la stufa",
+          "es": "!{{Encender|Apagar}} la estufa",
+          "sv": "!{{Slå på|Stäng av}} kaminen",
+          "no": "!{{Slå på|Slå av}} ovnen",
+          "da": "!{{Tænd|Sluk}} for ovnen",
+          "ru": "!{{Включить|Выключить}} печь",
+          "pl": "!{{Włącz|Wyłącz}} piec",
+          "ko": "스토브 !{{켜기|끄기}}"
+        },
+        "hint": {
+          "en": "Turn the stove on or off",
+          "nl": "Zet de kachel aan of uit",
+          "fr": "Allumer ou éteindre le poêle",
+          "de": "Schalten Sie den Ofen ein oder aus",
+          "it": "Accendi o spegni la stufa",
+          "es": "Encender o apagar la estufa",
+          "sv": "Slå på eller stäng av kaminen",
+          "no": "Slå ovnen på eller av",
+          "da": "Tænd eller sluk for ovnen",
+          "ru": "Включить или выключить печь",
+          "pl": "Włącz lub wyłącz piec",
+          "ko": "스토브를 켜거나 끕니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          }
+        ]
+      },
+      {
+        "id": "set_target_temperature",
+        "title": {
+          "en": "Set target temperature",
+          "nl": "Stel streeftemperatuur in",
+          "fr": "Régler la température cible",
+          "de": "Zieltemperatur einstellen",
+          "it": "Imposta temperatura obiettivo",
+          "es": "Establecer temperatura objetivo",
+          "sv": "Ställ in måltemperatur",
+          "no": "Still inn måltemperatur",
+          "da": "Indstil måltemperatur",
+          "ru": "Установить целевую температуру",
+          "pl": "Ustaw temperaturę docelową",
+          "ko": "목표 온도 설정"
+        },
+        "titleFormatted": {
+          "en": "Set target temperature to [[temperature]] °C",
+          "nl": "Stel streeftemperatuur in op [[temperature]] °C",
+          "fr": "Régler la température cible à [[temperature]] °C",
+          "de": "Zieltemperatur auf [[temperature]] °C einstellen",
+          "it": "Imposta temperatura obiettivo a [[temperature]] °C",
+          "es": "Establecer temperatura objetivo a [[temperature]] °C",
+          "sv": "Ställ in måltemperatur till [[temperature]] °C",
+          "no": "Still inn måltemperatur til [[temperature]] °C",
+          "da": "Indstil måltemperatur til [[temperature]] °C",
+          "ru": "Установить целевую температуру на [[temperature]] °C",
+          "pl": "Ustaw temperaturę docelową na [[temperature]] °C",
+          "ko": "목표 온도를 [[temperature]] °C로 설정"
+        },
+        "hint": {
+          "en": "Set the target temperature for the room",
+          "nl": "Stel de streeftemperatuur voor de kamer in",
+          "fr": "Réglez la température cible pour la pièce",
+          "de": "Stellen Sie die Zieltemperatur für den Raum ein",
+          "it": "Imposta la temperatura obiettivo per la stanza",
+          "es": "Establecer la temperatura objetivo para la habitación",
+          "sv": "Ställ in måltemperaturen för rummet",
+          "no": "Still inn måltemperaturen for rommet",
+          "da": "Indstil måltemperaturen for rummet",
+          "ru": "Установить целевую температуру для помещения",
+          "pl": "Ustaw temperaturę docelową dla pomieszczenia",
+          "ko": "방의 목표 온도를 설정합니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur",
+              "fr": "Température",
+              "de": "Temperatur",
+              "it": "Temperatura",
+              "es": "Temperatura",
+              "sv": "Temperatur",
+              "no": "Temperatur",
+              "da": "Temperatur",
+              "ru": "Температура",
+              "pl": "Temperatura",
+              "ko": "온도"
+            }
+          }
+        ]
+      },
+      {
+        "id": "turn_off_when_temperature_reached",
+        "title": {
+          "en": "Turn off when temperature reached",
+          "nl": "Uitschakelen wanneer temperatuur bereikt is",
+          "fr": "Éteindre lorsque la température est atteinte",
+          "de": "Ausschalten, wenn Temperatur erreicht ist",
+          "it": "Spegni quando la temperatura è raggiunta",
+          "es": "Apagar cuando se alcance la temperatura",
+          "sv": "Stäng av när temperaturen nås",
+          "no": "Slå av når temperaturen er nådd",
+          "da": "Sluk når temperaturen er nået",
+          "ru": "Выключить при достижении температуры",
+          "pl": "Wyłącz po osiągnięciu temperatury",
+          "ko": "온도 도달 시 끄기"
+        },
+        "hint": {
+          "en": "Sets the stove to turn off automatically when the target temperature is reached",
+          "nl": "Stelt de kachel in om automatisch uit te schakelen wanneer de streeftemperatuur is bereikt",
+          "fr": "Règle le poêle pour qu'il s'éteigne automatiquement lorsque la température cible est atteinte",
+          "de": "Stellt den Ofen so ein, dass er sich automatisch ausschaltet, wenn die Zieltemperatur erreicht ist",
+          "it": "Imposta la stufa per spegnersi automaticamente quando viene raggiunta la temperatura obiettivo",
+          "es": "Configura la estufa para que se apague automáticamente cuando se alcance la temperatura objetivo",
+          "sv": "Ställer in kaminen för att stängas av automatiskt när måltemperaturen nås",
+          "no": "Setter ovnen til å slå seg av automatisk når måltemperaturen er nådd",
+          "da": "Indstiller ovnen til at slukke automatisk, når måltemperaturen er nået",
+          "ru": "Настраивает печь на автоматическое выключение при достижении целевой температуры",
+          "pl": "Ustawia piec na automatyczne wyłączenie po osiągnięciu temperatury docelowej",
+          "ko": "목표 온도에 도달했을 때 스토브가 자동으로 꺼지도록 설정합니다"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=hottoh"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "HottoH stove",
+        "nl": "HottoH kachel",
+        "de": "HottoH ofen",
+        "fr": "Poêle HottoH",
+        "it": "Stufa HottoH",
+        "sv": "HottoH kamin",
+        "no": "HottoH ovn",
+        "es": "Estufa HottoH",
+        "da": "HottoH ovn",
+        "ru": "Печь HottoH",
+        "pl": "Piec HottoH",
+        "ko": "HottoH 스토브"
+      },
+      "class": "heater",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "onoff",
+        "fumes_flow",
+        "smoke_temperature",
+        "power_level",
+        "fan_speed",
+        "firmware_version",
+        "wifi_signal",
+        "stove_state"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/hottoh/assets/images/small.png",
+        "large": "/drivers/hottoh/assets/images/large.png",
+        "xlarge": "/drivers/hottoh/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "start",
+          "options": {
+            "title": "{{pair.title}}",
+            "subtitle": "{{pair.subtitle}}"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "options": {
+            "title": {
+              "en": "Discovered Stoves",
+              "nl": "Gevonden Kachels",
+              "de": "Gefundene Öfen",
+              "fr": "Poêles Découverts",
+              "it": "Stufe Trovate",
+              "sv": "Upptäckta Kaminer",
+              "no": "Oppdagede Ovner",
+              "es": "Estufas Descubiertas",
+              "da": "Fundne Ovne",
+              "ru": "Обнаруженные Печи",
+              "pl": "Znalezione Piece",
+              "ko": "발견된 스토브"
+            },
+            "titleError": {
+              "en": "Error during discovery",
+              "nl": "Fout tijdens zoeken",
+              "de": "Fehler bei der Suche",
+              "fr": "Erreur pendant la découverte",
+              "it": "Errore durante la ricerca",
+              "sv": "Fel under upptäckt",
+              "no": "Feil under oppdagelse",
+              "es": "Error durante la búsqueda",
+              "da": "Fejl under opdagelse",
+              "ru": "Ошибка во время поиска",
+              "pl": "Błąd podczas wykrywania",
+              "ko": "검색 중 오류 발생"
+            },
+            "singular": {
+              "en": "stove",
+              "nl": "kachel",
+              "de": "Ofen",
+              "fr": "poêle",
+              "it": "stufa",
+              "sv": "kamin",
+              "no": "ovn",
+              "es": "estufa",
+              "da": "ovn",
+              "ru": "печь",
+              "pl": "piec",
+              "ko": "스토브"
+            },
+            "plural": {
+              "en": "stoves",
+              "nl": "kachels",
+              "de": "Öfen",
+              "fr": "poêles",
+              "it": "stufe",
+              "sv": "kaminer",
+              "no": "ovner",
+              "es": "estufas",
+              "da": "ovne",
+              "ru": "печи",
+              "pl": "piece",
+              "ko": "스토브"
+            }
+          },
+          "navigation": {
+            "next": "add_devices",
+            "buttons": {
+              "manual": {
+                "label": {
+                  "en": "Manual IP Entry",
+                  "nl": "Handmatige IP Invoer",
+                  "de": "Manuelle IP-Eingabe",
+                  "fr": "Saisie manuelle de l'IP",
+                  "it": "Inserimento Manuale IP",
+                  "sv": "Manuell IP-inmatning",
+                  "no": "Manuell IP-oppføring",
+                  "es": "Entrada Manual de IP",
+                  "da": "Manuel IP-indtastning",
+                  "ru": "Ручной ввод IP",
+                  "pl": "Ręczne Wprowadzanie IP",
+                  "ko": "수동 IP 입력"
+                },
+                "next": "manual_ip"
+              }
+            }
+          }
+        },
+        {
+          "id": "manual_ip",
+          "options": {
+            "title": "{{pair.manual.title}}"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "discovery": "hottoh",
+      "id": "hottoh",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "General Settings",
+            "da": "Generelle indstillinger",
+            "de": "Allgemeine Einstellungen",
+            "es": "Configuración general",
+            "fr": "Paramètres généraux",
+            "it": "Impostazioni generali",
+            "ko": "일반 설정",
+            "nl": "Algemene instellingen",
+            "no": "Generelle innstillinger",
+            "pl": "Ustawienia ogólne",
+            "ru": "Общие настройки",
+            "sv": "Allmänna inställningar"
+          },
+          "children": [
+            {
+              "id": "ipAddress",
+              "type": "text",
+              "label": {
+                "en": "IP Address",
+                "da": "IP-adresse",
+                "de": "IP-Adresse",
+                "es": "Dirección IP",
+                "fr": "Adresse IP",
+                "it": "Indirizzo IP",
+                "ko": "IP 주소",
+                "nl": "IP-adres",
+                "no": "IP-adresse",
+                "pl": "Adres IP",
+                "ru": "IP-адрес",
+                "sv": "IP-adress"
+              },
+              "value": "",
+              "hint": {
+                "en": "The IP address of your HottoH stove",
+                "da": "IP-adressen på din HottoH ovn",
+                "de": "Die IP-Adresse Ihres HottoH Ofens",
+                "es": "La dirección IP de tu estufa HottoH",
+                "fr": "L'adresse IP de votre poêle HottoH",
+                "it": "L'indirizzo IP della tua stufa HottoH",
+                "ko": "HottoH 스토브의 IP 주소",
+                "nl": "Het IP-adres van uw HottoH kachel",
+                "no": "IP-adressen til din HottoH ovn",
+                "pl": "Adres IP twojego pieca HottoH",
+                "ru": "IP-адрес вашей печи HottoH",
+                "sv": "IP-adressen till din HottoH kamin"
+              }
+            },
+            {
+              "id": "deviceName",
+              "type": "text",
+              "label": {
+                "en": "Device Name",
+                "da": "Enhedsnavn",
+                "de": "Gerätename",
+                "es": "Nombre del dispositivo",
+                "fr": "Nom de l'appareil",
+                "it": "Nome dispositivo",
+                "ko": "기기 이름",
+                "nl": "Apparaatnaam",
+                "no": "Enhetsnavn",
+                "pl": "Nazwa urządzenia",
+                "ru": "Имя устройства",
+                "sv": "Enhetsnamn"
+              },
+              "value": "",
+              "hint": {
+                "en": "Custom name for your stove (leave empty to use default naming)",
+                "da": "Tilpasset navn til din ovn (lad være tom for at bruge standardnavngivning)",
+                "de": "Benutzerdefinierter Name für Ihren Ofen (leer lassen, um Standardbenennung zu verwenden)",
+                "es": "Nombre personalizado para tu estufa (déjalo en blanco para usar la nomenclatura predeterminada)",
+                "fr": "Nom personnalisé pour votre poêle (laissez vide pour utiliser la dénomination par défaut)",
+                "it": "Nome personalizzato per la tua stufa (lascia vuoto per utilizzare la denominazione predefinita)",
+                "ko": "스토브의 사용자 지정 이름 (기본 이름을 사용하려면 비워 두세요)",
+                "nl": "Aangepaste naam voor uw kachel (laat leeg om standaardnaamgeving te gebruiken)",
+                "no": "Tilpasset navn for ovnen din (la stå tomt for å bruke standard navngivning)",
+                "pl": "Niestandardowa nazwa dla twojego pieca (pozostaw puste, aby użyć domyślnego nazewnictwa)",
+                "ru": "Пользовательское имя для вашей печи (оставьте пустым для использования имени по умолчанию)",
+                "sv": "Anpassat namn för din kamin (lämna tomt för att använda standardnamn)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "fan_speed": {
+      "type": "number",
+      "title": {
+        "en": "Fan Speed",
+        "da": "Blæserhastighed",
+        "de": "Lüftergeschwindigkeit",
+        "es": "Velocidad del Ventilador",
+        "fr": "Vitesse du Ventilateur",
+        "it": "Velocità Ventilatore",
+        "ko": "팬 속도",
+        "nl": "Ventilatorsnelheid",
+        "no": "Viftehastighet",
+        "pl": "Prędkość Wentylatora",
+        "ru": "Скорость Вентилятора",
+        "sv": "Fläkthastighet"
+      },
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "icon": "/assets/fan_speed.svg"
+    },
+    "firmware_version": {
+      "type": "string",
+      "title": {
+        "en": "Firmware Version",
+        "da": "Firmware Version",
+        "de": "Firmware-Version",
+        "es": "Versión de Firmware",
+        "fr": "Version du Firmware",
+        "it": "Versione Firmware",
+        "ko": "펌웨어 버전",
+        "nl": "Firmware Versie",
+        "no": "Firmware Versjon",
+        "pl": "Wersja Oprogramowania",
+        "ru": "Версия Прошивки",
+        "sv": "Firmware Version"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "fumes_flow": {
+      "type": "number",
+      "title": {
+        "en": "Fumes Flow",
+        "da": "Røgstrøm",
+        "de": "Rauchgas-Durchfluss",
+        "es": "Flujo de Humos",
+        "fr": "Débit des Fumées",
+        "it": "Flusso Fumi",
+        "ko": "연기 흐름",
+        "nl": "Rookgasstroom",
+        "no": "Røykstrøm",
+        "pl": "Przepływ Dymu",
+        "ru": "Поток Дыма",
+        "sv": "Rökflöde"
+      },
+      "units": {
+        "en": "m³/s"
+      },
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/fumes_flow.svg"
+    },
+    "power_level": {
+      "type": "number",
+      "title": {
+        "en": "Power Level",
+        "da": "Effektniveau",
+        "de": "Leistungsstufe",
+        "es": "Nivel de Potencia",
+        "fr": "Niveau de Puissance",
+        "it": "Livello di Potenza",
+        "ko": "전원 레벨",
+        "nl": "Vermogensniveau",
+        "no": "Effektnivå",
+        "pl": "Poziom Mocy",
+        "ru": "Уровень Мощности",
+        "sv": "Effektnivå"
+      },
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "icon": "/assets/power_level.svg"
+    },
+    "smoke_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Smoke Temperature",
+        "da": "Røgtemperatur",
+        "de": "Rauchtemperatur",
+        "es": "Temperatura de Humo",
+        "fr": "Température des Fumées",
+        "it": "Temperatura Fumi",
+        "ko": "연기 온도",
+        "nl": "Rooktemperatuur",
+        "no": "Røyktemperatur",
+        "pl": "Temperatura Dymu",
+        "ru": "Температура Дыма",
+        "sv": "Röktemperatur"
+      },
+      "units": {
+        "en": "°C"
+      },
+      "decimals": 1,
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/smoke_temperature.svg"
+    },
+    "stove_state": {
+      "type": "string",
+      "title": {
+        "en": "Stove State",
+        "da": "Ovn Tilstand",
+        "de": "Ofen-Status",
+        "es": "Estado de la Estufa",
+        "fr": "État du Poêle",
+        "it": "Stato della Stufa",
+        "ko": "스토브 상태",
+        "nl": "Kachel Status",
+        "no": "Ovn Tilstand",
+        "pl": "Stan Pieca",
+        "ru": "Состояние Печи",
+        "sv": "Kamin Status"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "wifi_signal": {
+      "type": "number",
+      "title": {
+        "en": "WiFi Signal",
+        "da": "WiFi Signal",
+        "de": "WLAN-Signal",
+        "es": "Señal WiFi",
+        "fr": "Signal WiFi",
+        "it": "Segnale WiFi",
+        "ko": "와이파이 신호",
+        "nl": "WiFi Signaal",
+        "no": "WiFi Signal",
+        "pl": "Sygnał WiFi",
+        "ru": "Сигнал WiFi",
+        "sv": "WiFi Signal"
+      },
+      "units": {
+        "en": "dBm"
+      },
+      "min": -100,
+      "max": 0,
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/images/wifi_signal.svg"
+    }
+  },
+  "discovery": {
+    "hottoh": {
+      "id": "hottoh",
+      "type": "mac",
+      "mac": {
+        "manufacturer": [
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      }
+    }
+  }
+}

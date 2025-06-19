@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stove body -->
+  <rect x="96" y="80" width="320" height="400" rx="16" fill="#000000" />
+  <rect x="116" y="100" width="280" height="360" rx="8" fill="#000000" />
+
+  <!-- Stove window -->
+  <rect x="156" y="140" width="200" height="240" rx="12" fill="#000000" />
+  <rect x="166" y="150" width="180" height="220" rx="8" fill="#000000" />
+
+  <!-- Flames - now monochrome -->
+  <path d="M216 330C216 270 256 250 256 200C256 250 296 270 296 330C296 365 276 380 256 380C236 380 216 365 216 330Z" fill="#000000" />
+  <path d="M226 330C226 285 256 270 256 230C256 270 286 285 286 330C286 355 271 365 256 365C241 365 226 355 226 330Z" fill="#000000" />
+  <path d="M236 330C236 295 256 285 256 255C256 285 276 295 276 330C276 345 266 350 256 350C246 350 236 345 236 330Z" fill="#000000" />
+
+  <!-- Stove top -->
+  <rect x="96" y="60" width="320" height="20" rx="5" fill="#000000" />
+
+  <!-- Stove legs -->
+  <rect x="106" y="480" width="60" height="20" rx="5" fill="#000000" />
+  <rect x="346" y="480" width="60" height="20" rx="5" fill="#000000" />
+
+  <!-- Controls -->
+  <circle cx="256" cy="410" r="15" fill="#000000" />
+  <circle cx="206" cy="410" r="10" fill="#000000" />
+  <circle cx="306" cy="410" r="10" fill="#000000" />
+
+  <!-- Pellet container -->
+  <rect x="346" y="140" width="40" height="80" rx="5" fill="#000000" />
+  <rect x="351" y="145" width="30" height="70" rx="3" fill="#000000" />
+
+  <!-- Airflow -->
+  <rect x="126" y="140" width="20" height="5" fill="#000000" />
+  <rect x="126" y="150" width="20" height="5" fill="#000000" />
+  <rect x="126" y="160" width="20" height="5" fill="#000000" />
+  <rect x="126" y="170" width="20" height="5" fill="#000000" />
+</svg>

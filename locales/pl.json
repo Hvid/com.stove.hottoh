@@ -1,0 +1,116 @@
+{
+  "driver": {
+    "name": "Piec HottoH"
+  },
+  "pair": {
+    "title": "Parowanie pieca HottoH",
+    "subtitle": "Wybierz, jak chcesz dodać swój piec",
+    "options": "Opcje połączenia",
+    "continue": "Kontynuuj",
+    "discovery": {
+      "intro": "Wybierz, jak chcesz połączyć się ze swoim piecem HottoH.",
+      "button": "Rozpocznij wykrywanie",
+      "option": "Automatyczne wykrywanie",
+      "title": "Wykryte piece",
+      "titleError": "Błąd podczas wykrywania",
+      "singular": "piec",
+      "plural": "piece",
+      "timeout_error": "Wykrywanie trwa dłużej niż oczekiwano. Może to się zdarzyć, jeśli w sieci jest wiele urządzeń. Sprawdź, czy piec jest włączony i podłączony do WiFi, a następnie spróbuj ponownie."
+    },
+    "manual": {
+      "button": "Wprowadź IP ręcznie",
+      "option": "Ręczne wprowadzanie IP",
+      "title": "Wprowadź adres IP",
+      "subtitle": "Podaj adres IP swojego pieca HottoH",
+      "ip_label": "Adres IP",
+      "submit": "Testuj i dodaj",
+      "error": {
+        "invalid": "Nieprawidłowy format adresu IP.",
+        "null_device": "Obiekt urządzenia jest pusty lub niezdefiniowany",
+        "create_device": "Nie udało się utworzyć urządzenia",
+        "connect": "Nie udało się połączyć z piecem pod tym adresem IP"
+      }
+    },
+    "tips": {
+      "title": "Wskazówki dla udanego połączenia",
+      "item1": "Upewnij się, że twój piec jest włączony",
+      "item2": "Sprawdź, czy twój piec jest podłączony do sieci WiFi",
+      "item3": "Sprawdź, czy twój Homey jest w tej samej sieci co piec",
+      "item4": "Jeśli automatyczne wykrywanie nie powiedzie się, możesz ręcznie wprowadzić adres IP pieca"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "Dowolny piec jest !{{włączony|wyłączony}}",
+        "hint": "Wyzwalane, gdy dowolny piec zostaje włączony lub wyłączony"
+      },
+      "power_level_changed": {
+        "title": "Poziom mocy się zmienił",
+        "hint": "Wyzwalane, gdy poziom mocy pieca ulega zmianie"
+      },
+      "smoke_temperature_threshold": {
+        "title": "Temperatura dymu !{{wzrosła powyżej|spadła poniżej}} progu",
+        "titleFormatted": "Temperatura dymu !{{wzrosła powyżej|spadła poniżej}} [[threshold]] °C",
+        "hint": "Wyzwalane, gdy temperatura dymu przekracza próg"
+      },
+      "stove_state_changed": {
+        "title": "Stan pieca się zmienił",
+        "hint": "Wyzwalane, gdy piec zmienia stan z jednego na drugi"
+      },
+      "temperature_reached": {
+        "title": "Osiągnięto temperaturę docelową",
+        "hint": "Wyzwalane, gdy temperatura pokojowa osiąga temperaturę docelową"
+      },
+      "wifi_signal_changed": {
+        "title": "Sygnał WiFi znacznie się zmienił",
+        "hint": "Wyzwalane, gdy siła sygnału WiFi zmienia się o 10dBm lub więcej"
+      }
+    },
+    "tokens": {
+      "name": "Nazwa",
+      "state": "Stan",
+      "power_level": "Poziom Mocy",
+      "temperature": "Temperatura",
+      "state_string": "Stan",
+      "signal": "Sygnał"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "Stan Pieca",
+      "values": {
+        "Off": "Wyłączony",
+        "Starting": "Uruchamianie",
+        "Preheating": "Nagrzewanie",
+        "Running": "Praca",
+        "Cooling Down": "Schładzanie",
+        "Cleaning": "Czyszczenie",
+        "Standby": "Gotowość"
+      }
+    },
+    "fan_speed": {
+      "title": "Prędkość Wentylatora"
+    },
+    "power_level": {
+      "title": "Poziom Mocy"
+    },
+    "smoke_temperature": {
+      "title": "Temperatura Dymu"
+    },
+    "fumes_flow": {
+      "title": "Przepływ Dymu"
+    },
+    "wifi_signal": {
+      "title": "Sygnał WiFi",
+      "values": {
+        "strong": "Silny (>75%)",
+        "medium": "Średni (30-75%)",
+        "weak": "Słaby (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "Wersja Oprogramowania"
+    }
+  }
+}

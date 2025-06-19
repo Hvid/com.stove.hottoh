@@ -1,0 +1,160 @@
+{
+  "driver": {
+    "name": "Stufa HottoH"
+  },
+  "pair": {
+    "title": "Abbinamento stufa HottoH",
+    "subtitle": "Scegli come aggiungere la tua stufa",
+    "options": "Opzioni di connessione",
+    "continue": "Continua",
+    "discovery": {
+      "intro": "Scegli come connetterti alla tua stufa HottoH.",
+      "button": "Avvia ricerca",
+      "option": "Ricerca automatica",
+      "title": "Stufe trovate",
+      "titleError": "Errore durante la ricerca",
+      "singular": "stufa",
+      "plural": "stufe",
+      "timeout_error": "La ricerca sta impiegando più tempo del previsto. Questo può accadere se ci sono molti dispositivi sulla tua rete. Verifica che la tua stufa sia accesa e connessa al WiFi, quindi riprova."
+    },
+    "manual": {
+      "button": "Inserisci IP manualmente",
+      "option": "Inserimento manuale IP",
+      "title": "Inserisci l'indirizzo IP",
+      "subtitle": "Fornisci l'indirizzo IP della tua stufa HottoH",
+      "ip_label": "Indirizzo IP",
+      "submit": "Prova e aggiungi",
+      "error": {
+        "invalid": "Formato indirizzo IP non valido.",
+        "null_device": "L'oggetto dispositivo è nullo o non definito",
+        "create_device": "Impossibile creare il dispositivo",
+        "connect": "Impossibile connettersi alla stufa a questo indirizzo IP"
+      }
+    },
+    "tips": {
+      "title": "Suggerimenti per una connessione corretta",
+      "item1": "Assicurati che la tua stufa sia accesa",
+      "item2": "Verifica che la tua stufa sia connessa alla tua rete WiFi",
+      "item3": "Controlla che il tuo Homey sia sulla stessa rete della tua stufa",
+      "item4": "Se la ricerca automatica fallisce, puoi inserire manualmente l'indirizzo IP della tua stufa"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "Qualsiasi stufa è accesa o spenta",
+        "hint": "Attivato quando una stufa viene accesa o spenta"
+      },
+      "power_level_changed": {
+        "title": "Il livello di potenza è cambiato",
+        "hint": "Attivato quando il livello di potenza della stufa cambia"
+      },
+      "smoke_temperature_threshold": {
+        "title": "La temperatura del fumo !{{è salita sopra|è scesa sotto}} la soglia",
+        "titleFormatted": "La temperatura del fumo !{{è salita sopra|è scesa sotto}} [[threshold]] °C",
+        "hint": "Attivato quando la temperatura del fumo supera una soglia"
+      },
+      "stove_state_changed": {
+        "title": "Lo stato della stufa è cambiato",
+        "hint": "Attivato quando la stufa passa da uno stato all'altro"
+      },
+      "temperature_reached": {
+        "title": "Temperatura target raggiunta",
+        "hint": "Attivato quando la temperatura ambiente raggiunge la temperatura target"
+      },
+      "wifi_signal_changed": {
+        "title": "Il segnale WiFi è cambiato significativamente",
+        "hint": "Attivato quando la potenza del segnale WiFi cambia di 10dBm o più"
+      }
+    },
+    "conditions": {
+      "fan_speed_is": {
+        "title": "La velocità della ventola !{{è|non è}}",
+        "hint": "Controlla se la velocità della ventola è a un livello specifico"
+      },
+      "power_level_is": {
+        "title": "Il livello di potenza !{{è|non è}}",
+        "hint": "Controlla se il livello di potenza è a un livello specifico"
+      },
+      "room_temperature_is": {
+        "title": "La temperatura ambiente !{{è|non è}}",
+        "hint": "Controlla se la temperatura ambiente è a un valore specifico"
+      },
+      "stove_is_in_state": {
+        "title": "La stufa !{{è|non è}} nello stato",
+        "hint": "Controlla se la stufa è in uno stato specifico"
+      },
+      "wifi_signal_is": {
+        "title": "Il segnale WiFi !{{è|non è}}",
+        "hint": "Controlla se la potenza del segnale WiFi è forte/medio/debole"
+      }
+    },
+    "actions": {
+      "set_fan_speed": {
+        "title": "Imposta velocità ventola",
+        "hint": "Imposta la velocità della ventola della stufa"
+      },
+      "set_power_level": {
+        "title": "Imposta livello di potenza",
+        "hint": "Imposta il livello di potenza della stufa"
+      },
+      "set_power_state": {
+        "title": "!{{Accendi|Spegni}}",
+        "hint": "Accendi o spegni la stufa"
+      },
+      "set_target_temperature": {
+        "title": "Imposta temperatura target",
+        "hint": "Imposta la temperatura ambiente target"
+      },
+      "turn_off_when_temperature_reached": {
+        "title": "Spegni quando la temperatura è raggiunta",
+        "hint": "Spegni la stufa quando viene raggiunta una temperatura ambiente specifica"
+      }
+    },
+    "tokens": {
+      "name": "Nome",
+      "state": "Stato",
+      "power_level": "Livello di Potenza",
+      "temperature": "Temperatura",
+      "state_string": "Descrizione Stato",
+      "signal": "Potenza Segnale WiFi"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "Stato Stufa",
+      "values": {
+        "Off": "Spenta",
+        "Starting": "Avvio",
+        "Preheating": "Preriscaldamento",
+        "Running": "In Funzione",
+        "Cooling Down": "Raffreddamento",
+        "Cleaning": "Pulizia",
+        "Standby": "Standby"
+      }
+    },
+    "fan_speed": {
+      "title": "Velocità Ventilatore"
+    },
+    "power_level": {
+      "title": "Livello di Potenza"
+    },
+    "smoke_temperature": {
+      "title": "Temperatura Fumo"
+    },
+    "fumes_flow": {
+      "title": "Flusso Fumi"
+    },
+    "wifi_signal": {
+      "title": "Segnale WiFi",
+      "values": {
+        "strong": "Forte (>75%)",
+        "medium": "Medio (30-75%)",
+        "weak": "Debole (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "Versione Firmware"
+    }
+  }
+}

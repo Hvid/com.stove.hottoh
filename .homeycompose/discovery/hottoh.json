@@ -1,0 +1,9 @@
+{
+  "id": "hottoh",
+  "type": "mac",
+  "mac": {
+    "manufacturer": [
+      [1, 2, 3]
+    ]
+  }
+}

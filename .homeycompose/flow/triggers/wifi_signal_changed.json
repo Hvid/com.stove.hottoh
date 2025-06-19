@@ -1,0 +1,94 @@
+{
+  "id": "wifi_signal_changed",
+  "title": {
+    "en": "WiFi signal strength has changed significantly",
+    "nl": "WiFi-signaalsterkte is aanzienlijk veranderd",
+    "fr": "La force du signal WiFi a changé significativement",
+    "de": "WLAN-Signalstärke hat sich deutlich verändert",
+    "it": "La potenza del segnale WiFi è cambiata significativamente",
+    "es": "La intensidad de la señal WiFi ha cambiado significativamente",
+    "sv": "WiFi-signalstyrka har ändrats avsevärt",
+    "no": "WiFi-signalstyrke har endret seg betydelig",
+    "da": "WiFi-signalstyrke er ændret betydeligt",
+    "ru": "Уровень сигнала WiFi значительно изменился",
+    "pl": "Siła sygnału WiFi zmieniła się znacząco",
+    "ko": "WiFi 신호 강도가 크게 변경되었습니다"
+  },
+  "titleFormatted": {
+    "en": "WiFi signal strength has changed by more than [[threshold]]%",
+    "nl": "WiFi-signaalsterkte is meer dan [[threshold]]% veranderd",
+    "fr": "La force du signal WiFi a changé de plus de [[threshold]]%",
+    "de": "WLAN-Signalstärke hat sich um mehr als [[threshold]]% verändert",
+    "it": "La potenza del segnale WiFi è cambiata di più del [[threshold]]%",
+    "es": "La intensidad de la señal WiFi ha cambiado más del [[threshold]]%",
+    "sv": "WiFi-signalstyrka har ändrats med mer än [[threshold]]%",
+    "no": "WiFi-signalstyrke har endret seg med mer enn [[threshold]]%",
+    "da": "WiFi-signalstyrke er ændret med mere end [[threshold]]%",
+    "ru": "Уровень сигнала WiFi изменился более чем на [[threshold]]%",
+    "pl": "Siła sygnału WiFi zmieniła się o więcej niż [[threshold]]%",
+    "ko": "WiFi 신호 강도가 [[threshold]]% 이상 변경되었습니다"
+  },
+  "hint": {
+    "en": "Triggered when the WiFi signal strength changes by more than the specified percentage",
+    "nl": "Wordt geactiveerd wanneer de WiFi-signaalsterkte meer verandert dan het opgegeven percentage",
+    "fr": "Déclenché lorsque la force du signal WiFi change de plus que le pourcentage spécifié",
+    "de": "Wird ausgelöst, wenn sich die WLAN-Signalstärke um mehr als den angegebenen Prozentsatz ändert",
+    "it": "Attivato quando la potenza del segnale WiFi cambia di più della percentuale specificata",
+    "es": "Se activa cuando la intensidad de la señal WiFi cambia más del porcentaje especificado",
+    "sv": "Utlöses när WiFi-signalstyrkan ändras med mer än den angivna procentandelen",
+    "no": "Utløses når WiFi-signalstyrken endres med mer enn den angitte prosentandelen",
+    "da": "Udløses når WiFi-signalstyrken ændres med mere end den angivne procentdel",
+    "ru": "Срабатывает, когда уровень сигнала WiFi изменяется больше, чем на указанный процент",
+    "pl": "Wyzwalane, gdy siła sygnału WiFi zmienia się o więcej niż określony procent",
+    "ko": "WiFi 신호 강도가 지정된 백분율보다 크게 변경될 때 트리거됩니다"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "threshold",
+      "type": "number",
+      "min": 5,
+      "max": 50,
+      "step": 5,
+      "title": {
+        "en": "Threshold (%)",
+        "nl": "Drempelwaarde (%)",
+        "fr": "Seuil (%)",
+        "de": "Schwellenwert (%)",
+        "it": "Soglia (%)",
+        "es": "Umbral (%)",
+        "sv": "Tröskelvärde (%)",
+        "no": "Terskelverdi (%)",
+        "da": "Tærskelværdi (%)",
+        "ru": "Порог (%)",
+        "pl": "Próg (%)",
+        "ko": "임계값 (%)"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "signal",
+      "type": "number",
+      "title": {
+        "en": "Signal Strength",
+        "nl": "Signaalsterkte",
+        "fr": "Force du Signal",
+        "de": "Signalstärke",
+        "it": "Potenza del Segnale",
+        "es": "Intensidad de la Señal",
+        "sv": "Signalstyrka",
+        "no": "Signalstyrke",
+        "da": "Signalstyrke",
+        "ru": "Уровень Сигнала",
+        "pl": "Siła Sygnału",
+        "ko": "신호 강도"
+      },
+      "example": 75
+    }
+  ]
+}

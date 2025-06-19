@@ -1,0 +1,20 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Stove State",
+    "da": "Ovn Tilstand",
+    "de": "Ofen-Status",
+    "es": "Estado de la Estufa",
+    "fr": "État du Poêle",
+    "it": "Stato della Stufa",
+    "ko": "스토브 상태",
+    "nl": "Kachel Status",
+    "no": "Ovn Tilstand",
+    "pl": "Stan Pieca",
+    "ru": "Состояние Печи",
+    "sv": "Kamin Status"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor"
+}

@@ -1,0 +1,160 @@
+{
+  "driver": {
+    "name": "HottoH stove"
+  },
+  "pair": {
+    "title": "HottoH stove pairing",
+    "subtitle": "Choose how you want to add your stove",
+    "options": "Connection options",
+    "continue": "Continue",
+    "discovery": {
+      "intro": "Choose how you want to connect to your HottoH stove.",
+      "button": "Start discovery",
+      "option": "Automatic discovery",
+      "title": "Discovered stoves",
+      "titleError": "Error during discovery",
+      "singular": "stove",
+      "plural": "stoves",
+      "timeout_error": "Discovery is taking longer than expected. This can happen if there are many devices on your network. Please check that your stove is powered on and connected to WiFi, then try again."
+    },
+    "manual": {
+      "button": "Enter IP manually",
+      "option": "Manual IP entry",
+      "title": "Enter the IP address",
+      "subtitle": "Provide the IP address of your HottoH stove",
+      "ip_label": "IP address",
+      "submit": "Test and add",
+      "error": {
+        "invalid": "Invalid IP address format.",
+        "null_device": "Device object is null or undefined",
+        "create_device": "Failed to create device",
+        "connect": "Failed to connect to stove at this IP address"
+      }
+    },
+    "tips": {
+      "title": "Tips for successful connection",
+      "item1": "Make sure your stove is powered on",
+      "item2": "Verify that your stove is connected to your WiFi network",
+      "item3": "Check that your Homey is on the same network as your stove",
+      "item4": "If automatic discovery fails, you can enter your stove's IP address manually"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "Any stove is turned on or off",
+        "hint": "Triggered when any stove is turned on or off"
+      },
+      "power_level_changed": {
+        "title": "Power level has changed",
+        "hint": "Triggered when the power level of the stove changes"
+      },
+      "smoke_temperature_threshold": {
+        "title": "Smoke temperature !{{has risen above|has dropped below}} threshold",
+        "titleFormatted": "Smoke temperature !{{has risen above|has dropped below}} [[threshold]] °C",
+        "hint": "Triggered when the smoke temperature crosses a threshold"
+      },
+      "stove_state_changed": {
+        "title": "Stove state has changed",
+        "hint": "Triggered when the stove changes from one state to another"
+      },
+      "temperature_reached": {
+        "title": "Target temperature reached",
+        "hint": "Triggered when the room temperature reaches the target temperature"
+      },
+      "wifi_signal_changed": {
+        "title": "WiFi signal has changed significantly",
+        "hint": "Triggered when the WiFi signal strength changes by 10dBm or more"
+      }
+    },
+    "conditions": {
+      "fan_speed_is": {
+        "title": "Fan speed !{{is|is not}}",
+        "hint": "Check if the fan speed is at a specific level"
+      },
+      "power_level_is": {
+        "title": "Power level !{{is|is not}}",
+        "hint": "Check if the power level is at a specific level"
+      },
+      "room_temperature_is": {
+        "title": "Room temperature !{{is|is not}}",
+        "hint": "Check if the room temperature is at a specific value"
+      },
+      "stove_is_in_state": {
+        "title": "Stove !{{is|is not}} in state",
+        "hint": "Check if the stove is in a specific state"
+      },
+      "wifi_signal_is": {
+        "title": "WiFi signal !{{is|is not}}",
+        "hint": "Check if the WiFi signal strength is strong/medium/weak"
+      }
+    },
+    "actions": {
+      "set_fan_speed": {
+        "title": "Set fan speed",
+        "hint": "Set the fan speed of the stove"
+      },
+      "set_power_level": {
+        "title": "Set power level",
+        "hint": "Set the power level of the stove"
+      },
+      "set_power_state": {
+        "title": "Turn !{{on|off}}",
+        "hint": "Turn the stove on or off"
+      },
+      "set_target_temperature": {
+        "title": "Set target temperature",
+        "hint": "Set the target room temperature"
+      },
+      "turn_off_when_temperature_reached": {
+        "title": "Turn off when temperature reached",
+        "hint": "Turn off the stove when a specific room temperature is reached"
+      }
+    },
+    "tokens": {
+      "name": "Name",
+      "state": "State",
+      "power_level": "Power Level",
+      "temperature": "Temperature",
+      "state_string": "State Description",
+      "signal": "WiFi Signal Strength"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "Stove State",
+      "values": {
+        "Off": "Off",
+        "Starting": "Starting",
+        "Preheating": "Preheating",
+        "Running": "Running",
+        "Cooling Down": "Cooling Down",
+        "Cleaning": "Cleaning",
+        "Standby": "Standby"
+      }
+    },
+    "fan_speed": {
+      "title": "Fan Speed"
+    },
+    "power_level": {
+      "title": "Power Level"
+    },
+    "smoke_temperature": {
+      "title": "Smoke Temperature"
+    },
+    "fumes_flow": {
+      "title": "Fumes Flow"
+    },
+    "wifi_signal": {
+      "title": "WiFi Signal",
+      "values": {
+        "strong": "Strong (>75%)",
+        "medium": "Medium (30-75%)",
+        "weak": "Weak (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "Firmware Version"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "any_stove_on",
+  "title": {
+    "en": "Any stove is turned on or off",
+    "nl": "Een kachel is ingeschakeld of uitgeschakeld",
+    "fr": "N'importe quel poêle est allumé ou éteint",
+    "de": "Ein Ofen ist eingeschaltet oder ausgeschaltet",
+    "it": "Qualsiasi stufa è accesa o spenta",
+    "es": "Cualquier estufa está encendida o apagada",
+    "sv": "Någon kamin är påslagen eller avstängd",
+    "no": "En ovn er slått på eller slått av",
+    "da": "En ovn er tændt eller slukket",
+    "ru": "Любая печь включена или выключена",
+    "pl": "Dowolny piec jest włączony lub wyłączony",
+    "ko": "스토브가 켜짐 또는 꺼짐"
+  },
+  "titleFormatted": {
+    "en": "Any stove is turned [[on|off]]",
+    "nl": "Een kachel is [[ingeschakeld|uitgeschakeld]]",
+    "fr": "N'importe quel poêle est [[allumé|éteint]]",
+    "de": "Ein Ofen ist [[eingeschaltet|ausgeschaltet]]",
+    "it": "Qualsiasi stufa è [[accesa|spenta]]",
+    "es": "Cualquier estufa está [[encendida|apagada]]",
+    "sv": "Någon kamin är [[påslagen|avstängd]]",
+    "no": "En ovn er [[slått på|slått av]]",
+    "da": "En ovn er [[tændt|slukket]]",
+    "ru": "Любая печь [[включена|выключена]]",
+    "pl": "Dowolny piec jest [[włączony|wyłączony]]",
+    "ko": "스토브가 [[켜짐|꺼짐]]"
+  },
+  "hint": {
+    "en": "Triggered when any stove is turned on or off",
+    "nl": "Wordt geactiveerd wanneer een kachel wordt in- of uitgeschakeld",
+    "fr": "Déclenché lorsqu'un poêle est allumé ou éteint",
+    "de": "Wird ausgelöst, wenn ein Ofen ein- oder ausgeschaltet wird",
+    "it": "Attivato quando una stufa viene accesa o spenta",
+    "es": "Se activa cuando cualquier estufa se enciende o apaga",
+    "sv": "Utlöses när någon kamin slås på eller av",
+    "no": "Utløses når en ovn blir slått på eller av",
+    "da": "Udløses når en ovn tændes eller slukkes",
+    "ru": "Срабатывает, когда любая печь включается или выключается",
+    "pl": "Wyzwalane, gdy dowolny piec zostaje włączony lub wyłączony",
+    "ko": "스토브가 켜지거나 꺼질 때 트리거됩니다"
+  },
+  "tokens": [
+    {
+      "name": "name",
+      "type": "string",
+      "title": {
+        "en": "Name",
+        "nl": "Naam",
+        "fr": "Nom",
+        "de": "Name",
+        "it": "Nome",
+        "es": "Nombre",
+        "sv": "Namn",
+        "no": "Navn",
+        "da": "Navn",
+        "ru": "Название",
+        "pl": "Nazwa",
+        "ko": "이름"
+      },
+      "example": "Living Room Stove"
+    }
+  ]
+}

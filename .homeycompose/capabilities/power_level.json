@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Power Level",
+    "da": "Effektniveau",
+    "de": "Leistungsstufe",
+    "es": "Nivel de Potencia",
+    "fr": "Niveau de Puissance",
+    "it": "Livello di Potenza",
+    "ko": "전원 레벨",
+    "nl": "Vermogensniveau",
+    "no": "Effektnivå",
+    "pl": "Poziom Mocy",
+    "ru": "Уровень Мощности",
+    "sv": "Effektnivå"
+  },
+  "min": 1,
+  "max": 5,
+  "step": 1,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "icon": "/assets/power_level.svg"
+}

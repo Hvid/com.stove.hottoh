@@ -1,0 +1,161 @@
+{
+  "driver": {
+    "name": "HottoH Ofen"
+  },
+  "pair": {
+    "title": "HottoH Ofen koppeln",
+    "subtitle": "Wählen Sie, wie Sie Ihren Ofen hinzufügen möchten",
+    "options": "Verbindungsoptionen",
+    "continue": "Weiter",
+    "discovery": {
+      "intro": "Wählen Sie, wie Sie sich mit Ihrem HottoH Ofen verbinden möchten.",
+      "button": "Suche starten",
+      "option": "Automatische Suche",
+      "title": "Gefundene Öfen",
+      "titleError": "Fehler bei der Suche",
+      "singular": "Ofen",
+      "plural": "Öfen",
+      "timeout_error": "Die Suche dauert länger als erwartet. Dies kann passieren, wenn sich viele Geräte in Ihrem Netzwerk befinden. Bitte überprüfen Sie, ob Ihr Ofen eingeschaltet und mit WLAN verbunden ist, und versuchen Sie es dann erneut."
+    },
+    "manual": {
+      "button": "IP manuell eingeben",
+      "option": "Manuelle IP-Eingabe",
+      "title": "IP-Adresse eingeben",
+      "subtitle": "Geben Sie die IP-Adresse Ihres HottoH Ofens ein",
+      "ip_label": "IP-Adresse",
+      "submit": "Testen und hinzufügen",
+      "error": {
+        "invalid": "Ungültiges IP-Adressformat.",
+        "null_device": "Geräteobjekt ist null oder undefiniert",
+        "create_device": "Gerät konnte nicht erstellt werden",
+        "connect": "Verbindung zum Ofen unter dieser IP-Adresse fehlgeschlagen",
+        "ip_required": "IP-Adresse ist erforderlich"
+      }
+    },
+    "tips": {
+      "title": "Tipps für erfolgreiche Verbindung",
+      "item1": "Stellen Sie sicher, dass Ihr Ofen eingeschaltet ist",
+      "item2": "Überprüfen Sie, ob Ihr Ofen mit Ihrem WLAN-Netzwerk verbunden ist",
+      "item3": "Überprüfen Sie, ob sich Ihr Homey im gleichen Netzwerk wie Ihr Ofen befindet",
+      "item4": "Wenn die automatische Suche fehlschlägt, können Sie die IP-Adresse Ihres Ofens manuell eingeben"
+    }
+  },
+  "flow": {
+    "triggers": {
+      "any_stove_on": {
+        "title": "Ein Ofen wird ein- oder ausgeschaltet",
+        "hint": "Wird ausgelöst, wenn ein Ofen ein- oder ausgeschaltet wird"
+      },
+      "power_level_changed": {
+        "title": "Leistungsstufe hat sich geändert",
+        "hint": "Wird ausgelöst, wenn sich die Leistungsstufe des Ofens ändert"
+      },
+      "smoke_temperature_threshold": {
+        "title": "Rauchtemperatur !{{ist über|ist unter}} Schwellenwert",
+        "titleFormatted": "Rauchtemperatur !{{ist über|ist unter}} [[threshold]] °C",
+        "hint": "Wird ausgelöst, wenn die Rauchtemperatur einen Schwellenwert überschreitet"
+      },
+      "stove_state_changed": {
+        "title": "Ofenzustand hat sich geändert",
+        "hint": "Wird ausgelöst, wenn der Ofen von einem Zustand in einen anderen wechselt"
+      },
+      "temperature_reached": {
+        "title": "Zieltemperatur erreicht",
+        "hint": "Wird ausgelöst, wenn die Raumtemperatur die Zieltemperatur erreicht"
+      },
+      "wifi_signal_changed": {
+        "title": "WLAN-Signal hat sich deutlich geändert",
+        "hint": "Wird ausgelöst, wenn sich die WLAN-Signalstärke um 10dBm oder mehr ändert"
+      }
+    },
+    "conditions": {
+      "fan_speed_is": {
+        "title": "Lüftergeschwindigkeit !{{ist|ist nicht}}",
+        "hint": "Prüfen, ob die Lüftergeschwindigkeit auf einer bestimmten Stufe ist"
+      },
+      "power_level_is": {
+        "title": "Leistungsstufe !{{ist|ist nicht}}",
+        "hint": "Prüfen, ob die Leistungsstufe auf einem bestimmten Wert ist"
+      },
+      "room_temperature_is": {
+        "title": "Raumtemperatur !{{ist|ist nicht}}",
+        "hint": "Prüfen, ob die Raumtemperatur einen bestimmten Wert hat"
+      },
+      "stove_is_in_state": {
+        "title": "Ofen !{{ist|ist nicht}} im Zustand",
+        "hint": "Prüfen, ob sich der Ofen in einem bestimmten Zustand befindet"
+      },
+      "wifi_signal_is": {
+        "title": "WLAN-Signal !{{ist|ist nicht}}",
+        "hint": "Prüfen, ob die WLAN-Signalstärke stark/mittel/schwach ist"
+      }
+    },
+    "actions": {
+      "set_fan_speed": {
+        "title": "Lüftergeschwindigkeit einstellen",
+        "hint": "Stellen Sie die Lüftergeschwindigkeit des Ofens ein"
+      },
+      "set_power_level": {
+        "title": "Leistungsstufe einstellen",
+        "hint": "Stellen Sie die Leistungsstufe des Ofens ein"
+      },
+      "set_power_state": {
+        "title": "!{{Einschalten|Ausschalten}}",
+        "hint": "Den Ofen ein- oder ausschalten"
+      },
+      "set_target_temperature": {
+        "title": "Zieltemperatur einstellen",
+        "hint": "Stellen Sie die Zielraumtemperatur ein"
+      },
+      "turn_off_when_temperature_reached": {
+        "title": "Ausschalten, wenn Temperatur erreicht",
+        "hint": "Den Ofen ausschalten, wenn eine bestimmte Raumtemperatur erreicht ist"
+      }
+    },
+    "tokens": {
+      "name": "Name",
+      "state": "Zustand",
+      "power_level": "Leistungsstufe",
+      "temperature": "Temperatur",
+      "state_string": "Zustandsbeschreibung",
+      "signal": "WLAN-Signalstärke"
+    }
+  },
+  "capabilities": {
+    "stove_state": {
+      "title": "Ofen-Status",
+      "values": {
+        "Off": "Aus",
+        "Starting": "Starten",
+        "Preheating": "Vorheizen",
+        "Running": "In Betrieb",
+        "Cooling Down": "Abkühlen",
+        "Cleaning": "Reinigung",
+        "Standby": "Standby"
+      }
+    },
+    "fan_speed": {
+      "title": "Lüftergeschwindigkeit"
+    },
+    "power_level": {
+      "title": "Leistungsstufe"
+    },
+    "smoke_temperature": {
+      "title": "Rauchtemperatur"
+    },
+    "fumes_flow": {
+      "title": "Rauchgasstrom"
+    },
+    "wifi_signal": {
+      "title": "WLAN-Signal",
+      "values": {
+        "strong": "Stark (>75%)",
+        "medium": "Mittel (30-75%)",
+        "weak": "Schwach (<30%)"
+      }
+    },
+    "firmware_version": {
+      "title": "Firmware-Version"
+    }
+  }
+}

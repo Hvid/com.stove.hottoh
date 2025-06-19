@@ -1,0 +1,71 @@
+<header class="homey-header">
+  <h1 class="homey-title" data-i18n="pair.manual.title">Enter the IP Address</h1>
+  <p class="homey-subtitle" data-i18n="pair.manual.subtitle">Provide the IP address of your HottoH stove</p>
+</header>
+
+<div class="homey-form">
+  <fieldset class="homey-form-fieldset">
+    <div class="homey-form-group">
+      <label class="homey-form-label" for="ipAddress" data-i18n="pair.manual.ip_label">IP Address</label>
+      <input type="text" id="ipAddress" class="homey-form-input" placeholder="192.168.x.x">
+    </div>
+
+    <div class="homey-form-group">
+      <button id="submitButton" class="homey-button-primary-shadow" data-i18n="pair.manual.submit">Submit</button>
+      <p id="error" class="homey-text-danger"></p>
+    </div>
+  </fieldset>
+</div>
+
+<script>
+  // Get DOM elements
+  const ipAddressInput = document.getElementById('ipAddress');
+  const submitButton = document.getElementById('submitButton');
+  const errorDiv = document.getElementById('error');
+
+  submitButton.addEventListener('click', handleSubmit);
+  ipAddressInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleSubmit();
+  });
+
+  function handleSubmit() {
+    const ipInput = ipAddressInput.value.trim();
+
+    if (!validateIP(ipInput)) {
+      errorDiv.textContent = Homey.__('pair.manual.error.invalid') || 'Invalid IP address format.';
+      return;
+    }
+
+    errorDiv.textContent = '';
+    submitButton.disabled = true;
+    submitButton.classList.add('is-loading');
+
+    // Use the handler that's set up in the driver's onPair method
+    Homey.emit('manual_ip', { ipAddress: ipInput })
+      .then(device => {
+        // Double-check all required device properties
+        if (!device) {
+          throw new Error(Homey.__('pair.manual.error.null_device') || 'Device object is null or undefined');
+        }
+
+        // If successful, go to add_devices view with the device
+        Homey.createDevice(device)
+          .then(() => {
+            Homey.nextView();
+          })
+          .catch(err => {
+            throw new Error(Homey.__('pair.manual.error.create_device') || 'Failed to create device: ' + (err.message || 'Unknown error'));
+          });
+      })
+      .catch(error => {
+        errorDiv.textContent = error.message || Homey.__('pair.manual.error.connect') || 'Failed to connect to stove at this IP address';
+        submitButton.disabled = false;
+        submitButton.classList.remove('is-loading');
+      });
+  }
+
+  function validateIP(ip) {
+    const ipRegex = /^(\d{1,3}\.){3}\d{1,3}$/;
+    return ipRegex.test(ip);
+  }
+</script>

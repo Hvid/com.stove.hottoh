@@ -14,6 +14,20 @@
     "pl": "Sygnał WiFi się zmienił",
     "ko": "WiFi 신호가 변경됨"
   },
+  "titleFormatted": {
+    "en": "WiFi signal has changed to [[signal_value]] dBm",
+    "nl": "WiFi-signaal is gewijzigd naar [[signal_value]] dBm",
+    "fr": "Le signal WiFi a changé à [[signal_value]] dBm",
+    "de": "WLAN-Signal hat sich geändert zu [[signal_value]] dBm",
+    "it": "Il segnale WiFi è cambiato a [[signal_value]] dBm",
+    "es": "La señal WiFi ha cambiado a [[signal_value]] dBm",
+    "sv": "WiFi-signal har ändrats till [[signal_value]] dBm",
+    "no": "WiFi-signal er endret til [[signal_value]] dBm",
+    "da": "WiFi-signal er ændret til [[signal_value]] dBm",
+    "ru": "Сигнал WiFi изменился на [[signal_value]] dBm",
+    "pl": "Sygnał WiFi się zmienił na [[signal_value]] dBm",
+    "ko": "WiFi 신호가 [[signal_value]] dBm으로 변경됨"
+  },
   "hint": {
     "en": "Triggered when the WiFi signal strength changes",
     "nl": "Wordt geactiveerd wanneer de WiFi-signaalsterkte verandert",

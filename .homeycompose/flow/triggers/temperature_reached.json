@@ -12,7 +12,7 @@
     "da": "Rumtemperatur har nået målværdien",
     "ru": "Температура в помещении достигла целевой",
     "pl": "Temperatura pomieszczenia osiągnęła wartość docelową",
-    "ko": "실내 온도가 목표에 도달했습니다"
+    "ko": "실내 온도가 목표 온도에 도달했습니다"
   },
   "hint": {
     "en": "Triggered when the room temperature reaches the target temperature",
@@ -53,7 +53,26 @@
         "pl": "Temperatura",
         "ko": "온도"
       },
-      "example": 21
+      "example": 22
+    },
+    {
+      "name": "target_temperature",
+      "type": "number",
+      "title": {
+        "en": "Target temperature",
+        "nl": "Streeftemperatuur",
+        "fr": "Température cible",
+        "de": "Zieltemperatur",
+        "it": "Temperatura obiettivo",
+        "es": "Temperatura objetivo",
+        "sv": "Måltemperatur",
+        "no": "Måltemperatur",
+        "da": "Måltemperatur",
+        "ru": "Целевая температура",
+        "pl": "Temperatura docelowa",
+        "ko": "목표 온도"
+      },
+      "example": 22
     }
   ]
 }

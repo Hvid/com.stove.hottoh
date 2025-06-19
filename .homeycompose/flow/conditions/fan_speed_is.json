@@ -1,46 +1,32 @@
 {
   "id": "fan_speed_is",
   "title": {
-    "en": "Fan speed !{{is|is not}}",
-    "nl": "Ventilatorsnelheid !{{is|is niet}}",
-    "fr": "La vitesse du ventilateur !{{est|n'est pas}}",
-    "de": "Lüftergeschwindigkeit !{{ist|ist nicht}}",
-    "it": "La velocità della ventola !{{è|non è}}",
-    "es": "La velocidad del ventilador !{{es|no es}}",
-    "sv": "Fläkthastighet !{{är|är inte}}",
-    "no": "Viftehastighet !{{er|er ikke}}",
-    "da": "Blæserhastighed !{{er|er ikke}}",
-    "ru": "Скорость вентилятора !{{|не}}",
-    "pl": "Prędkość wentylatora !{{jest|nie jest}}",
-    "ko": "팬 속도가 !{{입니다|아닙니다}}"
-  },
-  "titleFormatted": {
-    "en": "Fan speed !{{is|is not}} [[speed]]",
-    "nl": "Ventilatorsnelheid !{{is|is niet}} [[speed]]",
-    "fr": "La vitesse du ventilateur !{{est|n'est pas}} [[speed]]",
-    "de": "Lüftergeschwindigkeit !{{ist|ist nicht}} [[speed]]",
-    "it": "La velocità della ventola !{{è|non è}} [[speed]]",
-    "es": "La velocidad del ventilador !{{es|no es}} [[speed]]",
-    "sv": "Fläkthastighet !{{är|är inte}} [[speed]]",
-    "no": "Viftehastighet !{{er|er ikke}} [[speed]]",
-    "da": "Blæserhastighed !{{er|er ikke}} [[speed]]",
-    "ru": "Скорость вентилятора !{{|не}} [[speed]]",
-    "pl": "Prędkość wentylatora !{{jest|nie jest}} [[speed]]",
-    "ko": "팬 속도가 [[speed]] !{{입니다|아닙니다}}"
+    "en": "Fan speed is a certain value",
+    "nl": "Ventilatorsnelheid is een bepaalde waarde",
+    "fr": "La vitesse du ventilateur est une certaine valeur",
+    "de": "Lüftergeschwindigkeit ist ein bestimmter Wert",
+    "it": "La velocità della ventola è un certo valore",
+    "es": "La velocidad del ventilador es un valor determinado",
+    "sv": "Fläkthastighet är ett visst värde",
+    "no": "Viftehastighet er en bestemt verdi",
+    "da": "Blæserhastighed er en bestemt værdi",
+    "ru": "Скорость вентилятора имеет определенное значение",
+    "pl": "Prędkość wentylatora ma określoną wartość",
+    "ko": "팬 속도가 특정 값입니다"
   },
   "hint": {
-    "en": "Check if the fan speed is at a specific setting",
-    "nl": "Controleer of de ventilatorsnelheid op een specifieke instelling staat",
-    "fr": "Vérifiez si la vitesse du ventilateur est à un réglage spécifique",
-    "de": "Prüfen, ob die Lüftergeschwindigkeit auf einer bestimmten Einstellung steht",
-    "it": "Controlla se la velocità della ventola è su un'impostazione specifica",
-    "es": "Comprobar si la velocidad del ventilador está en un ajuste específico",
-    "sv": "Kontrollera om fläkthastigheten är på en specifik inställning",
-    "no": "Sjekk om viftehastigheten er på en bestemt innstilling",
-    "da": "Tjek om blæserhastigheden er på en bestemt indstilling",
-    "ru": "Проверить, установлена ли скорость вентилятора на определенное значение",
-    "pl": "Sprawdź, czy prędkość wentylatora jest na określonym ustawieniu",
-    "ko": "팬 속도가 특정 설정인지 확인합니다"
+    "en": "Check if the fan speed matches a specific value",
+    "nl": "Controleer of de ventilatorsnelheid overeenkomt met een specifieke waarde",
+    "fr": "Vérifier si la vitesse du ventilateur correspond à une valeur spécifique",
+    "de": "Prüfen Sie, ob die Lüftergeschwindigkeit einem bestimmten Wert entspricht",
+    "it": "Controlla se la velocità della ventola corrisponde a un valore specifico",
+    "es": "Comprobar si la velocidad del ventilador coincide con un valor específico",
+    "sv": "Kontrollera om fläkthastigheten matchar ett specifikt värde",
+    "no": "Sjekk om viftehastigheten samsvarer med en bestemt verdi",
+    "da": "Kontroller om blæserhastigheden matcher en bestemt værdi",
+    "ru": "Проверьте, соответствует ли скорость вентилятора определенному значению",
+    "pl": "Sprawdź, czy prędkość wentylatora odpowiada określonej wartości",
+    "ko": "팬 속도가 특정 값과 일치하는지 확인합니다"
   },
   "args": [
     {
@@ -49,11 +35,62 @@
       "filter": "driver_id=hottoh"
     },
     {
+      "name": "is_not",
+      "type": "dropdown",
+      "title": {
+        "en": "Is/Is not",
+        "nl": "Is/Is niet",
+        "fr": "Est/N'est pas",
+        "de": "Ist/Ist nicht",
+        "it": "È/Non è",
+        "es": "Es/No es",
+        "sv": "Är/Är inte",
+        "no": "Er/Er ikke",
+        "da": "Er/Er ikke",
+        "ru": "Является/Не является",
+        "pl": "Jest/Nie jest",
+        "ko": "입니다/아닙니다"
+      },
+      "values": [
+        {
+          "id": "is",
+          "title": {
+            "en": "is",
+            "nl": "is",
+            "fr": "est",
+            "de": "ist",
+            "it": "è",
+            "es": "es",
+            "sv": "är",
+            "no": "er",
+            "da": "er",
+            "ru": "является",
+            "pl": "jest",
+            "ko": "입니다"
+          }
+        },
+        {
+          "id": "is_not",
+          "title": {
+            "en": "is not",
+            "nl": "is niet",
+            "fr": "n'est pas",
+            "de": "ist nicht",
+            "it": "non è",
+            "es": "no es",
+            "sv": "är inte",
+            "no": "er ikke",
+            "da": "er ikke",
+            "ru": "не является",
+            "pl": "nie jest",
+            "ko": "아닙니다"
+          }
+        }
+      ]
+    },
+    {
       "name": "speed",
-      "type": "number",
-      "min": 1,
-      "max": 5,
-      "step": 1,
+      "type": "dropdown",
       "title": {
         "en": "Speed",
         "nl": "Snelheid",
@@ -67,7 +104,142 @@
         "ru": "Скорость",
         "pl": "Prędkość",
         "ko": "속도"
-      }
+      },
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "0 (Off)",
+            "nl": "0 (Uit)",
+            "fr": "0 (Éteint)",
+            "de": "0 (Aus)",
+            "it": "0 (Spento)",
+            "es": "0 (Apagado)",
+            "sv": "0 (Av)",
+            "no": "0 (Av)",
+            "da": "0 (Slukket)",
+            "ru": "0 (Выкл.)",
+            "pl": "0 (Wyłączony)",
+            "ko": "0 (꺼짐)"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "1 (Low)",
+            "nl": "1 (Laag)",
+            "fr": "1 (Bas)",
+            "de": "1 (Niedrig)",
+            "it": "1 (Basso)",
+            "es": "1 (Bajo)",
+            "sv": "1 (Låg)",
+            "no": "1 (Lav)",
+            "da": "1 (Lav)",
+            "ru": "1 (Низкая)",
+            "pl": "1 (Niska)",
+            "ko": "1 (낮음)"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "2 (Medium)",
+            "nl": "2 (Gemiddeld)",
+            "fr": "2 (Moyen)",
+            "de": "2 (Mittel)",
+            "it": "2 (Medio)",
+            "es": "2 (Medio)",
+            "sv": "2 (Medium)",
+            "no": "2 (Middels)",
+            "da": "2 (Mellem)",
+            "ru": "2 (Средняя)",
+            "pl": "2 (Średnia)",
+            "ko": "2 (중간)"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "3 (High)",
+            "nl": "3 (Hoog)",
+            "fr": "3 (Haut)",
+            "de": "3 (Hoch)",
+            "it": "3 (Alto)",
+            "es": "3 (Alto)",
+            "sv": "3 (Hög)",
+            "no": "3 (Høy)",
+            "da": "3 (Høj)",
+            "ru": "3 (Высокая)",
+            "pl": "3 (Wysoka)",
+            "ko": "3 (높음)"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "4 (Maximum)",
+            "nl": "4 (Maximaal)",
+            "fr": "4 (Maximum)",
+            "de": "4 (Maximum)",
+            "it": "4 (Massimo)",
+            "es": "4 (Máximo)",
+            "sv": "4 (Maximal)",
+            "no": "4 (Maksimum)",
+            "da": "4 (Maksimum)",
+            "ru": "4 (Максимальная)",
+            "pl": "4 (Maksymalna)",
+            "ko": "4 (최대)"
+          }
+        },
+        {
+          "id": "5",
+          "title": {
+            "en": "5 (Turbo)",
+            "nl": "5 (Turbo)",
+            "fr": "5 (Turbo)",
+            "de": "5 (Turbo)",
+            "it": "5 (Turbo)",
+            "es": "5 (Turbo)",
+            "sv": "5 (Turbo)",
+            "no": "5 (Turbo)",
+            "da": "5 (Turbo)",
+            "ru": "5 (Турбо)",
+            "pl": "5 (Turbo)",
+            "ko": "5 (터보)"
+          }
+        },
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "nl": "Auto",
+            "fr": "Auto",
+            "de": "Auto",
+            "it": "Auto",
+            "es": "Auto",
+            "sv": "Auto",
+            "no": "Auto",
+            "da": "Auto",
+            "ru": "Авто",
+            "pl": "Auto",
+            "ko": "자동"
+          }
+        }
+      ]
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Fan speed [[is_not]] [[speed]]",
+    "nl": "Ventilatorsnelheid [[is_not]] [[speed]]",
+    "fr": "La vitesse du ventilateur [[is_not]] [[speed]]",
+    "de": "Lüftergeschwindigkeit [[is_not]] [[speed]]",
+    "it": "La velocità della ventola [[is_not]] [[speed]]",
+    "es": "La velocidad del ventilador [[is_not]] [[speed]]",
+    "sv": "Fläkthastighet [[is_not]] [[speed]]",
+    "no": "Viftehastighet [[is_not]] [[speed]]",
+    "da": "Blæserhastighed [[is_not]] [[speed]]",
+    "ru": "Скорость вентилятора [[is_not]] [[speed]]",
+    "pl": "Prędkość wentylatora [[is_not]] [[speed]]",
+    "ko": "팬 속도가 [[is_not]] [[speed]]"
+  }
 }

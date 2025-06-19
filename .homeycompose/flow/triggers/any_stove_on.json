@@ -15,18 +15,18 @@
     "ko": "스토브가 켜짐 또는 꺼짐"
   },
   "titleFormatted": {
-    "en": "Any stove is turned [[on|off]]",
-    "nl": "Een kachel is [[ingeschakeld|uitgeschakeld]]",
-    "fr": "N'importe quel poêle est [[allumé|éteint]]",
-    "de": "Ein Ofen ist [[eingeschaltet|ausgeschaltet]]",
-    "it": "Qualsiasi stufa è [[accesa|spenta]]",
-    "es": "Cualquier estufa está [[encendida|apagada]]",
-    "sv": "Någon kamin är [[påslagen|avstängd]]",
-    "no": "En ovn er [[slått på|slått av]]",
-    "da": "En ovn er [[tændt|slukket]]",
-    "ru": "Любая печь [[включена|выключена]]",
-    "pl": "Dowolny piec jest [[włączony|wyłączony]]",
-    "ko": "스토브가 [[켜짐|꺼짐]]"
+    "en": "Any stove is turned [[power_state]]",
+    "nl": "Een kachel is [[power_state]]",
+    "fr": "N'importe quel poêle est [[power_state]]",
+    "de": "Ein Ofen ist [[power_state]]",
+    "it": "Qualsiasi stufa è [[power_state]]",
+    "es": "Cualquier estufa está [[power_state]]",
+    "sv": "Någon kamin är [[power_state]]",
+    "no": "En ovn er [[power_state]]",
+    "da": "En ovn er [[power_state]]",
+    "ru": "Любая печь [[power_state]]",
+    "pl": "Dowolny piec jest [[power_state]]",
+    "ko": "스토브가 [[power_state]]"
   },
   "hint": {
     "en": "Triggered when any stove is turned on or off",
@@ -42,6 +42,62 @@
     "pl": "Wyzwalane, gdy dowolny piec zostaje włączony lub wyłączony",
     "ko": "스토브가 켜지거나 꺼질 때 트리거됩니다"
   },
+  "args": [
+    {
+      "name": "power_state",
+      "type": "dropdown",
+      "title": {
+        "en": "Power state",
+        "nl": "Vermogenstoestand",
+        "fr": "État d'alimentation",
+        "de": "Betriebszustand",
+        "it": "Stato di alimentazione",
+        "es": "Estado de energía",
+        "sv": "Strömläge",
+        "no": "Strømtilstand",
+        "da": "Strømtilstand",
+        "ru": "Состояние питания",
+        "pl": "Stan zasilania",
+        "ko": "전원 상태"
+      },
+      "values": [
+        {
+          "id": "on",
+          "title": {
+            "en": "on",
+            "nl": "ingeschakeld",
+            "fr": "allumé",
+            "de": "eingeschaltet",
+            "it": "accesa",
+            "es": "encendida",
+            "sv": "påslagen",
+            "no": "slått på",
+            "da": "tændt",
+            "ru": "включена",
+            "pl": "włączony",
+            "ko": "켜짐"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "off",
+            "nl": "uitgeschakeld",
+            "fr": "éteint",
+            "de": "ausgeschaltet",
+            "it": "spenta",
+            "es": "apagada",
+            "sv": "avstängd",
+            "no": "slått av",
+            "da": "slukket",
+            "ru": "выключена",
+            "pl": "wyłączony",
+            "ko": "꺼짐"
+          }
+        }
+      ]
+    }
+  ],
   "tokens": [
     {
       "name": "name",

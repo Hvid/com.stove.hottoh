@@ -1,32 +1,32 @@
 {
   "id": "smoke_temperature_threshold",
   "title": {
-    "en": "Smoke temperature !{{has risen above|has dropped below}} threshold",
-    "nl": "Rooktemperatuur !{{is gestegen boven|is gedaald onder}} drempelwaarde",
-    "fr": "La température des fumées !{{a dépassé|est descendue en dessous de}} le seuil",
-    "de": "Rauchtemperatur !{{ist über|ist unter}} Schwellenwert",
-    "it": "La temperatura dei fumi !{{è salita sopra|è scesa sotto}} la soglia",
-    "es": "La temperatura del humo !{{ha subido por encima|ha bajado por debajo}} del umbral",
-    "sv": "Röktemperatur !{{har stigit över|har sjunkit under}} tröskelvärdet",
-    "no": "Røyktemperatur !{{har steget over|har sunket under}} terskelverdi",
-    "da": "Røgtemperatur !{{er steget over|er faldet under}} tærskelværdi",
-    "ru": "Температура дыма !{{поднялась выше|опустилась ниже}} порогового значения",
-    "pl": "Temperatura dymu !{{wzrosła powyżej|spadła poniżej}} progu",
-    "ko": "연기 온도가 !{{임계값 이상으로 상승|임계값 이하로 하락}}"
+    "en": "Smoke temperature has crossed threshold",
+    "nl": "Rooktemperatuur heeft drempelwaarde overschreden",
+    "fr": "La température des fumées a traversé le seuil",
+    "de": "Rauchtemperatur hat Schwellenwert überschritten",
+    "it": "La temperatura dei fumi ha superato la soglia",
+    "es": "La temperatura del humo ha cruzado el umbral",
+    "sv": "Röktemperatur har korsat tröskelvärdet",
+    "no": "Røyktemperatur har krysset terskelverdi",
+    "da": "Røgtemperatur har krydset tærskelværdi",
+    "ru": "Температура дыма пересекла пороговое значение",
+    "pl": "Temperatura dymu przekroczyła próg",
+    "ko": "연기 온도가 임계값을 넘었습니다"
   },
   "titleFormatted": {
-    "en": "Smoke temperature !{{has risen above|has dropped below}} [[threshold]] °C",
-    "nl": "Rooktemperatuur !{{is gestegen boven|is gedaald onder}} [[threshold]] °C",
-    "fr": "La température des fumées !{{a dépassé|est descendue en dessous de}} [[threshold]] °C",
-    "de": "Rauchtemperatur !{{ist über|ist unter}} [[threshold]] °C",
-    "it": "La temperatura dei fumi !{{è salita sopra|è scesa sotto}} [[threshold]] °C",
-    "es": "La temperatura del humo !{{ha subido por encima|ha bajado por debajo}} de [[threshold]] °C",
-    "sv": "Röktemperatur !{{har stigit över|har sjunkit under}} [[threshold]] °C",
-    "no": "Røyktemperatur !{{har steget over|har sunket under}} [[threshold]] °C",
-    "da": "Røgtemperatur !{{er steget over|er faldet under}} [[threshold]] °C",
-    "ru": "Температура дыма !{{поднялась выше|опустилась ниже}} [[threshold]] °C",
-    "pl": "Temperatura dymu !{{wzrosła powyżej|spadła poniżej}} [[threshold]] °C",
-    "ko": "연기 온도가 [[threshold]] °C !{{이상으로 상승|이하로 하락}}"
+    "en": "Smoke temperature has [[type]] [[threshold]]",
+    "nl": "Rooktemperatuur heeft [[type]] [[threshold]]",
+    "fr": "La température des fumées a [[type]] [[threshold]]",
+    "de": "Rauchtemperatur hat [[type]] [[threshold]]",
+    "it": "La temperatura dei fumi ha [[type]] [[threshold]]",
+    "es": "La temperatura del humo ha [[type]] [[threshold]]",
+    "sv": "Röktemperatur har [[type]] [[threshold]]",
+    "no": "Røyktemperatur har [[type]] [[threshold]]",
+    "da": "Røgtemperatur har [[type]] [[threshold]]",
+    "ru": "Температура дыма [[type]] [[threshold]]",
+    "pl": "Temperatura dymu [[type]] [[threshold]]",
+    "ko": "연기 온도가 [[type]] [[threshold]]를 넘었습니다"
   },
   "hint": {
     "en": "Triggered when the smoke temperature crosses a threshold",
@@ -47,6 +47,60 @@
       "name": "device",
       "type": "device",
       "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "type",
+      "type": "dropdown",
+      "title": {
+        "en": "Direction",
+        "nl": "Richting",
+        "fr": "Direction",
+        "de": "Richtung",
+        "it": "Direzione",
+        "es": "Dirección",
+        "sv": "Riktning",
+        "no": "Retning",
+        "da": "Retning",
+        "ru": "Направление",
+        "pl": "Kierunek",
+        "ko": "방향"
+      },
+      "values": [
+        {
+          "id": "above",
+          "title": {
+            "en": "has risen above",
+            "nl": "is gestegen boven",
+            "fr": "a dépassé",
+            "de": "ist über",
+            "it": "è salita sopra",
+            "es": "ha subido por encima",
+            "sv": "har stigit över",
+            "no": "har steget over",
+            "da": "er steget over",
+            "ru": "поднялась выше",
+            "pl": "wzrosła powyżej",
+            "ko": "이상으로 상승"
+          }
+        },
+        {
+          "id": "below",
+          "title": {
+            "en": "has dropped below",
+            "nl": "is gedaald onder",
+            "fr": "est descendue en dessous de",
+            "de": "ist unter",
+            "it": "è scesa sotto",
+            "es": "ha bajado por debajo",
+            "sv": "har sjunkit under",
+            "no": "har sunket under",
+            "da": "er faldet under",
+            "ru": "опустилась ниже",
+            "pl": "spadła poniżej",
+            "ko": "이하로 하락"
+          }
+        }
+      ]
     },
     {
       "name": "threshold",

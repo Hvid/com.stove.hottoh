@@ -15,18 +15,18 @@
     "ko": "스토브 상태가 변경됨"
   },
   "hint": {
-    "en": "Triggered when the stove changes from one state to another (e.g., from Off to Startup)",
-    "nl": "Wordt geactiveerd wanneer de kachel van de ene naar de andere status verandert (bijv. van Uit naar Opstarten)",
-    "fr": "Déclenché lorsque le poêle change d'un état à un autre (par exemple, de Éteint à Démarrage)",
-    "de": "Wird ausgelöst, wenn der Ofen von einem Zustand in einen anderen wechselt (z.B. von Aus zu Starten)",
-    "it": "Attivato quando la stufa passa da uno stato all'altro (ad es., da Spenta ad Avvio)",
-    "es": "Se activa cuando la estufa cambia de un estado a otro (por ejemplo, de Apagado a Inicio)",
-    "sv": "Utlöses när kaminen ändras från ett tillstånd till ett annat (t.ex. från Av till Uppstart)",
-    "no": "Utløses når ovnen endrer seg fra en tilstand til en annen (f.eks. fra Av til Oppstart)",
-    "da": "Udløses når ovnen skifter fra en tilstand til en anden (f.eks. fra Slukket til Opstart)",
-    "ru": "Срабатывает, когда печь переходит из одного состояния в другое (например, из Выкл. в Запуск)",
-    "pl": "Wyzwalane, gdy piec zmienia stan z jednego na drugi (np. z Wyłączony na Uruchamianie)",
-    "ko": "스토브가 한 상태에서 다른 상태로 변경될 때 트리거됩니다 (예: 꺼짐에서 시작으로)"
+    "en": "Triggered when the stove state changes",
+    "nl": "Wordt geactiveerd wanneer de kachelstatus verandert",
+    "fr": "Déclenché lorsque l'état du poêle change",
+    "de": "Wird ausgelöst, wenn sich der Ofenzustand ändert",
+    "it": "Attivato quando lo stato della stufa cambia",
+    "es": "Se activa cuando cambia el estado de la estufa",
+    "sv": "Utlöses när kaminstatusen ändras",
+    "no": "Utløses når ovnstilstanden endres",
+    "da": "Udløses når ovntilstanden ændres",
+    "ru": "Срабатывает при изменении состояния печи",
+    "pl": "Wyzwalane, gdy zmienia się stan pieca",
+    "ko": "스토브 상태가 변경될 때 트리거됩니다"
   },
   "args": [
     {
@@ -37,7 +37,26 @@
   ],
   "tokens": [
     {
-      "name": "state",
+      "name": "state_id",
+      "type": "number",
+      "title": {
+        "en": "State ID",
+        "nl": "Status-ID",
+        "fr": "ID d'état",
+        "de": "Zustands-ID",
+        "it": "ID stato",
+        "es": "ID de estado",
+        "sv": "Status-ID",
+        "no": "Tilstands-ID",
+        "da": "Tilstands-ID",
+        "ru": "ID состояния",
+        "pl": "ID stanu",
+        "ko": "상태 ID"
+      },
+      "example": 6
+    },
+    {
+      "name": "state_string",
       "type": "string",
       "title": {
         "en": "State",
@@ -46,14 +65,14 @@
         "de": "Zustand",
         "it": "Stato",
         "es": "Estado",
-        "sv": "Tillstånd",
+        "sv": "Status",
         "no": "Tilstand",
         "da": "Tilstand",
         "ru": "Состояние",
         "pl": "Stan",
         "ko": "상태"
       },
-      "example": "Running"
+      "example": "Ignition"
     }
   ]
 }

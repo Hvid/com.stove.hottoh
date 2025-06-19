@@ -1,18 +1,32 @@
 {
   "id": "set_power_state",
   "title": {
-    "en": "Turn stove !{{on|off}}",
-    "nl": "Zet kachel !{{aan|uit}}",
-    "fr": "!{{Allumer|Éteindre}} le poêle",
-    "de": "Ofen !{{einschalten|ausschalten}}",
-    "it": "!{{Accendi|Spegni}} la stufa",
-    "es": "!{{Encender|Apagar}} la estufa",
-    "sv": "!{{Slå på|Stäng av}} kaminen",
-    "no": "!{{Slå på|Slå av}} ovnen",
-    "da": "!{{Tænd|Sluk}} for ovnen",
-    "ru": "!{{Включить|Выключить}} печь",
-    "pl": "!{{Włącz|Wyłącz}} piec",
-    "ko": "스토브 !{{켜기|끄기}}"
+    "en": "Turn stove on or off",
+    "nl": "Zet kachel aan of uit",
+    "fr": "Allumer ou éteindre le poêle",
+    "de": "Ofen ein- oder ausschalten",
+    "it": "Accendi o spegni la stufa",
+    "es": "Encender o apagar la estufa",
+    "sv": "Slå på eller stäng av kaminen",
+    "no": "Slå på eller slå av ovnen",
+    "da": "Tænd eller sluk for ovnen",
+    "ru": "Включить или выключить печь",
+    "pl": "Włącz lub wyłącz piec",
+    "ko": "스토브 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Turn stove [[power_state]]",
+    "nl": "Zet kachel [[power_state]]",
+    "fr": "[[power_state]] le poêle",
+    "de": "Ofen [[power_state]]",
+    "it": "[[power_state]] la stufa",
+    "es": "[[power_state]] la estufa",
+    "sv": "[[power_state]] kaminen",
+    "no": "[[power_state]] ovnen",
+    "da": "[[power_state]] for ovnen",
+    "ru": "[[power_state]] печь",
+    "pl": "[[power_state]] piec",
+    "ko": "스토브 [[power_state]]"
   },
   "hint": {
     "en": "Turn the stove on or off",
@@ -33,6 +47,60 @@
       "name": "device",
       "type": "device",
       "filter": "driver_id=hottoh"
+    },
+    {
+      "name": "power_state",
+      "type": "dropdown",
+      "title": {
+        "en": "Power state",
+        "nl": "Vermogenstoestand",
+        "fr": "État d'alimentation",
+        "de": "Betriebszustand",
+        "it": "Stato di alimentazione",
+        "es": "Estado de energía",
+        "sv": "Strömläge",
+        "no": "Strømtilstand",
+        "da": "Strømtilstand",
+        "ru": "Состояние питания",
+        "pl": "Stan zasilania",
+        "ko": "전원 상태"
+      },
+      "values": [
+        {
+          "id": "on",
+          "title": {
+            "en": "on",
+            "nl": "aan",
+            "fr": "allumé",
+            "de": "einschalten",
+            "it": "accendi",
+            "es": "encender",
+            "sv": "på",
+            "no": "på",
+            "da": "tændt",
+            "ru": "включить",
+            "pl": "włącz",
+            "ko": "켜기"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "off",
+            "nl": "uit",
+            "fr": "éteint",
+            "de": "ausschalten",
+            "it": "spegni",
+            "es": "apagar",
+            "sv": "av",
+            "no": "av",
+            "da": "slukket",
+            "ru": "выключить",
+            "pl": "wyłącz",
+            "ko": "끄기"
+          }
+        }
+      ]
     }
   ]
 }

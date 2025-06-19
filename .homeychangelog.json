@@ -4,5 +4,8 @@
   },
   "1.0.1": {
     "en": "Updated images, descriptions and translations"
+  },
+  "1.0.2": {
+    "en": "syntax and translation fixes"
   }
 }

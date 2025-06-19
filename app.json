@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.stove.hottoh",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=12.1.0",
   "sdk": 3,
   "platforms": [
@@ -190,6 +190,20 @@
           "ru": "Уровень мощности изменился",
           "pl": "Poziom mocy się zmienił",
           "ko": "전원 레벨이 변경됨"
+        },
+        "titleFormatted": {
+          "en": "Power level has changed to [[power_level]]",
+          "nl": "Vermogensniveau is gewijzigd naar [[power_level]]",
+          "fr": "Le niveau de puissance a changé à [[power_level]]",
+          "de": "Leistungsstufe hat sich geändert zu [[power_level]]",
+          "it": "Il livello di potenza è cambiato a [[power_level]]",
+          "es": "El nivel de potencia ha cambiado a [[power_level]]",
+          "sv": "Effektnivå har ändrats till [[power_level]]",
+          "no": "Effektnivå er endret til [[power_level]]",
+          "da": "Effektniveau er ændret til [[power_level]]",
+          "ru": "Уровень мощности изменился на [[power_level]]",
+          "pl": "Poziom mocy się zmienił na [[power_level]]",
+          "ko": "전원 레벨이 [[power_level]]로 변경됨"
         },
         "hint": {
           "en": "Triggered when the power level changes",
@@ -552,6 +566,20 @@
           "ru": "Сигнал WiFi изменился",
           "pl": "Sygnał WiFi się zmienił",
           "ko": "WiFi 신호가 변경됨"
+        },
+        "titleFormatted": {
+          "en": "WiFi signal has changed to [[signal_value]] dBm",
+          "nl": "WiFi-signaal is gewijzigd naar [[signal_value]] dBm",
+          "fr": "Le signal WiFi a changé à [[signal_value]] dBm",
+          "de": "WLAN-Signal hat sich geändert zu [[signal_value]] dBm",
+          "it": "Il segnale WiFi è cambiato a [[signal_value]] dBm",
+          "es": "La señal WiFi ha cambiado a [[signal_value]] dBm",
+          "sv": "WiFi-signal har ändrats till [[signal_value]] dBm",
+          "no": "WiFi-signal er endret til [[signal_value]] dBm",
+          "da": "WiFi-signal er ændret til [[signal_value]] dBm",
+          "ru": "Сигнал WiFi изменился на [[signal_value]] dBm",
+          "pl": "Sygnał WiFi się zmienił na [[signal_value]] dBm",
+          "ko": "WiFi 신호가 [[signal_value]] dBm으로 변경됨"
         },
         "hint": {
           "en": "Triggered when the WiFi signal strength changes",

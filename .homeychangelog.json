@@ -16,5 +16,8 @@
   },
   "1.0.5": {
     "en": "wifi signal condition now uses numeric comparison"
+  },
+  "1.0.6": {
+    "en": "Added equality comparison operator to conditions"
   }
 }

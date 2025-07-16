@@ -345,17 +345,40 @@ module.exports = class HottohDevice extends Homey.Device {
 
       // 1. Stove State Changed
       if (this.prevStoveState !== stoveStateValue) {
-        await this.hottohDriver.triggerStoveStateChanged(this, {
-          state: stoveStateValue
-        }, {});
+        try {
+          // Map state string to state ID
+          const stateMapping: { [key: string]: number } = {
+            'Off': 0,
+            'Starting': 1,
+            'Preheating': 2,
+            'Running': 3,
+            'Cooling Down': 4,
+            'Cleaning': 5,
+            'Standby': 6
+          };
+
+          const stateId = stateMapping[stoveStateValue] !== undefined ? stateMapping[stoveStateValue] : 0;
+
+          await this.hottohDriver.triggerStoveStateChanged(this, {
+            state_id: stateId,
+            state_string: stoveStateValue
+          }, {});
+        } catch (triggerError) {
+          this.error('Error triggering stove state changed flow:', triggerError);
+          // Don't let trigger errors crash the device update
+        }
         this.prevStoveState = stoveStateValue;
       }
 
       // 2. Temperature Reached
       if (Math.abs(roomTemp - targetTemperature) <= 0.5 && !this.temperatureReachedTriggered) {
-        await this.hottohDriver.triggerTemperatureReached(this, {
-          temperature: roomTemp
-        }, {});
+        try {
+          await this.hottohDriver.triggerTemperatureReached(this, {
+            temperature: roomTemp
+          }, {});
+        } catch (triggerError) {
+          this.error('Error triggering temperature reached flow:', triggerError);
+        }
         this.temperatureReachedTriggered = true;
       } else if (Math.abs(roomTemp - targetTemperature) > 0.5) {
         // Reset the trigger when temperature is no longer at target
@@ -364,34 +387,61 @@ module.exports = class HottohDevice extends Homey.Device {
 
       // 3. Smoke Temperature Threshold (Rising)
       if (this.prevSmokeTemperature !== null && smokeTempValue > this.prevSmokeTemperature) {
-        // We need to check for any registered threshold in the flow system
-        // This is a simplified approach - normally you'd check against registered thresholds
-        await this.hottohDriver.triggerSmokeTemperatureThreshold(this, {
-          temperature: smokeTempValue
-        }, { rising: true });
+        try {
+          // We need to check for any registered threshold in the flow system
+          // This is a simplified approach - normally you'd check against registered thresholds
+          await this.hottohDriver.triggerSmokeTemperatureThreshold(this, {
+            temperature: smokeTempValue
+          }, { rising: true });
+        } catch (triggerError) {
+          this.error('Error triggering smoke temperature threshold (rising) flow:', triggerError);
+        }
       }
 
       // 4. Smoke Temperature Threshold (Falling)
       if (this.prevSmokeTemperature !== null && smokeTempValue < this.prevSmokeTemperature) {
-        // We need to check for any registered threshold in the flow system
-        // This is a simplified approach - normally you'd check against registered thresholds
-        await this.hottohDriver.triggerSmokeTemperatureThreshold(this, {
-          temperature: smokeTempValue
-        }, { rising: false });
+        try {
+          // We need to check for any registered threshold in the flow system
+          // This is a simplified approach - normally you'd check against registered thresholds
+          await this.hottohDriver.triggerSmokeTemperatureThreshold(this, {
+            temperature: smokeTempValue
+          }, { rising: false });
+        } catch (triggerError) {
+          this.error('Error triggering smoke temperature threshold (falling) flow:', triggerError);
+        }
       }
 
       // 5. WiFi Signal Changed
       if (this.prevWifiSignal !== null && Math.abs(wifiSignalValue - this.prevWifiSignal) >= 10) {
-        await this.hottohDriver.triggerWifiSignalChanged(this, {
-          signal: wifiSignalValue
-        }, {});
+        try {
+          // Determine signal quality string
+          let signalString = 'Poor';
+          if (wifiSignalValue >= -50) {
+            signalString = 'Excellent';
+          } else if (wifiSignalValue >= -60) {
+            signalString = 'Good';
+          } else if (wifiSignalValue >= -70) {
+            signalString = 'Fair';
+          }
+
+          await this.hottohDriver.triggerWifiSignalChanged(this, {
+            signal_value: wifiSignalValue,
+            signal_string: signalString
+          }, {});
+        } catch (triggerError) {
+          this.error('Error triggering WiFi signal changed flow:', triggerError);
+        }
       }
 
       // 6. Power Level Changed
       if (this.prevPowerLevel !== powerLevelValue) {
-        await this.hottohDriver.triggerPowerLevelChanged(this, {
-          power_level: powerLevelValue
-        }, {});
+        try {
+          await this.hottohDriver.triggerPowerLevelChanged(this, {
+            power_level: powerLevelValue
+          }, {});
+        } catch (triggerError) {
+          this.error('Error triggering power level changed flow:', triggerError);
+        }
         this.prevPowerLevel = powerLevelValue;
       }
 

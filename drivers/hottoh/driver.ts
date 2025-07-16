@@ -85,54 +85,56 @@ module.exports = class HottohDriver extends Homey.Driver {
           return currentTemp > args.temperature;
         case 'below':
           return currentTemp < args.temperature;
+        case 'equals':
+          return Math.abs(currentTemp - args.temperature) < 0.5; // Allow small tolerance for equality
         default:
           return false;
       }
-    });
-
-    // Power level is condition
+    });    // Power level is condition
     this.powerLevelIsCondition = this.homey.flow.getConditionCard('power_level_is');
     this.powerLevelIsCondition.registerRunListener(async (args: any, state: any) => {
       const device = args.device;
       const currentLevel = device.getCapabilityValue('power_level');
-
+      
       switch (args.comparison) {
         case 'above':
           return currentLevel > args.level;
         case 'below':
           return currentLevel < args.level;
+        case 'equals':
+          return currentLevel === args.level;
         default:
           return false;
       }
-    });
-
-    // Fan speed is condition
+    });    // Fan speed is condition
     this.fanSpeedIsCondition = this.homey.flow.getConditionCard('fan_speed_is');
     this.fanSpeedIsCondition.registerRunListener(async (args: any, state: any) => {
       const device = args.device;
       const currentSpeed = device.getCapabilityValue('fan_speed');
-
+      
       switch (args.comparison) {
         case 'above':
           return currentSpeed > args.speed;
         case 'below':
           return currentSpeed < args.speed;
+        case 'equals':
+          return currentSpeed === args.speed;
         default:
           return false;
       }
-    });
-
-    // WiFi signal is condition
+    });    // WiFi signal is condition
     this.wifiSignalIsCondition = this.homey.flow.getConditionCard('wifi_signal_is');
     this.wifiSignalIsCondition.registerRunListener(async (args: any, state: any) => {
       const device = args.device;
       const currentSignal = device.getCapabilityValue('wifi_signal');
-
+      
       switch (args.comparison) {
         case 'above':
           return currentSignal > args.strength;
         case 'below':
           return currentSignal < args.strength;
+        case 'equals':
+          return currentSignal === args.strength;
         default:
           return false;
       }

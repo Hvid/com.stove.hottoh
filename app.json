@@ -774,6 +774,23 @@
                   "pl": "poniżej",
                   "ko": "미만"
                 }
+              },
+              {
+                "id": "equals",
+                "label": {
+                  "en": "equals",
+                  "nl": "gelijk aan",
+                  "fr": "égal à",
+                  "de": "gleich",
+                  "it": "uguale a",
+                  "es": "igual a",
+                  "sv": "lika med",
+                  "no": "lik",
+                  "da": "lig med",
+                  "ru": "равно",
+                  "pl": "równe",
+                  "ko": "같음"
+                }
               }
             ]
           },
@@ -901,6 +918,23 @@
                   "pl": "poniżej",
                   "ko": "미만"
                 }
+              },
+              {
+                "id": "equals",
+                "label": {
+                  "en": "equals",
+                  "nl": "gelijk aan",
+                  "fr": "égal à",
+                  "de": "gleich",
+                  "it": "uguale a",
+                  "es": "igual a",
+                  "sv": "lika med",
+                  "no": "lik",
+                  "da": "lig med",
+                  "ru": "равно",
+                  "pl": "równe",
+                  "ko": "같음"
+                }
               }
             ]
           },
@@ -1027,6 +1061,23 @@
                   "ru": "ниже",
                   "pl": "poniżej",
                   "ko": "미만"
+                }
+              },
+              {
+                "id": "equals",
+                "label": {
+                  "en": "equals",
+                  "nl": "gelijk aan",
+                  "fr": "égal à",
+                  "de": "gleich",
+                  "it": "uguale a",
+                  "es": "igual a",
+                  "sv": "lika med",
+                  "no": "lik",
+                  "da": "lig med",
+                  "ru": "равно",
+                  "pl": "równe",
+                  "ko": "같음"
                 }
               }
             ]
@@ -1345,6 +1396,23 @@
                   "ru": "ниже",
                   "pl": "poniżej",
                   "ko": "미만"
+                }
+              },
+              {
+                "id": "equals",
+                "label": {
+                  "en": "equals",
+                  "nl": "gelijk aan",
+                  "fr": "égal à",
+                  "de": "gleich",
+                  "it": "uguale a",
+                  "es": "igual a",
+                  "sv": "lika med",
+                  "no": "lik",
+                  "da": "lig med",
+                  "ru": "равно",
+                  "pl": "równe",
+                  "ko": "같음"
                 }
               }
             ]

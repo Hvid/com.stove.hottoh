@@ -128,12 +128,13 @@ module.exports = class HottohDriver extends Homey.Driver {
       const device = args.device;
       const currentSignal = device.getCapabilityValue('wifi_signal');
 
-      if (args.strength === 'strong') {
-        return currentSignal > 75;
-      } else if (args.strength === 'medium') {
-        return currentSignal >= 30 && currentSignal <= 75;
-      } else { // weak
-        return currentSignal < 30;
+      switch (args.comparison) {
+        case 'above':
+          return currentSignal > args.strength;
+        case 'below':
+          return currentSignal < args.strength;
+        default:
+          return false;
       }
     });
   }

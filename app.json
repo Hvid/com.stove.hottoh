@@ -1262,32 +1262,32 @@
           "ko": "WiFi 신호가 특정 값입니다"
         },
         "titleFormatted": {
-          "en": "WiFi signal is [[strength]]",
-          "nl": "WiFi-signaal is [[strength]]",
-          "fr": "Le signal WiFi est [[strength]]",
-          "de": "WLAN-Signal ist [[strength]]",
-          "it": "Il segnale WiFi è [[strength]]",
-          "es": "La señal WiFi es [[strength]]",
-          "sv": "WiFi-signal är [[strength]]",
-          "no": "WiFi-signal er [[strength]]",
-          "da": "WiFi-signal er [[strength]]",
-          "ru": "Сигнал WiFi является [[strength]]",
-          "pl": "Sygnał WiFi jest [[strength]]",
-          "ko": "WiFi 신호가 [[strength]]입니다"
+          "en": "WiFi signal [[comparison]] [[strength]]%",
+          "nl": "WiFi-signaal [[comparison]] [[strength]]%",
+          "fr": "Le signal WiFi [[comparison]] [[strength]]%",
+          "de": "WLAN-Signal [[comparison]] [[strength]]%",
+          "it": "Il segnale WiFi [[comparison]] [[strength]]%",
+          "es": "La señal WiFi [[comparison]] [[strength]]%",
+          "sv": "WiFi-signal [[comparison]] [[strength]]%",
+          "no": "WiFi-signal [[comparison]] [[strength]]%",
+          "da": "WiFi-signal [[comparison]] [[strength]]%",
+          "ru": "Сигнал WiFi [[comparison]] [[strength]]%",
+          "pl": "Sygnał WiFi [[comparison]] [[strength]]%",
+          "ko": "WiFi 신호가 [[strength]]% [[comparison]]"
         },
         "hint": {
-          "en": "Check if the WiFi signal strength is strong/medium/weak",
-          "nl": "Controleer of de WiFi-signaalsterkte sterk/gemiddeld/zwak is",
-          "fr": "Vérifiez si la force du signal WiFi est forte/moyenne/faible",
-          "de": "Prüfen, ob die WLAN-Signalstärke stark/mittel/schwach ist",
-          "it": "Controlla se la potenza del segnale WiFi è forte/media/debole",
-          "es": "Comprobar si la intensidad de la señal WiFi es fuerte/media/débil",
-          "sv": "Kontrollera om WiFi-signalstyrkan är stark/medel/svag",
-          "no": "Sjekk om WiFi-signalstyrken er sterk/middels/svak",
-          "da": "Tjek om WiFi-signalstyrken er stærk/medium/svag",
-          "ru": "Проверить, является ли уровень сигнала WiFi сильным/средним/слабым",
-          "pl": "Sprawdź, czy siła sygnału WiFi jest silna/średnia/słaba",
-          "ko": "WiFi 신호 강도가 강함/중간/약함인지 확인합니다"
+          "en": "Check if the WiFi signal strength is above/below a percentage value (Strong: >75%, Medium: 30-75%, Weak: <30%)",
+          "nl": "Controleer of de WiFi-signaalsterkte boven/onder een percentage waarde ligt (Sterk: >75%, Gemiddeld: 30-75%, Zwak: <30%)",
+          "fr": "Vérifiez si la force du signal WiFi est supérieure/inférieure à une valeur de pourcentage (Fort: >75%, Moyen: 30-75%, Faible: <30%)",
+          "de": "Prüfen, ob die WLAN-Signalstärke über/unter einem Prozentwert liegt (Stark: >75%, Mittel: 30-75%, Schwach: <30%)",
+          "it": "Controlla se la potenza del segnale WiFi è sopra/sotto un valore percentuale (Forte: >75%, Medio: 30-75%, Debole: <30%)",
+          "es": "Comprobar si la intensidad de la señal WiFi está por encima/debajo de un valor porcentual (Fuerte: >75%, Medio: 30-75%, Débil: <30%)",
+          "sv": "Kontrollera om WiFi-signalstyrkan är över/under ett procentvärde (Stark: >75%, Medel: 30-75%, Svag: <30%)",
+          "no": "Sjekk om WiFi-signalstyrken er over/under en prosentverdi (Sterk: >75%, Middels: 30-75%, Svak: <30%)",
+          "da": "Tjek om WiFi-signalstyrken er over/under en procentværdi (Stærk: >75%, Medium: 30-75%, Svag: <30%)",
+          "ru": "Проверить, находится ли уровень сигнала WiFi выше/ниже процентного значения (Сильный: >75%, Средний: 30-75%, Слабый: <30%)",
+          "pl": "Sprawdź, czy siła sygnału WiFi jest powyżej/poniżej wartości procentowej (Silny: >75%, Średni: 30-75%, Słaby: <30%)",
+          "ko": "WiFi 신호 강도가 백분율 값보다 높은지/낮은지 확인합니다 (강함: >75%, 중간: 30-75%, 약함: <30%)"
         },
         "args": [
           {
@@ -1296,75 +1296,93 @@
             "filter": "driver_id=hottoh"
           },
           {
-            "name": "strength",
+            "name": "comparison",
             "type": "dropdown",
             "title": {
-              "en": "Signal Strength",
-              "nl": "Signaalsterkte",
-              "fr": "Force du signal",
-              "de": "Signalstärke",
-              "it": "Potenza del segnale",
-              "es": "Intensidad de señal",
-              "sv": "Signalstyrka",
-              "no": "Signalstyrke",
-              "da": "Signalstyrke",
-              "ru": "Сила сигнала",
-              "pl": "Siła sygnału",
-              "ko": "신호 강도"
+              "en": "Comparison",
+              "nl": "Vergelijking",
+              "fr": "Comparaison",
+              "de": "Vergleich",
+              "it": "Confronto",
+              "es": "Comparación",
+              "sv": "Jämförelse",
+              "no": "Sammenligning",
+              "da": "Sammenligning",
+              "ru": "Сравнение",
+              "pl": "Porównanie",
+              "ko": "비교"
             },
             "values": [
               {
-                "id": "strong",
+                "id": "above",
                 "label": {
-                  "en": "Strong (>75%)",
-                  "nl": "Sterk (>75%)",
-                  "fr": "Fort (>75%)",
-                  "de": "Stark (>75%)",
-                  "it": "Forte (>75%)",
-                  "es": "Fuerte (>75%)",
-                  "sv": "Stark (>75%)",
-                  "no": "Sterk (>75%)",
-                  "da": "Stærk (>75%)",
-                  "ru": "Сильный (>75%)",
-                  "pl": "Silny (>75%)",
-                  "ko": "강함 (>75%)"
+                  "en": "above",
+                  "nl": "boven",
+                  "fr": "au-dessus de",
+                  "de": "über",
+                  "it": "sopra",
+                  "es": "por encima de",
+                  "sv": "över",
+                  "no": "over",
+                  "da": "over",
+                  "ru": "выше",
+                  "pl": "powyżej",
+                  "ko": "초과"
                 }
               },
               {
-                "id": "medium",
+                "id": "below",
                 "label": {
-                  "en": "Medium (30-75%)",
-                  "nl": "Gemiddeld (30-75%)",
-                  "fr": "Moyen (30-75%)",
-                  "de": "Mittel (30-75%)",
-                  "it": "Medio (30-75%)",
-                  "es": "Medio (30-75%)",
-                  "sv": "Medel (30-75%)",
-                  "no": "Middels (30-75%)",
-                  "da": "Medium (30-75%)",
-                  "ru": "Средний (30-75%)",
-                  "pl": "Średni (30-75%)",
-                  "ko": "중간 (30-75%)"
-                }
-              },
-              {
-                "id": "weak",
-                "label": {
-                  "en": "Weak (<30%)",
-                  "nl": "Zwak (<30%)",
-                  "fr": "Faible (<30%)",
-                  "de": "Schwach (<30%)",
-                  "it": "Debole (<30%)",
-                  "es": "Débil (<30%)",
-                  "sv": "Svag (<30%)",
-                  "no": "Svak (<30%)",
-                  "da": "Svag (<30%)",
-                  "ru": "Слабый (<30%)",
-                  "pl": "Słaby (<30%)",
-                  "ko": "약함 (<30%)"
+                  "en": "below",
+                  "nl": "onder",
+                  "fr": "en dessous de",
+                  "de": "unter",
+                  "it": "sotto",
+                  "es": "por debajo de",
+                  "sv": "under",
+                  "no": "under",
+                  "da": "under",
+                  "ru": "ниже",
+                  "pl": "poniżej",
+                  "ko": "미만"
                 }
               }
             ]
+          },
+          {
+            "name": "strength",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "title": {
+              "en": "Signal Strength (%)",
+              "nl": "Signaalsterkte (%)",
+              "fr": "Force du signal (%)",
+              "de": "Signalstärke (%)",
+              "it": "Potenza del segnale (%)",
+              "es": "Intensidad de señal (%)",
+              "sv": "Signalstyrka (%)",
+              "no": "Signalstyrke (%)",
+              "da": "Signalstyrke (%)",
+              "ru": "Сила сигнала (%)",
+              "pl": "Siła sygnału (%)",
+              "ko": "신호 강도 (%)"
+            },
+            "placeholder": {
+              "en": "e.g. 75 (Strong), 30 (Medium/Weak boundary)",
+              "nl": "bijv. 75 (Sterk), 30 (Grens Gemiddeld/Zwak)",
+              "fr": "par ex. 75 (Fort), 30 (Frontière Moyen/Faible)",
+              "de": "z.B. 75 (Stark), 30 (Grenze Mittel/Schwach)",
+              "it": "es. 75 (Forte), 30 (Confine Medio/Debole)",
+              "es": "ej. 75 (Fuerte), 30 (Límite Medio/Débil)",
+              "sv": "t.ex. 75 (Stark), 30 (Gräns Medel/Svag)",
+              "no": "f.eks. 75 (Sterk), 30 (Grense Middels/Svak)",
+              "da": "f.eks. 75 (Stærk), 30 (Grænse Medium/Svag)",
+              "ru": "напр. 75 (Сильный), 30 (Граница Средний/Слабый)",
+              "pl": "np. 75 (Silny), 30 (Granica Średni/Słaby)",
+              "ko": "예: 75 (강함), 30 (중간/약함 경계)"
+            }
           }
         ]
       }

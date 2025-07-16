@@ -14,6 +14,20 @@
     "pl": "Temperatura pomieszczenia osiągnęła wartość docelową",
     "ko": "실내 온도가 목표 온도에 도달했습니다"
   },
+  "titleFormatted": {
+    "en": "Room temperature has reached [[target_temperature]]°C",
+    "nl": "Kamertemperatuur heeft [[target_temperature]]°C bereikt",
+    "fr": "La température ambiante a atteint [[target_temperature]]°C",
+    "de": "Raumtemperatur hat [[target_temperature]]°C erreicht",
+    "it": "La temperatura ambiente ha raggiunto [[target_temperature]]°C",
+    "es": "La temperatura ambiente ha alcanzado [[target_temperature]]°C",
+    "sv": "Rumstemperatur har nått [[target_temperature]]°C",
+    "no": "Romtemperaturen har nådd [[target_temperature]]°C",
+    "da": "Rumtemperatur har nået [[target_temperature]]°C",
+    "ru": "Температура в помещении достигла [[target_temperature]]°C",
+    "pl": "Temperatura pomieszczenia osiągnęła [[target_temperature]]°C",
+    "ko": "실내 온도가 [[target_temperature]]°C에 도달했습니다"
+  },
   "hint": {
     "en": "Triggered when the room temperature reaches the target temperature",
     "nl": "Wordt geactiveerd wanneer de kamertemperatuur de streeftemperatuur bereikt",

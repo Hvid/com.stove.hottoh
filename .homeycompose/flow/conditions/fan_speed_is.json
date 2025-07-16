@@ -35,60 +35,6 @@
       "filter": "driver_id=hottoh"
     },
     {
-      "name": "is_not",
-      "type": "dropdown",
-      "title": {
-        "en": "Is/Is not",
-        "nl": "Is/Is niet",
-        "fr": "Est/N'est pas",
-        "de": "Ist/Ist nicht",
-        "it": "È/Non è",
-        "es": "Es/No es",
-        "sv": "Är/Är inte",
-        "no": "Er/Er ikke",
-        "da": "Er/Er ikke",
-        "ru": "Является/Не является",
-        "pl": "Jest/Nie jest",
-        "ko": "입니다/아닙니다"
-      },
-      "values": [
-        {
-          "id": "is",
-          "title": {
-            "en": "is",
-            "nl": "is",
-            "fr": "est",
-            "de": "ist",
-            "it": "è",
-            "es": "es",
-            "sv": "är",
-            "no": "er",
-            "da": "er",
-            "ru": "является",
-            "pl": "jest",
-            "ko": "입니다"
-          }
-        },
-        {
-          "id": "is_not",
-          "title": {
-            "en": "is not",
-            "nl": "is niet",
-            "fr": "n'est pas",
-            "de": "ist nicht",
-            "it": "non è",
-            "es": "no es",
-            "sv": "är inte",
-            "no": "er ikke",
-            "da": "er ikke",
-            "ru": "не является",
-            "pl": "nie jest",
-            "ko": "아닙니다"
-          }
-        }
-      ]
-    },
-    {
       "name": "speed",
       "type": "dropdown",
       "title": {
@@ -229,17 +175,17 @@
     }
   ],
   "titleFormatted": {
-    "en": "Fan speed [[is_not]] [[speed]]",
-    "nl": "Ventilatorsnelheid [[is_not]] [[speed]]",
-    "fr": "La vitesse du ventilateur [[is_not]] [[speed]]",
-    "de": "Lüftergeschwindigkeit [[is_not]] [[speed]]",
-    "it": "La velocità della ventola [[is_not]] [[speed]]",
-    "es": "La velocidad del ventilador [[is_not]] [[speed]]",
-    "sv": "Fläkthastighet [[is_not]] [[speed]]",
-    "no": "Viftehastighet [[is_not]] [[speed]]",
-    "da": "Blæserhastighed [[is_not]] [[speed]]",
-    "ru": "Скорость вентилятора [[is_not]] [[speed]]",
-    "pl": "Prędkość wentylatora [[is_not]] [[speed]]",
-    "ko": "팬 속도가 [[is_not]] [[speed]]"
+    "en": "Fan speed {{is|is not}} [[speed]]",
+    "nl": "Ventilatorsnelheid {{is|is niet}} [[speed]]",
+    "fr": "La vitesse du ventilateur {{est|n'est pas}} [[speed]]",
+    "de": "Lüftergeschwindigkeit {{ist|ist nicht}} [[speed]]",
+    "it": "La velocità della ventola {{è|non è}} [[speed]]",
+    "es": "La velocidad del ventilador {{es|no es}} [[speed]]",
+    "sv": "Fläkthastighet {{är|är inte}} [[speed]]",
+    "no": "Viftehastighet {{er|er ikke}} [[speed]]",
+    "da": "Blæserhastighed {{er|er ikke}} [[speed]]",
+    "ru": "Скорость вентилятора {{является|не является}} [[speed]]",
+    "pl": "Prędkość wentylatora {{jest|nie jest}} [[speed]]",
+    "ko": "팬 속도가 [[speed]] {{입니다|아닙니다}}"
   }
 }

@@ -411,6 +411,20 @@
           "pl": "Stan pieca się zmienił",
           "ko": "스토브 상태가 변경됨"
         },
+        "titleFormatted": {
+          "en": "Stove state has changed to [[state_string]]",
+          "nl": "Kachelstatus is gewijzigd naar [[state_string]]",
+          "fr": "L'état du poêle a changé à [[state_string]]",
+          "de": "Ofenzustand hat sich geändert zu [[state_string]]",
+          "it": "Lo stato della stufa è cambiato a [[state_string]]",
+          "es": "El estado de la estufa ha cambiado a [[state_string]]",
+          "sv": "Kaminstatus har ändrats till [[state_string]]",
+          "no": "Ovnstilstand er endret til [[state_string]]",
+          "da": "Ovntilstand er ændret til [[state_string]]",
+          "ru": "Состояние печи изменилось на [[state_string]]",
+          "pl": "Stan pieca się zmienił na [[state_string]]",
+          "ko": "스토브 상태가 [[state_string]]로 변경됨"
+        },
         "hint": {
           "en": "Triggered when the stove state changes",
           "nl": "Wordt geactiveerd wanneer de kachelstatus verandert",
@@ -488,6 +502,20 @@
           "ru": "Температура в помещении достигла целевой",
           "pl": "Temperatura pomieszczenia osiągnęła wartość docelową",
           "ko": "실내 온도가 목표 온도에 도달했습니다"
+        },
+        "titleFormatted": {
+          "en": "Room temperature has reached [[target_temperature]]°C",
+          "nl": "Kamertemperatuur heeft [[target_temperature]]°C bereikt",
+          "fr": "La température ambiante a atteint [[target_temperature]]°C",
+          "de": "Raumtemperatur hat [[target_temperature]]°C erreicht",
+          "it": "La temperatura ambiente ha raggiunto [[target_temperature]]°C",
+          "es": "La temperatura ambiente ha alcanzado [[target_temperature]]°C",
+          "sv": "Rumstemperatur har nått [[target_temperature]]°C",
+          "no": "Romtemperaturen har nådd [[target_temperature]]°C",
+          "da": "Rumtemperatur har nået [[target_temperature]]°C",
+          "ru": "Температура в помещении достигла [[target_temperature]]°C",
+          "pl": "Temperatura pomieszczenia osiągnęła [[target_temperature]]°C",
+          "ko": "실내 온도가 [[target_temperature]]°C에 도달했습니다"
         },
         "hint": {
           "en": "Triggered when the room temperature reaches the target temperature",
@@ -682,60 +710,6 @@
             "filter": "driver_id=hottoh"
           },
           {
-            "name": "is_not",
-            "type": "dropdown",
-            "title": {
-              "en": "Is/Is not",
-              "nl": "Is/Is niet",
-              "fr": "Est/N'est pas",
-              "de": "Ist/Ist nicht",
-              "it": "È/Non è",
-              "es": "Es/No es",
-              "sv": "Är/Är inte",
-              "no": "Er/Er ikke",
-              "da": "Er/Er ikke",
-              "ru": "Является/Не является",
-              "pl": "Jest/Nie jest",
-              "ko": "입니다/아닙니다"
-            },
-            "values": [
-              {
-                "id": "is",
-                "title": {
-                  "en": "is",
-                  "nl": "is",
-                  "fr": "est",
-                  "de": "ist",
-                  "it": "è",
-                  "es": "es",
-                  "sv": "är",
-                  "no": "er",
-                  "da": "er",
-                  "ru": "является",
-                  "pl": "jest",
-                  "ko": "입니다"
-                }
-              },
-              {
-                "id": "is_not",
-                "title": {
-                  "en": "is not",
-                  "nl": "is niet",
-                  "fr": "n'est pas",
-                  "de": "ist nicht",
-                  "it": "non è",
-                  "es": "no es",
-                  "sv": "är inte",
-                  "no": "er ikke",
-                  "da": "er ikke",
-                  "ru": "не является",
-                  "pl": "nie jest",
-                  "ko": "아닙니다"
-                }
-              }
-            ]
-          },
-          {
             "name": "speed",
             "type": "dropdown",
             "title": {
@@ -876,18 +850,18 @@
           }
         ],
         "titleFormatted": {
-          "en": "Fan speed [[is_not]] [[speed]]",
-          "nl": "Ventilatorsnelheid [[is_not]] [[speed]]",
-          "fr": "La vitesse du ventilateur [[is_not]] [[speed]]",
-          "de": "Lüftergeschwindigkeit [[is_not]] [[speed]]",
-          "it": "La velocità della ventola [[is_not]] [[speed]]",
-          "es": "La velocidad del ventilador [[is_not]] [[speed]]",
-          "sv": "Fläkthastighet [[is_not]] [[speed]]",
-          "no": "Viftehastighet [[is_not]] [[speed]]",
-          "da": "Blæserhastighed [[is_not]] [[speed]]",
-          "ru": "Скорость вентилятора [[is_not]] [[speed]]",
-          "pl": "Prędkość wentylatora [[is_not]] [[speed]]",
-          "ko": "팬 속도가 [[is_not]] [[speed]]"
+          "en": "Fan speed {{is|is not}} [[speed]]",
+          "nl": "Ventilatorsnelheid {{is|is niet}} [[speed]]",
+          "fr": "La vitesse du ventilateur {{est|n'est pas}} [[speed]]",
+          "de": "Lüftergeschwindigkeit {{ist|ist nicht}} [[speed]]",
+          "it": "La velocità della ventola {{è|non è}} [[speed]]",
+          "es": "La velocidad del ventilador {{es|no es}} [[speed]]",
+          "sv": "Fläkthastighet {{är|är inte}} [[speed]]",
+          "no": "Viftehastighet {{er|er ikke}} [[speed]]",
+          "da": "Blæserhastighed {{er|er ikke}} [[speed]]",
+          "ru": "Скорость вентилятора {{является|не является}} [[speed]]",
+          "pl": "Prędkość wentylatora {{jest|nie jest}} [[speed]]",
+          "ko": "팬 속도가 [[speed]] {{입니다|아닙니다}}"
         }
       },
       {
@@ -925,60 +899,6 @@
             "name": "device",
             "type": "device",
             "filter": "driver_id=hottoh"
-          },
-          {
-            "name": "is_not",
-            "type": "dropdown",
-            "title": {
-              "en": "Is/Is not",
-              "nl": "Is/Is niet",
-              "fr": "Est/N'est pas",
-              "de": "Ist/Ist nicht",
-              "it": "È/Non è",
-              "es": "Es/No es",
-              "sv": "Är/Är inte",
-              "no": "Er/Er ikke",
-              "da": "Er/Er ikke",
-              "ru": "Является/Не является",
-              "pl": "Jest/Nie jest",
-              "ko": "입니다/아닙니다"
-            },
-            "values": [
-              {
-                "id": "is",
-                "title": {
-                  "en": "is",
-                  "nl": "is",
-                  "fr": "est",
-                  "de": "ist",
-                  "it": "è",
-                  "es": "es",
-                  "sv": "är",
-                  "no": "er",
-                  "da": "er",
-                  "ru": "является",
-                  "pl": "jest",
-                  "ko": "입니다"
-                }
-              },
-              {
-                "id": "is_not",
-                "title": {
-                  "en": "is not",
-                  "nl": "is niet",
-                  "fr": "n'est pas",
-                  "de": "ist nicht",
-                  "it": "non è",
-                  "es": "no es",
-                  "sv": "är inte",
-                  "no": "er ikke",
-                  "da": "er ikke",
-                  "ru": "не является",
-                  "pl": "nie jest",
-                  "ko": "아닙니다"
-                }
-              }
-            ]
           },
           {
             "name": "level",
@@ -1104,18 +1024,18 @@
           }
         ],
         "titleFormatted": {
-          "en": "Power level [[is_not]] [[level]]",
-          "nl": "Vermogensniveau [[is_not]] [[level]]",
-          "fr": "Le niveau de puissance [[is_not]] [[level]]",
-          "de": "Leistungsstufe [[is_not]] [[level]]",
-          "it": "Il livello di potenza [[is_not]] [[level]]",
-          "es": "El nivel de potencia [[is_not]] [[level]]",
-          "sv": "Effektnivå [[is_not]] [[level]]",
-          "no": "Effektnivå [[is_not]] [[level]]",
-          "da": "Effektniveau [[is_not]] [[level]]",
-          "ru": "Уровень мощности [[is_not]] [[level]]",
-          "pl": "Poziom mocy [[is_not]] [[level]]",
-          "ko": "전원 레벨이 [[is_not]] [[level]]"
+          "en": "Power level {{is|is not}} [[level]]",
+          "nl": "Vermogensniveau {{is|is niet}} [[level]]",
+          "fr": "Le niveau de puissance {{est|n'est pas}} [[level]]",
+          "de": "Leistungsstufe {{ist|ist nicht}} [[level]]",
+          "it": "Il livello di potenza {{è|non è}} [[level]]",
+          "es": "El nivel de potencia {{es|no es}} [[level]]",
+          "sv": "Effektnivå {{är|är inte}} [[level]]",
+          "no": "Effektnivå {{er|er ikke}} [[level]]",
+          "da": "Effektniveau {{er|er ikke}} [[level]]",
+          "ru": "Уровень мощности {{является|не является}} [[level]]",
+          "pl": "Poziom mocy {{jest|nie jest}} [[level]]",
+          "ko": "전원 레벨이 [[level]] {{입니다|아닙니다}}"
         }
       },
       {
@@ -1464,7 +1384,7 @@
           "da": "WiFi-signal {{er|er ikke}} [[strength]]",
           "ru": "Сигнал WiFi {{является|не является}} [[strength]]",
           "pl": "Sygnał WiFi {{jest|nie jest}} [[strength]]",
-          "ko": "WiFi 신호가 {{입니다|아닙니다}} [[strength]]"
+          "ko": "WiFi 신호가 [[strength]] {{입니다|아닙니다}}"
         },
         "hint": {
           "en": "Check if the WiFi signal strength is strong/medium/weak",
@@ -1890,6 +1810,20 @@
         "id": "turn_off_when_temperature_reached",
         "title": {
           "en": "Turn off when temperature reached",
+          "nl": "Uitschakelen wanneer temperatuur bereikt is",
+          "fr": "Éteindre lorsque la température est atteinte",
+          "de": "Ausschalten, wenn Temperatur erreicht ist",
+          "it": "Spegni quando la temperatura è raggiunta",
+          "es": "Apagar cuando se alcance la temperatura",
+          "sv": "Stäng av när temperaturen nås",
+          "no": "Slå av når temperaturen er nådd",
+          "da": "Sluk når temperaturen er nået",
+          "ru": "Выключить при достижении температуры",
+          "pl": "Wyłącz po osiągnięciu temperatury",
+          "ko": "온도 도달 시 끄기"
+        },
+        "titleFormatted": {
+          "en": "Turn off when temperature is reached",
           "nl": "Uitschakelen wanneer temperatuur bereikt is",
           "fr": "Éteindre lorsque la température est atteinte",
           "de": "Ausschalten, wenn Temperatur erreicht ist",

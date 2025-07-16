@@ -14,6 +14,20 @@
     "pl": "Stan pieca się zmienił",
     "ko": "스토브 상태가 변경됨"
   },
+  "titleFormatted": {
+    "en": "Stove state has changed to [[state_string]]",
+    "nl": "Kachelstatus is gewijzigd naar [[state_string]]",
+    "fr": "L'état du poêle a changé à [[state_string]]",
+    "de": "Ofenzustand hat sich geändert zu [[state_string]]",
+    "it": "Lo stato della stufa è cambiato a [[state_string]]",
+    "es": "El estado de la estufa ha cambiado a [[state_string]]",
+    "sv": "Kaminstatus har ändrats till [[state_string]]",
+    "no": "Ovnstilstand er endret til [[state_string]]",
+    "da": "Ovntilstand er ændret til [[state_string]]",
+    "ru": "Состояние печи изменилось на [[state_string]]",
+    "pl": "Stan pieca się zmienił na [[state_string]]",
+    "ko": "스토브 상태가 [[state_string]]로 변경됨"
+  },
   "hint": {
     "en": "Triggered when the stove state changes",
     "nl": "Wordt geactiveerd wanneer de kachelstatus verandert",

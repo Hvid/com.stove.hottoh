@@ -35,60 +35,6 @@
       "filter": "driver_id=hottoh"
     },
     {
-      "name": "is_not",
-      "type": "dropdown",
-      "title": {
-        "en": "Is/Is not",
-        "nl": "Is/Is niet",
-        "fr": "Est/N'est pas",
-        "de": "Ist/Ist nicht",
-        "it": "È/Non è",
-        "es": "Es/No es",
-        "sv": "Är/Är inte",
-        "no": "Er/Er ikke",
-        "da": "Er/Er ikke",
-        "ru": "Является/Не является",
-        "pl": "Jest/Nie jest",
-        "ko": "입니다/아닙니다"
-      },
-      "values": [
-        {
-          "id": "is",
-          "title": {
-            "en": "is",
-            "nl": "is",
-            "fr": "est",
-            "de": "ist",
-            "it": "è",
-            "es": "es",
-            "sv": "är",
-            "no": "er",
-            "da": "er",
-            "ru": "является",
-            "pl": "jest",
-            "ko": "입니다"
-          }
-        },
-        {
-          "id": "is_not",
-          "title": {
-            "en": "is not",
-            "nl": "is niet",
-            "fr": "n'est pas",
-            "de": "ist nicht",
-            "it": "non è",
-            "es": "no es",
-            "sv": "är inte",
-            "no": "er ikke",
-            "da": "er ikke",
-            "ru": "не является",
-            "pl": "nie jest",
-            "ko": "아닙니다"
-          }
-        }
-      ]
-    },
-    {
       "name": "level",
       "type": "dropdown",
       "title": {
@@ -212,17 +158,17 @@
     }
   ],
   "titleFormatted": {
-    "en": "Power level [[is_not]] [[level]]",
-    "nl": "Vermogensniveau [[is_not]] [[level]]",
-    "fr": "Le niveau de puissance [[is_not]] [[level]]",
-    "de": "Leistungsstufe [[is_not]] [[level]]",
-    "it": "Il livello di potenza [[is_not]] [[level]]",
-    "es": "El nivel de potencia [[is_not]] [[level]]",
-    "sv": "Effektnivå [[is_not]] [[level]]",
-    "no": "Effektnivå [[is_not]] [[level]]",
-    "da": "Effektniveau [[is_not]] [[level]]",
-    "ru": "Уровень мощности [[is_not]] [[level]]",
-    "pl": "Poziom mocy [[is_not]] [[level]]",
-    "ko": "전원 레벨이 [[is_not]] [[level]]"
+    "en": "Power level {{is|is not}} [[level]]",
+    "nl": "Vermogensniveau {{is|is niet}} [[level]]",
+    "fr": "Le niveau de puissance {{est|n'est pas}} [[level]]",
+    "de": "Leistungsstufe {{ist|ist nicht}} [[level]]",
+    "it": "Il livello di potenza {{è|non è}} [[level]]",
+    "es": "El nivel de potencia {{es|no es}} [[level]]",
+    "sv": "Effektnivå {{är|är inte}} [[level]]",
+    "no": "Effektnivå {{er|er ikke}} [[level]]",
+    "da": "Effektniveau {{er|er ikke}} [[level]]",
+    "ru": "Уровень мощности {{является|не является}} [[level]]",
+    "pl": "Poziom mocy {{jest|nie jest}} [[level]]",
+    "ko": "전원 레벨이 [[level]] {{입니다|아닙니다}}"
   }
 }

@@ -14,6 +14,20 @@
     "pl": "Wyłącz po osiągnięciu temperatury",
     "ko": "온도 도달 시 끄기"
   },
+  "titleFormatted": {
+    "en": "Turn off when temperature is reached",
+    "nl": "Uitschakelen wanneer temperatuur bereikt is",
+    "fr": "Éteindre lorsque la température est atteinte",
+    "de": "Ausschalten, wenn Temperatur erreicht ist",
+    "it": "Spegni quando la temperatura è raggiunta",
+    "es": "Apagar cuando se alcance la temperatura",
+    "sv": "Stäng av när temperaturen nås",
+    "no": "Slå av når temperaturen er nådd",
+    "da": "Sluk når temperaturen er nået",
+    "ru": "Выключить при достижении температуры",
+    "pl": "Wyłącz po osiągnięciu temperatury",
+    "ko": "온도 도달 시 끄기"
+  },
   "hint": {
     "en": "Sets the stove to turn off automatically when the target temperature is reached",
     "nl": "Stelt de kachel in om automatisch uit te schakelen wanneer de streeftemperatuur is bereikt",

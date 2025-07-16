@@ -689,19 +689,33 @@
           "pl": "Prędkość wentylatora ma określoną wartość",
           "ko": "팬 속도가 특정 값입니다"
         },
+        "titleFormatted": {
+          "en": "Fan speed [[comparison]] [[speed]]",
+          "nl": "Ventilatorsnelheid [[comparison]] [[speed]]",
+          "fr": "La vitesse du ventilateur [[comparison]] [[speed]]",
+          "de": "Lüftergeschwindigkeit [[comparison]] [[speed]]",
+          "it": "La velocità della ventola [[comparison]] [[speed]]",
+          "es": "La velocidad del ventilador [[comparison]] [[speed]]",
+          "sv": "Fläkthastighet [[comparison]] [[speed]]",
+          "no": "Viftehastighet [[comparison]] [[speed]]",
+          "da": "Blæserhastighed [[comparison]] [[speed]]",
+          "ru": "Скорость вентилятора [[comparison]] [[speed]]",
+          "pl": "Prędkość wentylatora [[comparison]] [[speed]]",
+          "ko": "팬 속도가 [[speed]] [[comparison]]"
+        },
         "hint": {
-          "en": "Check if the fan speed matches a specific value",
-          "nl": "Controleer of de ventilatorsnelheid overeenkomt met een specifieke waarde",
-          "fr": "Vérifier si la vitesse du ventilateur correspond à une valeur spécifique",
-          "de": "Prüfen Sie, ob die Lüftergeschwindigkeit einem bestimmten Wert entspricht",
-          "it": "Controlla se la velocità della ventola corrisponde a un valore specifico",
-          "es": "Comprobar si la velocidad del ventilador coincide con un valor específico",
-          "sv": "Kontrollera om fläkthastigheten matchar ett specifikt värde",
-          "no": "Sjekk om viftehastigheten samsvarer med en bestemt verdi",
-          "da": "Kontroller om blæserhastigheden matcher en bestemt værdi",
-          "ru": "Проверьте, соответствует ли скорость вентилятора определенному значению",
-          "pl": "Sprawdź, czy prędkość wentylatora odpowiada określonej wartości",
-          "ko": "팬 속도가 특정 값과 일치하는지 확인합니다"
+          "en": "Check if the fan speed is above/below a certain value",
+          "nl": "Controleer of de ventilatorsnelheid boven/onder een bepaalde waarde ligt",
+          "fr": "Vérifiez si la vitesse du ventilateur est supérieure/inférieure à une certaine valeur",
+          "de": "Prüfen Sie, ob die Lüftergeschwindigkeit über/unter einem bestimmten Wert liegt",
+          "it": "Controlla se la velocità della ventola è sopra/sotto un certo valore",
+          "es": "Comprobar si la velocidad del ventilador está por encima/debajo de un valor determinado",
+          "sv": "Kontrollera om fläkthastigheten är över/under ett visst värde",
+          "no": "Sjekk om viftehastigheten er over/under en bestemt verdi",
+          "da": "Kontroller om blæserhastigheden er over/under en bestemt værdi",
+          "ru": "Проверьте, находится ли скорость вентилятора выше/ниже определенного значения",
+          "pl": "Sprawdź, czy prędkość wentylatora jest powyżej/poniżej określonej wartości",
+          "ko": "팬 속도가 특정 값보다 높은지/낮은지 확인합니다"
         },
         "args": [
           {
@@ -710,8 +724,65 @@
             "filter": "driver_id=hottoh"
           },
           {
-            "name": "speed",
+            "name": "comparison",
             "type": "dropdown",
+            "title": {
+              "en": "Comparison",
+              "nl": "Vergelijking",
+              "fr": "Comparaison",
+              "de": "Vergleich",
+              "it": "Confronto",
+              "es": "Comparación",
+              "sv": "Jämförelse",
+              "no": "Sammenligning",
+              "da": "Sammenligning",
+              "ru": "Сравнение",
+              "pl": "Porównanie",
+              "ko": "비교"
+            },
+            "values": [
+              {
+                "id": "above",
+                "label": {
+                  "en": "above",
+                  "nl": "boven",
+                  "fr": "au-dessus de",
+                  "de": "über",
+                  "it": "sopra",
+                  "es": "por encima de",
+                  "sv": "över",
+                  "no": "over",
+                  "da": "over",
+                  "ru": "выше",
+                  "pl": "powyżej",
+                  "ko": "초과"
+                }
+              },
+              {
+                "id": "below",
+                "label": {
+                  "en": "below",
+                  "nl": "onder",
+                  "fr": "en dessous de",
+                  "de": "unter",
+                  "it": "sotto",
+                  "es": "por debajo de",
+                  "sv": "under",
+                  "no": "under",
+                  "da": "under",
+                  "ru": "ниже",
+                  "pl": "poniżej",
+                  "ko": "미만"
+                }
+              }
+            ]
+          },
+          {
+            "name": "speed",
+            "type": "number",
+            "min": 0,
+            "max": 5,
+            "step": 1,
             "title": {
               "en": "Speed",
               "nl": "Snelheid",
@@ -725,144 +796,9 @@
               "ru": "Скорость",
               "pl": "Prędkość",
               "ko": "속도"
-            },
-            "values": [
-              {
-                "id": "0",
-                "title": {
-                  "en": "0 (Off)",
-                  "nl": "0 (Uit)",
-                  "fr": "0 (Éteint)",
-                  "de": "0 (Aus)",
-                  "it": "0 (Spento)",
-                  "es": "0 (Apagado)",
-                  "sv": "0 (Av)",
-                  "no": "0 (Av)",
-                  "da": "0 (Slukket)",
-                  "ru": "0 (Выкл.)",
-                  "pl": "0 (Wyłączony)",
-                  "ko": "0 (꺼짐)"
-                }
-              },
-              {
-                "id": "1",
-                "title": {
-                  "en": "1 (Low)",
-                  "nl": "1 (Laag)",
-                  "fr": "1 (Bas)",
-                  "de": "1 (Niedrig)",
-                  "it": "1 (Basso)",
-                  "es": "1 (Bajo)",
-                  "sv": "1 (Låg)",
-                  "no": "1 (Lav)",
-                  "da": "1 (Lav)",
-                  "ru": "1 (Низкая)",
-                  "pl": "1 (Niska)",
-                  "ko": "1 (낮음)"
-                }
-              },
-              {
-                "id": "2",
-                "title": {
-                  "en": "2 (Medium)",
-                  "nl": "2 (Gemiddeld)",
-                  "fr": "2 (Moyen)",
-                  "de": "2 (Mittel)",
-                  "it": "2 (Medio)",
-                  "es": "2 (Medio)",
-                  "sv": "2 (Medium)",
-                  "no": "2 (Middels)",
-                  "da": "2 (Mellem)",
-                  "ru": "2 (Средняя)",
-                  "pl": "2 (Średnia)",
-                  "ko": "2 (중간)"
-                }
-              },
-              {
-                "id": "3",
-                "title": {
-                  "en": "3 (High)",
-                  "nl": "3 (Hoog)",
-                  "fr": "3 (Haut)",
-                  "de": "3 (Hoch)",
-                  "it": "3 (Alto)",
-                  "es": "3 (Alto)",
-                  "sv": "3 (Hög)",
-                  "no": "3 (Høy)",
-                  "da": "3 (Høj)",
-                  "ru": "3 (Высокая)",
-                  "pl": "3 (Wysoka)",
-                  "ko": "3 (높음)"
-                }
-              },
-              {
-                "id": "4",
-                "title": {
-                  "en": "4 (Maximum)",
-                  "nl": "4 (Maximaal)",
-                  "fr": "4 (Maximum)",
-                  "de": "4 (Maximum)",
-                  "it": "4 (Massimo)",
-                  "es": "4 (Máximo)",
-                  "sv": "4 (Maximal)",
-                  "no": "4 (Maksimum)",
-                  "da": "4 (Maksimum)",
-                  "ru": "4 (Максимальная)",
-                  "pl": "4 (Maksymalna)",
-                  "ko": "4 (최대)"
-                }
-              },
-              {
-                "id": "5",
-                "title": {
-                  "en": "5 (Turbo)",
-                  "nl": "5 (Turbo)",
-                  "fr": "5 (Turbo)",
-                  "de": "5 (Turbo)",
-                  "it": "5 (Turbo)",
-                  "es": "5 (Turbo)",
-                  "sv": "5 (Turbo)",
-                  "no": "5 (Turbo)",
-                  "da": "5 (Turbo)",
-                  "ru": "5 (Турбо)",
-                  "pl": "5 (Turbo)",
-                  "ko": "5 (터보)"
-                }
-              },
-              {
-                "id": "auto",
-                "title": {
-                  "en": "Auto",
-                  "nl": "Auto",
-                  "fr": "Auto",
-                  "de": "Auto",
-                  "it": "Auto",
-                  "es": "Auto",
-                  "sv": "Auto",
-                  "no": "Auto",
-                  "da": "Auto",
-                  "ru": "Авто",
-                  "pl": "Auto",
-                  "ko": "자동"
-                }
-              }
-            ]
+            }
           }
-        ],
-        "titleFormatted": {
-          "en": "Fan speed {{is|is not}} [[speed]]",
-          "nl": "Ventilatorsnelheid {{is|is niet}} [[speed]]",
-          "fr": "La vitesse du ventilateur {{est|n'est pas}} [[speed]]",
-          "de": "Lüftergeschwindigkeit {{ist|ist nicht}} [[speed]]",
-          "it": "La velocità della ventola {{è|non è}} [[speed]]",
-          "es": "La velocidad del ventilador {{es|no es}} [[speed]]",
-          "sv": "Fläkthastighet {{är|är inte}} [[speed]]",
-          "no": "Viftehastighet {{er|er ikke}} [[speed]]",
-          "da": "Blæserhastighed {{er|er ikke}} [[speed]]",
-          "ru": "Скорость вентилятора {{является|не является}} [[speed]]",
-          "pl": "Prędkość wentylatora {{jest|nie jest}} [[speed]]",
-          "ko": "팬 속도가 [[speed]] {{입니다|아닙니다}}"
-        }
+        ]
       },
       {
         "id": "power_level_is",
@@ -880,19 +816,33 @@
           "pl": "Poziom mocy ma określoną wartość",
           "ko": "전원 레벨이 특정 값입니다"
         },
+        "titleFormatted": {
+          "en": "Power level [[comparison]] [[level]]",
+          "nl": "Vermogensniveau [[comparison]] [[level]]",
+          "fr": "Le niveau de puissance [[comparison]] [[level]]",
+          "de": "Leistungsstufe [[comparison]] [[level]]",
+          "it": "Il livello di potenza [[comparison]] [[level]]",
+          "es": "El nivel de potencia [[comparison]] [[level]]",
+          "sv": "Effektnivå [[comparison]] [[level]]",
+          "no": "Effektnivå [[comparison]] [[level]]",
+          "da": "Effektniveau [[comparison]] [[level]]",
+          "ru": "Уровень мощности [[comparison]] [[level]]",
+          "pl": "Poziom mocy [[comparison]] [[level]]",
+          "ko": "전원 레벨이 [[level]] [[comparison]]"
+        },
         "hint": {
-          "en": "Check if the power level matches a specific value",
-          "nl": "Controleer of het vermogensniveau overeenkomt met een specifieke waarde",
-          "fr": "Vérifier si le niveau de puissance correspond à une valeur spécifique",
-          "de": "Prüfen Sie, ob die Leistungsstufe einem bestimmten Wert entspricht",
-          "it": "Controlla se il livello di potenza corrisponde a un valore specifico",
-          "es": "Comprobar si el nivel de potencia coincide con un valor específico",
-          "sv": "Kontrollera om effektnivån matchar ett specifikt värde",
-          "no": "Sjekk om effektnivået samsvarer med en bestemt verdi",
-          "da": "Kontroller om effektniveauet matcher en bestemt værdi",
-          "ru": "Проверьте, соответствует ли уровень мощности определенному значению",
-          "pl": "Sprawdź, czy poziom mocy odpowiada określonej wartości",
-          "ko": "전원 레벨이 특정 값과 일치하는지 확인합니다"
+          "en": "Check if the power level is above/below a certain value",
+          "nl": "Controleer of het vermogensniveau boven/onder een bepaalde waarde ligt",
+          "fr": "Vérifiez si le niveau de puissance est supérieur/inférieur à une certaine valeur",
+          "de": "Prüfen Sie, ob die Leistungsstufe über/unter einem bestimmten Wert liegt",
+          "it": "Controlla se il livello di potenza è sopra/sotto un certo valore",
+          "es": "Comprobar si el nivel de potencia está por encima/debajo de un valor determinado",
+          "sv": "Kontrollera om effektnivån är över/under ett visst värde",
+          "no": "Sjekk om effektnivået er over/under en bestemt verdi",
+          "da": "Kontroller om effektniveauet er over/under en bestemt værdi",
+          "ru": "Проверьте, находится ли уровень мощности выше/ниже определенного значения",
+          "pl": "Sprawdź, czy poziom mocy jest powyżej/poniżej określonej wartości",
+          "ko": "전원 레벨이 특정 값보다 높은지/낮은지 확인합니다"
         },
         "args": [
           {
@@ -901,8 +851,65 @@
             "filter": "driver_id=hottoh"
           },
           {
-            "name": "level",
+            "name": "comparison",
             "type": "dropdown",
+            "title": {
+              "en": "Comparison",
+              "nl": "Vergelijking",
+              "fr": "Comparaison",
+              "de": "Vergleich",
+              "it": "Confronto",
+              "es": "Comparación",
+              "sv": "Jämförelse",
+              "no": "Sammenligning",
+              "da": "Sammenligning",
+              "ru": "Сравнение",
+              "pl": "Porównanie",
+              "ko": "비교"
+            },
+            "values": [
+              {
+                "id": "above",
+                "label": {
+                  "en": "above",
+                  "nl": "boven",
+                  "fr": "au-dessus de",
+                  "de": "über",
+                  "it": "sopra",
+                  "es": "por encima de",
+                  "sv": "över",
+                  "no": "over",
+                  "da": "over",
+                  "ru": "выше",
+                  "pl": "powyżej",
+                  "ko": "초과"
+                }
+              },
+              {
+                "id": "below",
+                "label": {
+                  "en": "below",
+                  "nl": "onder",
+                  "fr": "en dessous de",
+                  "de": "unter",
+                  "it": "sotto",
+                  "es": "por debajo de",
+                  "sv": "under",
+                  "no": "under",
+                  "da": "under",
+                  "ru": "ниже",
+                  "pl": "poniżej",
+                  "ko": "미만"
+                }
+              }
+            ]
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 5,
+            "step": 1,
             "title": {
               "en": "Level",
               "nl": "Niveau",
@@ -916,127 +923,9 @@
               "ru": "Уровень",
               "pl": "Poziom",
               "ko": "레벨"
-            },
-            "values": [
-              {
-                "id": "0",
-                "title": {
-                  "en": "0 (Off)",
-                  "nl": "0 (Uit)",
-                  "fr": "0 (Éteint)",
-                  "de": "0 (Aus)",
-                  "it": "0 (Spento)",
-                  "es": "0 (Apagado)",
-                  "sv": "0 (Av)",
-                  "no": "0 (Av)",
-                  "da": "0 (Slukket)",
-                  "ru": "0 (Выкл.)",
-                  "pl": "0 (Wyłączony)",
-                  "ko": "0 (꺼짐)"
-                }
-              },
-              {
-                "id": "1",
-                "title": {
-                  "en": "1 (Low)",
-                  "nl": "1 (Laag)",
-                  "fr": "1 (Bas)",
-                  "de": "1 (Niedrig)",
-                  "it": "1 (Basso)",
-                  "es": "1 (Bajo)",
-                  "sv": "1 (Låg)",
-                  "no": "1 (Lav)",
-                  "da": "1 (Lav)",
-                  "ru": "1 (Низкий)",
-                  "pl": "1 (Niski)",
-                  "ko": "1 (낮음)"
-                }
-              },
-              {
-                "id": "2",
-                "title": {
-                  "en": "2",
-                  "nl": "2",
-                  "fr": "2",
-                  "de": "2",
-                  "it": "2",
-                  "es": "2",
-                  "sv": "2",
-                  "no": "2",
-                  "da": "2",
-                  "ru": "2",
-                  "pl": "2",
-                  "ko": "2"
-                }
-              },
-              {
-                "id": "3",
-                "title": {
-                  "en": "3",
-                  "nl": "3",
-                  "fr": "3",
-                  "de": "3",
-                  "it": "3",
-                  "es": "3",
-                  "sv": "3",
-                  "no": "3",
-                  "da": "3",
-                  "ru": "3",
-                  "pl": "3",
-                  "ko": "3"
-                }
-              },
-              {
-                "id": "4",
-                "title": {
-                  "en": "4",
-                  "nl": "4",
-                  "fr": "4",
-                  "de": "4",
-                  "it": "4",
-                  "es": "4",
-                  "sv": "4",
-                  "no": "4",
-                  "da": "4",
-                  "ru": "4",
-                  "pl": "4",
-                  "ko": "4"
-                }
-              },
-              {
-                "id": "5",
-                "title": {
-                  "en": "5 (High)",
-                  "nl": "5 (Hoog)",
-                  "fr": "5 (Haut)",
-                  "de": "5 (Hoch)",
-                  "it": "5 (Alto)",
-                  "es": "5 (Alto)",
-                  "sv": "5 (Hög)",
-                  "no": "5 (Høy)",
-                  "da": "5 (Høj)",
-                  "ru": "5 (Высокий)",
-                  "pl": "5 (Wysoki)",
-                  "ko": "5 (높음)"
-                }
-              }
-            ]
+            }
           }
-        ],
-        "titleFormatted": {
-          "en": "Power level {{is|is not}} [[level]]",
-          "nl": "Vermogensniveau {{is|is niet}} [[level]]",
-          "fr": "Le niveau de puissance {{est|n'est pas}} [[level]]",
-          "de": "Leistungsstufe {{ist|ist nicht}} [[level]]",
-          "it": "Il livello di potenza {{è|non è}} [[level]]",
-          "es": "El nivel de potencia {{es|no es}} [[level]]",
-          "sv": "Effektnivå {{är|är inte}} [[level]]",
-          "no": "Effektnivå {{er|er ikke}} [[level]]",
-          "da": "Effektniveau {{er|er ikke}} [[level]]",
-          "ru": "Уровень мощности {{является|не является}} [[level]]",
-          "pl": "Poziom mocy {{jest|nie jest}} [[level]]",
-          "ko": "전원 레벨이 [[level]] {{입니다|아닙니다}}"
-        }
+        ]
       },
       {
         "id": "room_temperature_is",
@@ -1182,18 +1071,18 @@
           "ko": "스토브가 상태입니다"
         },
         "titleFormatted": {
-          "en": "Stove {{is|is not}} in state [[state]]",
-          "nl": "Kachel {{is|is niet}} in staat [[state]]",
-          "fr": "Le poêle {{est|n'est pas}} dans l'état [[state]]",
-          "de": "Ofen {{ist|ist nicht}} im Zustand [[state]]",
-          "it": "La stufa {{è|non è}} nello stato [[state]]",
-          "es": "La estufa {{está|no está}} en estado [[state]]",
-          "sv": "Kamin {{är|är inte}} i tillstånd [[state]]",
-          "no": "Ovn {{er|er ikke}} i tilstand [[state]]",
-          "da": "Ovn {{er|er ikke}} i tilstand [[state]]",
-          "ru": "Печь {{находится|не находится}} в состоянии [[state]]",
-          "pl": "Piec {{jest|nie jest}} w stanie [[state]]",
-          "ko": "스토브가 [[state]] {{상태입니다|상태가 아닙니다}}"
+          "en": "Stove is in state [[state]]",
+          "nl": "Kachel is in staat [[state]]",
+          "fr": "Le poêle est dans l'état [[state]]",
+          "de": "Ofen ist im Zustand [[state]]",
+          "it": "La stufa è nello stato [[state]]",
+          "es": "La estufa está en estado [[state]]",
+          "sv": "Kamin är i tillstånd [[state]]",
+          "no": "Ovn er i tilstand [[state]]",
+          "da": "Ovn er i tilstand [[state]]",
+          "ru": "Печь находится в состоянии [[state]]",
+          "pl": "Piec jest w stanie [[state]]",
+          "ko": "스토브가 [[state]] 상태입니다"
         },
         "hint": {
           "en": "Check if the stove is in a specific state",
@@ -1373,18 +1262,18 @@
           "ko": "WiFi 신호가 특정 값입니다"
         },
         "titleFormatted": {
-          "en": "WiFi signal {{is|is not}} [[strength]]",
-          "nl": "WiFi-signaal {{is|is niet}} [[strength]]",
-          "fr": "Le signal WiFi {{est|n'est pas}} [[strength]]",
-          "de": "WLAN-Signal {{ist|ist nicht}} [[strength]]",
-          "it": "Il segnale WiFi {{è|non è}} [[strength]]",
-          "es": "La señal WiFi {{es|no es}} [[strength]]",
-          "sv": "WiFi-signal {{är|är inte}} [[strength]]",
-          "no": "WiFi-signal {{er|er ikke}} [[strength]]",
-          "da": "WiFi-signal {{er|er ikke}} [[strength]]",
-          "ru": "Сигнал WiFi {{является|не является}} [[strength]]",
-          "pl": "Sygnał WiFi {{jest|nie jest}} [[strength]]",
-          "ko": "WiFi 신호가 [[strength]] {{입니다|아닙니다}}"
+          "en": "WiFi signal is [[strength]]",
+          "nl": "WiFi-signaal is [[strength]]",
+          "fr": "Le signal WiFi est [[strength]]",
+          "de": "WLAN-Signal ist [[strength]]",
+          "it": "Il segnale WiFi è [[strength]]",
+          "es": "La señal WiFi es [[strength]]",
+          "sv": "WiFi-signal är [[strength]]",
+          "no": "WiFi-signal er [[strength]]",
+          "da": "WiFi-signal er [[strength]]",
+          "ru": "Сигнал WiFi является [[strength]]",
+          "pl": "Sygnał WiFi jest [[strength]]",
+          "ko": "WiFi 신호가 [[strength]]입니다"
         },
         "hint": {
           "en": "Check if the WiFi signal strength is strong/medium/weak",

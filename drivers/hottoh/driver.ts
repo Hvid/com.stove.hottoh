@@ -80,13 +80,11 @@ module.exports = class HottohDriver extends Homey.Driver {
       const device = args.device;
       const currentTemp = device.getCapabilityValue('measure_temperature');
 
-      switch (args.condition) {
-        case 'gt':
+      switch (args.comparison) {
+        case 'above':
           return currentTemp > args.temperature;
-        case 'lt':
+        case 'below':
           return currentTemp < args.temperature;
-        case 'eq':
-          return Math.abs(currentTemp - args.temperature) < 0.5; // Allow small tolerance for equality
         default:
           return false;
       }
@@ -97,7 +95,15 @@ module.exports = class HottohDriver extends Homey.Driver {
     this.powerLevelIsCondition.registerRunListener(async (args: any, state: any) => {
       const device = args.device;
       const currentLevel = device.getCapabilityValue('power_level');
-      return currentLevel === parseInt(args.level);
+
+      switch (args.comparison) {
+        case 'above':
+          return currentLevel > args.level;
+        case 'below':
+          return currentLevel < args.level;
+        default:
+          return false;
+      }
     });
 
     // Fan speed is condition
@@ -105,7 +111,15 @@ module.exports = class HottohDriver extends Homey.Driver {
     this.fanSpeedIsCondition.registerRunListener(async (args: any, state: any) => {
       const device = args.device;
       const currentSpeed = device.getCapabilityValue('fan_speed');
-      return currentSpeed === parseInt(args.speed);
+
+      switch (args.comparison) {
+        case 'above':
+          return currentSpeed > args.speed;
+        case 'below':
+          return currentSpeed < args.speed;
+        default:
+          return false;
+      }
     });
 
     // WiFi signal is condition

@@ -15,18 +15,18 @@
     "ko": "WiFi 신호가 특정 값입니다"
   },
   "titleFormatted": {
-    "en": "WiFi signal {{is|is not}} [[strength]]",
-    "nl": "WiFi-signaal {{is|is niet}} [[strength]]",
-    "fr": "Le signal WiFi {{est|n'est pas}} [[strength]]",
-    "de": "WLAN-Signal {{ist|ist nicht}} [[strength]]",
-    "it": "Il segnale WiFi {{è|non è}} [[strength]]",
-    "es": "La señal WiFi {{es|no es}} [[strength]]",
-    "sv": "WiFi-signal {{är|är inte}} [[strength]]",
-    "no": "WiFi-signal {{er|er ikke}} [[strength]]",
-    "da": "WiFi-signal {{er|er ikke}} [[strength]]",
-    "ru": "Сигнал WiFi {{является|не является}} [[strength]]",
-    "pl": "Sygnał WiFi {{jest|nie jest}} [[strength]]",
-    "ko": "WiFi 신호가 [[strength]] {{입니다|아닙니다}}"
+    "en": "WiFi signal is [[strength]]",
+    "nl": "WiFi-signaal is [[strength]]",
+    "fr": "Le signal WiFi est [[strength]]",
+    "de": "WLAN-Signal ist [[strength]]",
+    "it": "Il segnale WiFi è [[strength]]",
+    "es": "La señal WiFi es [[strength]]",
+    "sv": "WiFi-signal är [[strength]]",
+    "no": "WiFi-signal er [[strength]]",
+    "da": "WiFi-signal er [[strength]]",
+    "ru": "Сигнал WiFi является [[strength]]",
+    "pl": "Sygnał WiFi jest [[strength]]",
+    "ko": "WiFi 신호가 [[strength]]입니다"
   },
   "hint": {
     "en": "Check if the WiFi signal strength is strong/medium/weak",

@@ -1,23 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="500" height="350" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Stove device outline with thicker stroke -->
-  <rect x="150" y="40" width="200" height="270" rx="16"
-        stroke="#FFFFFF" stroke-width="10" fill="none"/>
+  <!-- Background - warm ambient room -->
+  <rect width="500" height="350" fill="#e8dcc8"/>
 
-  <!-- Inner screen/window -->
-  <rect x="180" y="70" width="140" height="160" rx="12"
-        stroke="#FFFFFF" stroke-width="8" fill="none"/>
+  <!-- Wall -->
+  <rect x="0" y="0" width="500" height="240" fill="#c9b89a"/>
 
-  <!-- Flame outline with thick stroke -->
-  <path d="M250 110 C250 95, 280 90, 280 140 C280 155, 265 165, 250 165 C235 165, 220 155, 220 140 C220 90, 250 95, 250 110 Z"
-        stroke="#FFFFFF" stroke-width="7" fill="none" stroke-linejoin="round"/>
+  <!-- Wood floor planks -->
+  <rect x="0" y="240" width="500" height="110" fill="#8b6f47"/>
+  <line x1="0" y1="260" x2="500" y2="260" stroke="#73563a" stroke-width="2"/>
+  <line x1="0" y1="290" x2="500" y2="290" stroke="#73563a" stroke-width="2"/>
+  <line x1="0" y1="320" x2="500" y2="320" stroke="#73563a" stroke-width="2"/>
 
-  <!-- Inner flame detail -->
-  <path d="M250 125 C250 117, 265 115, 265 143 C265 151, 257 155, 250 155 C243 155, 235 151, 235 143 C235 115, 250 117, 250 125 Z"
-        stroke="#FFFFFF" stroke-width="5" fill="none" stroke-linejoin="round"/>
+  <!-- Stove shadow -->
+  <ellipse cx="250" cy="316" rx="84" ry="16" fill="#000000" opacity="0.25"/>
 
-  <!-- Control buttons -->
-  <circle cx="210" cy="265" r="12" stroke="#FFFFFF" stroke-width="5" fill="none"/>
-  <circle cx="250" cy="265" r="15" stroke="#FFFFFF" stroke-width="5" fill="none"/>
-  <circle cx="290" cy="265" r="12" stroke="#FFFFFF" stroke-width="5" fill="none"/>
+  <!-- Stove body -->
+  <rect x="170" y="50" width="160" height="220" rx="12" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="2"/>
+  <rect x="178" y="58" width="144" height="204" rx="8" fill="#353535"/>
+
+  <!-- Glass window/door -->
+  <rect x="194" y="76" width="112" height="140" rx="10" fill="#1a1a1a" stroke="#0d0d0d" stroke-width="2"/>
+  <rect x="200" y="82" width="100" height="128" rx="6" fill="#111111"/>
+
+  <!-- Fire glow -->
+  <defs>
+    <radialGradient id="fireGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffdb44;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#f8692b;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#f8692b;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="250" cy="150" rx="70" ry="80" fill="url(#fireGlow)"/>
+
+  <!-- Flames -->
+  <path d="M214 170C214 140 250 134 250 114C250 134 286 140 286 170C286 186 268 194 250 194C232 194 214 186 214 170Z" fill="#f8692b"/>
+  <path d="M222 170C222 146 250 142 250 122C250 142 278 146 278 170C278 182 264 188 250 188C236 188 222 182 222 170Z" fill="#fcae30"/>
+  <path d="M230 170C230 152 250 148 250 130C250 148 270 152 270 170C270 178 260 182 250 182C240 182 230 178 230 170Z" fill="#ffdb44"/>
+
+  <!-- Stove details -->
+  <rect x="170" y="40" width="160" height="10" rx="4" fill="#3a3a3a"/>
+  <rect x="180" y="270" width="30" height="10" rx="4" fill="#3a3a3a"/>
+  <rect x="290" y="270" width="30" height="10" rx="4" fill="#3a3a3a"/>
+
+  <!-- Control panel -->
+  <circle cx="250" cy="236" r="8" fill="#505050" stroke="#3a3a3a" stroke-width="1"/>
+  <circle cx="224" cy="236" r="5" fill="#505050"/>
+  <circle cx="276" cy="236" r="5" fill="#505050"/>
+
+  <!-- Pellet container -->
+  <rect x="304" y="90" width="20" height="50" rx="4" fill="#3a3a3a"/>
+  <rect x="308" y="94" width="12" height="42" rx="2" fill="#4a4a4a"/>
+
+  <!-- Light glow on wall -->
+  <ellipse cx="250" cy="120" rx="140" ry="100" fill="#f8692b" opacity="0.08"/>
 </svg>

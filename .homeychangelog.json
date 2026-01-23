@@ -37,5 +37,8 @@
   },
   "1.0.12": {
     "en": "Updated app icon to use white outlines for better contrast on orange background."
+  },
+  "1.0.13": {
+    "en": "Complete icon redesign: Proper outline icons (960x960) that work in both light and dark mode, and realistic ambient app images showing stove in room setting per Homey guidelines."
   }
 }

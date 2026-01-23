@@ -1,49 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Stove body - dark filled for contrast on orange -->
-  <rect x="180" y="150" width="600" height="750" rx="30" fill="#1a1a1a"/>
+  <!-- App icon using medium gray that works on both light and dark backgrounds -->
 
-  <!-- Inner panel lighter -->
-  <rect x="230" y="200" width="500" height="650" rx="20" fill="#2d2d2d"/>
+  <!-- Stove body outline -->
+  <rect x="240" y="120" width="480" height="600" rx="24"
+        stroke="#666666" stroke-width="8" fill="none"/>
 
-  <!-- Glass window/door frame -->
-  <rect x="280" y="250" width="400" height="450" rx="25" fill="#0d0d0d"/>
+  <!-- Inner panel -->
+  <rect x="280" y="160" width="400" height="520" rx="16"
+        stroke="#666666" stroke-width="6" fill="none"/>
 
-  <!-- Glass inner -->
-  <rect x="305" y="275" width="350" height="400" rx="18" fill="#1a1a1a"/>
+  <!-- Glass window/door -->
+  <rect x="320" y="200" width="320" height="340" rx="20"
+        stroke="#666666" stroke-width="7" fill="none"/>
+  <rect x="340" y="220" width="280" height="300" rx="14"
+        stroke="#666666" stroke-width="5" fill="none"/>
 
-  <!-- Fire glow background -->
-  <ellipse cx="480" cy="475" rx="130" ry="160" fill="#1a1a1a" opacity="0.5"/>
-
-  <!-- Flames - filled for visibility -->
-  <path d="M380 560C380 460 480 442 480 370C480 442 580 460 580 560C580 620 530 650 480 650C430 650 380 620 380 560Z"
-        fill="#2d2d2d"/>
-  <path d="M405 560C405 485 480 470 480 405C480 470 555 485 555 560C555 605 518 625 480 625C442 625 405 605 405 560Z"
-        fill="#3d3d3d"/>
-  <path d="M430 560C430 510 480 497 480 440C480 497 530 510 530 560C530 590 505 605 480 605C455 605 430 590 430 560Z"
-        fill="#4d4d4d"/>
+  <!-- Flames - outline style -->
+  <path d="M420 420C420 340 480 318 480 250C480 318 540 340 540 420C540 470 510 500 480 500C450 500 420 470 420 420Z"
+        stroke="#666666" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M440 420C440 365 480 348 480 295C480 348 520 365 520 420C520 455 500 475 480 475C460 475 440 455 440 420Z"
+        stroke="#666666" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M455 420C455 385 480 373 480 335C480 373 505 385 505 420C505 445 492 458 480 458C468 458 455 445 455 420Z"
+        stroke="#666666" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
 
   <!-- Stove top cap -->
-  <rect x="180" y="120" width="600" height="30" rx="15" fill="#2d2d2d"/>
+  <rect x="240" y="90" width="480" height="30" rx="12"
+        stroke="#666666" stroke-width="7" fill="none"/>
 
   <!-- Stove legs -->
-  <rect x="210" y="900" width="100" height="35" rx="12" fill="#2d2d2d"/>
-  <rect x="650" y="900" width="100" height="35" rx="12" fill="#2d2d2d"/>
+  <rect x="270" y="720" width="90" height="30" rx="10"
+        stroke="#666666" stroke-width="6" fill="none"/>
+  <rect x="600" y="720" width="90" height="30" rx="10"
+        stroke="#666666" stroke-width="6" fill="none"/>
 
   <!-- Control panel -->
-  <circle cx="480" cy="750" r="30" fill="#3d3d3d"/>
-  <circle cx="480" cy="750" r="18" fill="#1a1a1a"/>
-  <circle cx="400" cy="750" r="20" fill="#3d3d3d"/>
-  <circle cx="560" cy="750" r="20" fill="#3d3d3d"/>
+  <circle cx="480" cy="600" r="24" stroke="#666666" stroke-width="5" fill="none"/>
+  <circle cx="410" cy="600" r="16" stroke="#666666" stroke-width="4" fill="none"/>
+  <circle cx="550" cy="600" r="16" stroke="#666666" stroke-width="4" fill="none"/>
 
   <!-- Pellet container on side -->
-  <rect x="680" y="280" width="50" height="140" rx="10" fill="#2d2d2d"/>
-  <rect x="690" y="290" width="30" height="120" rx="6" fill="#3d3d3d"/>
+  <rect x="640" y="230" width="50" height="120" rx="8"
+        stroke="#666666" stroke-width="5" fill="none"/>
+  <rect x="648" y="238" width="34" height="104" rx="5"
+        stroke="#666666" stroke-width="3" fill="none"/>
 
   <!-- Airflow vents on left side -->
-  <rect x="240" y="280" width="30" height="8" rx="3" fill="#1a1a1a"/>
-  <rect x="240" y="300" width="30" height="8" rx="3" fill="#1a1a1a"/>
-  <rect x="240" y="320" width="30" height="8" rx="3" fill="#1a1a1a"/>
-  <rect x="240" y="340" width="30" height="8" rx="3" fill="#1a1a1a"/>
-  <rect x="240" y="360" width="30" height="8" rx="3" fill="#1a1a1a"/>
+  <line x1="290" y1="235" x2="320" y2="235" stroke="#666666" stroke-width="4" stroke-linecap="round"/>
+  <line x1="290" y1="255" x2="320" y2="255" stroke="#666666" stroke-width="4" stroke-linecap="round"/>
+  <line x1="290" y1="275" x2="320" y2="275" stroke="#666666" stroke-width="4" stroke-linecap="round"/>
+  <line x1="290" y1="295" x2="320" y2="295" stroke="#666666" stroke-width="4" stroke-linecap="round"/>
 </svg>

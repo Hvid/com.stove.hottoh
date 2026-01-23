@@ -34,5 +34,8 @@
   },
   "1.0.11": {
     "en": "Updated app icon to outlined style with thicker strokes for better visibility."
+  },
+  "1.0.12": {
+    "en": "Updated app icon to use white outlines for better contrast on orange background."
   }
 }

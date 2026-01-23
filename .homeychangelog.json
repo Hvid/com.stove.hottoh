@@ -31,5 +31,8 @@
   },
   "1.0.10": {
     "en": "Fixed UI issues: Target temperature no longer shows when stove is off, removed capability update race conditions that caused flickering, enabled fan speed 5 (auto mode), and improved power level UI updates."
+  },
+  "1.0.11": {
+    "en": "Updated app icon to outlined style with thicker strokes for better visibility."
   }
 }

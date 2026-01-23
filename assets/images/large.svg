@@ -2,22 +2,22 @@
 <svg width="500" height="350" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Stove device outline with thicker stroke -->
   <rect x="150" y="40" width="200" height="270" rx="16"
-        stroke="#2a2a2a" stroke-width="10" fill="none"/>
+        stroke="#FFFFFF" stroke-width="10" fill="none"/>
 
   <!-- Inner screen/window -->
   <rect x="180" y="70" width="140" height="160" rx="12"
-        stroke="#2a2a2a" stroke-width="8" fill="none"/>
+        stroke="#FFFFFF" stroke-width="8" fill="none"/>
 
   <!-- Flame outline with thick stroke -->
   <path d="M250 110 C250 95, 280 90, 280 140 C280 155, 265 165, 250 165 C235 165, 220 155, 220 140 C220 90, 250 95, 250 110 Z"
-        stroke="#F57C00" stroke-width="7" fill="none" stroke-linejoin="round"/>
+        stroke="#FFFFFF" stroke-width="7" fill="none" stroke-linejoin="round"/>
 
   <!-- Inner flame detail -->
   <path d="M250 125 C250 117, 265 115, 265 143 C265 151, 257 155, 250 155 C243 155, 235 151, 235 143 C235 115, 250 117, 250 125 Z"
-        stroke="#F57C00" stroke-width="5" fill="none" stroke-linejoin="round"/>
+        stroke="#FFFFFF" stroke-width="5" fill="none" stroke-linejoin="round"/>
 
   <!-- Control buttons -->
-  <circle cx="210" cy="265" r="12" stroke="#2a2a2a" stroke-width="5" fill="none"/>
-  <circle cx="250" cy="265" r="15" stroke="#2a2a2a" stroke-width="5" fill="none"/>
-  <circle cx="290" cy="265" r="12" stroke="#2a2a2a" stroke-width="5" fill="none"/>
+  <circle cx="210" cy="265" r="12" stroke="#FFFFFF" stroke-width="5" fill="none"/>
+  <circle cx="250" cy="265" r="15" stroke="#FFFFFF" stroke-width="5" fill="none"/>
+  <circle cx="290" cy="265" r="12" stroke="#FFFFFF" stroke-width="5" fill="none"/>
 </svg>

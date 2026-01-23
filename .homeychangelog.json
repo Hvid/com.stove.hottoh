@@ -19,5 +19,8 @@
   },
   "1.0.6": {
     "en": "Added equality comparison operator to conditions"
+  },
+  "1.0.7": {
+    "en": "Major stability and compliance improvements: Fixed connection reliability with automatic reconnection, improved flow card grammar, redesigned icons to outlined style, updated app images for better presentation, and addressed all Homey App Store feedback."
   }
 }

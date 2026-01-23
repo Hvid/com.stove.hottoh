@@ -15,17 +15,17 @@
     "ko": "WiFi 신호가 특정 값입니다"
   },
   "titleFormatted": {
-    "en": "WiFi signal [[comparison]] [[strength]]%",
-    "nl": "WiFi-signaal [[comparison]] [[strength]]%",
-    "fr": "Le signal WiFi [[comparison]] [[strength]]%",
-    "de": "WLAN-Signal [[comparison]] [[strength]]%",
-    "it": "Il segnale WiFi [[comparison]] [[strength]]%",
-    "es": "La señal WiFi [[comparison]] [[strength]]%",
-    "sv": "WiFi-signal [[comparison]] [[strength]]%",
-    "no": "WiFi-signal [[comparison]] [[strength]]%",
-    "da": "WiFi-signal [[comparison]] [[strength]]%",
+    "en": "WiFi signal is [[comparison]] [[strength]]%",
+    "nl": "WiFi-signaal is [[comparison]] [[strength]]%",
+    "fr": "Le signal WiFi est [[comparison]] [[strength]]%",
+    "de": "WLAN-Signal ist [[comparison]] [[strength]]%",
+    "it": "Il segnale WiFi è [[comparison]] [[strength]]%",
+    "es": "La señal WiFi es [[comparison]] [[strength]]%",
+    "sv": "WiFi-signal är [[comparison]] [[strength]]%",
+    "no": "WiFi-signal er [[comparison]] [[strength]]%",
+    "da": "WiFi-signal er [[comparison]] [[strength]]%",
     "ru": "Сигнал WiFi [[comparison]] [[strength]]%",
-    "pl": "Sygnał WiFi [[comparison]] [[strength]]%",
+    "pl": "Sygnał WiFi jest [[comparison]] [[strength]]%",
     "ko": "WiFi 신호가 [[strength]]% [[comparison]]"
   },
   "hint": {

@@ -1,37 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Stove body -->
-  <rect x="96" y="80" width="320" height="400" rx="16" fill="#404040" />
-  <rect x="116" y="100" width="280" height="360" rx="8" fill="#303030" />
+<svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stove body - outlined -->
+  <rect x="180" y="150" width="600" height="750" rx="30" stroke="#000000" stroke-width="6" fill="none" />
 
-  <!-- Stove window -->
-  <rect x="156" y="140" width="200" height="240" rx="12" fill="#1a1a1a" />
-  <rect x="166" y="150" width="180" height="220" rx="8" fill="#111111" />
+  <!-- Inner panel -->
+  <rect x="218" y="188" width="524" height="674" rx="15" stroke="#000000" stroke-width="4" fill="none" />
 
-  <!-- Flames - monochrome -->
-  <path d="M216 330C216 270 256 250 256 200C256 250 296 270 296 330C296 365 276 380 256 380C236 380 216 365 216 330Z" fill="#404040" />
-  <path d="M226 330C226 285 256 270 256 230C256 270 286 285 286 330C286 355 271 365 256 365C241 365 226 355 226 330Z" fill="#303030" />
-  <path d="M236 330C236 295 256 285 256 255C256 285 276 295 276 330C276 345 266 350 256 350C246 350 236 345 236 330Z" fill="#505050" />
+  <!-- Glass window/door -->
+  <rect x="293" y="263" width="374" height="450" rx="22" stroke="#000000" stroke-width="5" fill="none" />
+  <rect x="312" y="281" width="336" height="413" rx="15" stroke="#000000" stroke-width="3" fill="none" />
+
+  <!-- Flames - outlined style -->
+  <path d="M405 618C405 506 480 469 480 375C480 469 555 506 555 618C555 684 518 713 480 713C442 713 405 684 405 618Z"
+        stroke="#000000" stroke-width="4" fill="none" stroke-linejoin="round"/>
+  <path d="M424 618C424 534 480 506 480 431C480 506 536 534 536 618C536 666 508 684 480 684C452 684 424 666 424 618Z"
+        stroke="#000000" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <path d="M443 618C443 553 480 534 480 478C480 534 517 553 517 618C517 646 499 656 480 656C461 656 443 646 443 618Z"
+        stroke="#000000" stroke-width="3" fill="none" stroke-linejoin="round"/>
 
   <!-- Stove top -->
-  <rect x="96" y="60" width="320" height="20" rx="5" fill="#505050" />
+  <rect x="180" y="113" width="600" height="37" rx="9" stroke="#000000" stroke-width="6" fill="none" />
 
   <!-- Stove legs -->
-  <rect x="106" y="480" width="60" height="20" rx="5" fill="#505050" />
-  <rect x="346" y="480" width="60" height="20" rx="5" fill="#505050" />
+  <rect x="199" y="900" width="112" height="37" rx="9" stroke="#000000" stroke-width="5" fill="none" />
+  <rect x="649" y="900" width="112" height="37" rx="9" stroke="#000000" stroke-width="5" fill="none" />
 
-  <!-- Controls -->
-  <circle cx="256" cy="410" r="15" fill="#707070" />
-  <circle cx="206" cy="410" r="10" fill="#707070" />
-  <circle cx="306" cy="410" r="10" fill="#707070" />
+  <!-- Control panel circles -->
+  <circle cx="480" cy="768" r="28" stroke="#000000" stroke-width="4" fill="none" />
+  <circle cx="386" cy="768" r="19" stroke="#000000" stroke-width="3" fill="none" />
+  <circle cx="574" cy="768" r="19" stroke="#000000" stroke-width="3" fill="none" />
 
   <!-- Pellet container -->
-  <rect x="346" y="140" width="40" height="80" rx="5" fill="#505050" />
-  <rect x="351" y="145" width="30" height="70" rx="3" fill="#606060" />
+  <rect x="649" y="263" width="75" height="150" rx="9" stroke="#000000" stroke-width="4" fill="none" />
+  <rect x="659" y="272" width="56" height="131" rx="6" stroke="#000000" stroke-width="3" fill="none" />
 
-  <!-- Airflow -->
-  <rect x="126" y="140" width="20" height="5" fill="#505050" />
-  <rect x="126" y="150" width="20" height="5" fill="#505050" />
-  <rect x="126" y="160" width="20" height="5" fill="#505050" />
-  <rect x="126" y="170" width="20" height="5" fill="#505050" />
+  <!-- Airflow vents -->
+  <rect x="237" y="263" width="37" height="9" rx="2" stroke="#000000" stroke-width="2" fill="none" />
+  <rect x="237" y="281" width="37" height="9" rx="2" stroke="#000000" stroke-width="2" fill="none" />
+  <rect x="237" y="300" width="37" height="9" rx="2" stroke="#000000" stroke-width="2" fill="none" />
+  <rect x="237" y="319" width="37" height="9" rx="2" stroke="#000000" stroke-width="2" fill="none" />
 </svg>

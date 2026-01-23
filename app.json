@@ -22,18 +22,18 @@
     "sv": "HottoH kamin"
   },
   "description": {
-    "en": "Control your HottoH pellet stove with Homey",
-    "da": "Styr din HottoH pilleovn med Homey",
-    "de": "Steuern Sie Ihren HottoH Pelletofen mit Homey",
-    "es": "Controla tu estufa de pellets HottoH con Homey",
-    "fr": "Contrôlez votre poêle à granulés HottoH avec Homey",
-    "it": "Controlla la tua stufa a pellet HottoH con Homey",
-    "ko": "Homey로 HottoH 펠릿 스토브를 제어하세요",
-    "nl": "Bedien je HottoH pelletkachel met Homey",
-    "no": "Styr HottoH pelletovnen din med Homey",
-    "pl": "Steruj piecem na pellet HottoH za pomocą Homey",
-    "ru": "Управляйте пеллетной печью HottoH с помощью Homey",
-    "sv": "Styr din HottoH pelletskamin med Homey"
+    "en": "Smart heating automation for your HottoH pellet stove",
+    "da": "Smart opvarmningsautomatisering til din HottoH pilleovn",
+    "de": "Intelligente Heizungsautomatisierung für Ihren HottoH Pelletofen",
+    "es": "Automatización inteligente de calefacción para tu estufa HottoH",
+    "fr": "Automatisation intelligente du chauffage pour votre poêle HottoH",
+    "it": "Automazione intelligente del riscaldamento per la tua stufa HottoH",
+    "ko": "HottoH 펠릿 스토브를 위한 스마트 난방 자동화",
+    "nl": "Slimme verwarmingsautomatisering voor je HottoH pelletkachel",
+    "no": "Smart oppvarmingsautomatisering for din HottoH pelletovn",
+    "pl": "Inteligentna automatyzacja ogrzewania dla pieca HottoH",
+    "ru": "Умная автоматизация отопления для печи HottoH",
+    "sv": "Smart uppvärmningsautomation för din HottoH pelletskamin"
   },
   "category": [
     "climate"
@@ -690,17 +690,17 @@
           "ko": "팬 속도가 특정 값입니다"
         },
         "titleFormatted": {
-          "en": "Fan speed [[comparison]] [[speed]]",
-          "nl": "Ventilatorsnelheid [[comparison]] [[speed]]",
-          "fr": "La vitesse du ventilateur [[comparison]] [[speed]]",
-          "de": "Lüftergeschwindigkeit [[comparison]] [[speed]]",
-          "it": "La velocità della ventola [[comparison]] [[speed]]",
-          "es": "La velocidad del ventilador [[comparison]] [[speed]]",
-          "sv": "Fläkthastighet [[comparison]] [[speed]]",
-          "no": "Viftehastighet [[comparison]] [[speed]]",
-          "da": "Blæserhastighed [[comparison]] [[speed]]",
+          "en": "Fan speed is [[comparison]] [[speed]]",
+          "nl": "Ventilatorsnelheid is [[comparison]] [[speed]]",
+          "fr": "La vitesse du ventilateur est [[comparison]] [[speed]]",
+          "de": "Lüftergeschwindigkeit ist [[comparison]] [[speed]]",
+          "it": "La velocità della ventola è [[comparison]] [[speed]]",
+          "es": "La velocidad del ventilador es [[comparison]] [[speed]]",
+          "sv": "Fläkthastighet är [[comparison]] [[speed]]",
+          "no": "Viftehastighet er [[comparison]] [[speed]]",
+          "da": "Blæserhastighed er [[comparison]] [[speed]]",
           "ru": "Скорость вентилятора [[comparison]] [[speed]]",
-          "pl": "Prędkość wentylatora [[comparison]] [[speed]]",
+          "pl": "Prędkość wentylatora jest [[comparison]] [[speed]]",
           "ko": "팬 속도가 [[speed]] [[comparison]]"
         },
         "hint": {
@@ -834,17 +834,17 @@
           "ko": "전원 레벨이 특정 값입니다"
         },
         "titleFormatted": {
-          "en": "Power level [[comparison]] [[level]]",
-          "nl": "Vermogensniveau [[comparison]] [[level]]",
-          "fr": "Le niveau de puissance [[comparison]] [[level]]",
-          "de": "Leistungsstufe [[comparison]] [[level]]",
-          "it": "Il livello di potenza [[comparison]] [[level]]",
-          "es": "El nivel de potencia [[comparison]] [[level]]",
-          "sv": "Effektnivå [[comparison]] [[level]]",
-          "no": "Effektnivå [[comparison]] [[level]]",
-          "da": "Effektniveau [[comparison]] [[level]]",
+          "en": "Power level is [[comparison]] [[level]]",
+          "nl": "Vermogensniveau is [[comparison]] [[level]]",
+          "fr": "Le niveau de puissance est [[comparison]] [[level]]",
+          "de": "Leistungsstufe ist [[comparison]] [[level]]",
+          "it": "Il livello di potenza è [[comparison]] [[level]]",
+          "es": "El nivel de potencia es [[comparison]] [[level]]",
+          "sv": "Effektnivå är [[comparison]] [[level]]",
+          "no": "Effektnivå er [[comparison]] [[level]]",
+          "da": "Effektniveau er [[comparison]] [[level]]",
           "ru": "Уровень мощности [[comparison]] [[level]]",
-          "pl": "Poziom mocy [[comparison]] [[level]]",
+          "pl": "Poziom mocy jest [[comparison]] [[level]]",
           "ko": "전원 레벨이 [[level]] [[comparison]]"
         },
         "hint": {
@@ -978,18 +978,18 @@
           "ko": "실내 온도가 특정 값입니다"
         },
         "titleFormatted": {
-          "en": "Room temperature [[comparison]] [[temperature]]",
-          "nl": "Kamertemperatuur [[comparison]] [[temperature]]",
-          "fr": "La température ambiante [[comparison]] [[temperature]]",
-          "de": "Raumtemperatur [[comparison]] [[temperature]]",
-          "it": "La temperatura ambiente [[comparison]] [[temperature]]",
-          "es": "La temperatura ambiente [[comparison]] [[temperature]]",
-          "sv": "Rumstemperatur [[comparison]] [[temperature]]",
-          "no": "Romtemperatur [[comparison]] [[temperature]]",
-          "da": "Rumtemperatur [[comparison]] [[temperature]]",
-          "ru": "Температура в помещении [[comparison]] [[temperature]]",
-          "pl": "Temperatura pomieszczenia [[comparison]] [[temperature]]",
-          "ko": "실내 온도가 [[comparison]] [[temperature]]"
+          "en": "Room temperature is [[comparison]] [[temperature]]°C",
+          "nl": "Kamertemperatuur is [[comparison]] [[temperature]]°C",
+          "fr": "La température ambiante est [[comparison]] [[temperature]]°C",
+          "de": "Raumtemperatur ist [[comparison]] [[temperature]]°C",
+          "it": "La temperatura ambiente è [[comparison]] [[temperature]]°C",
+          "es": "La temperatura ambiente es [[comparison]] [[temperature]]°C",
+          "sv": "Rumstemperatur är [[comparison]] [[temperature]]°C",
+          "no": "Romtemperatur er [[comparison]] [[temperature]]°C",
+          "da": "Rumtemperatur er [[comparison]] [[temperature]]°C",
+          "ru": "Температура в помещении [[comparison]] [[temperature]]°C",
+          "pl": "Temperatura pomieszczenia jest [[comparison]] [[temperature]]°C",
+          "ko": "실내 온도가 [[comparison]] [[temperature]]°C"
         },
         "hint": {
           "en": "Check if the room temperature is above/below a certain value",
@@ -1313,17 +1313,17 @@
           "ko": "WiFi 신호가 특정 값입니다"
         },
         "titleFormatted": {
-          "en": "WiFi signal [[comparison]] [[strength]]%",
-          "nl": "WiFi-signaal [[comparison]] [[strength]]%",
-          "fr": "Le signal WiFi [[comparison]] [[strength]]%",
-          "de": "WLAN-Signal [[comparison]] [[strength]]%",
-          "it": "Il segnale WiFi [[comparison]] [[strength]]%",
-          "es": "La señal WiFi [[comparison]] [[strength]]%",
-          "sv": "WiFi-signal [[comparison]] [[strength]]%",
-          "no": "WiFi-signal [[comparison]] [[strength]]%",
-          "da": "WiFi-signal [[comparison]] [[strength]]%",
+          "en": "WiFi signal is [[comparison]] [[strength]]%",
+          "nl": "WiFi-signaal is [[comparison]] [[strength]]%",
+          "fr": "Le signal WiFi est [[comparison]] [[strength]]%",
+          "de": "WLAN-Signal ist [[comparison]] [[strength]]%",
+          "it": "Il segnale WiFi è [[comparison]] [[strength]]%",
+          "es": "La señal WiFi es [[comparison]] [[strength]]%",
+          "sv": "WiFi-signal är [[comparison]] [[strength]]%",
+          "no": "WiFi-signal er [[comparison]] [[strength]]%",
+          "da": "WiFi-signal er [[comparison]] [[strength]]%",
           "ru": "Сигнал WiFi [[comparison]] [[strength]]%",
-          "pl": "Sygnał WiFi [[comparison]] [[strength]]%",
+          "pl": "Sygnał WiFi jest [[comparison]] [[strength]]%",
           "ko": "WiFi 신호가 [[strength]]% [[comparison]]"
         },
         "hint": {
@@ -1599,112 +1599,6 @@
               "pl": "Poziom",
               "ko": "레벨"
             }
-          }
-        ]
-      },
-      {
-        "id": "set_power_state",
-        "title": {
-          "en": "Turn stove on or off",
-          "nl": "Zet kachel aan of uit",
-          "fr": "Allumer ou éteindre le poêle",
-          "de": "Ofen ein- oder ausschalten",
-          "it": "Accendi o spegni la stufa",
-          "es": "Encender o apagar la estufa",
-          "sv": "Slå på eller stäng av kaminen",
-          "no": "Slå på eller slå av ovnen",
-          "da": "Tænd eller sluk for ovnen",
-          "ru": "Включить или выключить печь",
-          "pl": "Włącz lub wyłącz piec",
-          "ko": "스토브 켜기 또는 끄기"
-        },
-        "titleFormatted": {
-          "en": "Turn stove [[power_state]]",
-          "nl": "Zet kachel [[power_state]]",
-          "fr": "[[power_state]] le poêle",
-          "de": "Ofen [[power_state]]",
-          "it": "[[power_state]] la stufa",
-          "es": "[[power_state]] la estufa",
-          "sv": "[[power_state]] kaminen",
-          "no": "[[power_state]] ovnen",
-          "da": "[[power_state]] for ovnen",
-          "ru": "[[power_state]] печь",
-          "pl": "[[power_state]] piec",
-          "ko": "스토브 [[power_state]]"
-        },
-        "hint": {
-          "en": "Turn the stove on or off",
-          "nl": "Zet de kachel aan of uit",
-          "fr": "Allumer ou éteindre le poêle",
-          "de": "Schalten Sie den Ofen ein oder aus",
-          "it": "Accendi o spegni la stufa",
-          "es": "Encender o apagar la estufa",
-          "sv": "Slå på eller stäng av kaminen",
-          "no": "Slå ovnen på eller av",
-          "da": "Tænd eller sluk for ovnen",
-          "ru": "Включить или выключить печь",
-          "pl": "Włącz lub wyłącz piec",
-          "ko": "스토브를 켜거나 끕니다"
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=hottoh"
-          },
-          {
-            "name": "power_state",
-            "type": "dropdown",
-            "title": {
-              "en": "Power state",
-              "nl": "Vermogenstoestand",
-              "fr": "État d'alimentation",
-              "de": "Betriebszustand",
-              "it": "Stato di alimentazione",
-              "es": "Estado de energía",
-              "sv": "Strömläge",
-              "no": "Strømtilstand",
-              "da": "Strømtilstand",
-              "ru": "Состояние питания",
-              "pl": "Stan zasilania",
-              "ko": "전원 상태"
-            },
-            "values": [
-              {
-                "id": "on",
-                "title": {
-                  "en": "on",
-                  "nl": "aan",
-                  "fr": "allumé",
-                  "de": "einschalten",
-                  "it": "accendi",
-                  "es": "encender",
-                  "sv": "på",
-                  "no": "på",
-                  "da": "tændt",
-                  "ru": "включить",
-                  "pl": "włącz",
-                  "ko": "켜기"
-                }
-              },
-              {
-                "id": "off",
-                "title": {
-                  "en": "off",
-                  "nl": "uit",
-                  "fr": "éteint",
-                  "de": "ausschalten",
-                  "it": "spegni",
-                  "es": "apagar",
-                  "sv": "av",
-                  "no": "av",
-                  "da": "slukket",
-                  "ru": "выключить",
-                  "pl": "wyłącz",
-                  "ko": "끄기"
-                }
-              }
-            ]
           }
         ]
       },

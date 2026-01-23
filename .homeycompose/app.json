@@ -1,6 +1,6 @@
 {
   "id": "com.stove.hottoh",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "compatibility": ">=12.1.0",
   "sdk": 3,
   "platforms": [
@@ -21,18 +21,18 @@
     "sv": "HottoH kamin"
   },
   "description": {
-    "en": "Control your HottoH pellet stove with Homey",
-    "da": "Styr din HottoH pilleovn med Homey",
-    "de": "Steuern Sie Ihren HottoH Pelletofen mit Homey",
-    "es": "Controla tu estufa de pellets HottoH con Homey",
-    "fr": "Contrôlez votre poêle à granulés HottoH avec Homey",
-    "it": "Controlla la tua stufa a pellet HottoH con Homey",
-    "ko": "Homey로 HottoH 펠릿 스토브를 제어하세요",
-    "nl": "Bedien je HottoH pelletkachel met Homey",
-    "no": "Styr HottoH pelletovnen din med Homey",
-    "pl": "Steruj piecem na pellet HottoH za pomocą Homey",
-    "ru": "Управляйте пеллетной печью HottoH с помощью Homey",
-    "sv": "Styr din HottoH pelletskamin med Homey"
+    "en": "Smart heating automation for your HottoH pellet stove",
+    "da": "Smart opvarmningsautomatisering til din HottoH pilleovn",
+    "de": "Intelligente Heizungsautomatisierung für Ihren HottoH Pelletofen",
+    "es": "Automatización inteligente de calefacción para tu estufa HottoH",
+    "fr": "Automatisation intelligente du chauffage pour votre poêle HottoH",
+    "it": "Automazione intelligente del riscaldamento per la tua stufa HottoH",
+    "ko": "HottoH 펠릿 스토브를 위한 스마트 난방 자동화",
+    "nl": "Slimme verwarmingsautomatisering voor je HottoH pelletkachel",
+    "no": "Smart oppvarmingsautomatisering for din HottoH pelletovn",
+    "pl": "Inteligentna automatyzacja ogrzewania dla pieca HottoH",
+    "ru": "Умная автоматизация отопления для печи HottoH",
+    "sv": "Smart uppvärmningsautomation för din HottoH pelletskamin"
   },
   "category": [
     "climate"

@@ -1,20 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="500" height="350" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Stove body -->
-  <rect x="150" y="40" width="200" height="280" rx="12" fill="#404040" />
-  <rect x="160" y="50" width="180" height="260" rx="8" fill="#303030" />
+  <!-- Background - warm ambient room -->
+  <rect width="500" height="350" fill="#e8dcc8"/>
 
-  <!-- Stove window -->
-  <rect x="180" y="70" width="140" height="180" rx="10" fill="#1a1a1a" />
-  <rect x="190" y="80" width="120" height="160" rx="6" fill="#111111" />
+  <!-- Wall with texture -->
+  <rect x="0" y="0" width="500" height="240" fill="#c9b89a"/>
+  <rect x="0" y="0" width="500" height="240" fill="url(#wallTexture)" opacity="0.3"/>
+
+  <!-- Wood floor planks -->
+  <rect x="0" y="240" width="500" height="110" fill="#8b6f47"/>
+  <line x1="0" y1="260" x2="500" y2="260" stroke="#73563a" stroke-width="2"/>
+  <line x1="0" y1="290" x2="500" y2="290" stroke="#73563a" stroke-width="2"/>
+  <line x1="0" y1="320" x2="500" y2="320" stroke="#73563a" stroke-width="2"/>
+  <rect x="0" y="240" width="500" height="110" fill="#000000" opacity="0.05"/>
+
+  <!-- Furniture shadow on left (chair/table) -->
+  <ellipse cx="60" cy="280" rx="50" ry="30" fill="#000000" opacity="0.1"/>
+
+  <!-- Stove shadow on floor -->
+  <ellipse cx="250" cy="316" rx="84" ry="16" fill="#000000" opacity="0.25"/>
+
+  <!-- Stove body -->
+  <rect x="170" y="50" width="160" height="220" rx="12" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="2"/>
+  <rect x="178" y="58" width="144" height="204" rx="8" fill="#353535"/>
+
+  <!-- Glass window/door -->
+  <rect x="194" y="76" width="112" height="140" rx="10" fill="#1a1a1a" stroke="#0d0d0d" stroke-width="2"/>
+  <rect x="200" y="82" width="100" height="128" rx="6" fill="#111111"/>
+
+  <!-- Glowing flames with warm light -->
+  <defs>
+    <radialGradient id="fireGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffdb44;stop-opacity:0.6" />
+      <stop offset="50%" style="stop-color:#f8692b;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#f8692b;stop-opacity:0" />
+    </radialGradient>
+    <pattern id="wallTexture" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="none"/>
+      <circle cx="20" cy="20" r="2" fill="#ffffff" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Fire glow effect -->
+  <ellipse cx="250" cy="150" rx="70" ry="80" fill="url(#fireGlow)"/>
 
   <!-- Flames -->
-  <path d="M210 200C210 160 250 150 250 130C250 150 290 160 290 200C290 220 270 230 250 230C230 230 210 220 210 200Z" fill="#f8692b" />
-  <path d="M220 200C220 170 250 162 250 140C250 162 280 170 280 200C280 215 265 222 250 222C235 222 220 215 220 200Z" fill="#fcae30" />
-  <path d="M230 200C230 175 250 170 250 150C250 170 270 175 270 200C270 210 260 215 250 215C240 215 230 210 230 200Z" fill="#ffdb44" />
+  <path d="M214 170C214 140 250 134 250 114C250 134 286 140 286 170C286 186 268 194 250 194C232 194 214 186 214 170Z" fill="#f8692b"/>
+  <path d="M222 170C222 146 250 142 250 122C250 142 278 146 278 170C278 182 264 188 250 188C236 188 222 182 222 170Z" fill="#fcae30"/>
+  <path d="M230 170C230 152 250 148 250 130C250 148 270 152 270 170C270 178 260 182 250 182C240 182 230 178 230 170Z" fill="#ffdb44"/>
 
-  <!-- Controls -->
-  <circle cx="250" cy="280" r="10" fill="#707070" />
-  <circle cx="220" cy="280" r="7" fill="#707070" />
-  <circle cx="280" cy="280" r="7" fill="#707070" />
+  <!-- Stove top -->
+  <rect x="170" y="40" width="160" height="10" rx="4" fill="#3a3a3a"/>
+
+  <!-- Stove legs -->
+  <rect x="180" y="270" width="30" height="10" rx="4" fill="#3a3a3a"/>
+  <rect x="290" y="270" width="30" height="10" rx="4" fill="#3a3a3a"/>
+
+  <!-- Control panel -->
+  <circle cx="250" cy="236" r="8" fill="#505050" stroke="#3a3a3a" stroke-width="1"/>
+  <circle cx="224" cy="236" r="5" fill="#505050"/>
+  <circle cx="276" cy="236" r="5" fill="#505050"/>
+
+  <!-- Pellet container -->
+  <rect x="304" y="90" width="20" height="50" rx="4" fill="#3a3a3a"/>
+  <rect x="308" y="94" width="12" height="42" rx="2" fill="#4a4a4a"/>
+
+  <!-- Airflow vents -->
+  <rect x="184" y="90" width="8" height="3" rx="1" fill="#2a2a2a"/>
+  <rect x="184" y="98" width="8" height="3" rx="1" fill="#2a2a2a"/>
+  <rect x="184" y="106" width="8" height="3" rx="1" fill="#2a2a2a"/>
+
+  <!-- Light glow on wall from fire -->
+  <ellipse cx="250" cy="120" rx="140" ry="100" fill="#f8692b" opacity="0.08"/>
 </svg>

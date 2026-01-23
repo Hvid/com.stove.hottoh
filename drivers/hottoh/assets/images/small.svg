@@ -1,27 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Pellet Stove - more realistic design -->
-  <rect x="15" y="5" width="45" height="65" rx="4" fill="#404040" />
+  <!-- White background as required by Homey guidelines -->
+  <rect width="75" height="75" fill="#FFFFFF"/>
 
-  <!-- Stove front panel -->
-  <rect x="18" y="8" width="39" height="59" rx="3" fill="#2A2A2A" />
+  <!-- Shadow -->
+  <ellipse cx="37.5" cy="70" rx="20" ry="3" fill="#000000" opacity="0.1"/>
 
-  <!-- Stove glass door -->
-  <rect x="22" y="12" width="31" height="35" rx="2" fill="#1a1a1a" />
+  <!-- Stove body -->
+  <rect x="18" y="10" width="39" height="58" rx="3" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="0.5"/>
+  <rect x="20" y="12" width="35" height="54" rx="2" fill="#353535"/>
 
-  <!-- Fire glow effect -->
-  <circle cx="37.5" cy="29.5" r="12" fill="#FF4500" opacity="0.25" />
-  <circle cx="37.5" cy="29.5" r="8" fill="#FF6A00" opacity="0.5" />
-  <circle cx="37.5" cy="29.5" r="4" fill="#FFDD00" opacity="0.75" />
+  <!-- Glass window -->
+  <rect x="24" y="16" width="27" height="32" rx="2" fill="#1a1a1a"/>
+
+  <!-- Fire glow -->
+  <defs>
+    <radialGradient id="glow">
+      <stop offset="0%" style="stop-color:#ffdb44;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#f8692b;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <ellipse cx="37.5" cy="32" rx="14" ry="16" fill="url(#glow)"/>
+
+  <!-- Flames -->
+  <path d="M30 40C30 30 37.5 29 37.5 23C37.5 29 45 30 45 40C45 45 41 47 37.5 47C34 47 30 45 30 40Z" fill="#f8692b"/>
+  <path d="M32 40C32 32 37.5 31 37.5 25C37.5 31 43 32 43 40C43 43 40 44 37.5 44C35 44 32 43 32 40Z" fill="#fcae30"/>
+  <path d="M34 40C34 34 37.5 33 37.5 28C37.5 33 41 34 41 40C41 42 39 43 37.5 43C36 43 34 42 34 40Z" fill="#ffdb44"/>
+
+  <!-- Stove top -->
+  <rect x="18" y="8" width="39" height="2" rx="1" fill="#3a3a3a"/>
+
+  <!-- Stove legs -->
+  <rect x="20" y="68" width="10" height="3" rx="1" fill="#3a3a3a"/>
+  <rect x="45" y="68" width="10" height="3" rx="1" fill="#3a3a3a"/>
 
   <!-- Control panel -->
-  <rect x="22" y="52" width="31" height="10" rx="2" fill="#333333" />
+  <circle cx="37.5" cy="56" r="2.5" fill="#505050"/>
+  <circle cx="30" cy="56" r="1.5" fill="#505050"/>
+  <circle cx="45" cy="56" r="1.5" fill="#505050"/>
 
-  <!-- Control buttons -->
-  <circle cx="28" cy="57" r="2" fill="#555555" />
-  <circle cx="37.5" cy="57" r="2" fill="#555555" />
-  <circle cx="47" cy="57" r="2" fill="#555555" />
-
-  <!-- Stove base -->
-  <rect x="12" y="70" width="51" height="3" rx="1" fill="#333333" />
+  <!-- Pellet container side -->
+  <rect x="50" y="20" width="5" height="15" rx="1" fill="#3a3a3a"/>
 </svg>

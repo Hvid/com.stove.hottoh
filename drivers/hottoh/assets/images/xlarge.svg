@@ -1,61 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1000" height="700" viewBox="0 0 1000 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Pellet Stove - more realistic design -->
-  <rect x="350" y="150" width="300" height="420" rx="16" fill="#404040" />
-  <rect x="360" y="160" width="280" height="400" rx="10" fill="#303030" />
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- White background as required by Homey guidelines -->
+  <rect width="1000" height="1000" fill="#FFFFFF"/>
 
-  <!-- Stove glass door -->
-  <rect x="390" y="190" width="220" height="260" rx="12" fill="#1a1a1a" />
-  <rect x="400" y="200" width="200" height="240" rx="8" fill="#111111" />
+  <!-- Stove shadow on floor -->
+  <ellipse cx="500" cy="960" rx="200" ry="30" fill="#000000" opacity="0.15"/>
 
-  <!-- Door frame details -->
-  <rect x="390" y="190" width="220" height="10" rx="2" fill="#505050" />
-  <rect x="390" y="190" width="10" height="260" rx="2" fill="#505050" />
-  <rect x="600" y="190" width="10" height="260" rx="2" fill="#505050" />
-  <rect x="390" y="440" width="220" height="10" rx="2" fill="#505050" />
+  <!-- Stove body -->
+  <rect x="300" y="120" width="400" height="760" rx="30" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="4"/>
+  <rect x="316" y="136" width="368" height="728" rx="20" fill="#353535"/>
 
-  <!-- Door handle -->
-  <rect x="620" y="280" width="20" height="60" rx="5" fill="#606060" />
-  <rect x="625" y="300" width="25" height="20" rx="3" fill="#707070" />
+  <!-- Glass window/door -->
+  <rect x="358" y="180" width="284" height="440" rx="25" fill="#1a1a1a" stroke="#0d0d0d" stroke-width="4"/>
+  <rect x="372" y="194" width="256" height="412" rx="18" fill="#111111"/>
 
-  <!-- Pellet hopper on top -->
-  <rect x="360" y="110" width="280" height="50" rx="8" fill="#353535" />
-  <rect x="380" y="90" width="240" height="30" rx="5" fill="#303030" />
-  <path d="M380 105 L620 105 L600 90 L400 90 Z" fill="#252525" />
+  <!-- Fire glow effect -->
+  <defs>
+    <radialGradient id="fireGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffdb44;stop-opacity:0.7" />
+      <stop offset="50%" style="stop-color:#f8692b;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#f8692b;stop-opacity:0" />
+    </radialGradient>
+  </defs>
 
-  <!-- Stove base -->
-  <rect x="340" y="570" width="320" height="30" rx="5" fill="#505050" />
+  <ellipse cx="500" cy="400" rx="160" ry="190" fill="url(#fireGlow)"/>
+
+  <!-- Flames with multiple layers -->
+  <path d="M410 450C410 350 500 332 500 270C500 332 590 350 590 450C590 510 545 540 500 540C455 540 410 510 410 450Z" fill="#f8692b"/>
+  <path d="M430 450C430 370 500 356 500 294C500 356 570 370 570 450C570 500 535 524 500 524C465 524 430 500 430 450Z" fill="#fcae30"/>
+  <path d="M450 450C450 390 500 378 500 320C500 378 550 390 550 450C550 485 525 504 500 504C475 504 450 485 450 450Z" fill="#ffdb44"/>
+  <path d="M470 450C470 410 500 400 500 350C500 400 530 410 530 450C530 475 515 488 500 488C485 488 470 475 470 450Z" fill="#fffacd"/>
+
+  <!-- Stove top -->
+  <rect x="300" y="96" width="400" height="24" rx="12" fill="#3a3a3a"/>
+
+  <!-- Stove legs -->
+  <rect x="330" y="880" width="80" height="30" rx="12" fill="#3a3a3a"/>
+  <rect x="590" y="880" width="80" height="30" rx="12" fill="#3a3a3a"/>
 
   <!-- Control panel -->
-  <rect x="390" y="470" width="220" height="70" rx="5" fill="#252525" />
+  <circle cx="500" cy="680" r="24" fill="#505050" stroke="#3a3a3a" stroke-width="3"/>
+  <circle cx="440" cy="680" r="15" fill="#505050"/>
+  <circle cx="560" cy="680" r="15" fill="#505050"/>
 
-  <!-- Display screen -->
-  <rect x="400" y="480" width="120" height="30" rx="3" fill="#101010" />
-  <rect x="405" y="485" width="110" height="20" rx="2" fill="#202020" />
+  <!-- Status LED indicator (on) -->
+  <circle cx="500" cy="680" r="7" fill="#4ade80"/>
 
-  <!-- Control buttons -->
-  <circle cx="550" cy="485" r="8" fill="#606060" />
-  <circle cx="575" cy="485" r="8" fill="#606060" />
-  <circle cx="550" cy="510" r="8" fill="#606060" />
-  <circle cx="575" cy="510" r="8" fill="#606060" />
+  <!-- Pellet container -->
+  <rect x="680" y="220" width="36" height="150" rx="10" fill="#3a3a3a"/>
+  <rect x="688" y="228" width="20" height="134" rx="6" fill="#4a4a4a"/>
 
-  <!-- Power button -->
-  <circle cx="500" cy="530" r="15" fill="#404040" stroke="#505050" stroke-width="2" />
-  <line x1="500" y1="520" x2="500" y2="540" stroke="#606060" stroke-width="3" />
-
-  <!-- Heat vents -->
-  <rect x="365" y="200" width="15" height="3" fill="#202020" />
-  <rect x="365" y="210" width="15" height="3" fill="#202020" />
-  <rect x="365" y="220" width="15" height="3" fill="#202020" />
-  <rect x="365" y="230" width="15" height="3" fill="#202020" />
-  <rect x="365" y="240" width="15" height="3" fill="#202020" />
-
-  <rect x="620" y="200" width="15" height="3" fill="#202020" />
-  <rect x="620" y="210" width="15" height="3" fill="#202020" />
-  <rect x="620" y="220" width="15" height="3" fill="#202020" />
-  <rect x="620" y="230" width="15" height="3" fill="#202020" />
-  <rect x="620" y="240" width="15" height="3" fill="#202020" />
-
-  <!-- Shadow -->
-  <ellipse cx="500" cy="595" rx="250" ry="15" fill="#d0d0d0" />
+  <!-- Airflow vents -->
+  <rect x="324" y="220" width="20" height="8" rx="3" fill="#2a2a2a"/>
+  <rect x="324" y="238" width="20" height="8" rx="3" fill="#2a2a2a"/>
+  <rect x="324" y="256" width="20" height="8" rx="3" fill="#2a2a2a"/>
+  <rect x="324" y="274" width="20" height="8" rx="3" fill="#2a2a2a"/>
+  <rect x="324" y="292" width="20" height="8" rx="3" fill="#2a2a2a"/>
 </svg>

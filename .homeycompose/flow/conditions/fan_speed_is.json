@@ -15,17 +15,17 @@
     "ko": "팬 속도가 특정 값입니다"
   },
   "titleFormatted": {
-    "en": "Fan speed [[comparison]] [[speed]]",
-    "nl": "Ventilatorsnelheid [[comparison]] [[speed]]",
-    "fr": "La vitesse du ventilateur [[comparison]] [[speed]]",
-    "de": "Lüftergeschwindigkeit [[comparison]] [[speed]]",
-    "it": "La velocità della ventola [[comparison]] [[speed]]",
-    "es": "La velocidad del ventilador [[comparison]] [[speed]]",
-    "sv": "Fläkthastighet [[comparison]] [[speed]]",
-    "no": "Viftehastighet [[comparison]] [[speed]]",
-    "da": "Blæserhastighed [[comparison]] [[speed]]",
+    "en": "Fan speed is [[comparison]] [[speed]]",
+    "nl": "Ventilatorsnelheid is [[comparison]] [[speed]]",
+    "fr": "La vitesse du ventilateur est [[comparison]] [[speed]]",
+    "de": "Lüftergeschwindigkeit ist [[comparison]] [[speed]]",
+    "it": "La velocità della ventola è [[comparison]] [[speed]]",
+    "es": "La velocidad del ventilador es [[comparison]] [[speed]]",
+    "sv": "Fläkthastighet är [[comparison]] [[speed]]",
+    "no": "Viftehastighet er [[comparison]] [[speed]]",
+    "da": "Blæserhastighed er [[comparison]] [[speed]]",
     "ru": "Скорость вентилятора [[comparison]] [[speed]]",
-    "pl": "Prędkość wentylatora [[comparison]] [[speed]]",
+    "pl": "Prędkość wentylatora jest [[comparison]] [[speed]]",
     "ko": "팬 속도가 [[speed]] [[comparison]]"
   },
   "hint": {

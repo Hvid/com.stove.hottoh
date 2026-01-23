@@ -30,6 +30,14 @@ module.exports = class HottohDevice extends Homey.Device {
   private readonly DEFAULT_PORT = 5001; // Default port for HottoH stoves
   private stoveClient: Hottoh | null = null;
 
+  // Connection state management
+  private connectionState: 'disconnected' | 'connecting' | 'connected' | 'reconnecting' | 'failed' = 'disconnected';
+  private reconnectAttempts: number = 0;
+  private readonly MAX_RECONNECT_ATTEMPTS = 5;
+  private reconnectTimeout: NodeJS.Timeout | null = null;
+  private lastSuccessfulPoll: number = Date.now();
+  private readonly STALE_CONNECTION_THRESHOLD = 30000; // 30 seconds
+
   // Store previous values for trigger detection
   private prevStoveState: string | null = null;
   private prevPowerLevel: number | null = null;
@@ -121,33 +129,19 @@ module.exports = class HottohDevice extends Homey.Device {
     if (changedKeys.includes('ipAddress')) {
       this.log('IP address changed from settings');
 
-      // Stop polling with old client
-      if (this.updateInterval) {
-        clearInterval(this.updateInterval);
-        this.updateInterval = null;
+      // Stop polling and reset connection state
+      this.stopPolling();
+      this.reconnectAttempts = 0;
+
+      // Start with new IP
+      await this.startPolling();
+
+      // Update device name if needed
+      if (!newSettings.deviceName || newSettings.deviceName.trim() === '') {
+        this.updateDeviceName();
       }
 
-      // Disconnect old client if it exists
-      if (this.stoveClient) {
-        try {
-          this.stoveClient.disconnect();
-        } catch (e) {
-          this.error('Error disconnecting old client:', e);
-        }
-        this.stoveClient = null;
-      }
-
-      // Test new connection
-      const success = await this.testConnection();
-      if (success) {
-        // Start polling with new client
-        this.startPolling();
-
-        // If no custom name is set, suggest updating the name to include the new IP
-        if (!newSettings.deviceName || newSettings.deviceName.trim() === '') {
-          this.updateDeviceName();
-        }
-
+      if (this.connectionState === 'connected') {
         return 'Successfully connected to stove at new IP address';
       } else {
         throw new Error('Could not connect to stove at new IP address');
@@ -196,47 +190,13 @@ module.exports = class HottohDevice extends Homey.Device {
     }
   }
 
-  /**
-   * Helper method to perform an action with a fresh client
-   */
-  private async withClient<T>(action: (client: Hottoh) => T): Promise<T | null> {
-    const settings = this.getSettings();
-    const ip = settings.ipAddress;
-
-    if (!ip) {
-      this.log('No IP address found in device settings');
-      return null;
-    }
-
-    let client: Hottoh | null = null;
-
-    try {
-      client = new Hottoh(ip, this.DEFAULT_PORT);
-      client.connect();
-
-      const result = action(client);
-      return result;
-    } catch (error) {
-      this.error('Error performing action with client:', error);
-      return null;
-    } finally {
-      if (client) {
-        try {
-          client.disconnect();
-        } catch (error) {
-          this.error('Error disconnecting client:', error);
-        }
-      }
-    }
-  }
 
   /**
    * Start polling for device updates
    */
-  private startPolling() {
+  private async startPolling() {
     this.stopPolling(); // Stop any existing polling
 
-    // Create a persistent connection
     const settings = this.getSettings();
     const ip = settings.ipAddress;
 
@@ -245,53 +205,118 @@ module.exports = class HottohDevice extends Homey.Device {
       return;
     }
 
-    // Initialize the persistent client
-    this.stoveClient = new Hottoh(ip, this.DEFAULT_PORT);
-    this.stoveClient.connect();
-    this.log('Created persistent connection to stove');
+    try {
+      // Initialize and AWAIT connection
+      this.connectionState = 'connecting';
+      this.stoveClient = new Hottoh(ip, this.DEFAULT_PORT);
+      await this.stoveClient.connect(); // CRITICAL: Await here!
+      this.connectionState = 'connected';
+      this.reconnectAttempts = 0;
+      this.log('Successfully established persistent connection to stove');
 
-    this.updateInterval = this.homey.setInterval(async () => {
-      try {
-        await this.updateDeviceState();
-        this.setAvailable();
-      } catch (error) {
-        this.error('Error polling device:', error);
-        this.setUnavailable('Connection lost. Trying to reconnect...');
+      // Start polling interval
+      this.updateInterval = this.homey.setInterval(async () => {
+        await this.pollDeviceState();
+      }, this.POLL_INTERVAL);
+    } catch (error) {
+      this.error('Failed to start persistent connection:', error);
+      this.connectionState = 'failed';
+      this.setUnavailable('Failed to connect to stove');
+      this.scheduleReconnect();
+    }
+  }
 
-        // Try to reconnect
-        try {
-          this.stopPolling(); // This will disconnect the client
-          const reconnected = await this.testConnection();
-          if (reconnected) {
-            this.startPolling(); // This will create a new persistent connection
-            this.setAvailable();
-          }
-        } catch (reconnectError) {
-          this.error('Failed to reconnect:', reconnectError);
-        }
+  /**
+   * Poll device state with error handling and reconnection logic
+   */
+  private async pollDeviceState() {
+    try {
+      // Check if client exists and is connected
+      if (!this.stoveClient) {
+        throw new Error('Stove client not initialized');
       }
-    }, this.POLL_INTERVAL);
+
+      // Detect stale connection
+      const timeSinceLastSuccess = Date.now() - this.lastSuccessfulPoll;
+      if (timeSinceLastSuccess > this.STALE_CONNECTION_THRESHOLD) {
+        throw new Error('Connection appears stale, triggering reconnect');
+      }
+
+      await this.updateDeviceState();
+      this.lastSuccessfulPoll = Date.now();
+      this.setAvailable();
+
+    } catch (error) {
+      this.error('Error polling device:', error);
+      this.connectionState = 'reconnecting';
+      this.setUnavailable('Connection lost. Reconnecting...');
+
+      // Stop current polling and trigger reconnection
+      this.stopPolling();
+      this.scheduleReconnect();
+    }
+  }
+
+  /**
+   * Schedule reconnection with exponential backoff
+   */
+  private scheduleReconnect() {
+    // Clear any existing reconnect timeout
+    if (this.reconnectTimeout) {
+      this.homey.clearTimeout(this.reconnectTimeout);
+      this.reconnectTimeout = null;
+    }
+
+    // Check if we've exceeded max attempts
+    if (this.reconnectAttempts >= this.MAX_RECONNECT_ATTEMPTS) {
+      this.error('Max reconnection attempts reached, giving up');
+      this.connectionState = 'failed';
+      this.setUnavailable('Failed to reconnect after multiple attempts. Please check stove connection and restart the app.');
+      return;
+    }
+
+    // Calculate delay with exponential backoff: 2s, 4s, 8s, 16s, 32s
+    const delay = Math.min(Math.pow(2, this.reconnectAttempts + 1) * 1000, 60000);
+    this.reconnectAttempts++;
+
+    this.log(`Scheduling reconnection attempt ${this.reconnectAttempts}/${this.MAX_RECONNECT_ATTEMPTS} in ${delay}ms`);
+    this.setUnavailable(`Reconnecting (attempt ${this.reconnectAttempts}/${this.MAX_RECONNECT_ATTEMPTS})...`);
+
+    this.reconnectTimeout = this.homey.setTimeout(async () => {
+      this.log('Attempting reconnection...');
+      await this.startPolling();
+    }, delay);
   }
 
   /**
    * Stop the polling interval
    */
   private stopPolling() {
+    // Clear polling interval
     if (this.updateInterval) {
       this.homey.clearInterval(this.updateInterval);
       this.updateInterval = null;
+    }
+
+    // Clear any pending reconnect
+    if (this.reconnectTimeout) {
+      this.homey.clearTimeout(this.reconnectTimeout);
+      this.reconnectTimeout = null;
     }
 
     // Clean up the persistent connection
     if (this.stoveClient) {
       try {
         this.stoveClient.disconnect();
+        this.stoveClient.dispose();
         this.stoveClient = null;
-        this.log('Disconnected persistent stove connection');
+        this.log('Disconnected and disposed persistent stove connection');
       } catch (error) {
         this.error('Error disconnecting persistent client:', error);
       }
     }
+
+    this.connectionState = 'disconnected';
   }
 
   /**
@@ -468,8 +493,9 @@ module.exports = class HottohDevice extends Homey.Device {
     this.log(`Setting power state to: ${value}`);
 
     try {
-      if (!this.stoveClient) {
-        throw new Error('Stove client not initialized');
+      // Verify client exists and is connected
+      if (!this.stoveClient || this.connectionState !== 'connected') {
+        throw new Error('Stove is not connected');
       }
 
       let result;
@@ -489,7 +515,13 @@ module.exports = class HottohDevice extends Homey.Device {
       this.log(`Power state set successfully to: ${value}`);
     } catch (error) {
       this.error(`Failed to set power state to ${value}:`, error);
-      throw new Error(`Failed to ${value ? 'turn on' : 'turn off'} the stove`);
+
+      // Trigger reconnection if command fails
+      if (this.connectionState === 'connected') {
+        this.scheduleReconnect();
+      }
+
+      throw new Error(`Failed to ${value ? 'turn on' : 'turn off'} the stove. ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 
@@ -500,8 +532,9 @@ module.exports = class HottohDevice extends Homey.Device {
     this.log(`Setting target temperature to: ${value}`);
 
     try {
-      if (!this.stoveClient) {
-        throw new Error('Stove client not initialized');
+      // Verify client exists and is connected
+      if (!this.stoveClient || this.connectionState !== 'connected') {
+        throw new Error('Stove is not connected');
       }
 
       const result = await this.stoveClient.setTemperature(value);
@@ -517,7 +550,13 @@ module.exports = class HottohDevice extends Homey.Device {
       this.log(`Target temperature set successfully to: ${value}`);
     } catch (error) {
       this.error(`Failed to set target temperature to ${value}:`, error);
-      throw new Error(`Failed to set target temperature to ${value}`);
+
+      // Trigger reconnection if command fails
+      if (this.connectionState === 'connected') {
+        this.scheduleReconnect();
+      }
+
+      throw new Error(`Failed to set target temperature to ${value}. ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 
@@ -528,8 +567,9 @@ module.exports = class HottohDevice extends Homey.Device {
     this.log(`Setting power level to: ${value}`);
 
     try {
-      if (!this.stoveClient) {
-        throw new Error('Stove client not initialized');
+      // Verify client exists and is connected
+      if (!this.stoveClient || this.connectionState !== 'connected') {
+        throw new Error('Stove is not connected');
       }
 
       // Get min/max values
@@ -554,7 +594,13 @@ module.exports = class HottohDevice extends Homey.Device {
       this.log(`Power level set successfully to: ${value}`);
     } catch (error) {
       this.error(`Failed to set power level to ${value}:`, error);
-      throw error;
+
+      // Trigger reconnection if command fails
+      if (this.connectionState === 'connected') {
+        this.scheduleReconnect();
+      }
+
+      throw new Error(`Failed to set power level to ${value}. ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 
@@ -565,8 +611,9 @@ module.exports = class HottohDevice extends Homey.Device {
     this.log(`Setting fan speed to: ${value}`);
 
     try {
-      if (!this.stoveClient) {
-        throw new Error('Stove client not initialized');
+      // Verify client exists and is connected
+      if (!this.stoveClient || this.connectionState !== 'connected') {
+        throw new Error('Stove is not connected');
       }
 
       // Get max value (min is always 1)
@@ -590,7 +637,13 @@ module.exports = class HottohDevice extends Homey.Device {
       this.log(`Fan speed set successfully to: ${value}`);
     } catch (error) {
       this.error(`Failed to set fan speed to ${value}:`, error);
-      throw error;
+
+      // Trigger reconnection if command fails
+      if (this.connectionState === 'connected') {
+        this.scheduleReconnect();
+      }
+
+      throw new Error(`Failed to set fan speed to ${value}. ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 

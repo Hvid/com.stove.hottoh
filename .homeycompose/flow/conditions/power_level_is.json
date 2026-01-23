@@ -15,17 +15,17 @@
     "ko": "전원 레벨이 특정 값입니다"
   },
   "titleFormatted": {
-    "en": "Power level [[comparison]] [[level]]",
-    "nl": "Vermogensniveau [[comparison]] [[level]]",
-    "fr": "Le niveau de puissance [[comparison]] [[level]]",
-    "de": "Leistungsstufe [[comparison]] [[level]]",
-    "it": "Il livello di potenza [[comparison]] [[level]]",
-    "es": "El nivel de potencia [[comparison]] [[level]]",
-    "sv": "Effektnivå [[comparison]] [[level]]",
-    "no": "Effektnivå [[comparison]] [[level]]",
-    "da": "Effektniveau [[comparison]] [[level]]",
+    "en": "Power level is [[comparison]] [[level]]",
+    "nl": "Vermogensniveau is [[comparison]] [[level]]",
+    "fr": "Le niveau de puissance est [[comparison]] [[level]]",
+    "de": "Leistungsstufe ist [[comparison]] [[level]]",
+    "it": "Il livello di potenza è [[comparison]] [[level]]",
+    "es": "El nivel de potencia es [[comparison]] [[level]]",
+    "sv": "Effektnivå är [[comparison]] [[level]]",
+    "no": "Effektnivå er [[comparison]] [[level]]",
+    "da": "Effektniveau er [[comparison]] [[level]]",
     "ru": "Уровень мощности [[comparison]] [[level]]",
-    "pl": "Poziom mocy [[comparison]] [[level]]",
+    "pl": "Poziom mocy jest [[comparison]] [[level]]",
     "ko": "전원 레벨이 [[level]] [[comparison]]"
   },
   "hint": {

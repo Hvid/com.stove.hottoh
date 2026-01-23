@@ -15,18 +15,18 @@
     "ko": "실내 온도가 특정 값입니다"
   },
   "titleFormatted": {
-    "en": "Room temperature [[comparison]] [[temperature]]",
-    "nl": "Kamertemperatuur [[comparison]] [[temperature]]",
-    "fr": "La température ambiante [[comparison]] [[temperature]]",
-    "de": "Raumtemperatur [[comparison]] [[temperature]]",
-    "it": "La temperatura ambiente [[comparison]] [[temperature]]",
-    "es": "La temperatura ambiente [[comparison]] [[temperature]]",
-    "sv": "Rumstemperatur [[comparison]] [[temperature]]",
-    "no": "Romtemperatur [[comparison]] [[temperature]]",
-    "da": "Rumtemperatur [[comparison]] [[temperature]]",
-    "ru": "Температура в помещении [[comparison]] [[temperature]]",
-    "pl": "Temperatura pomieszczenia [[comparison]] [[temperature]]",
-    "ko": "실내 온도가 [[comparison]] [[temperature]]"
+    "en": "Room temperature is [[comparison]] [[temperature]]°C",
+    "nl": "Kamertemperatuur is [[comparison]] [[temperature]]°C",
+    "fr": "La température ambiante est [[comparison]] [[temperature]]°C",
+    "de": "Raumtemperatur ist [[comparison]] [[temperature]]°C",
+    "it": "La temperatura ambiente è [[comparison]] [[temperature]]°C",
+    "es": "La temperatura ambiente es [[comparison]] [[temperature]]°C",
+    "sv": "Rumstemperatur är [[comparison]] [[temperature]]°C",
+    "no": "Romtemperatur er [[comparison]] [[temperature]]°C",
+    "da": "Rumtemperatur er [[comparison]] [[temperature]]°C",
+    "ru": "Температура в помещении [[comparison]] [[temperature]]°C",
+    "pl": "Temperatura pomieszczenia jest [[comparison]] [[temperature]]°C",
+    "ko": "실내 온도가 [[comparison]] [[temperature]]°C"
   },
   "hint": {
     "en": "Check if the room temperature is above/below a certain value",

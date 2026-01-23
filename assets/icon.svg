@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="960" height="960" viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Stove body - outlined -->
-  <rect x="180" y="150" width="600" height="750" rx="30" stroke="#000000" stroke-width="6" fill="none" />
+  <!-- Stove body - dark filled for contrast on orange -->
+  <rect x="180" y="150" width="600" height="750" rx="30" fill="#1a1a1a"/>
 
-  <!-- Inner panel -->
-  <rect x="218" y="188" width="524" height="674" rx="15" stroke="#000000" stroke-width="4" fill="none" />
+  <!-- Inner panel lighter -->
+  <rect x="230" y="200" width="500" height="650" rx="20" fill="#2d2d2d"/>
 
-  <!-- Glass window/door -->
-  <rect x="293" y="263" width="374" height="450" rx="22" stroke="#000000" stroke-width="5" fill="none" />
-  <rect x="312" y="281" width="336" height="413" rx="15" stroke="#000000" stroke-width="3" fill="none" />
+  <!-- Glass window/door frame -->
+  <rect x="280" y="250" width="400" height="450" rx="25" fill="#0d0d0d"/>
 
-  <!-- Flames - outlined style -->
-  <path d="M405 618C405 506 480 469 480 375C480 469 555 506 555 618C555 684 518 713 480 713C442 713 405 684 405 618Z"
-        stroke="#000000" stroke-width="4" fill="none" stroke-linejoin="round"/>
-  <path d="M424 618C424 534 480 506 480 431C480 506 536 534 536 618C536 666 508 684 480 684C452 684 424 666 424 618Z"
-        stroke="#000000" stroke-width="3" fill="none" stroke-linejoin="round"/>
-  <path d="M443 618C443 553 480 534 480 478C480 534 517 553 517 618C517 646 499 656 480 656C461 656 443 646 443 618Z"
-        stroke="#000000" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <!-- Glass inner -->
+  <rect x="305" y="275" width="350" height="400" rx="18" fill="#1a1a1a"/>
 
-  <!-- Stove top -->
-  <rect x="180" y="113" width="600" height="37" rx="9" stroke="#000000" stroke-width="6" fill="none" />
+  <!-- Fire glow background -->
+  <ellipse cx="480" cy="475" rx="130" ry="160" fill="#1a1a1a" opacity="0.5"/>
+
+  <!-- Flames - filled for visibility -->
+  <path d="M380 560C380 460 480 442 480 370C480 442 580 460 580 560C580 620 530 650 480 650C430 650 380 620 380 560Z"
+        fill="#2d2d2d"/>
+  <path d="M405 560C405 485 480 470 480 405C480 470 555 485 555 560C555 605 518 625 480 625C442 625 405 605 405 560Z"
+        fill="#3d3d3d"/>
+  <path d="M430 560C430 510 480 497 480 440C480 497 530 510 530 560C530 590 505 605 480 605C455 605 430 590 430 560Z"
+        fill="#4d4d4d"/>
+
+  <!-- Stove top cap -->
+  <rect x="180" y="120" width="600" height="30" rx="15" fill="#2d2d2d"/>
 
   <!-- Stove legs -->
-  <rect x="199" y="900" width="112" height="37" rx="9" stroke="#000000" stroke-width="5" fill="none" />
-  <rect x="649" y="900" width="112" height="37" rx="9" stroke="#000000" stroke-width="5" fill="none" />
+  <rect x="210" y="900" width="100" height="35" rx="12" fill="#2d2d2d"/>
+  <rect x="650" y="900" width="100" height="35" rx="12" fill="#2d2d2d"/>
 
-  <!-- Control panel circles -->
-  <circle cx="480" cy="768" r="28" stroke="#000000" stroke-width="4" fill="none" />
-  <circle cx="386" cy="768" r="19" stroke="#000000" stroke-width="3" fill="none" />
-  <circle cx="574" cy="768" r="19" stroke="#000000" stroke-width="3" fill="none" />
+  <!-- Control panel -->
+  <circle cx="480" cy="750" r="30" fill="#3d3d3d"/>
+  <circle cx="480" cy="750" r="18" fill="#1a1a1a"/>
+  <circle cx="400" cy="750" r="20" fill="#3d3d3d"/>
+  <circle cx="560" cy="750" r="20" fill="#3d3d3d"/>
 
-  <!-- Pellet container -->
-  <rect x="649" y="263" width="75" height="150" rx="9" stroke="#000000" stroke-width="4" fill="none" />
-  <rect x="659" y="272" width="56" height="131" rx="6" stroke="#000000" stroke-width="3" fill="none" />
+  <!-- Pellet container on side -->
+  <rect x="680" y="280" width="50" height="140" rx="10" fill="#2d2d2d"/>
+  <rect x="690" y="290" width="30" height="120" rx="6" fill="#3d3d3d"/>
 
-  <!-- Airflow vents -->
-  <rect x="237" y="263" width="37" height="9" rx="2" stroke="#000000" stroke-width="2" fill="none" />
-  <rect x="237" y="281" width="37" height="9" rx="2" stroke="#000000" stroke-width="2" fill="none" />
-  <rect x="237" y="300" width="37" height="9" rx="2" stroke="#000000" stroke-width="2" fill="none" />
-  <rect x="237" y="319" width="37" height="9" rx="2" stroke="#000000" stroke-width="2" fill="none" />
+  <!-- Airflow vents on left side -->
+  <rect x="240" y="280" width="30" height="8" rx="3" fill="#1a1a1a"/>
+  <rect x="240" y="300" width="30" height="8" rx="3" fill="#1a1a1a"/>
+  <rect x="240" y="320" width="30" height="8" rx="3" fill="#1a1a1a"/>
+  <rect x="240" y="340" width="30" height="8" rx="3" fill="#1a1a1a"/>
+  <rect x="240" y="360" width="30" height="8" rx="3" fill="#1a1a1a"/>
 </svg>

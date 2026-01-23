@@ -22,5 +22,8 @@
   },
   "1.0.7": {
     "en": "Major stability and compliance improvements: Fixed connection reliability with automatic reconnection, improved flow card grammar, redesigned icons to outlined style, updated app images for better presentation, and addressed all Homey App Store feedback."
+  },
+  "1.0.8": {
+    "en": "Fixed app icon visibility: Changed from outlined to filled design for better contrast against the orange background."
   }
 }

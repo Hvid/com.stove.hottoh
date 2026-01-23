@@ -1,58 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="500" height="350" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background - warm ambient room -->
-  <rect width="500" height="350" fill="#e8dcc8"/>
+<svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Same as small - driver images are all the same size -->
 
-  <!-- Wall -->
-  <rect x="0" y="0" width="500" height="240" fill="#c9b89a"/>
+  <!-- Stove body outline -->
+  <rect x="19" y="9" width="37" height="57" rx="3"
+        stroke="#666666" stroke-width="2" fill="none"/>
 
-  <!-- Wood floor planks -->
-  <rect x="0" y="240" width="500" height="110" fill="#8b6f47"/>
-  <line x1="0" y1="260" x2="500" y2="260" stroke="#73563a" stroke-width="2"/>
-  <line x1="0" y1="290" x2="500" y2="290" stroke="#73563a" stroke-width="2"/>
-  <line x1="0" y1="320" x2="500" y2="320" stroke="#73563a" stroke-width="2"/>
+  <!-- Inner screen -->
+  <rect x="23" y="13" width="29" height="40" rx="2"
+        stroke="#666666" stroke-width="1.5" fill="none"/>
 
-  <!-- Stove shadow -->
-  <ellipse cx="250" cy="316" rx="84" ry="16" fill="#000000" opacity="0.25"/>
+  <!-- Flame icon -->
+  <path d="M37.5 27C37.5 24 41 23 41 19C41 23 44.5 24 44.5 27C44.5 29 43 30 41 30C39 30 37.5 29 37.5 27Z"
+        stroke="#666666" stroke-width="1.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M39 27C39 25.5 41 25 41 23C41 25 43 25.5 43 27C43 28 42 28.5 41 28.5C40 28.5 39 28 39 27Z"
+        stroke="#666666" stroke-width="1" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
 
-  <!-- Stove body -->
-  <rect x="170" y="50" width="160" height="220" rx="12" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="2"/>
-  <rect x="178" y="58" width="144" height="204" rx="8" fill="#353535"/>
+  <!-- Control buttons -->
+  <circle cx="33" cy="58" r="2" stroke="#666666" stroke-width="1" fill="none"/>
+  <circle cx="37.5" cy="58" r="2.5" stroke="#666666" stroke-width="1" fill="none"/>
+  <circle cx="42" cy="58" r="2" stroke="#666666" stroke-width="1" fill="none"/>
 
-  <!-- Glass window/door -->
-  <rect x="194" y="76" width="112" height="140" rx="10" fill="#1a1a1a" stroke="#0d0d0d" stroke-width="2"/>
-  <rect x="200" y="82" width="100" height="128" rx="6" fill="#111111"/>
-
-  <!-- Fire glow -->
-  <defs>
-    <radialGradient id="fireGlow" cx="50%" cy="50%">
-      <stop offset="0%" style="stop-color:#ffdb44;stop-opacity:0.6" />
-      <stop offset="50%" style="stop-color:#f8692b;stop-opacity:0.3" />
-      <stop offset="100%" style="stop-color:#f8692b;stop-opacity:0" />
-    </radialGradient>
-  </defs>
-
-  <ellipse cx="250" cy="150" rx="70" ry="80" fill="url(#fireGlow)"/>
-
-  <!-- Flames -->
-  <path d="M214 170C214 140 250 134 250 114C250 134 286 140 286 170C286 186 268 194 250 194C232 194 214 186 214 170Z" fill="#f8692b"/>
-  <path d="M222 170C222 146 250 142 250 122C250 142 278 146 278 170C278 182 264 188 250 188C236 188 222 182 222 170Z" fill="#fcae30"/>
-  <path d="M230 170C230 152 250 148 250 130C250 148 270 152 270 170C270 178 260 182 250 182C240 182 230 178 230 170Z" fill="#ffdb44"/>
-
-  <!-- Stove details -->
-  <rect x="170" y="40" width="160" height="10" rx="4" fill="#3a3a3a"/>
-  <rect x="180" y="270" width="30" height="10" rx="4" fill="#3a3a3a"/>
-  <rect x="290" y="270" width="30" height="10" rx="4" fill="#3a3a3a"/>
-
-  <!-- Control panel -->
-  <circle cx="250" cy="236" r="8" fill="#505050" stroke="#3a3a3a" stroke-width="1"/>
-  <circle cx="224" cy="236" r="5" fill="#505050"/>
-  <circle cx="276" cy="236" r="5" fill="#505050"/>
-
-  <!-- Pellet container -->
-  <rect x="304" y="90" width="20" height="50" rx="4" fill="#3a3a3a"/>
-  <rect x="308" y="94" width="12" height="42" rx="2" fill="#4a4a4a"/>
-
-  <!-- Light glow on wall -->
-  <ellipse cx="250" cy="120" rx="140" ry="100" fill="#f8692b" opacity="0.08"/>
+  <!-- Stove legs -->
+  <rect x="21" y="66" width="8" height="3" rx="1"
+        stroke="#666666" stroke-width="1" fill="none"/>
+  <rect x="46" y="66" width="8" height="3" rx="1"
+        stroke="#666666" stroke-width="1" fill="none"/>
 </svg>

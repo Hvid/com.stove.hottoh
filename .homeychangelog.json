@@ -28,5 +28,8 @@
   },
   "1.0.9": {
     "en": "Critical bug fix: Removed code references to deleted set_power_state action card to prevent app crashes."
+  },
+  "1.0.10": {
+    "en": "Fixed UI issues: Target temperature no longer shows when stove is off, removed capability update race conditions that caused flickering, enabled fan speed 5 (auto mode), and improved power level UI updates."
   }
 }

@@ -93,7 +93,7 @@ module.exports = class HottohDevice extends Homey.Device {
 
       await this.setCapabilityOptions('fan_speed', {
         min: 1,
-        max: maxFanSpeed,
+        max: 5,  // Fixed: includes auto mode
         step: 1
       });
 
@@ -357,7 +357,9 @@ module.exports = class HottohDevice extends Homey.Device {
       // Update capabilities
       await this.setCapabilityValue('onoff', isPoweredOn !== null ? isPoweredOn : false);
       await this.setCapabilityValue('measure_temperature', roomTemp);
-      await this.setCapabilityValue('target_temperature', targetTemperature);
+      await this.setCapabilityValue('target_temperature',
+        isPoweredOn ? targetTemperature : null
+      );
       await this.setCapabilityValue('fumes_flow', fumesFlow !== null ? fumesFlow : 0);
       await this.setCapabilityValue('smoke_temperature', smokeTempValue);
       await this.setCapabilityValue('power_level', powerLevelValue);
@@ -509,10 +511,7 @@ module.exports = class HottohDevice extends Homey.Device {
         throw new Error(`Failed to ${value ? 'turn on' : 'turn off'} the stove`);
       }
 
-      // Update the capability value
-      await this.setCapabilityValue('onoff', value);
-
-      this.log(`Power state set successfully to: ${value}`);
+      this.log(`Power state command sent successfully`);
     } catch (error) {
       this.error(`Failed to set power state to ${value}:`, error);
 
@@ -544,10 +543,7 @@ module.exports = class HottohDevice extends Homey.Device {
         throw new Error('Failed to set temperature');
       }
 
-      // Update the capability value
-      await this.setCapabilityValue('target_temperature', value);
-
-      this.log(`Target temperature set successfully to: ${value}`);
+      this.log(`Target temperature command sent successfully`);
     } catch (error) {
       this.error(`Failed to set target temperature to ${value}:`, error);
 
@@ -588,10 +584,7 @@ module.exports = class HottohDevice extends Homey.Device {
         throw new Error('Failed to set power level');
       }
 
-      // Update the capability value
-      await this.setCapabilityValue('power_level', value);
-
-      this.log(`Power level set successfully to: ${value}`);
+      this.log(`Power level command sent successfully`);
     } catch (error) {
       this.error(`Failed to set power level to ${value}:`, error);
 
@@ -617,7 +610,7 @@ module.exports = class HottohDevice extends Homey.Device {
       }
 
       // Get max value (min is always 1)
-      const maxFanSpeed = this.stoveClient.getSetMaxSpeedFan1() ?? 5;
+      const maxFanSpeed = 5; // Hardcoded: 1-4 are manual speeds, 5 is auto mode
 
       // Validate value
       if (value < 1 || value > maxFanSpeed) {
@@ -631,10 +624,7 @@ module.exports = class HottohDevice extends Homey.Device {
         throw new Error('Failed to set fan speed');
       }
 
-      // Update the capability value
-      await this.setCapabilityValue('fan_speed', value);
-
-      this.log(`Fan speed set successfully to: ${value}`);
+      this.log(`Fan speed command sent successfully`);
     } catch (error) {
       this.error(`Failed to set fan speed to ${value}:`, error);
 

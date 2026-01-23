@@ -25,5 +25,8 @@
   },
   "1.0.8": {
     "en": "Fixed app icon visibility: Changed from outlined to filled design for better contrast against the orange background."
+  },
+  "1.0.9": {
+    "en": "Critical bug fix: Removed code references to deleted set_power_state action card to prevent app crashes."
   }
 }

@@ -20,7 +20,6 @@ module.exports = class HottohDriver extends Homey.Driver {
   private wifiSignalIsCondition: any;
 
   // Flow action cards
-  private setPowerStateAction: any;
   private setTargetTemperatureAction: any;
   private setPowerLevelAction: any;
   private setFanSpeedAction: any;
@@ -145,15 +144,6 @@ module.exports = class HottohDriver extends Homey.Driver {
    * Initialize all action flow cards
    */
   private initActionCards() {
-    // Set power state action
-    this.setPowerStateAction = this.homey.flow.getActionCard('set_power_state');
-    this.setPowerStateAction.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
-      const value = args.choice === '1'; // Convert to boolean
-      await device.onCapabilityOnOff(value);
-      return true;
-    });
-
     // Set target temperature action
     this.setTargetTemperatureAction = this.homey.flow.getActionCard('set_target_temperature');
     this.setTargetTemperatureAction.registerRunListener(async (args: any, state: any) => {

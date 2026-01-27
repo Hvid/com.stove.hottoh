@@ -43,5 +43,8 @@
   },
   "1.0.14": {
     "en": "Icon improvements per Homey verification feedback: Changed strokes from gray to black for better contrast, standardized line widths, and properly centered all icons vertically."
+  },
+  "1.0.15": {
+    "en": "Updated icons with thicker lines for improved visibility."
   }
 }

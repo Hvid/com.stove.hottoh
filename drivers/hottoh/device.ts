@@ -1,6 +1,7 @@
 import Homey from 'homey';
+import net from 'net';
 import { Hottoh } from 'hottohts';
-import { EventEmitter } from 'events';
+import { getStateId } from './stove-state';
 
 /**
  * HottohDevice Class
@@ -24,27 +25,42 @@ interface HottohDriver extends Homey.Driver {
   triggerPowerLevelChanged(device: any, tokens: any, state: any): Promise<void>;
 }
 
+interface HottohApp extends Homey.App {
+  triggerAnyStoveOn(device: any, value: boolean): Promise<void>;
+}
+
+const TURN_OFF_WHEN_REACHED_KEY = 'turnOffWhenTemperatureReached';
+const MAX_TEXT_LENGTH = 64;
+
+/**
+ * Stove-provided text is shown in the UI and passed to flows; strip control characters and cap the length.
+ */
+function sanitizeText(value: string | null): string | null {
+  if (value === null) return null;
+  // eslint-disable-next-line no-control-regex
+  return value.replace(/[\u0000-\u001f\u007f]/g, '').slice(0, MAX_TEXT_LENGTH);
+}
+
 module.exports = class HottohDevice extends Homey.Device {
   private updateInterval: NodeJS.Timeout | null = null;
   private readonly POLL_INTERVAL = 5000; // 5 seconds
   private readonly DEFAULT_PORT = 5001; // Default port for HottoH stoves
-  private stoveClient: Hottoh | null = null;
-
-  // Connection state management
-  private connectionState: 'disconnected' | 'connecting' | 'connected' | 'reconnecting' | 'failed' = 'disconnected';
-  private reconnectAttempts: number = 0;
-  private readonly MAX_RECONNECT_ATTEMPTS = 5;
-  private reconnectTimeout: NodeJS.Timeout | null = null;
-  private lastSuccessfulPoll: number = Date.now();
+  private readonly CONNECT_TIMEOUT = 15000;
+  private readonly MAX_RECONNECT_DELAY = 300000; // 5 minutes
   private readonly STALE_CONNECTION_THRESHOLD = 30000; // 30 seconds
+  private stoveClient: Hottoh | null = null;
+  // IP of the current connection; settings are only saved after onSettings returns
+  private currentIp: string | null = null;
+
+  private reconnectAttempts: number = 0;
+  private reconnectTimeout: NodeJS.Timeout | null = null;
 
   // Store previous values for trigger detection
   private prevStoveState: string | null = null;
+  private prevIsOn: boolean | null = null;
   private prevPowerLevel: number | null = null;
   private prevWifiSignal: number | null = null;
   private prevSmokeTemperature: number | null = null;
-  private prevRoomTemperature: number | null = null;
-  private prevTargetTemperature: number | null = null;
   private temperatureReachedTriggered: boolean = false;
 
   // Access the driver with the correct type
@@ -66,53 +82,30 @@ module.exports = class HottohDevice extends Homey.Device {
 
     // Get IP from settings
     const settings = this.getSettings();
-    const ipFromSettings = settings.ipAddress;
+    let ip: string | undefined = settings.ipAddress;
     const ipFromStore = this.getStoreValue('address');
 
     // If we have an IP in store but not settings, migrate it
-    if (!ipFromSettings && ipFromStore) {
+    if (!ip && ipFromStore) {
       await this.setSettings({ ipAddress: ipFromStore });
       this.log('Migrated IP address from store to settings:', ipFromStore);
+      ip = ipFromStore;
     }
 
-    // Initialize connection test
-    const initSuccess = await this.testConnection();
+    // Initialize previous values from current capability values so a restart doesn't fire triggers
+    this.prevStoveState = this.getCapabilityValue('stove_state');
+    this.prevIsOn = this.getCapabilityValue('onoff');
+    this.prevPowerLevel = this.getCapabilityValue('power_level');
+    this.prevWifiSignal = this.getCapabilityValue('wifi_signal');
+    this.prevSmokeTemperature = this.getCapabilityValue('smoke_temperature');
 
-    if (initSuccess) {
-      // Get the min/max values for power level and fan speed
-      const maxPowerLevel = this.stoveClient?.getSetMaxPowerLevel() ?? 5;
-      const minPowerLevel = this.stoveClient?.getSetMinPowerLevel() ?? 1;
-      const maxFanSpeed = this.stoveClient?.getSetMaxSpeedFan1() ?? 5;
-
-      // Set capability options
-      await this.setCapabilityOptions('power_level', {
-        min: minPowerLevel,
-        max: maxPowerLevel,
-        step: 1
-      });
-
-      await this.setCapabilityOptions('fan_speed', {
-        min: 1,
-        max: 5,  // Fixed: includes auto mode
-        step: 1
-      });
-
-      // Initialize previous values from current capability values
-      this.prevStoveState = this.getCapabilityValue('stove_state');
-      this.prevPowerLevel = this.getCapabilityValue('power_level');
-      this.prevWifiSignal = this.getCapabilityValue('wifi_signal');
-      this.prevSmokeTemperature = this.getCapabilityValue('smoke_temperature');
-      this.prevRoomTemperature = this.getCapabilityValue('measure_temperature');
-      this.prevTargetTemperature = this.getCapabilityValue('target_temperature');
-
-      // Check if the device name should be updated
-      this.updateDeviceName();
-
-      // Start polling for updates
-      this.startPolling();
-    } else {
-      this.log('Initial connection test failed, not starting polling');
+    if (!ip) {
+      this.log('No IP address found in device settings. Please set the IP address in device settings.');
+      await this.setUnavailable('IP address not set. Please configure the device settings.');
+      return;
     }
+
+    await this.startPolling(ip);
   }
 
   /**
@@ -125,366 +118,285 @@ module.exports = class HottohDevice extends Homey.Device {
     newSettings: { [key: string]: any };
     changedKeys: string[];
   }): Promise<string | void> {
-    // IP address changed
-    if (changedKeys.includes('ipAddress')) {
-      this.log('IP address changed from settings');
+    if (!changedKeys.includes('ipAddress')) return undefined;
 
-      // Stop polling and reset connection state
-      this.stopPolling();
-      this.reconnectAttempts = 0;
-
-      // Start with new IP
-      await this.startPolling();
-
-      // Update device name if needed
-      if (!newSettings.deviceName || newSettings.deviceName.trim() === '') {
-        this.updateDeviceName();
-      }
-
-      if (this.connectionState === 'connected') {
-        return 'Successfully connected to stove at new IP address';
-      } else {
-        throw new Error('Could not connect to stove at new IP address');
-      }
+    const ip = String(newSettings.ipAddress ?? '').trim();
+    if (!net.isIPv4(ip)) {
+      throw new Error(`"${ip}" is not a valid IPv4 address. Enter an address such as 192.168.1.50.`);
     }
+
+    this.log(`IP address changed from ${oldSettings.ipAddress} to ${ip}`);
+    this.reconnectAttempts = 0;
+
+    if (await this.startPolling(ip)) {
+      return 'Successfully connected to stove at new IP address';
+    }
+    return `Saved, but the stove at ${ip} did not respond yet. Retrying in the background.`;
   }
 
   /**
-   * Test connection to the stove
+   * Connect to the stove and start polling.
+   * On failure, schedules a reconnect with exponential backoff.
+   * @returns true if the stove responded
    */
-  private async testConnection(): Promise<boolean> {
+  private async startPolling(ip: string): Promise<boolean> {
+    this.stopPolling(); // Stop any existing polling
+    this.currentIp = ip;
+
+    const client = new Hottoh(ip, this.DEFAULT_PORT);
+    this.stoveClient = client;
+
     try {
-      const settings = this.getSettings();
-      const ip = settings.ipAddress;
-
-      if (!ip) {
-        this.log('No IP address found in device settings. Please set the IP address in device settings.');
-        this.setUnavailable('IP address not set. Please configure the device settings.');
-        return false;
-      }
-
-      this.log(`Testing connection to HottoH stove at ${ip}`);
-
-      // Create a new client for testing
-      const testClient = new Hottoh(ip, this.DEFAULT_PORT);
-
-      // Test connection
-      await testClient.connect();
-      this.log('Connected to HottoH stove');
-
-      // Always disconnect the test client
-      try {
-        await testClient.disconnect();
-      } catch (e) {
-        this.error('Error disconnecting test client:', e);
-      }
-
-      // Mark device as available
-      this.setAvailable();
-
-      return true;
+      await client.connect(this.CONNECT_TIMEOUT);
     } catch (error) {
-      this.error('Failed to connect to HottoH stove:', error);
-      this.setUnavailable('Unable to connect to the stove. Please check if it is powered on and connected to your network.');
+      // A newer startPolling() or stopPolling() replaced this client while connecting
+      if (this.stoveClient !== client) return false;
+
+      this.error(`Failed to connect to stove at ${ip}:`, error);
+      this.stopPolling();
+      this.scheduleReconnect();
       return false;
     }
+    if (this.stoveClient !== client) return false;
+
+    this.reconnectAttempts = 0;
+    this.log(`Connected to stove at ${ip}`);
+
+    await this.applyCapabilityOptions(client);
+
+    // The client reconnects on its own after this point; polling only reads its cached data
+    this.updateInterval = this.homey.setInterval(() => this.pollDeviceState(), this.POLL_INTERVAL);
+    await this.pollDeviceState();
+    return true;
   }
 
+  private async applyCapabilityOptions(client: Hottoh) {
+    try {
+      await this.setCapabilityOptions('power_level', {
+        min: client.getSetMinPowerLevel() ?? 1,
+        max: client.getSetMaxPowerLevel() ?? 5,
+        step: 1,
+      });
+
+      await this.setCapabilityOptions('fan_speed', {
+        min: 1,
+        max: 5, // 1-4 are manual speeds, 5 is auto mode
+        step: 1,
+      });
+    } catch (error) {
+      this.error('Failed to set capability options:', error);
+    }
+  }
 
   /**
-   * Start polling for device updates
+   * Update capabilities from the client's cached data, or mark the device unavailable if it is stale
    */
-  private async startPolling() {
-    this.stopPolling(); // Stop any existing polling
+  private async pollDeviceState() {
+    const client = this.stoveClient;
+    if (!client) return;
 
-    const settings = this.getSettings();
-    const ip = settings.ipAddress;
-
-    if (!ip) {
-      this.log('No IP address found in device settings');
+    const lastData = client.getLastDataTime();
+    if (lastData === null || Date.now() - lastData > this.STALE_CONNECTION_THRESHOLD) {
+      if (this.getAvailable()) {
+        this.log('No fresh data from stove, marking unavailable while the client reconnects');
+        await this.setUnavailable('Connection to the stove lost. Reconnecting...').catch((err) => this.error(err));
+      }
       return;
     }
 
     try {
-      // Initialize and AWAIT connection
-      this.connectionState = 'connecting';
-      this.stoveClient = new Hottoh(ip, this.DEFAULT_PORT);
-      await this.stoveClient.connect(); // CRITICAL: Await here!
-      this.connectionState = 'connected';
-      this.reconnectAttempts = 0;
-      this.log('Successfully established persistent connection to stove');
-
-      // Start polling interval
-      this.updateInterval = this.homey.setInterval(async () => {
-        await this.pollDeviceState();
-      }, this.POLL_INTERVAL);
+      await this.updateDeviceState(client);
+      if (!this.getAvailable()) await this.setAvailable();
     } catch (error) {
-      this.error('Failed to start persistent connection:', error);
-      this.connectionState = 'failed';
-      this.setUnavailable('Failed to connect to stove');
-      this.scheduleReconnect();
+      this.error('Error updating device state:', error);
     }
   }
 
   /**
-   * Poll device state with error handling and reconnection logic
-   */
-  private async pollDeviceState() {
-    try {
-      // Check if client exists and is connected
-      if (!this.stoveClient) {
-        throw new Error('Stove client not initialized');
-      }
-
-      // Detect stale connection
-      const timeSinceLastSuccess = Date.now() - this.lastSuccessfulPoll;
-      if (timeSinceLastSuccess > this.STALE_CONNECTION_THRESHOLD) {
-        throw new Error('Connection appears stale, triggering reconnect');
-      }
-
-      await this.updateDeviceState();
-      this.lastSuccessfulPoll = Date.now();
-      this.setAvailable();
-
-    } catch (error) {
-      this.error('Error polling device:', error);
-      this.connectionState = 'reconnecting';
-      this.setUnavailable('Connection lost. Reconnecting...');
-
-      // Stop current polling and trigger reconnection
-      this.stopPolling();
-      this.scheduleReconnect();
-    }
-  }
-
-  /**
-   * Schedule reconnection with exponential backoff
+   * Schedule reconnection with exponential backoff: 2s, 4s, 8s, ... up to 5 minutes, without giving up
    */
   private scheduleReconnect() {
-    // Clear any existing reconnect timeout
     if (this.reconnectTimeout) {
       this.homey.clearTimeout(this.reconnectTimeout);
       this.reconnectTimeout = null;
     }
+    const ip = this.currentIp;
+    if (!ip) return;
 
-    // Check if we've exceeded max attempts
-    if (this.reconnectAttempts >= this.MAX_RECONNECT_ATTEMPTS) {
-      this.error('Max reconnection attempts reached, giving up');
-      this.connectionState = 'failed';
-      this.setUnavailable('Failed to reconnect after multiple attempts. Please check stove connection and restart the app.');
-      return;
-    }
-
-    // Calculate delay with exponential backoff: 2s, 4s, 8s, 16s, 32s
-    const delay = Math.min(Math.pow(2, this.reconnectAttempts + 1) * 1000, 60000);
+    const delay = Math.min(2 ** (this.reconnectAttempts + 1) * 1000, this.MAX_RECONNECT_DELAY);
     this.reconnectAttempts++;
 
-    this.log(`Scheduling reconnection attempt ${this.reconnectAttempts}/${this.MAX_RECONNECT_ATTEMPTS} in ${delay}ms`);
-    this.setUnavailable(`Reconnecting (attempt ${this.reconnectAttempts}/${this.MAX_RECONNECT_ATTEMPTS})...`);
+    this.log(`Scheduling reconnection attempt ${this.reconnectAttempts} in ${delay}ms`);
+    this.setUnavailable(`Unable to reach the stove at ${ip}. Retrying in ${Math.round(delay / 1000)} s.`).catch((err) => this.error(err));
 
-    this.reconnectTimeout = this.homey.setTimeout(async () => {
-      this.log('Attempting reconnection...');
-      await this.startPolling();
+    this.reconnectTimeout = this.homey.setTimeout(() => {
+      this.reconnectTimeout = null;
+      this.startPolling(ip).catch((err) => this.error(err));
     }, delay);
   }
 
   /**
-   * Stop the polling interval
+   * Stop polling, cancel pending reconnects and dispose the connection
    */
   private stopPolling() {
-    // Clear polling interval
     if (this.updateInterval) {
       this.homey.clearInterval(this.updateInterval);
       this.updateInterval = null;
     }
 
-    // Clear any pending reconnect
     if (this.reconnectTimeout) {
       this.homey.clearTimeout(this.reconnectTimeout);
       this.reconnectTimeout = null;
     }
 
-    // Clean up the persistent connection
     if (this.stoveClient) {
-      try {
-        this.stoveClient.disconnect();
-        this.stoveClient.dispose();
-        this.stoveClient = null;
-        this.log('Disconnected and disposed persistent stove connection');
-      } catch (error) {
-        this.error('Error disconnecting persistent client:', error);
-      }
+      this.stoveClient.dispose();
+      this.stoveClient = null;
+      this.log('Disposed stove connection');
     }
-
-    this.connectionState = 'disconnected';
   }
 
   /**
-   * Update the device state with latest values from the stove
-   * Fetches all relevant data points from the stove and updates capabilities
+   * Set a capability value, skipping missing (null) and unchanged values
    */
-  private async updateDeviceState() {
-    try {
-      if (!this.stoveClient) {
-        throw new Error('Stove client not initialized');
-      }
+  private async updateCapability(capabilityId: string, value: any) {
+    if (value === null || value === undefined) return;
+    if (this.getCapabilityValue(capabilityId) === value) return;
+    await this.setCapabilityValue(capabilityId, value);
+  }
 
-      // Use the persistent connection to fetch all stove metrics
-      const isPoweredOn = this.stoveClient.getIsOn();
-      const currentTemp = this.stoveClient.getTemperatureRoom1();
-      const targetTemp = this.stoveClient.getSetTemperatureRoom1();
-      const fumesFlow = this.stoveClient.getSpeedFanSmoke();
-      const smokeTemp = this.stoveClient.getSmokeTemperature();
-      const powerLevel = this.stoveClient.getPowerLevel();
-      const fanSpeed = this.stoveClient.getSpeedFan1();
+  /**
+   * Update the device state with latest values from the stove and fire triggers on changes
+   */
+  private async updateDeviceState(client: Hottoh) {
+    const isOn = client.getIsOn();
+    const roomTemp = client.getTemperatureRoom1();
+    const targetTemp = client.getSetTemperatureRoom1();
+    const smokeTemp = client.getSmokeTemperature();
+    const powerLevel = client.getPowerLevel();
+    const wifiRaw = client._getWifiSignal();
+    const wifiSignal = wifiRaw !== null && Number.isFinite(parseInt(wifiRaw, 10)) ? parseInt(wifiRaw, 10) : null;
+    const stoveState = sanitizeText(client._getStoveState());
 
-      // Get additional diagnostic data
-      const firmwareVersion = this.stoveClient._getFirmwareVersion();
-      const wifiSignal = this.stoveClient._getWifiSignal();
-      const stoveState = this.stoveClient._getStoveState();
+    await this.updateCapability('onoff', isOn);
+    await this.updateCapability('measure_temperature', roomTemp);
+    if (isOn === false) {
+      await this.setCapabilityValue('target_temperature', null);
+    } else {
+      await this.updateCapability('target_temperature', targetTemp);
+    }
+    await this.updateCapability('fumes_flow', client.getSpeedFanSmoke());
+    await this.updateCapability('smoke_temperature', smokeTemp);
+    await this.updateCapability('power_level', powerLevel);
+    await this.updateCapability('fan_speed', client.getSpeedFan1());
+    await this.updateCapability('firmware_version', sanitizeText(client._getFirmwareVersion()));
+    await this.updateCapability('wifi_signal', wifiSignal);
+    await this.updateCapability('stove_state', stoveState);
 
-      // Store current values for processing triggers
-      const roomTemp = currentTemp !== null ? currentTemp : 0;
-      const targetTemperature = targetTemp !== null ? targetTemp : 20;
-      const smokeTempValue = smokeTemp !== null ? smokeTemp : 0;
-      const powerLevelValue = powerLevel !== null ? powerLevel : 1;
-      const wifiSignalValue = wifiSignal !== null ? parseInt(wifiSignal) : 0;
-      const stoveStateValue = stoveState !== null ? stoveState : 'Unknown';
+    // Trigger errors are logged and must not stop the remaining triggers
+    const fire = (name: string, trigger: () => Promise<void>) => trigger()
+      .catch((error) => this.error(`Error triggering ${name} flow:`, error));
 
-      // Check if temperature has changed
-      const tempChanged = this.prevRoomTemperature !== roomTemp;
+    if (stoveState !== null && this.prevStoveState !== stoveState) {
+      await fire('stove state changed', () => this.hottohDriver.triggerStoveStateChanged(this, {
+        state_id: getStateId(stoveState),
+        state_string: stoveState,
+      }, {}));
+      this.prevStoveState = stoveState;
+    }
 
-      // Update capabilities
-      await this.setCapabilityValue('onoff', isPoweredOn !== null ? isPoweredOn : false);
-      await this.setCapabilityValue('measure_temperature', roomTemp);
-      await this.setCapabilityValue('target_temperature',
-        isPoweredOn ? targetTemperature : null
-      );
-      await this.setCapabilityValue('fumes_flow', fumesFlow !== null ? fumesFlow : 0);
-      await this.setCapabilityValue('smoke_temperature', smokeTempValue);
-      await this.setCapabilityValue('power_level', powerLevelValue);
-      await this.setCapabilityValue('fan_speed', fanSpeed !== null ? fanSpeed : 1);
-      await this.setCapabilityValue('firmware_version', firmwareVersion !== null ? firmwareVersion : 'Unknown');
-      await this.setCapabilityValue('wifi_signal', wifiSignalValue);
-      await this.setCapabilityValue('stove_state', stoveStateValue);
+    if (isOn !== null && this.prevIsOn !== null && this.prevIsOn !== isOn) {
+      await fire('any stove on', () => (this.homey.app as HottohApp).triggerAnyStoveOn(this, isOn));
+    }
+    if (isOn !== null) this.prevIsOn = isOn;
 
-      // Process triggers based on value changes
-
-      // 1. Stove State Changed
-      if (this.prevStoveState !== stoveStateValue) {
-        try {
-          // Map state string to state ID
-          const stateMapping: { [key: string]: number } = {
-            'Off': 0,
-            'Starting': 1,
-            'Preheating': 2,
-            'Running': 3,
-            'Cooling Down': 4,
-            'Cleaning': 5,
-            'Standby': 6
-          };
-
-          const stateId = stateMapping[stoveStateValue] !== undefined ? stateMapping[stoveStateValue] : 0;
-
-          await this.hottohDriver.triggerStoveStateChanged(this, {
-            state_id: stateId,
-            state_string: stoveStateValue
-          }, {});
-        } catch (triggerError) {
-          this.error('Error triggering stove state changed flow:', triggerError);
-          // Don't let trigger errors crash the device update
-        }
-        this.prevStoveState = stoveStateValue;
-      }
-
-      // 2. Temperature Reached
-      if (Math.abs(roomTemp - targetTemperature) <= 0.5 && !this.temperatureReachedTriggered) {
-        try {
-          await this.hottohDriver.triggerTemperatureReached(this, {
-            temperature: roomTemp
-          }, {});
-        } catch (triggerError) {
-          this.error('Error triggering temperature reached flow:', triggerError);
-        }
+    if (isOn && roomTemp !== null && targetTemp !== null) {
+      const reached = Math.abs(roomTemp - targetTemp) <= 0.5;
+      if (reached && !this.temperatureReachedTriggered) {
         this.temperatureReachedTriggered = true;
-      } else if (Math.abs(roomTemp - targetTemperature) > 0.5) {
-        // Reset the trigger when temperature is no longer at target
+        await fire('temperature reached', () => this.hottohDriver.triggerTemperatureReached(this, {
+          temperature: roomTemp,
+          target_temperature: targetTemp,
+        }, {}));
+        await this.turnOffIfArmed();
+      } else if (!reached) {
         this.temperatureReachedTriggered = false;
       }
+    }
 
-      // 3. Smoke Temperature Threshold (Rising)
-      if (this.prevSmokeTemperature !== null && smokeTempValue > this.prevSmokeTemperature) {
-        try {
-          // We need to check for any registered threshold in the flow system
-          // This is a simplified approach - normally you'd check against registered thresholds
-          await this.hottohDriver.triggerSmokeTemperatureThreshold(this, {
-            temperature: smokeTempValue
-          }, { rising: true });
-        } catch (triggerError) {
-          this.error('Error triggering smoke temperature threshold (rising) flow:', triggerError);
+    if (smokeTemp !== null) {
+      if (this.prevSmokeTemperature !== null && smokeTemp !== this.prevSmokeTemperature) {
+        const previous = this.prevSmokeTemperature;
+        await fire('smoke temperature threshold', () => this.hottohDriver.triggerSmokeTemperatureThreshold(this, {
+          temperature: smokeTemp,
+        }, { previous, current: smokeTemp }));
+      }
+      this.prevSmokeTemperature = smokeTemp;
+    }
+
+    if (wifiSignal !== null) {
+      if (this.prevWifiSignal !== null && Math.abs(wifiSignal - this.prevWifiSignal) >= 10) {
+        let signalString = 'Poor';
+        if (wifiSignal >= -50) {
+          signalString = 'Excellent';
+        } else if (wifiSignal >= -60) {
+          signalString = 'Good';
+        } else if (wifiSignal >= -70) {
+          signalString = 'Fair';
         }
+
+        await fire('WiFi signal changed', () => this.hottohDriver.triggerWifiSignalChanged(this, {
+          signal_value: wifiSignal,
+          signal_string: signalString,
+        }, {}));
+        this.prevWifiSignal = wifiSignal;
+      } else if (this.prevWifiSignal === null) {
+        this.prevWifiSignal = wifiSignal;
       }
+    }
 
-      // 4. Smoke Temperature Threshold (Falling)
-      if (this.prevSmokeTemperature !== null && smokeTempValue < this.prevSmokeTemperature) {
-        try {
-          // We need to check for any registered threshold in the flow system
-          // This is a simplified approach - normally you'd check against registered thresholds
-          await this.hottohDriver.triggerSmokeTemperatureThreshold(this, {
-            temperature: smokeTempValue
-          }, { rising: false });
-        } catch (triggerError) {
-          this.error('Error triggering smoke temperature threshold (falling) flow:', triggerError);
-        }
-      }
+    if (powerLevel !== null && this.prevPowerLevel !== powerLevel) {
+      await fire('power level changed', () => this.hottohDriver.triggerPowerLevelChanged(this, {
+        power_level: powerLevel,
+      }, {}));
+      this.prevPowerLevel = powerLevel;
+    }
+  }
 
-      // 5. WiFi Signal Changed
-      if (this.prevWifiSignal !== null && Math.abs(wifiSignalValue - this.prevWifiSignal) >= 10) {
-        try {
-          // Determine signal quality string
-          let signalString = 'Poor';
-          if (wifiSignalValue >= -50) {
-            signalString = 'Excellent';
-          } else if (wifiSignalValue >= -60) {
-            signalString = 'Good';
-          } else if (wifiSignalValue >= -70) {
-            signalString = 'Fair';
-          }
+  /**
+   * Arm a one-shot turn-off for the next time the room reaches the target temperature.
+   * Called by the "turn off when temperature reached" flow action; persisted across restarts.
+   */
+  async armTurnOffWhenTemperatureReached() {
+    await this.setStoreValue(TURN_OFF_WHEN_REACHED_KEY, true);
+    this.log('Armed turn-off when target temperature is reached');
+  }
 
-          await this.hottohDriver.triggerWifiSignalChanged(this, {
-            signal_value: wifiSignalValue,
-            signal_string: signalString
-          }, {});
-        } catch (triggerError) {
-          this.error('Error triggering WiFi signal changed flow:', triggerError);
-        }
-      }
-
-      // 6. Power Level Changed
-      if (this.prevPowerLevel !== powerLevelValue) {
-        try {
-          await this.hottohDriver.triggerPowerLevelChanged(this, {
-            power_level: powerLevelValue
-          }, {});
-        } catch (triggerError) {
-          this.error('Error triggering power level changed flow:', triggerError);
-        }
-        this.prevPowerLevel = powerLevelValue;
-      }
-
-      // Update previous values for next comparison cycle
-      this.prevRoomTemperature = roomTemp;
-      this.prevTargetTemperature = targetTemperature;
-      this.prevSmokeTemperature = smokeTempValue;
-      this.prevWifiSignal = wifiSignalValue;
-
-      // Update device name if temperature has changed and no custom name is set
-      if (tempChanged) {
-        this.updateDeviceName();
-      }
+  private async turnOffIfArmed() {
+    if (!this.getStoreValue(TURN_OFF_WHEN_REACHED_KEY)) return;
+    try {
+      this.log('Target temperature reached, turning stove off as requested by flow');
+      await this.onCapabilityOnOff(false);
+      await this.setStoreValue(TURN_OFF_WHEN_REACHED_KEY, false);
     } catch (error) {
-      this.error('Error updating device state:', error);
-      throw error; // Re-throw to trigger reconnection logic
+      // Stays armed so the next time the temperature is reached it is retried
+      this.error('Failed to turn off stove after reaching target temperature:', error);
+    }
+  }
+
+  private requireClient(): Hottoh {
+    if (!this.stoveClient) {
+      throw new Error('Stove is not connected');
+    }
+    return this.stoveClient;
+  }
+
+  /**
+   * Throw unless a command was queued; the client refuses commands while disconnected
+   */
+  private assertSent(sent: boolean) {
+    if (!sent) {
+      throw new Error('Stove is not connected; the command was not sent');
     }
   }
 
@@ -493,35 +405,9 @@ module.exports = class HottohDevice extends Homey.Device {
    */
   async onCapabilityOnOff(value: boolean) {
     this.log(`Setting power state to: ${value}`);
-
-    try {
-      // Verify client exists and is connected
-      if (!this.stoveClient || this.connectionState !== 'connected') {
-        throw new Error('Stove is not connected');
-      }
-
-      let result;
-      if (value) {
-        result = await this.stoveClient.setOn();
-      } else {
-        result = await this.stoveClient.setOff();
-      }
-
-      if (!result) {
-        throw new Error(`Failed to ${value ? 'turn on' : 'turn off'} the stove`);
-      }
-
-      this.log(`Power state command sent successfully`);
-    } catch (error) {
-      this.error(`Failed to set power state to ${value}:`, error);
-
-      // Trigger reconnection if command fails
-      if (this.connectionState === 'connected') {
-        this.scheduleReconnect();
-      }
-
-      throw new Error(`Failed to ${value ? 'turn on' : 'turn off'} the stove. ${error instanceof Error ? error.message : String(error)}`);
-    }
+    const client = this.requireClient();
+    this.assertSent(value ? client.setOn() : client.setOff());
+    this.log('Power state command sent successfully');
   }
 
   /**
@@ -529,31 +415,16 @@ module.exports = class HottohDevice extends Homey.Device {
    */
   async onCapabilityTargetTemperature(value: number) {
     this.log(`Setting target temperature to: ${value}`);
+    const client = this.requireClient();
 
-    try {
-      // Verify client exists and is connected
-      if (!this.stoveClient || this.connectionState !== 'connected') {
-        throw new Error('Stove is not connected');
-      }
-
-      const result = await this.stoveClient.setTemperature(value);
-      this.log(`Set temperature result: ${result}`);
-
-      if (!result) {
-        throw new Error('Failed to set temperature');
-      }
-
-      this.log(`Target temperature command sent successfully`);
-    } catch (error) {
-      this.error(`Failed to set target temperature to ${value}:`, error);
-
-      // Trigger reconnection if command fails
-      if (this.connectionState === 'connected') {
-        this.scheduleReconnect();
-      }
-
-      throw new Error(`Failed to set target temperature to ${value}. ${error instanceof Error ? error.message : String(error)}`);
+    const min = client.getSetMinTemperatureRoom1() ?? 5;
+    const max = client.getSetMaxTemperatureRoom1() ?? 35;
+    if (typeof value !== 'number' || !Number.isFinite(value) || value < min || value > max) {
+      throw new Error(`Target temperature must be between ${min} and ${max} °C, got ${value}`);
     }
+
+    this.assertSent(await client.setTemperature(value));
+    this.log('Target temperature command sent successfully');
   }
 
   /**
@@ -561,40 +432,16 @@ module.exports = class HottohDevice extends Homey.Device {
    */
   async onCapabilityPowerLevel(value: number) {
     this.log(`Setting power level to: ${value}`);
+    const client = this.requireClient();
 
-    try {
-      // Verify client exists and is connected
-      if (!this.stoveClient || this.connectionState !== 'connected') {
-        throw new Error('Stove is not connected');
-      }
-
-      // Get min/max values
-      const maxPowerLevel = this.stoveClient.getSetMaxPowerLevel() ?? 5;
-      const minPowerLevel = this.stoveClient.getSetMinPowerLevel() ?? 1;
-
-      // Validate value
-      if (value < minPowerLevel || value > maxPowerLevel) {
-        throw new Error(`Power level must be between ${minPowerLevel} and ${maxPowerLevel}`);
-      }
-
-      const result = this.stoveClient.setPowerLevel(value);
-      this.log(`Set power level result: ${result}`);
-
-      if (!result) {
-        throw new Error('Failed to set power level');
-      }
-
-      this.log(`Power level command sent successfully`);
-    } catch (error) {
-      this.error(`Failed to set power level to ${value}:`, error);
-
-      // Trigger reconnection if command fails
-      if (this.connectionState === 'connected') {
-        this.scheduleReconnect();
-      }
-
-      throw new Error(`Failed to set power level to ${value}. ${error instanceof Error ? error.message : String(error)}`);
+    const min = client.getSetMinPowerLevel() ?? 1;
+    const max = client.getSetMaxPowerLevel() ?? 5;
+    if (!Number.isInteger(value) || value < min || value > max) {
+      throw new Error(`Power level must be a whole number between ${min} and ${max}, got ${value}`);
     }
+
+    this.assertSent(client.setPowerLevel(value));
+    this.log('Power level command sent successfully');
   }
 
   /**
@@ -602,39 +449,15 @@ module.exports = class HottohDevice extends Homey.Device {
    */
   async onCapabilityFanSpeed(value: number) {
     this.log(`Setting fan speed to: ${value}`);
+    const client = this.requireClient();
 
-    try {
-      // Verify client exists and is connected
-      if (!this.stoveClient || this.connectionState !== 'connected') {
-        throw new Error('Stove is not connected');
-      }
-
-      // Get max value (min is always 1)
-      const maxFanSpeed = 5; // Hardcoded: 1-4 are manual speeds, 5 is auto mode
-
-      // Validate value
-      if (value < 1 || value > maxFanSpeed) {
-        throw new Error(`Fan speed must be between 1 and ${maxFanSpeed}`);
-      }
-
-      const result = this.stoveClient.setSpeedFan1(value);
-      this.log(`Set fan speed result: ${result}`);
-
-      if (!result) {
-        throw new Error('Failed to set fan speed');
-      }
-
-      this.log(`Fan speed command sent successfully`);
-    } catch (error) {
-      this.error(`Failed to set fan speed to ${value}:`, error);
-
-      // Trigger reconnection if command fails
-      if (this.connectionState === 'connected') {
-        this.scheduleReconnect();
-      }
-
-      throw new Error(`Failed to set fan speed to ${value}. ${error instanceof Error ? error.message : String(error)}`);
+    // 1-4 are manual speeds, 5 is auto mode
+    if (!Number.isInteger(value) || value < 1 || value > 5) {
+      throw new Error(`Fan speed must be a whole number between 1 and 5, got ${value}`);
     }
+
+    this.assertSent(client.setSpeedFan1(value));
+    this.log('Fan speed command sent successfully');
   }
 
   /**
@@ -652,39 +475,23 @@ module.exports = class HottohDevice extends Homey.Device {
     if (name !== defaultName) {
       // This is a custom name, store it in settings
       await this.setSettings({
-        deviceName: name
+        deviceName: name,
       });
       this.log('Custom name saved to device settings');
     } else if (settings.deviceName) {
       // User renamed back to default, clear the stored custom name
       await this.setSettings({
-        deviceName: ''
+        deviceName: '',
       });
       this.log('Custom name cleared from device settings');
     }
   }
 
   /**
-   * Update device name based on settings and state
-   * @private
+   * onUninit is called when the app is stopped or restarted.
    */
-  private async updateDeviceName() {
-    const settings = this.getSettings();
-
-    // If a custom name is set in settings, we don't update the name
-    if (settings.deviceName && settings.deviceName.trim() !== '') {
-      return;
-    }
-
-    // Otherwise use the default naming scheme
-    const ip = settings.ipAddress || this.getStoreValue('address');
-    const defaultName = `HottoH Stove (${ip})`;
-
-    // We can't set the name programmatically, but we can log that it should be updated
-    // The user will need to manually rename the device
-    if (this.getName() !== defaultName) {
-      this.log(`Device name should be updated to: ${defaultName} (needs manual rename)`);
-    }
+  async onUninit() {
+    this.stopPolling();
   }
 
   /**

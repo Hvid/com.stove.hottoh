@@ -2,27 +2,35 @@ name: Publish Homey App
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   main:
     name: Publish Homey App
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '18'
+          node-version: '22'
 
+      # No install scripts: this job later holds the Homey publish token
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Publish Homey App
-        uses: athombv/github-action-homey-app-publish@master
+        uses: athombv/github-action-homey-app-publish@0642b483f1eb66fbceb0c91b73df35d45fd2f3db # master as of 2026-10-26
         id: publish
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: URL
+        env:
+          PUBLISH_URL: ${{ steps.publish.outputs.url }}
         run: |
-          echo "Manage your app at ${{ steps.publish.outputs.url }}." >> $GITHUB_STEP_SUMMARY
+          echo "Manage your app at ${PUBLISH_URL}." >> "$GITHUB_STEP_SUMMARY"

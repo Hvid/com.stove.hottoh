@@ -1,8 +1,7 @@
 import Homey from 'homey';
-import { discoverStoves } from './discovery';
-
-// Set discovery timeout longer than the base discovery to avoid race conditions
-const DISCOVERY_TIMEOUT = 150000; // 2.5 minutes
+import net from 'net';
+import { discoverStoves, getDeviceId } from './discovery';
+import { getStateCategory } from './stove-state';
 
 module.exports = class HottohDriver extends Homey.Driver {
   // Flow trigger cards
@@ -24,9 +23,6 @@ module.exports = class HottohDriver extends Homey.Driver {
   private setPowerLevelAction: any;
   private setFanSpeedAction: any;
   private turnOffWhenTemperatureReachedAction: any;
-
-  // Store devices that are configured to turn off when temperature is reached
-  private turnOffTemperatureReached: Map<string, boolean> = new Map();
 
   /**
    * Driver initialization
@@ -53,6 +49,17 @@ module.exports = class HottohDriver extends Homey.Driver {
 
     // Smoke temperature threshold trigger
     this.smokeTemperatureThresholdTrigger = this.homey.flow.getDeviceTriggerCard('smoke_temperature_threshold');
+    // Only fire flows whose threshold was crossed in the chosen direction since the previous poll
+    this.smokeTemperatureThresholdTrigger.registerRunListener(async (args: any, state: any) => {
+      switch (args.type) {
+        case 'above':
+          return state.previous <= args.threshold && state.current > args.threshold;
+        case 'below':
+          return state.previous >= args.threshold && state.current < args.threshold;
+        default:
+          return false;
+      }
+    });
 
     // WiFi signal changed trigger
     this.wifiSignalChangedTrigger = this.homey.flow.getDeviceTriggerCard('wifi_signal_changed');
@@ -68,15 +75,14 @@ module.exports = class HottohDriver extends Homey.Driver {
     // Stove is in state condition
     this.stoveIsInStateCondition = this.homey.flow.getConditionCard('stove_is_in_state');
     this.stoveIsInStateCondition.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
-      const currentState = device.getCapabilityValue('stove_state');
-      return currentState === args.state;
+      const { device } = args;
+      return getStateCategory(device.getCapabilityValue('stove_state')) === args.state;
     });
 
     // Room temperature is condition
     this.roomTemperatureIsCondition = this.homey.flow.getConditionCard('room_temperature_is');
     this.roomTemperatureIsCondition.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
+      const { device } = args;
       const currentTemp = device.getCapabilityValue('measure_temperature');
 
       switch (args.comparison) {
@@ -89,12 +95,12 @@ module.exports = class HottohDriver extends Homey.Driver {
         default:
           return false;
       }
-    });    // Power level is condition
+    }); // Power level is condition
     this.powerLevelIsCondition = this.homey.flow.getConditionCard('power_level_is');
     this.powerLevelIsCondition.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
+      const { device } = args;
       const currentLevel = device.getCapabilityValue('power_level');
-      
+
       switch (args.comparison) {
         case 'above':
           return currentLevel > args.level;
@@ -105,12 +111,12 @@ module.exports = class HottohDriver extends Homey.Driver {
         default:
           return false;
       }
-    });    // Fan speed is condition
+    }); // Fan speed is condition
     this.fanSpeedIsCondition = this.homey.flow.getConditionCard('fan_speed_is');
     this.fanSpeedIsCondition.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
+      const { device } = args;
       const currentSpeed = device.getCapabilityValue('fan_speed');
-      
+
       switch (args.comparison) {
         case 'above':
           return currentSpeed > args.speed;
@@ -121,12 +127,12 @@ module.exports = class HottohDriver extends Homey.Driver {
         default:
           return false;
       }
-    });    // WiFi signal is condition
+    }); // WiFi signal is condition
     this.wifiSignalIsCondition = this.homey.flow.getConditionCard('wifi_signal_is');
     this.wifiSignalIsCondition.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
+      const { device } = args;
       const currentSignal = device.getCapabilityValue('wifi_signal');
-      
+
       switch (args.comparison) {
         case 'above':
           return currentSignal > args.strength;
@@ -147,7 +153,7 @@ module.exports = class HottohDriver extends Homey.Driver {
     // Set target temperature action
     this.setTargetTemperatureAction = this.homey.flow.getActionCard('set_target_temperature');
     this.setTargetTemperatureAction.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
+      const { device } = args;
       await device.onCapabilityTargetTemperature(args.temperature);
       return true;
     });
@@ -155,7 +161,7 @@ module.exports = class HottohDriver extends Homey.Driver {
     // Set power level action
     this.setPowerLevelAction = this.homey.flow.getActionCard('set_power_level');
     this.setPowerLevelAction.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
+      const { device } = args;
       await device.onCapabilityPowerLevel(args.level);
       return true;
     });
@@ -163,7 +169,7 @@ module.exports = class HottohDriver extends Homey.Driver {
     // Set fan speed action
     this.setFanSpeedAction = this.homey.flow.getActionCard('set_fan_speed');
     this.setFanSpeedAction.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
+      const { device } = args;
       await device.onCapabilityFanSpeed(args.speed);
       return true;
     });
@@ -171,11 +177,7 @@ module.exports = class HottohDriver extends Homey.Driver {
     // Turn off when temperature reached action
     this.turnOffWhenTemperatureReachedAction = this.homey.flow.getActionCard('turn_off_when_temperature_reached');
     this.turnOffWhenTemperatureReachedAction.registerRunListener(async (args: any, state: any) => {
-      const device = args.device;
-      const deviceId = device.getData().id;
-      // Store if this device should be turned off when temperature is reached
-      this.turnOffTemperatureReached.set(deviceId, args.enable === '1');
-      this.log(`Set turn off when temperature reached to ${args.enable === '1' ? 'ON' : 'OFF'} for device ${deviceId}`);
+      await args.device.armTurnOffWhenTemperatureReached();
       return true;
     });
   }
@@ -191,12 +193,6 @@ module.exports = class HottohDriver extends Homey.Driver {
    * Trigger the temperature reached flow
    */
   async triggerTemperatureReached(device: any, tokens: any, state: any) {
-    // Also check if this device should be turned off when temperature is reached
-    const deviceId = device.getData().id;
-    if (this.turnOffTemperatureReached.get(deviceId)) {
-      this.log(`Auto-turning off device ${deviceId} because temperature was reached`);
-      await device.onCapabilityOnOff(false);
-    }
     return this.temperatureReachedTrigger.trigger(device, tokens, state);
   }
 
@@ -232,30 +228,26 @@ module.exports = class HottohDriver extends Homey.Driver {
 
     // When the user manually adds a device by IP
     session.setHandler('manual_ip', async (data: any) => {
-      const ipAddress = data.ip;
+      const ipAddress = String(data?.ipAddress ?? '').trim();
 
-      if (!ipAddress) {
-        throw new Error('IP address is required');
+      if (!net.isIPv4(ipAddress)) {
+        throw new Error(`"${ipAddress}" is not a valid IPv4 address. Enter an address such as 192.168.1.50.`);
       }
 
-      try {
-        // Create a device object with the manual IP
-        const device = {
-          name: `HottoH Stove (${ipAddress})`,
-          data: {
-            id: `hottoh-${ipAddress}`,
-            ipAddress
-          },
-          settings: {
-            ipAddress
-          }
-        };
-
-        return device;
-      } catch (error) {
-        this.error('Error during manual IP pairing:', error);
-        throw new Error('Could not connect to the stove at that IP address. Please check the IP and try again.');
-      }
+      // Same id format as discovery, so a stove cannot be paired twice
+      return {
+        name: `HottoH Stove (${ipAddress})`,
+        data: {
+          id: getDeviceId(ipAddress),
+          address: ipAddress,
+        },
+        settings: {
+          ipAddress,
+        },
+        store: {
+          address: ipAddress,
+        },
+      };
     });
 
     // Log when a view is shown (for debugging)
@@ -272,40 +264,19 @@ module.exports = class HottohDriver extends Homey.Driver {
     this.log('Searching for HottoH stoves...');
 
     try {
-      // Create a timeout promise
-      const timeoutPromise = new Promise<never>((_, reject) => {
-        setTimeout(() => reject(new Error('Discovery timeout')), DISCOVERY_TIMEOUT);
-      });
-
-      // Race the discovery against the timeout
-      const devices = await Promise.race([
-        discoverStoves(),
-        timeoutPromise
-      ]);
-
-      this.log('Discovery completed');
-
-      if (!Array.isArray(devices)) {
-        this.log('Discovery did not return an array');
-        return [];
-      }
+      // discoverStoves() bounds its own run time
+      const devices = await discoverStoves();
 
       if (devices.length === 0) {
         this.log('No stoves found during discovery');
       } else {
-        this.log('Found stoves:', devices);
+        this.log('Found stoves:', devices.map((d) => d.data.address));
       }
 
       return devices;
-    } catch (error: any) {
-      // For timeout errors, throw a user-friendly error that will be shown in the GUI
-      if (error?.message === 'Discovery timeout') {
-        throw new Error(this.homey.__('pair.discovery.timeout_error') || 'Discovery is taking longer than expected. This can happen if there are many devices on your network. Please check that your stove is powered on and connected to WiFi, then try again.');
-      }
-
-      // For other errors, log but return empty array
+    } catch (error) {
       this.error('Error during device discovery:', error);
       return [];
     }
   }
-}
+};

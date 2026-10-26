@@ -9,12 +9,12 @@
     "@tsconfig/node16": "^16.1.4",
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
     "@types/node": "^24.0.1",
-    "eslint": "^7.32.0",
-    "eslint-config-athom": "^3.1.5",
-    "sharp": "^0.34.5",
+    "eslint": "^8.57.1",
+    "eslint-config-athom": "^4.0.2",
+    "sharp": "^0.35.5",
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "hottohts": "^1.0.3"
+    "hottohts": "^1.1.0"
   }
 }

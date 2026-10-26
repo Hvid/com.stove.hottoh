@@ -1872,7 +1872,6 @@
           "template": "add_devices"
         }
       ],
-      "discovery": "hottoh",
       "id": "hottoh",
       "settings": [
         {
@@ -2130,21 +2129,6 @@
       "insights": true,
       "uiComponent": "sensor",
       "icon": "/assets/images/wifi_signal.svg"
-    }
-  },
-  "discovery": {
-    "hottoh": {
-      "id": "hottoh",
-      "type": "mac",
-      "mac": {
-        "manufacturer": [
-          [
-            1,
-            2,
-            3
-          ]
-        ]
-      }
     }
   }
 }

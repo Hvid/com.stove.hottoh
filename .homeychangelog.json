@@ -46,5 +46,8 @@
   },
   "1.0.15": {
     "en": "Updated icons with thicker lines for improved visibility."
+  },
+  "1.1.0": {
+    "en": "Fixes app crashes after settings changes or device removal. The stove now reconnects automatically after an outage and shows as unavailable instead of displaying old values. Manual IP pairing works, and discovery finds running stoves. Changing the IP setting takes effect immediately. Flow fixes: \"Stove is in state\" now matches; the smoke temperature trigger fires only when the threshold is crossed; \"Turn off when temperature reached\" is a one-shot that survives restarts; \"Any stove turned on/off\" now fires."
   }
 }
